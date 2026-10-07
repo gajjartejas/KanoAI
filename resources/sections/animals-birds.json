@@ -1,0 +1,408 @@
+{
+  "sectionId": 7,
+  "sectionSlug": "animals-birds",
+  "sectionName": "Animals, Birds & Marine Life (પ્રાણીઓ, પક્ષીઓ અને જળચર જીવો)",
+  "totalItems": 50,
+  "items": [
+    {
+      "id": 1,
+      "en": "Cow",
+      "gu": "ગાય",
+      "transliteration": "Gāy",
+      "category": "Domestic Animals",
+      "emoji": "🐄"
+    },
+    {
+      "id": 2,
+      "en": "Buffalo",
+      "gu": "ભેંસ",
+      "transliteration": "Bhens",
+      "category": "Domestic Animals",
+      "emoji": "🐃"
+    },
+    {
+      "id": 3,
+      "en": "Ox / Bull",
+      "gu": "બળદ",
+      "transliteration": "Baḷad",
+      "category": "Domestic Animals",
+      "emoji": "🐂"
+    },
+    {
+      "id": 4,
+      "en": "Dog",
+      "gu": "કૂતરો",
+      "transliteration": "Kūtro",
+      "category": "Domestic Animals",
+      "emoji": "🐕"
+    },
+    {
+      "id": 5,
+      "en": "Cat",
+      "gu": "બિલાડી",
+      "transliteration": "Bilāḍī",
+      "category": "Domestic Animals",
+      "emoji": "🐈"
+    },
+    {
+      "id": 6,
+      "en": "Goat",
+      "gu": "બકરી",
+      "transliteration": "Bakrī",
+      "category": "Domestic Animals",
+      "emoji": "🐐"
+    },
+    {
+      "id": 7,
+      "en": "Sheep",
+      "gu": "ઘેટું",
+      "transliteration": "Gheṭun",
+      "category": "Domestic Animals",
+      "emoji": "🐑"
+    },
+    {
+      "id": 8,
+      "en": "Horse",
+      "gu": "ઘોડો",
+      "transliteration": "Ghoḍo",
+      "category": "Domestic Animals",
+      "emoji": "🐎"
+    },
+    {
+      "id": 9,
+      "en": "Donkey",
+      "gu": "ગધેડો",
+      "transliteration": "Ghadheḍo",
+      "category": "Domestic Animals",
+      "emoji": "🫏"
+    },
+    {
+      "id": 10,
+      "en": "Camel",
+      "gu": "ઊંટ",
+      "transliteration": "Ūnṭ",
+      "category": "Domestic Animals",
+      "emoji": "🐪"
+    },
+    {
+      "id": 11,
+      "en": "Elephant",
+      "gu": "હાથી",
+      "transliteration": "Hāthī",
+      "category": "Domestic / Wild",
+      "emoji": "🐘"
+    },
+    {
+      "id": 12,
+      "en": "Rabbit",
+      "gu": "સસલું",
+      "transliteration": "Saslun",
+      "category": "Domestic Animals",
+      "emoji": "🐇"
+    },
+    {
+      "id": 13,
+      "en": "Lion",
+      "gu": "સિંહ / સાવજ",
+      "transliteration": "Sinh / Sāvaj",
+      "category": "Wild Animals",
+      "emoji": "🦁"
+    },
+    {
+      "id": 14,
+      "en": "Tiger",
+      "gu": "વાઘ",
+      "transliteration": "Vāgh",
+      "category": "Wild Animals",
+      "emoji": "🐅"
+    },
+    {
+      "id": 15,
+      "en": "Leopard",
+      "gu": "દીપડો",
+      "transliteration": "Dīpḍo",
+      "category": "Wild Animals",
+      "emoji": "🐆"
+    },
+    {
+      "id": 16,
+      "en": "Bear",
+      "gu": "રીંછ",
+      "transliteration": "Rīnchh",
+      "category": "Wild Animals",
+      "emoji": "🐻"
+    },
+    {
+      "id": 17,
+      "en": "Wolf",
+      "gu": "વરુ",
+      "transliteration": "Varu",
+      "category": "Wild Animals",
+      "emoji": "🐺"
+    },
+    {
+      "id": 18,
+      "en": "Fox",
+      "gu": "શિયાળ",
+      "transliteration": "Shiyāḷ",
+      "category": "Wild Animals",
+      "emoji": "🦊"
+    },
+    {
+      "id": 19,
+      "en": "Deer",
+      "gu": "હરણ",
+      "transliteration": "Haraṇ",
+      "category": "Wild Animals",
+      "emoji": "🦌"
+    },
+    {
+      "id": 20,
+      "en": "Monkey",
+      "gu": "વાંદરો",
+      "transliteration": "Vāndro",
+      "category": "Wild Animals",
+      "emoji": "🐒"
+    },
+    {
+      "id": 21,
+      "en": "Giraffe",
+      "gu": "જિરાફ",
+      "transliteration": "Jirāf",
+      "category": "Wild Animals",
+      "emoji": "🦒"
+    },
+    {
+      "id": 22,
+      "en": "Zebra",
+      "gu": "ઝીબ્રા",
+      "transliteration": "Zībrā",
+      "category": "Wild Animals",
+      "emoji": "🦓"
+    },
+    {
+      "id": 23,
+      "en": "Rhinoceros",
+      "gu": "ગેંડો",
+      "transliteration": "Genḍo",
+      "category": "Wild Animals",
+      "emoji": "🦏"
+    },
+    {
+      "id": 24,
+      "en": "Hippopotamus",
+      "gu": "જળઘોડો",
+      "transliteration": "Jaḷghoḍo",
+      "category": "Wild Animals",
+      "emoji": "🦛"
+    },
+    {
+      "id": 25,
+      "en": "Kangaroo",
+      "gu": "કાંગારુ",
+      "transliteration": "Kāngāru",
+      "category": "Wild Animals",
+      "emoji": "🦘"
+    },
+    {
+      "id": 26,
+      "en": "Peacock",
+      "gu": "મોર",
+      "transliteration": "Mor",
+      "category": "Birds",
+      "emoji": "🦚"
+    },
+    {
+      "id": 27,
+      "en": "Peahen",
+      "gu": "ઢેલ",
+      "transliteration": "Ḍhel",
+      "category": "Birds",
+      "emoji": "🦚"
+    },
+    {
+      "id": 28,
+      "en": "Sparrow",
+      "gu": "ચકલી",
+      "transliteration": "Chaklī",
+      "category": "Birds",
+      "emoji": "🐦"
+    },
+    {
+      "id": 29,
+      "en": "Crow",
+      "gu": "કાગડો",
+      "transliteration": "Kāgḍo",
+      "category": "Birds",
+      "emoji": "🐦‍⬛"
+    },
+    {
+      "id": 30,
+      "en": "Pigeon",
+      "gu": "કબૂતર",
+      "transliteration": "Kabūtar",
+      "category": "Birds",
+      "emoji": "🕊️"
+    },
+    {
+      "id": 31,
+      "en": "Parrot",
+      "gu": "પોપટ",
+      "transliteration": "Popaṭ",
+      "category": "Birds",
+      "emoji": "🦜"
+    },
+    {
+      "id": 32,
+      "en": "Eagle",
+      "gu": "ગરુડ / સમડી",
+      "transliteration": "Garuḍ / Samaḍī",
+      "category": "Birds",
+      "emoji": "🦅"
+    },
+    {
+      "id": 33,
+      "en": "Owl",
+      "gu": "ઘુવડ",
+      "transliteration": "Ghuvaḍ",
+      "category": "Birds",
+      "emoji": "🦉"
+    },
+    {
+      "id": 34,
+      "en": "Swan",
+      "gu": "હંસ",
+      "transliteration": "Hans",
+      "category": "Birds",
+      "emoji": "🦢"
+    },
+    {
+      "id": 35,
+      "en": "Duck",
+      "gu": "બતક",
+      "transliteration": "Batak",
+      "category": "Birds",
+      "emoji": "🦆"
+    },
+    {
+      "id": 36,
+      "en": "Hen / Rooster",
+      "gu": "મરઘી / કૂકડો",
+      "transliteration": "Marghī / Kūkaḍo",
+      "category": "Birds",
+      "emoji": "🐓"
+    },
+    {
+      "id": 37,
+      "en": "Cuckoo",
+      "gu": "કોયલ",
+      "transliteration": "Koyal",
+      "category": "Birds",
+      "emoji": "🐦"
+    },
+    {
+      "id": 38,
+      "en": "Kingfisher",
+      "gu": "કલકલિયો",
+      "transliteration": "Kalkaliyo",
+      "category": "Birds",
+      "emoji": "🪶"
+    },
+    {
+      "id": 39,
+      "en": "Ostrich",
+      "gu": "શાહમૃગ",
+      "transliteration": "Shāhamrug",
+      "category": "Birds",
+      "emoji": "🦤"
+    },
+    {
+      "id": 40,
+      "en": "Fish",
+      "gu": "માછલી",
+      "transliteration": "Māchhlī",
+      "category": "Water Animals",
+      "emoji": "🐟"
+    },
+    {
+      "id": 41,
+      "en": "Crocodile",
+      "gu": "મગર",
+      "transliteration": "Magar",
+      "category": "Water Animals",
+      "emoji": "🐊"
+    },
+    {
+      "id": 42,
+      "en": "Tortoise / Turtle",
+      "gu": "કાચબો",
+      "transliteration": "Kāchbo",
+      "category": "Water Animals",
+      "emoji": "🐢"
+    },
+    {
+      "id": 43,
+      "en": "Whale",
+      "gu": "વ્હેલ",
+      "transliteration": "Whale",
+      "category": "Water Animals",
+      "emoji": "🐋"
+    },
+    {
+      "id": 44,
+      "en": "Dolphin",
+      "gu": "ડોલ્ફિન",
+      "transliteration": "Dolphin",
+      "category": "Water Animals",
+      "emoji": "🐬"
+    },
+    {
+      "id": 45,
+      "en": "Shark",
+      "gu": "શાર્ક",
+      "transliteration": "Shark",
+      "category": "Water Animals",
+      "emoji": "🦈"
+    },
+    {
+      "id": 46,
+      "en": "Octopus",
+      "gu": "ઓક્ટોપસ / અષ્ટપાદ",
+      "transliteration": "Octopus / Aṣhṭapād",
+      "category": "Water Animals",
+      "emoji": "🐙"
+    },
+    {
+      "id": 47,
+      "en": "Crab",
+      "gu": "કરચલો",
+      "transliteration": "Karchalo",
+      "category": "Water Animals",
+      "emoji": "🦀"
+    },
+    {
+      "id": 48,
+      "en": "Frog",
+      "gu": "દેડકો",
+      "transliteration": "Deḍko",
+      "category": "Water / Amphibian",
+      "emoji": "🐸"
+    },
+    {
+      "id": 49,
+      "en": "Seahorse",
+      "gu": "જળઘોડો / દરિયાઈ ઘોડો",
+      "transliteration": "Dariyāī Ghoḍo",
+      "category": "Water Animals",
+      "emoji": "🪸"
+    },
+    {
+      "id": 50,
+      "en": "Starfish",
+      "gu": "તારામાછલી",
+      "transliteration": "Tārāmāchhlī",
+      "category": "Water Animals",
+      "emoji": "⭐"
+    }
+  ]
+}

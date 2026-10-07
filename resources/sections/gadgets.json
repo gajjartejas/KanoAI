@@ -1,0 +1,248 @@
+{
+  "sectionId": 10,
+  "sectionSlug": "gadgets",
+  "sectionName": "Gadgets & Electronics (ગેજેટ્સ અને ઈલેક્ટ્રોનિક્સ)",
+  "totalItems": 30,
+  "items": [
+    {
+      "id": 1,
+      "en": "Mobile Phone / Smartphone",
+      "gu": "મોબાઇલ ફોન",
+      "transliteration": "Mobile Phone",
+      "category": "Communication",
+      "emoji": "📱"
+    },
+    {
+      "id": 2,
+      "en": "Computer / Desktop",
+      "gu": "કમ્પ્યુટર / સંગણક",
+      "transliteration": "Computer / Sangaṇak",
+      "category": "Computing",
+      "emoji": "🖥️"
+    },
+    {
+      "id": 3,
+      "en": "Laptop",
+      "gu": "લેપટોપ",
+      "transliteration": "Laptop",
+      "category": "Computing",
+      "emoji": "💻"
+    },
+    {
+      "id": 4,
+      "en": "Tablet / iPad",
+      "gu": "ટેબ્લેટ",
+      "transliteration": "Tablet",
+      "category": "Computing",
+      "emoji": "📟"
+    },
+    {
+      "id": 5,
+      "en": "Television / TV",
+      "gu": "ટેલિવિઝન / ટીવી",
+      "transliteration": "Television / TV",
+      "category": "Entertainment",
+      "emoji": "📺"
+    },
+    {
+      "id": 6,
+      "en": "Radio",
+      "gu": "રેડિયો / આકાશવાણી",
+      "transliteration": "Radio",
+      "category": "Entertainment",
+      "emoji": "📻"
+    },
+    {
+      "id": 7,
+      "en": "Smartwatch",
+      "gu": "સ્માર્ટવોચ / ઘડિયાળ",
+      "transliteration": "Smartwatch",
+      "category": "Wearables",
+      "emoji": "⌚"
+    },
+    {
+      "id": 8,
+      "en": "Camera",
+      "gu": "કેમેરા / કેમેરો",
+      "transliteration": "Camera",
+      "category": "Photography",
+      "emoji": "📷"
+    },
+    {
+      "id": 9,
+      "en": "Headphones",
+      "gu": "હેડફોન",
+      "transliteration": "Headphones",
+      "category": "Audio",
+      "emoji": "🎧"
+    },
+    {
+      "id": 10,
+      "en": "Earphones / Earbuds",
+      "gu": "ઈયરફોન",
+      "transliteration": "Earphones",
+      "category": "Audio",
+      "emoji": "👂"
+    },
+    {
+      "id": 11,
+      "en": "Speaker / Bluetooth Speaker",
+      "gu": "સ્પીકર",
+      "transliteration": "Speaker",
+      "category": "Audio",
+      "emoji": "🔊"
+    },
+    {
+      "id": 12,
+      "en": "Microphone",
+      "gu": "માઇક્રોફોન / માઇક",
+      "transliteration": "Microphone / Mike",
+      "category": "Audio",
+      "emoji": "🎙️"
+    },
+    {
+      "id": 13,
+      "en": "Printer",
+      "gu": "પ્રિન્ટર / છાપયંત્ર",
+      "transliteration": "Printer",
+      "category": "Peripherals",
+      "emoji": "🖨️"
+    },
+    {
+      "id": 14,
+      "en": "Scanner",
+      "gu": "સ્કેનર",
+      "transliteration": "Scanner",
+      "category": "Peripherals",
+      "emoji": "📠"
+    },
+    {
+      "id": 15,
+      "en": "Router / Wi-Fi",
+      "gu": "રાઉટર / વાઇ-ફાઇ",
+      "transliteration": "Router / Wi-Fi",
+      "category": "Networking",
+      "emoji": "📶"
+    },
+    {
+      "id": 16,
+      "en": "Power Bank",
+      "gu": "પાવર બેંક",
+      "transliteration": "Power Bank",
+      "category": "Accessories",
+      "emoji": "🔋"
+    },
+    {
+      "id": 17,
+      "en": "Charger / Adapter",
+      "gu": "ચાર્જર",
+      "transliteration": "Charger",
+      "category": "Accessories",
+      "emoji": "🔌"
+    },
+    {
+      "id": 18,
+      "en": "Pendrive / USB Flash Drive",
+      "gu": "પેનડ્રાઇવ / યુએસબી",
+      "transliteration": "Pendrive / USB",
+      "category": "Storage",
+      "emoji": "💾"
+    },
+    {
+      "id": 19,
+      "en": "Hard Drive",
+      "gu": "હાર્ડ ડિસ્ક",
+      "transliteration": "Hard Disk",
+      "category": "Storage",
+      "emoji": "💽"
+    },
+    {
+      "id": 20,
+      "en": "Keyboard",
+      "gu": "કીબોર્ડ",
+      "transliteration": "Keyboard",
+      "category": "Peripherals",
+      "emoji": "⌨️"
+    },
+    {
+      "id": 21,
+      "en": "Mouse",
+      "gu": "માઉસ",
+      "transliteration": "Mouse",
+      "category": "Peripherals",
+      "emoji": "🖱️"
+    },
+    {
+      "id": 22,
+      "en": "Remote Control",
+      "gu": "રીમોટ કંટ્રોલ",
+      "transliteration": "Remote Control",
+      "category": "Accessories",
+      "emoji": "📱"
+    },
+    {
+      "id": 23,
+      "en": "Calculator",
+      "gu": "કેલ્ક્યુલેટર / ગણકયંત્ર",
+      "transliteration": "Calculator / Gaṇakyantra",
+      "category": "Tools",
+      "emoji": "🧮"
+    },
+    {
+      "id": 24,
+      "en": "Drone",
+      "gu": "ડ્રોન",
+      "transliteration": "Drone",
+      "category": "Smart Devices",
+      "emoji": "🚁"
+    },
+    {
+      "id": 25,
+      "en": "Flashlight / Torch",
+      "gu": "ટોર્ચ / બેટરી",
+      "transliteration": "Torch / Battery",
+      "category": "Tools",
+      "emoji": "🔦"
+    },
+    {
+      "id": 26,
+      "en": "Projector",
+      "gu": "પ્રોજેક્ટર",
+      "transliteration": "Projector",
+      "category": "Display",
+      "emoji": "📽️"
+    },
+    {
+      "id": 27,
+      "en": "Video Game Console",
+      "gu": "વિડીયો ગેમ",
+      "transliteration": "Video Game",
+      "category": "Gaming",
+      "emoji": "🎮"
+    },
+    {
+      "id": 28,
+      "en": "VR Headset",
+      "gu": "વીઆર હેડસેટ",
+      "transliteration": "VR Headset",
+      "category": "Wearables",
+      "emoji": "🥽"
+    },
+    {
+      "id": 29,
+      "en": "Smart Bulb",
+      "gu": "સ્માર્ટ બલ્બ",
+      "transliteration": "Smart Bulb",
+      "category": "Smart Home",
+      "emoji": "💡"
+    },
+    {
+      "id": 30,
+      "en": "Robot",
+      "gu": "રોબોટ / યંત્રમાનવ",
+      "transliteration": "Robot / Yantramānav",
+      "category": "Smart Devices",
+      "emoji": "🤖"
+    }
+  ]
+}

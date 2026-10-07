@@ -226,6 +226,16 @@ class App {
         }, '*');
       } catch (err) {}
     }
+
+    // If in TTS mode, update TTS textarea with the selected character
+    const secTTS = document.getElementById('section-tts');
+    if (secTTS && secTTS.style.display !== 'none') {
+      const ttsInput = document.getElementById('tts-input-text');
+      if (ttsInput) {
+        ttsInput.value = item.char;
+        ttsInput.dispatchEvent(new Event('input'));
+      }
+    }
   }
 
   updateHeaderBanner(item) {
@@ -300,23 +310,32 @@ class App {
 
 window.switchSuite = function(suite) {
   const isHandwriting = suite === 'handwriting';
+  const isTTS = suite === 'tts';
+  const isAnimator = !isHandwriting && !isTTS;
 
   const tabAnimator = document.getElementById('tab-btn-animator');
   const tabHandwriting = document.getElementById('tab-btn-handwriting');
+  const tabTTS = document.getElementById('tab-btn-tts');
+
   const secAnimator = document.getElementById('section-animator');
   const secHandwriting = document.getElementById('section-handwriting');
+  const secTTS = document.getElementById('section-tts');
   const tagline = document.getElementById('suite-tagline');
 
   if (tabAnimator) {
-    tabAnimator.classList.toggle('active', !isHandwriting);
-    tabAnimator.setAttribute('aria-selected', (!isHandwriting).toString());
+    tabAnimator.classList.toggle('active', isAnimator);
+    tabAnimator.setAttribute('aria-selected', isAnimator.toString());
   }
   if (tabHandwriting) {
     tabHandwriting.classList.toggle('active', isHandwriting);
     tabHandwriting.setAttribute('aria-selected', isHandwriting.toString());
   }
+  if (tabTTS) {
+    tabTTS.classList.toggle('active', isTTS);
+    tabTTS.setAttribute('aria-selected', isTTS.toString());
+  }
 
-  if (secAnimator) secAnimator.style.display = isHandwriting ? 'none' : 'flex';
+  if (secAnimator) secAnimator.style.display = isAnimator ? 'flex' : 'none';
   if (secHandwriting) {
     secHandwriting.style.display = isHandwriting ? 'flex' : 'none';
     if (isHandwriting) {
@@ -338,17 +357,29 @@ window.switchSuite = function(suite) {
       }
     }
   }
-
-  if (tagline) {
-    tagline.textContent = isHandwriting
-      ? 'Interactive Tracing, Word Quiz, Free Draw ML & Offline Benchmarks'
-      : 'Reference Template (Light) vs Medial Ridge Auto-Generated (Bold) • 565 Characters';
+  if (secTTS) {
+    secTTS.style.display = isTTS ? 'flex' : 'none';
+    if (isTTS && window.ttsStudio && !window.ttsStudio.initialized) {
+      window.ttsStudio.init();
+      window.ttsStudio.initialized = true;
+    }
   }
 
+  if (tagline) {
+    if (isTTS) {
+      tagline.textContent = 'AI4Bharat IndicF5 (Flow-Matching) & Indic-TTS / Bodhan Indic-Speak • Neural Gujarati Voice Studio';
+    } else if (isHandwriting) {
+      tagline.textContent = 'Interactive Tracing, Word Quiz, Free Draw ML & Offline Benchmarks';
+    } else {
+      tagline.textContent = 'Reference Template (Light) vs Medial Ridge Auto-Generated (Bold) • 565 Characters';
+    }
+  }
+
+  const hash = isTTS ? '#tts' : (isHandwriting ? '#handwriting' : '#animator');
   if (window.history && window.history.replaceState) {
-    window.history.replaceState(null, '', isHandwriting ? '#handwriting' : '#animator');
+    window.history.replaceState(null, '', hash);
   } else {
-    window.location.hash = isHandwriting ? '#handwriting' : '#animator';
+    window.location.hash = hash;
   }
 };
 
@@ -406,10 +437,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (window.location.hash === '#handwriting') {
+  const initialHash = window.location.hash;
+  if (initialHash === '#tts') {
+    window.switchSuite('tts');
+  } else if (initialHash === '#handwriting') {
     window.switchSuite('handwriting');
+  } else {
+    window.switchSuite('animator');
   }
+
   window.addEventListener('hashchange', () => {
-    window.switchSuite(window.location.hash === '#handwriting' ? 'handwriting' : 'animator');
+    const currentHash = window.location.hash;
+    if (currentHash === '#tts') {
+      window.switchSuite('tts');
+    } else if (currentHash === '#handwriting') {
+      window.switchSuite('handwriting');
+    } else {
+      window.switchSuite('animator');
+    }
   });
 });

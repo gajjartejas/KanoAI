@@ -1,0 +1,248 @@
+{
+  "sectionId": 11,
+  "sectionSlug": "vehicles",
+  "sectionName": "Vehicles & Transport (વાહનો અને વાહનવ્યવહાર)",
+  "totalItems": 30,
+  "items": [
+    {
+      "id": 1,
+      "en": "Bicycle / Cycle",
+      "gu": "સાયકલ",
+      "transliteration": "Cycle / Sāykal",
+      "category": "Land (Two-Wheeler)",
+      "emoji": "🚲"
+    },
+    {
+      "id": 2,
+      "en": "Motorcycle / Bike",
+      "gu": "મોટરસાયકલ / બાઇક",
+      "transliteration": "Motorcycle / Bike",
+      "category": "Land (Two-Wheeler)",
+      "emoji": "🏍️"
+    },
+    {
+      "id": 3,
+      "en": "Scooter",
+      "gu": "સ્કૂટર",
+      "transliteration": "Scooter",
+      "category": "Land (Two-Wheeler)",
+      "emoji": "🛵"
+    },
+    {
+      "id": 4,
+      "en": "Auto Rickshaw",
+      "gu": "રીક્ષા / ઓટોરીક્ષા",
+      "transliteration": "Rickshaw / Auto Rickshaw",
+      "category": "Land (Three-Wheeler)",
+      "emoji": "🛺"
+    },
+    {
+      "id": 5,
+      "en": "Car",
+      "gu": "કાર / મોટરગાડી",
+      "transliteration": "Car / Moṭargāḍī",
+      "category": "Land (Four-Wheeler)",
+      "emoji": "🚗"
+    },
+    {
+      "id": 6,
+      "en": "Bus",
+      "gu": "બસ",
+      "transliteration": "Bus",
+      "category": "Public Transport",
+      "emoji": "🚌"
+    },
+    {
+      "id": 7,
+      "en": "School Bus",
+      "gu": "સ્કૂલ બસ",
+      "transliteration": "School Bus",
+      "category": "Public Transport",
+      "emoji": "🚍"
+    },
+    {
+      "id": 8,
+      "en": "Truck / Lorry",
+      "gu": "ટ્રક / ખટારો",
+      "transliteration": "Truck / Khaṭāro",
+      "category": "Heavy Transport",
+      "emoji": "🚚"
+    },
+    {
+      "id": 9,
+      "en": "Tractor",
+      "gu": "ટ્રેક્ટર",
+      "transliteration": "Tractor",
+      "category": "Agricultural",
+      "emoji": "🚜"
+    },
+    {
+      "id": 10,
+      "en": "Ambulance",
+      "gu": "એમ્બ્યુલન્સ / શવવાહિની",
+      "transliteration": "Ambulance",
+      "category": "Emergency",
+      "emoji": "🚑"
+    },
+    {
+      "id": 11,
+      "en": "Fire Engine",
+      "gu": "લાયબંબો / ફાયર બ્રિગેડ",
+      "transliteration": "Lāybambo / Fire Brigade",
+      "category": "Emergency",
+      "emoji": "🚒"
+    },
+    {
+      "id": 12,
+      "en": "Police Car",
+      "gu": "પોલીસ વાન / ગાડી",
+      "transliteration": "Police Van",
+      "category": "Emergency",
+      "emoji": "🚓"
+    },
+    {
+      "id": 13,
+      "en": "Taxi / Cab",
+      "gu": "ટેક્સી",
+      "transliteration": "Taxi",
+      "category": "Public Transport",
+      "emoji": "🚕"
+    },
+    {
+      "id": 14,
+      "en": "Train / Railway",
+      "gu": "રેલગાડી / ટ્રેન",
+      "transliteration": "Relgāḍī / Train",
+      "category": "Railways",
+      "emoji": "🚆"
+    },
+    {
+      "id": 15,
+      "en": "Metro Train",
+      "gu": "મેટ્રો ટ્રેન",
+      "transliteration": "Metro Train",
+      "category": "Railways",
+      "emoji": "🚇"
+    },
+    {
+      "id": 16,
+      "en": "Goods Train",
+      "gu": "માલગાડી",
+      "transliteration": "Mālgāḍī",
+      "category": "Railways",
+      "emoji": "🚈"
+    },
+    {
+      "id": 17,
+      "en": "Bullock Cart",
+      "gu": "બળદગાડું",
+      "transliteration": "Baḷadgāḍun",
+      "category": "Traditional Land",
+      "emoji": "🐂"
+    },
+    {
+      "id": 18,
+      "en": "Horse Carriage",
+      "gu": "ઘોડાગાડી / તાંગો",
+      "transliteration": "Ghoḍāgāḍī / Tāngo",
+      "category": "Traditional Land",
+      "emoji": "🐎"
+    },
+    {
+      "id": 19,
+      "en": "Aeroplane / Airplane",
+      "gu": "વિમાન / હવાઈજહાજ",
+      "transliteration": "Vimān / Havāījahāj",
+      "category": "Aviation",
+      "emoji": "✈️"
+    },
+    {
+      "id": 20,
+      "en": "Helicopter",
+      "gu": "હેલિકોપ્ટર",
+      "transliteration": "Helicopter",
+      "category": "Aviation",
+      "emoji": "🚁"
+    },
+    {
+      "id": 21,
+      "en": "Rocket / Spacecraft",
+      "gu": "રોકેટ / અંતરિક્ષયાન",
+      "transliteration": "Rocket / Antarikshayān",
+      "category": "Space",
+      "emoji": "🚀"
+    },
+    {
+      "id": 22,
+      "en": "Hot Air Balloon",
+      "gu": "ગરમ હવાનું બલૂન",
+      "transliteration": "Garam Havā-nun Balloon",
+      "category": "Aviation",
+      "emoji": "🎈"
+    },
+    {
+      "id": 23,
+      "en": "Ship",
+      "gu": "જહાજ / સ્ટીમર",
+      "transliteration": "Jahāj / Steamer",
+      "category": "Water Transport",
+      "emoji": "🚢"
+    },
+    {
+      "id": 24,
+      "en": "Boat",
+      "gu": "હોડી / નાવડી",
+      "transliteration": "Hoḍī / Nāvḍī",
+      "category": "Water Transport",
+      "emoji": "⛵"
+    },
+    {
+      "id": 25,
+      "en": "Speedboat",
+      "gu": "સ્પીડબોટ",
+      "transliteration": "Speedboat",
+      "category": "Water Transport",
+      "emoji": "🚤"
+    },
+    {
+      "id": 26,
+      "en": "Submarine",
+      "gu": "સબમરીન / પાનડૂબી",
+      "transliteration": "Submarine / Pānḍūbī",
+      "category": "Water Transport",
+      "emoji": "🤿"
+    },
+    {
+      "id": 27,
+      "en": "Crane",
+      "gu": "ક્રેન",
+      "transliteration": "Crane",
+      "category": "Construction",
+      "emoji": "🏗️"
+    },
+    {
+      "id": 28,
+      "en": "Bulldozer",
+      "gu": "બુલડોઝર",
+      "transliteration": "Bulldozer",
+      "category": "Construction",
+      "emoji": "🚜"
+    },
+    {
+      "id": 29,
+      "en": "Tanker",
+      "gu": "ટેન્કર",
+      "transliteration": "Tanker",
+      "category": "Heavy Transport",
+      "emoji": "🚛"
+    },
+    {
+      "id": 30,
+      "en": "Electric Car",
+      "gu": "ઇલેક્ટ્રિક કાર",
+      "transliteration": "Electric Car",
+      "category": "Eco Transport",
+      "emoji": "🚙"
+    }
+  ]
+}

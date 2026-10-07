@@ -1,0 +1,328 @@
+{
+  "sectionId": 15,
+  "sectionSlug": "professions",
+  "sectionName": "Professions & Occupations (વ્યવસાયો અને કારીગરો)",
+  "totalItems": 40,
+  "items": [
+    {
+      "id": 1,
+      "en": "Teacher",
+      "gu": "શિક્ષક / અધ્યાપક",
+      "transliteration": "Shikṣhak / Adhyāpak",
+      "category": "Education",
+      "emoji": "👨‍🏫"
+    },
+    {
+      "id": 2,
+      "en": "Doctor",
+      "gu": "ડોક્ટર / વૈદ્ય",
+      "transliteration": "Doctor / Vaidya",
+      "category": "Healthcare",
+      "emoji": "👨‍⚕️"
+    },
+    {
+      "id": 3,
+      "en": "Nurse",
+      "gu": "નર્સ / પરિચારિકા",
+      "transliteration": "Nurse / Parichārikā",
+      "category": "Healthcare",
+      "emoji": "👩‍⚕️"
+    },
+    {
+      "id": 4,
+      "en": "Police Officer",
+      "gu": "પોલીસ / સિપાહી",
+      "transliteration": "Police / Sipāhī",
+      "category": "Public Safety",
+      "emoji": "👮"
+    },
+    {
+      "id": 5,
+      "en": "Soldier",
+      "gu": "સૈનિક / જવાન",
+      "transliteration": "Sainik / Javān",
+      "category": "Defense",
+      "emoji": "🪖"
+    },
+    {
+      "id": 6,
+      "en": "Farmer",
+      "gu": "ખેડૂત / કૃષિકાર",
+      "transliteration": "Kheḍūt",
+      "category": "Agriculture",
+      "emoji": "👨‍🌾"
+    },
+    {
+      "id": 7,
+      "en": "Engineer",
+      "gu": "ઇજનેર / એન્જિનિયર",
+      "transliteration": "Ijner / Engineer",
+      "category": "Technical",
+      "emoji": "👷"
+    },
+    {
+      "id": 8,
+      "en": "Scientist",
+      "gu": "વૈજ્ઞાનિક",
+      "transliteration": "Vaijñānik",
+      "category": "Science",
+      "emoji": "🔬"
+    },
+    {
+      "id": 9,
+      "en": "Lawyer / Advocate",
+      "gu": "વકીલ",
+      "transliteration": "Vakīl",
+      "category": "Law",
+      "emoji": "⚖️"
+    },
+    {
+      "id": 10,
+      "en": "Judge",
+      "gu": "ન્યાયાધીશ / જજ",
+      "transliteration": "Nyāyādhīsh",
+      "category": "Law",
+      "emoji": "👨‍⚖️"
+    },
+    {
+      "id": 11,
+      "en": "Pilot",
+      "gu": "વિમાનચાલક / પાયલટ",
+      "transliteration": "Vimānchālak / Pilot",
+      "category": "Aviation",
+      "emoji": "👨‍✈️"
+    },
+    {
+      "id": 12,
+      "en": "Driver",
+      "gu": "ચાલક / ડ્રાઇવર",
+      "transliteration": "Chālak / Driver",
+      "category": "Transport",
+      "emoji": "🚗"
+    },
+    {
+      "id": 13,
+      "en": "Carpenter",
+      "gu": "સુથાર",
+      "transliteration": "Suthār",
+      "category": "Artisans",
+      "emoji": "🪚"
+    },
+    {
+      "id": 14,
+      "en": "Blacksmith",
+      "gu": "લુહાર",
+      "transliteration": "Luhār",
+      "category": "Artisans",
+      "emoji": "⚒️"
+    },
+    {
+      "id": 15,
+      "en": "Goldsmith",
+      "gu": "સોની",
+      "transliteration": "Sonī",
+      "category": "Artisans",
+      "emoji": "💍"
+    },
+    {
+      "id": 16,
+      "en": "Potter",
+      "gu": "કુંભાર",
+      "transliteration": "Kumbhār",
+      "category": "Artisans",
+      "emoji": "🏺"
+    },
+    {
+      "id": 17,
+      "en": "Tailor",
+      "gu": "દરજી",
+      "transliteration": "Darjī",
+      "category": "Services",
+      "emoji": "🧵"
+    },
+    {
+      "id": 18,
+      "en": "Barber / Hairdresser",
+      "gu": "વાળંદ / હજામ",
+      "transliteration": "Vāḷand / Hajām",
+      "category": "Services",
+      "emoji": "💈"
+    },
+    {
+      "id": 19,
+      "en": "Cobbler / Shoemaker",
+      "gu": "મોચી",
+      "transliteration": "Mochī",
+      "category": "Services",
+      "emoji": "👞"
+    },
+    {
+      "id": 20,
+      "en": "Painter",
+      "gu": "ચિત્રકાર / કલરકામ કરનાર",
+      "transliteration": "Chitrakār",
+      "category": "Art & Services",
+      "emoji": "🎨"
+    },
+    {
+      "id": 21,
+      "en": "Mason",
+      "gu": "કડિયો",
+      "transliteration": "Kaḍiyo",
+      "category": "Construction",
+      "emoji": "🧱"
+    },
+    {
+      "id": 22,
+      "en": "Plumber",
+      "gu": "પ્લમ્બર / નળ ફિટિંગ કરનાર",
+      "transliteration": "Plumber",
+      "category": "Services",
+      "emoji": "🔧"
+    },
+    {
+      "id": 23,
+      "en": "Electrician",
+      "gu": "ઇલેક્ટ્રિશિયન / વીજળીકામ કરનાર",
+      "transliteration": "Electrician",
+      "category": "Services",
+      "emoji": "⚡"
+    },
+    {
+      "id": 24,
+      "en": "Sweeper / Sanitation Worker",
+      "gu": "સફાઈ કામદાર / ઝાડુવાળા",
+      "transliteration": "Safāī Kāmdār",
+      "category": "Services",
+      "emoji": "🧹"
+    },
+    {
+      "id": 25,
+      "en": "Postman",
+      "gu": "ટપાલી",
+      "transliteration": "Ṭapālī",
+      "category": "Public Services",
+      "emoji": "📫"
+    },
+    {
+      "id": 26,
+      "en": "Firefighter",
+      "gu": "અગ્નિશામક / ફાયરમેન",
+      "transliteration": "Agnishāmak",
+      "category": "Public Safety",
+      "emoji": "🧑‍🚒"
+    },
+    {
+      "id": 27,
+      "en": "Shopkeeper",
+      "gu": "દુકાનદાર",
+      "transliteration": "Dukāndār",
+      "category": "Business",
+      "emoji": "🏪"
+    },
+    {
+      "id": 28,
+      "en": "Merchant / Trader",
+      "gu": "વેપારી",
+      "transliteration": "Vepārī",
+      "category": "Business",
+      "emoji": "💼"
+    },
+    {
+      "id": 29,
+      "en": "Chef / Cook",
+      "gu": "રસોઈયો / શૅફ",
+      "transliteration": "Rasoīyo / Chef",
+      "category": "Hospitality",
+      "emoji": "👨‍🍳"
+    },
+    {
+      "id": 30,
+      "en": "Fisherman",
+      "gu": "માછીમાર",
+      "transliteration": "Māchhīmār",
+      "category": "Primary",
+      "emoji": "🎣"
+    },
+    {
+      "id": 31,
+      "en": "Milkman",
+      "gu": "દૂધવાળો",
+      "transliteration": "Dūdhvāḷo",
+      "category": "Services",
+      "emoji": "🥛"
+    },
+    {
+      "id": 32,
+      "en": "Gardener",
+      "gu": "માળી",
+      "transliteration": "Māḷī",
+      "category": "Services",
+      "emoji": "🌻"
+    },
+    {
+      "id": 33,
+      "en": "Security Guard / Watchman",
+      "gu": "ચોકીદાર / સુરક્ષાકર્મી",
+      "transliteration": "Chokīdār",
+      "category": "Security",
+      "emoji": "💂"
+    },
+    {
+      "id": 34,
+      "en": "Photographer",
+      "gu": "ફોટોગ્રાફર / છબિકાર",
+      "transliteration": "Photographer",
+      "category": "Media",
+      "emoji": "📷"
+    },
+    {
+      "id": 35,
+      "en": "Musician",
+      "gu": "સંગીતકાર",
+      "transliteration": "Sangītkār",
+      "category": "Arts",
+      "emoji": "🎵"
+    },
+    {
+      "id": 36,
+      "en": "Singer",
+      "gu": "ગાયક / ગાયિકા",
+      "transliteration": "Gāyak / Gāyikā",
+      "category": "Arts",
+      "emoji": "🎤"
+    },
+    {
+      "id": 37,
+      "en": "Dancer",
+      "gu": "નર્તક / નૃત્યાંગના",
+      "transliteration": "Nartak / Nrutānganā",
+      "category": "Arts",
+      "emoji": "💃"
+    },
+    {
+      "id": 38,
+      "en": "Actor",
+      "gu": "અભિનેતા / નાટ્યકાર",
+      "transliteration": "Abhinetā",
+      "category": "Media",
+      "emoji": "🎭"
+    },
+    {
+      "id": 39,
+      "en": "Writer / Author",
+      "gu": "લેખક / સાહિત્યકાર",
+      "transliteration": "Lekhak",
+      "category": "Literature",
+      "emoji": "✍️"
+    },
+    {
+      "id": 40,
+      "en": "Astronaut",
+      "gu": "અવકાશયાત્રી / ગગનચારી",
+      "transliteration": "Avakāshyātrī",
+      "category": "Space",
+      "emoji": "👨‍🚀"
+    }
+  ]
+}

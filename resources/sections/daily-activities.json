@@ -1,0 +1,256 @@
+{
+  "sectionId": 21,
+  "sectionSlug": "daily-activities",
+  "sectionName": "Daily Activities & Routines (દિનચર્યા અને દૈનિક ક્રિયાઓ)",
+  "totalItems": 31,
+  "items": [
+    {
+      "id": 1,
+      "en": "Waking up",
+      "gu": "સવારે જાગવું / ઊઠવું",
+      "transliteration": "Jāgvun / Ūṭhvun",
+      "category": "Morning Routine",
+      "emoji": "⏰"
+    },
+    {
+      "id": 2,
+      "en": "Brushing teeth",
+      "gu": "દાંત સાફ કરવા / બ્રશ કરવું",
+      "transliteration": "Dānt Sāf Karvā",
+      "category": "Hygiene",
+      "emoji": "🪥"
+    },
+    {
+      "id": 3,
+      "en": "Bathing / Showering",
+      "gu": "નાહવું / સ્નાન કરવું",
+      "transliteration": "Nāhvun / Snān Karvun",
+      "category": "Hygiene",
+      "emoji": "🚿"
+    },
+    {
+      "id": 4,
+      "en": "Wearing clothes",
+      "gu": "કપડાં પહેરવાં",
+      "transliteration": "Kapaḍān Paheravān",
+      "category": "Morning Routine",
+      "emoji": "👕"
+    },
+    {
+      "id": 5,
+      "en": "Combing hair",
+      "gu": "વાળ ઓળવા",
+      "transliteration": "Vāḷ Oḷvā",
+      "category": "Grooming",
+      "emoji": "🪮"
+    },
+    {
+      "id": 6,
+      "en": "Praying / Worship",
+      "gu": "પ્રાર્થના કરવી / પૂજા કરવી",
+      "transliteration": "Prārthanā Karvī",
+      "category": "Spiritual",
+      "emoji": "🙏"
+    },
+    {
+      "id": 7,
+      "en": "Eating breakfast",
+      "gu": "નાસ્તો કરવો",
+      "transliteration": "Nāsto Karvo",
+      "category": "Meals",
+      "emoji": "🥣"
+    },
+    {
+      "id": 8,
+      "en": "Drinking milk / water",
+      "gu": "દૂધ / પાણી પીવું",
+      "transliteration": "Dūdh / Pāṇī Pīvun",
+      "category": "Meals",
+      "emoji": "🥛"
+    },
+    {
+      "id": 9,
+      "en": "Going to school",
+      "gu": "શાળે જવું",
+      "transliteration": "Shāḷe Javun",
+      "category": "School / Work",
+      "emoji": "🎒"
+    },
+    {
+      "id": 10,
+      "en": "Studying / Learning",
+      "gu": "અભ્યાસ કરવો / ભણવું",
+      "transliteration": "Abhyās Karvo / Bhaṇvun",
+      "category": "Education",
+      "emoji": "📖"
+    },
+    {
+      "id": 11,
+      "en": "Reading a book",
+      "gu": "વાંચન કરવું / વાંચવું",
+      "transliteration": "Vānchvun",
+      "category": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 12,
+      "en": "Writing",
+      "gu": "લખવું / લેખન કરવું",
+      "transliteration": "Lakhvun",
+      "category": "Education",
+      "emoji": "✍️"
+    },
+    {
+      "id": 13,
+      "en": "Drawing / Coloring",
+      "gu": "ચિત્ર દોરવું / રંગ પૂરવો",
+      "transliteration": "Chitra Dorvun",
+      "category": "Creativity",
+      "emoji": "🎨"
+    },
+    {
+      "id": 14,
+      "en": "Playing games / sports",
+      "gu": "રમવું / રમત રમવી",
+      "transliteration": "Ramvun / Ramat Ramvī",
+      "category": "Recreation",
+      "emoji": "⚽"
+    },
+    {
+      "id": 15,
+      "en": "Exercising / Yoga",
+      "gu": "કસરત કરવી / યોગાસન",
+      "transliteration": "Kasarat Karvī / Yoga",
+      "category": "Health",
+      "emoji": "🧘"
+    },
+    {
+      "id": 16,
+      "en": "Running",
+      "gu": "દોડવું",
+      "transliteration": "Doḍvun",
+      "category": "Physical",
+      "emoji": "🏃"
+    },
+    {
+      "id": 17,
+      "en": "Walking",
+      "gu": "ચાલવું / લટાર મારવી",
+      "transliteration": "Chālvun",
+      "category": "Physical",
+      "emoji": "🚶"
+    },
+    {
+      "id": 18,
+      "en": "Washing hands",
+      "gu": "હાથ ધોવા",
+      "transliteration": "Hāth Dhovā",
+      "category": "Hygiene",
+      "emoji": "🧼"
+    },
+    {
+      "id": 19,
+      "en": "Eating lunch",
+      "gu": "બપોરનું ભોજન કરવું / જમવું",
+      "transliteration": "Jamvun / Bhojan Karvun",
+      "category": "Meals",
+      "emoji": "🍛"
+    },
+    {
+      "id": 20,
+      "en": "Resting / Taking a nap",
+      "gu": "વિશરામ કરવો / આરામ કરવો",
+      "transliteration": "Ārām Karvo",
+      "category": "Rest",
+      "emoji": "🛌"
+    },
+    {
+      "id": 21,
+      "en": "Doing homework",
+      "gu": "ગૃહકાર્ય / હોમવર્ક કરવું",
+      "transliteration": "Homework Karvun",
+      "category": "Education",
+      "emoji": "📝"
+    },
+    {
+      "id": 22,
+      "en": "Helping parents",
+      "gu": "મમ્મી-પપ્પાને મદદ કરવી",
+      "transliteration": "Madad Karvī",
+      "category": "Household",
+      "emoji": "🤝"
+    },
+    {
+      "id": 23,
+      "en": "Cleaning room",
+      "gu": "રૂમ સાફ કરવો / સફાઈ કરવી",
+      "transliteration": "Safāī Karvī",
+      "category": "Household",
+      "emoji": "🧹"
+    },
+    {
+      "id": 24,
+      "en": "Watering plants",
+      "gu": "છોડને પાણી પાવું",
+      "transliteration": "Chhoḍ-ne Pāṇī Pāvun",
+      "category": "Nature",
+      "emoji": "🪴"
+    },
+    {
+      "id": 25,
+      "en": "Singing songs",
+      "gu": "ગીત ગાવું",
+      "transliteration": "Gīt Gāvun",
+      "category": "Creativity",
+      "emoji": "🎤"
+    },
+    {
+      "id": 26,
+      "en": "Dancing",
+      "gu": "નૃત્ય કરવું / નાચવું",
+      "transliteration": "Nrutya Karvun",
+      "category": "Creativity",
+      "emoji": "💃"
+    },
+    {
+      "id": 27,
+      "en": "Listening to music",
+      "gu": "સંગીત સાંભળવું",
+      "transliteration": "Sangīt Sāmbhaḷvun",
+      "category": "Leisure",
+      "emoji": "🎧"
+    },
+    {
+      "id": 28,
+      "en": "Watching TV",
+      "gu": "ટીવી જોવું",
+      "transliteration": "TV Jovun",
+      "category": "Leisure",
+      "emoji": "📺"
+    },
+    {
+      "id": 29,
+      "en": "Talking with family",
+      "gu": "વાતચીત કરવી",
+      "transliteration": "Vātchīt Karvī",
+      "category": "Social",
+      "emoji": "🗣️"
+    },
+    {
+      "id": 30,
+      "en": "Eating dinner",
+      "gu": "સાંજનું ભોજન કરવું / વાળુ કરવું",
+      "transliteration": "Vāḷu Karvun",
+      "category": "Meals",
+      "emoji": "🍲"
+    },
+    {
+      "id": 31,
+      "en": "Sleeping / Going to bed",
+      "gu": "રાત્રે સૂઈ જવું / નિદ્રા લેવી",
+      "transliteration": "Sūī Javun",
+      "category": "Rest",
+      "emoji": "😴"
+    }
+  ]
+}

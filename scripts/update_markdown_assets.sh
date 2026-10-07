@@ -57,6 +57,9 @@ echo "📸 Capturing screenshots via ${CHROME_BIN}..."
 # 3.3 Handwriting Recognition & Practice Suite
 "${CHROME_BIN}" --headless --disable-gpu --screenshot="${ASSETS_DIR}/preview-handwriting.png" --window-size=1280,820 "http://localhost:${PORT}/handwriting/" >/dev/null 2>&1 || true
 
+# 3.4 Gujarati Text-to-Speech (TTS) Studio
+"${CHROME_BIN}" --headless --disable-gpu --screenshot="${ASSETS_DIR}/preview-tts.png" --window-size=1280,820 "http://localhost:${PORT}/#tts" >/dev/null 2>&1 || true
+
 echo "✓ Raw screenshots captured."
 
 # 4. Compress PNGs using pngquant and optipng

@@ -1,0 +1,233 @@
+{
+  "sectionId": 3,
+  "sectionSlug": "colors",
+  "sectionName": "Colors (રંગો)",
+  "totalItems": 25,
+  "items": [
+    {
+      "id": 1,
+      "en": "Red",
+      "gu": "લાલ",
+      "transliteration": "Lāl",
+      "category": "Primary",
+      "hex": "#EF4444",
+      "emoji": "🔴"
+    },
+    {
+      "id": 2,
+      "en": "Blue",
+      "gu": "વાદળી",
+      "transliteration": "Vādḷī",
+      "category": "Primary",
+      "hex": "#3B82F6",
+      "emoji": "🔵"
+    },
+    {
+      "id": 3,
+      "en": "Yellow",
+      "gu": "પીળો",
+      "transliteration": "Pīḷo",
+      "category": "Primary",
+      "hex": "#EAB308",
+      "emoji": "🟡"
+    },
+    {
+      "id": 4,
+      "en": "Green",
+      "gu": "લીલો",
+      "transliteration": "Līlo",
+      "category": "Secondary",
+      "hex": "#22C55E",
+      "emoji": "🟢"
+    },
+    {
+      "id": 5,
+      "en": "Orange",
+      "gu": "નારંગી / કેસરી",
+      "transliteration": "Nārangī / Kesarī",
+      "category": "Secondary",
+      "hex": "#F97316",
+      "emoji": "🟠"
+    },
+    {
+      "id": 6,
+      "en": "Purple / Violet",
+      "gu": "જાંબલી",
+      "transliteration": "Jāmbalī",
+      "category": "Secondary",
+      "hex": "#A855F7",
+      "emoji": "🟣"
+    },
+    {
+      "id": 7,
+      "en": "Pink",
+      "gu": "ગુલાબી",
+      "transliteration": "Gulābī",
+      "category": "Shades",
+      "hex": "#EC4899",
+      "emoji": "🌸"
+    },
+    {
+      "id": 8,
+      "en": "Black",
+      "gu": "કાળો",
+      "transliteration": "Kāḷo",
+      "category": "Neutral",
+      "hex": "#000000",
+      "emoji": "⚫"
+    },
+    {
+      "id": 9,
+      "en": "White",
+      "gu": "સફેદ",
+      "transliteration": "Safed",
+      "category": "Neutral",
+      "hex": "#FFFFFF",
+      "emoji": "⚪"
+    },
+    {
+      "id": 10,
+      "en": "Brown",
+      "gu": "કથ્થઈ / બદામી",
+      "transliteration": "Kaththaī / Badāmī",
+      "category": "Earth",
+      "hex": "#78350F",
+      "emoji": "🟤"
+    },
+    {
+      "id": 11,
+      "en": "Grey",
+      "gu": "રાખોડી",
+      "transliteration": "Rākhoḍī",
+      "category": "Neutral",
+      "hex": "#6B7280",
+      "emoji": "🔘"
+    },
+    {
+      "id": 12,
+      "en": "Gold / Golden",
+      "gu": "સોનેરી",
+      "transliteration": "Sonerī",
+      "category": "Metallic",
+      "hex": "#F59E0B",
+      "emoji": "🪙"
+    },
+    {
+      "id": 13,
+      "en": "Silver",
+      "gu": "રૂપેરી",
+      "transliteration": "Rūperī",
+      "category": "Metallic",
+      "hex": "#94A3B8",
+      "emoji": "🥈"
+    },
+    {
+      "id": 14,
+      "en": "Cyan / Light Blue",
+      "gu": "આકાશી વાદળી",
+      "transliteration": "Ākāshī Vādḷī",
+      "category": "Shades",
+      "hex": "#06B6D4",
+      "emoji": "🩵"
+    },
+    {
+      "id": 15,
+      "en": "Magenta",
+      "gu": "ઘેરો ગુલાબી",
+      "transliteration": "Ghero Gulābī",
+      "category": "Shades",
+      "hex": "#D946EF",
+      "emoji": "🌺"
+    },
+    {
+      "id": 16,
+      "en": "Maroon",
+      "gu": "ઘેરો લાલ",
+      "transliteration": "Ghero Lāl",
+      "category": "Shades",
+      "hex": "#881337",
+      "emoji": "🍷"
+    },
+    {
+      "id": 17,
+      "en": "Navy Blue",
+      "gu": "ઘેરો વાદળી",
+      "transliteration": "Ghero Vādḷī",
+      "category": "Shades",
+      "hex": "#1E3A8A",
+      "emoji": "🫐"
+    },
+    {
+      "id": 18,
+      "en": "Turquoise",
+      "gu": "ફિરોજી",
+      "transliteration": "Firozī",
+      "category": "Shades",
+      "hex": "#14B8A6",
+      "emoji": "💎"
+    },
+    {
+      "id": 19,
+      "en": "Olive Green",
+      "gu": "ઓલિવ લીલો",
+      "transliteration": "Olive Līlo",
+      "category": "Earth",
+      "hex": "#65A30D",
+      "emoji": "🫒"
+    },
+    {
+      "id": 20,
+      "en": "Coral",
+      "gu": "પરવાળા રંગ",
+      "transliteration": "Parvāḷā Rang",
+      "category": "Shades",
+      "hex": "#FB7185",
+      "emoji": "🪸"
+    },
+    {
+      "id": 21,
+      "en": "Teal",
+      "gu": "તીલ વાદળી",
+      "transliteration": "Teal Vādḷī",
+      "category": "Shades",
+      "hex": "#0F766E",
+      "emoji": "🦚"
+    },
+    {
+      "id": 22,
+      "en": "Beige / Cream",
+      "gu": "ક્રીમ રંગ",
+      "transliteration": "Cream Rang",
+      "category": "Neutral",
+      "hex": "#FEF3C7",
+      "emoji": "🍦"
+    },
+    {
+      "id": 23,
+      "en": "Lime Green",
+      "gu": "પોપટી લીલો",
+      "transliteration": "Popaṭī Līlo",
+      "category": "Shades",
+      "hex": "#84CC16",
+      "emoji": "🦜"
+    },
+    {
+      "id": 24,
+      "en": "Indigo",
+      "gu": "ગળી રંગ",
+      "transliteration": "Gaḷī Rang",
+      "category": "Shades",
+      "hex": "#4338CA",
+      "emoji": "🌌"
+    },
+    {
+      "id": 25,
+      "en": "Bronze",
+      "gu": "કાંસા રંગ",
+      "transliteration": "Kānsā Rang",
+      "category": "Metallic",
+      "hex": "#CD7F32",
+      "emoji": "🥉"
+    }
+  ]
+}

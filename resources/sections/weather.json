@@ -1,0 +1,208 @@
+{
+  "sectionId": 19,
+  "sectionSlug": "weather",
+  "sectionName": "Weather & Climate (હવામાન અને વાતાવરણ)",
+  "totalItems": 25,
+  "items": [
+    {
+      "id": 1,
+      "en": "Sunny / Clear Sky",
+      "gu": "તડકો / તડકાવાળું",
+      "transliteration": "Taḍko / Taḍkāvāḷun",
+      "category": "Conditions",
+      "emoji": "☀️"
+    },
+    {
+      "id": 2,
+      "en": "Rain / Rainy",
+      "gu": "વરસાદ / વરસાદી",
+      "transliteration": "Varsād / Varsādī",
+      "category": "Conditions",
+      "emoji": "🌧️"
+    },
+    {
+      "id": 3,
+      "en": "Cloud / Cloudy",
+      "gu": "વાદળ / વાદળછાયું",
+      "transliteration": "Vādaḷ / Vādaḷchhāyaun",
+      "category": "Conditions",
+      "emoji": "☁️"
+    },
+    {
+      "id": 4,
+      "en": "Wind / Windy",
+      "gu": "પવન / તોફાની પવન",
+      "transliteration": "Pavan",
+      "category": "Conditions",
+      "emoji": "💨"
+    },
+    {
+      "id": 5,
+      "en": "Storm / Thunderstorm",
+      "gu": "વાવાઝોડું / આંધી",
+      "transliteration": "Vāvāzhoḍun / Āndhī",
+      "category": "Severe Weather",
+      "emoji": "⛈️"
+    },
+    {
+      "id": 6,
+      "en": "Cold / Chilly",
+      "gu": "ઠંડી / ઠાર",
+      "transliteration": "Ṭhanḍī / Ṭhār",
+      "category": "Temperature",
+      "emoji": "🥶"
+    },
+    {
+      "id": 7,
+      "en": "Hot / Heat",
+      "gu": "ગરમી / લૂ",
+      "transliteration": "Garmī / Lū",
+      "category": "Temperature",
+      "emoji": "🥵"
+    },
+    {
+      "id": 8,
+      "en": "Fog / Mist",
+      "gu": "ધુમ્મસ",
+      "transliteration": "Dhummas",
+      "category": "Atmospheric",
+      "emoji": "🌫️"
+    },
+    {
+      "id": 9,
+      "en": "Snow / Ice",
+      "gu": "બરફ",
+      "transliteration": "Baraf",
+      "category": "Precipitation",
+      "emoji": "❄️"
+    },
+    {
+      "id": 10,
+      "en": "Hailstorm / Hail",
+      "gu": "કરા / કરા પડવા",
+      "transliteration": "Karā",
+      "category": "Precipitation",
+      "emoji": "🌨️"
+    },
+    {
+      "id": 11,
+      "en": "Rainbow",
+      "gu": "મેઘધનુષ",
+      "transliteration": "Meghdhanuṣh",
+      "category": "Atmospheric",
+      "emoji": "🌈"
+    },
+    {
+      "id": 12,
+      "en": "Lightning",
+      "gu": "વીજળી",
+      "transliteration": "Vījḷī",
+      "category": "Atmospheric",
+      "emoji": "⚡"
+    },
+    {
+      "id": 13,
+      "en": "Thunder",
+      "gu": "વાદળોની ગર્જના",
+      "transliteration": "Vādaḷonī Garjanā",
+      "category": "Atmospheric",
+      "emoji": "🌩️"
+    },
+    {
+      "id": 14,
+      "en": "Dew / Dewdrops",
+      "gu": "ઝાકળ",
+      "transliteration": "Jhākaḷ",
+      "category": "Atmospheric",
+      "emoji": "💧"
+    },
+    {
+      "id": 15,
+      "en": "Drizzle / Light Rain",
+      "gu": "ઝરમર વરસાદ / છાંટા",
+      "transliteration": "Jharmar Varsād",
+      "category": "Precipitation",
+      "emoji": "🌦️"
+    },
+    {
+      "id": 16,
+      "en": "Heavy Rain / Downpour",
+      "gu": "મુશળધાર વરસાદ / હેલી",
+      "transliteration": "Musaldhār Varsād",
+      "category": "Precipitation",
+      "emoji": "🌊"
+    },
+    {
+      "id": 17,
+      "en": "Flood",
+      "gu": "પૂર / રેલ",
+      "transliteration": "Pūr / Rel",
+      "category": "Severe Weather",
+      "emoji": "🌊"
+    },
+    {
+      "id": 18,
+      "en": "Drought",
+      "gu": "દુષ્કાળ / અનાવૃષ્ટિ",
+      "transliteration": "Duṣhkāḷ",
+      "category": "Severe Weather",
+      "emoji": "🏜️"
+    },
+    {
+      "id": 19,
+      "en": "Cyclone / Hurricane",
+      "gu": "ચક્રવાત / વંટોળિયો",
+      "transliteration": "Chakravāt / Vanṭoḷiyo",
+      "category": "Severe Weather",
+      "emoji": "🌀"
+    },
+    {
+      "id": 20,
+      "en": "Humidity",
+      "gu": "ભેજ / બફારો",
+      "transliteration": "Bhej / Bafāro",
+      "category": "Atmospheric",
+      "emoji": "💧"
+    },
+    {
+      "id": 21,
+      "en": "Breeze",
+      "gu": "મંદ પવન / લહેરખી",
+      "transliteration": "Mand Pavan / Laherkhī",
+      "category": "Conditions",
+      "emoji": "🍃"
+    },
+    {
+      "id": 22,
+      "en": "Heatwave",
+      "gu": "ગરમ હવા / હીટવેવ",
+      "transliteration": "Heatwave / Garmī-no Prapāt",
+      "category": "Temperature",
+      "emoji": "🔥"
+    },
+    {
+      "id": 23,
+      "en": "Coldwave",
+      "gu": "શીતલહેર / કોલ્ડવેવ",
+      "transliteration": "Shīt-laher",
+      "category": "Temperature",
+      "emoji": "🧊"
+    },
+    {
+      "id": 24,
+      "en": "Temperature",
+      "gu": "તાપમાન",
+      "transliteration": "Tāpmān",
+      "category": "Measurement",
+      "emoji": "🌡️"
+    },
+    {
+      "id": 25,
+      "en": "Climate",
+      "gu": "આબોહવા / જળવાયુ",
+      "transliteration": "Ābohāvā",
+      "category": "General",
+      "emoji": "🌐"
+    }
+  ]
+}

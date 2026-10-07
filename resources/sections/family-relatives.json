@@ -1,0 +1,368 @@
+{
+  "sectionId": 6,
+  "sectionSlug": "family-relatives",
+  "sectionName": "Family & Relatives (પરિવાર અને સગા-સંબંધીઓ)",
+  "totalItems": 45,
+  "items": [
+    {
+      "id": 1,
+      "en": "Father",
+      "gu": "પિતા / પપ્પા / બાપુજી",
+      "transliteration": "Pitā / Pappā / Bāpujī",
+      "category": "Immediate Family",
+      "emoji": "👨"
+    },
+    {
+      "id": 2,
+      "en": "Mother",
+      "gu": "માતા / મમ્મી / બા",
+      "transliteration": "Mātā / Mammī / Bā",
+      "category": "Immediate Family",
+      "emoji": "👩"
+    },
+    {
+      "id": 3,
+      "en": "Brother",
+      "gu": "ભાઈ",
+      "transliteration": "Bhāi",
+      "category": "Immediate Family",
+      "emoji": "👦"
+    },
+    {
+      "id": 4,
+      "en": "Elder Brother",
+      "gu": "મોટા ભાઈ",
+      "transliteration": "Moṭā Bhāi",
+      "category": "Immediate Family",
+      "emoji": "🧑"
+    },
+    {
+      "id": 5,
+      "en": "Younger Brother",
+      "gu": "નાના ભાઈ",
+      "transliteration": "Nānā Bhāi",
+      "category": "Immediate Family",
+      "emoji": "🧒"
+    },
+    {
+      "id": 6,
+      "en": "Sister",
+      "gu": "બહેન",
+      "transliteration": "Bahen / Ben",
+      "category": "Immediate Family",
+      "emoji": "👧"
+    },
+    {
+      "id": 7,
+      "en": "Elder Sister",
+      "gu": "મોટી બહેન",
+      "transliteration": "Moṭī Bahen",
+      "category": "Immediate Family",
+      "emoji": "👩"
+    },
+    {
+      "id": 8,
+      "en": "Younger Sister",
+      "gu": "નાની બહેન",
+      "transliteration": "Nānī Bahen",
+      "category": "Immediate Family",
+      "emoji": "👧"
+    },
+    {
+      "id": 9,
+      "en": "Grandfather (Paternal)",
+      "gu": "દાદા",
+      "transliteration": "Dādā",
+      "category": "Grandparents",
+      "emoji": "👴"
+    },
+    {
+      "id": 10,
+      "en": "Grandmother (Paternal)",
+      "gu": "દાદી / બા",
+      "transliteration": "Dādī / Bā",
+      "category": "Grandparents",
+      "emoji": "👵"
+    },
+    {
+      "id": 11,
+      "en": "Grandfather (Maternal)",
+      "gu": "નાના",
+      "transliteration": "Nānā",
+      "category": "Grandparents",
+      "emoji": "👴"
+    },
+    {
+      "id": 12,
+      "en": "Grandmother (Maternal)",
+      "gu": "નાની",
+      "transliteration": "Nānī",
+      "category": "Grandparents",
+      "emoji": "👵"
+    },
+    {
+      "id": 13,
+      "en": "Uncle (Father's Brother)",
+      "gu": "કાકા",
+      "transliteration": "Kākā",
+      "category": "Uncles & Aunts",
+      "emoji": "👨"
+    },
+    {
+      "id": 14,
+      "en": "Aunt (Father's Brother's Wife)",
+      "gu": "કાકી",
+      "transliteration": "Kākī",
+      "category": "Uncles & Aunts",
+      "emoji": "👩"
+    },
+    {
+      "id": 15,
+      "en": "Uncle (Mother's Brother)",
+      "gu": "મામા",
+      "transliteration": "Māmā",
+      "category": "Uncles & Aunts",
+      "emoji": "👨"
+    },
+    {
+      "id": 16,
+      "en": "Aunt (Mother's Brother's Wife)",
+      "gu": "મામી",
+      "transliteration": "Māmī",
+      "category": "Uncles & Aunts",
+      "emoji": "👩"
+    },
+    {
+      "id": 17,
+      "en": "Aunt (Father's Sister)",
+      "gu": "ફોઈ / ફઈબા",
+      "transliteration": "Foi / Faībā",
+      "category": "Uncles & Aunts",
+      "emoji": "👩"
+    },
+    {
+      "id": 18,
+      "en": "Uncle (Father's Sister's Husband)",
+      "gu": "ફુવા",
+      "transliteration": "Fuwā",
+      "category": "Uncles & Aunts",
+      "emoji": "👨"
+    },
+    {
+      "id": 19,
+      "en": "Aunt (Mother's Sister)",
+      "gu": "માસી",
+      "transliteration": "Māsī",
+      "category": "Uncles & Aunts",
+      "emoji": "👩"
+    },
+    {
+      "id": 20,
+      "en": "Uncle (Mother's Sister's Husband)",
+      "gu": "માસા",
+      "transliteration": "Māsā",
+      "category": "Uncles & Aunts",
+      "emoji": "👨"
+    },
+    {
+      "id": 21,
+      "en": "Son",
+      "gu": "દીકરો / પુત્ર",
+      "transliteration": "Dīkro / Putra",
+      "category": "Children",
+      "emoji": "👦"
+    },
+    {
+      "id": 22,
+      "en": "Daughter",
+      "gu": "દીકરી / પુત્રી",
+      "transliteration": "Dīkrī / Putrī",
+      "category": "Children",
+      "emoji": "👧"
+    },
+    {
+      "id": 23,
+      "en": "Grandson (Son's Son)",
+      "gu": "પૌત્ર / પૌત્ર",
+      "transliteration": "Pautra",
+      "category": "Grandchildren",
+      "emoji": "👦"
+    },
+    {
+      "id": 24,
+      "en": "Granddaughter (Son's Daughter)",
+      "gu": "પૌત્રી",
+      "transliteration": "Pautrī",
+      "category": "Grandchildren",
+      "emoji": "👧"
+    },
+    {
+      "id": 25,
+      "en": "Grandson (Daughter's Son)",
+      "gu": "દોહિત્ર / ભાણો",
+      "transliteration": "Dohitra / Bhāṇo",
+      "category": "Grandchildren",
+      "emoji": "👦"
+    },
+    {
+      "id": 26,
+      "en": "Granddaughter (Daughter's Daughter)",
+      "gu": "દોહિત્રી / ભાણી",
+      "transliteration": "Dohitrī / Bhāṇī",
+      "category": "Grandchildren",
+      "emoji": "👧"
+    },
+    {
+      "id": 27,
+      "en": "Husband",
+      "gu": "પતિ / વર",
+      "transliteration": "Pati / Var",
+      "category": "Spouses",
+      "emoji": "🤵"
+    },
+    {
+      "id": 28,
+      "en": "Wife",
+      "gu": "પત્ની / વહુ",
+      "transliteration": "Patnī / Vahu",
+      "category": "Spouses",
+      "emoji": "👰"
+    },
+    {
+      "id": 29,
+      "en": "Father-in-law",
+      "gu": "સસરા",
+      "transliteration": "Sasrā",
+      "category": "In-Laws",
+      "emoji": "👴"
+    },
+    {
+      "id": 30,
+      "en": "Mother-in-law",
+      "gu": "સાસુ",
+      "transliteration": "Sāsu",
+      "category": "In-Laws",
+      "emoji": "👵"
+    },
+    {
+      "id": 31,
+      "en": "Brother-in-law (Husband's Elder Brother)",
+      "gu": "જેઠ",
+      "transliteration": "Jeṭh",
+      "category": "In-Laws",
+      "emoji": "👨"
+    },
+    {
+      "id": 32,
+      "en": "Sister-in-law (Husband's Elder Brother's Wife)",
+      "gu": "જેઠાણી",
+      "transliteration": "Jeṭhāṇī",
+      "category": "In-Laws",
+      "emoji": "👩"
+    },
+    {
+      "id": 33,
+      "en": "Brother-in-law (Husband's Younger Brother)",
+      "gu": "દિયર",
+      "transliteration": "Diyar",
+      "category": "In-Laws",
+      "emoji": "👨"
+    },
+    {
+      "id": 34,
+      "en": "Sister-in-law (Husband's Younger Brother's Wife)",
+      "gu": "દેરાણી",
+      "transliteration": "Derāṇī",
+      "category": "In-Laws",
+      "emoji": "👩"
+    },
+    {
+      "id": 35,
+      "en": "Sister-in-law (Husband's Sister)",
+      "gu": "ણણંદ",
+      "transliteration": "Naṇand",
+      "category": "In-Laws",
+      "emoji": "👩"
+    },
+    {
+      "id": 36,
+      "en": "Brother-in-law (Husband's Sister's Husband)",
+      "gu": "નણદોઈ",
+      "transliteration": "Naṇadoī",
+      "category": "In-Laws",
+      "emoji": "👨"
+    },
+    {
+      "id": 37,
+      "en": "Brother-in-law (Wife's Brother)",
+      "gu": "સાળો",
+      "transliteration": "Sāḷo",
+      "category": "In-Laws",
+      "emoji": "👨"
+    },
+    {
+      "id": 38,
+      "en": "Sister-in-law (Wife's Sister)",
+      "gu": "સાળી",
+      "transliteration": "Sāḷī",
+      "category": "In-Laws",
+      "emoji": "👩"
+    },
+    {
+      "id": 39,
+      "en": "Nephew (Brother's Son)",
+      "gu": "ભત્રીજો",
+      "transliteration": "Bhatrījo",
+      "category": "Nieces & Nephews",
+      "emoji": "👦"
+    },
+    {
+      "id": 40,
+      "en": "Niece (Brother's Daughter)",
+      "gu": "ભત્રીજી",
+      "transliteration": "Bhatrījī",
+      "category": "Nieces & Nephews",
+      "emoji": "👧"
+    },
+    {
+      "id": 41,
+      "en": "Nephew (Sister's Son)",
+      "gu": "ભાણેજ / ભાણો",
+      "transliteration": "Bhāṇej / Bhāṇo",
+      "category": "Nieces & Nephews",
+      "emoji": "👦"
+    },
+    {
+      "id": 42,
+      "en": "Niece (Sister's Daughter)",
+      "gu": "ભાણેજી / ભાણી",
+      "transliteration": "Bhāṇejī / Bhāṇī",
+      "category": "Nieces & Nephews",
+      "emoji": "👧"
+    },
+    {
+      "id": 43,
+      "en": "Friend",
+      "gu": "મિત્ર / દોસ્ત / ભાઈબંધ",
+      "transliteration": "Mitra / Dost / Bhāībandh",
+      "category": "Social",
+      "emoji": "🧑‍🤝‍🧑"
+    },
+    {
+      "id": 44,
+      "en": "Neighbor",
+      "gu": "પડોશી",
+      "transliteration": "Paḍoshī",
+      "category": "Social",
+      "emoji": "🏡"
+    },
+    {
+      "id": 45,
+      "en": "Guest",
+      "gu": "મહેમાન / અતિથિ",
+      "transliteration": "Mahemān / Atithi",
+      "category": "Social",
+      "emoji": "🧳"
+    }
+  ]
+}
