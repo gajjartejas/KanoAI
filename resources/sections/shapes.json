@@ -1,0 +1,248 @@
+{
+  "sectionId": 4,
+  "sectionSlug": "shapes",
+  "sectionName": "Shapes & Geometry (આકારો)",
+  "totalItems": 30,
+  "items": [
+    {
+      "id": 1,
+      "en": "Circle",
+      "gu": "વર્તુળ / ગોળ",
+      "transliteration": "Vartuḷ / Goḷ",
+      "category": "2D Basic",
+      "emoji": "⭕"
+    },
+    {
+      "id": 2,
+      "en": "Square",
+      "gu": "ચોરસ",
+      "transliteration": "Choras",
+      "category": "2D Basic",
+      "emoji": "⏹️"
+    },
+    {
+      "id": 3,
+      "en": "Triangle",
+      "gu": "ત્રિકોણ",
+      "transliteration": "Trikoṇ",
+      "category": "2D Basic",
+      "emoji": "🔺"
+    },
+    {
+      "id": 4,
+      "en": "Rectangle",
+      "gu": "લંબચોરસ",
+      "transliteration": "Lambchoras",
+      "category": "2D Basic",
+      "emoji": "▭"
+    },
+    {
+      "id": 5,
+      "en": "Oval",
+      "gu": "લંબગોળ / ઈંડાકાર",
+      "transliteration": "Lambgoḷ / Īṇḍākār",
+      "category": "2D Basic",
+      "emoji": "🥚"
+    },
+    {
+      "id": 6,
+      "en": "Star",
+      "gu": "તારો",
+      "transliteration": "Tāro",
+      "category": "Symbolic",
+      "emoji": "⭐"
+    },
+    {
+      "id": 7,
+      "en": "Heart",
+      "gu": "હૃદયાકાર",
+      "transliteration": "Hrudayākār",
+      "category": "Symbolic",
+      "emoji": "❤️"
+    },
+    {
+      "id": 8,
+      "en": "Diamond / Rhombus",
+      "gu": "સમબાજુ ચતુષ્કોણ / હીરાકાર",
+      "transliteration": "Sambāju Chatuṣhkoṇ / Hīrākār",
+      "category": "2D Polygon",
+      "emoji": "🔷"
+    },
+    {
+      "id": 9,
+      "en": "Pentagon",
+      "gu": "પંચકોણ",
+      "transliteration": "Panchkoṇ",
+      "category": "2D Polygon",
+      "emoji": "⬟"
+    },
+    {
+      "id": 10,
+      "en": "Hexagon",
+      "gu": "ષટ્કોણ",
+      "transliteration": "Shaṭkoṇ",
+      "category": "2D Polygon",
+      "emoji": "⬡"
+    },
+    {
+      "id": 11,
+      "en": "Heptagon",
+      "gu": "સપ્તકોણ",
+      "transliteration": "Saptakoṇ",
+      "category": "2D Polygon",
+      "emoji": "🛑"
+    },
+    {
+      "id": 12,
+      "en": "Octagon",
+      "gu": "અષ્ટકોણ",
+      "transliteration": "Aṣhṭakoṇ",
+      "category": "2D Polygon",
+      "emoji": "🛑"
+    },
+    {
+      "id": 13,
+      "en": "Nonagon",
+      "gu": "નવકોણ",
+      "transliteration": "Navkoṇ",
+      "category": "2D Polygon",
+      "emoji": "⯃"
+    },
+    {
+      "id": 14,
+      "en": "Decagon",
+      "gu": "દશકોણ",
+      "transliteration": "Dashkoṇ",
+      "category": "2D Polygon",
+      "emoji": "🔟"
+    },
+    {
+      "id": 15,
+      "en": "Semicircle",
+      "gu": "અર્ધવર્તુળ",
+      "transliteration": "Ardhavartuḷ",
+      "category": "2D Curved",
+      "emoji": "🌗"
+    },
+    {
+      "id": 16,
+      "en": "Crescent",
+      "gu": "અર્ધચંદ્રાકાર",
+      "transliteration": "Ardhachandrākār",
+      "category": "Symbolic",
+      "emoji": "🌙"
+    },
+    {
+      "id": 17,
+      "en": "Cross",
+      "gu": "ચોકડી / સરવાળો",
+      "transliteration": "Chokaḍī / Sarvāḷo",
+      "category": "Symbolic",
+      "emoji": "➕"
+    },
+    {
+      "id": 18,
+      "en": "Arrow",
+      "gu": "તીર",
+      "transliteration": "Tīr",
+      "category": "Symbolic",
+      "emoji": "➡️"
+    },
+    {
+      "id": 19,
+      "en": "Trapezoid",
+      "gu": "સમલંબ ચતુષ્કોણ",
+      "transliteration": "Samlamb Chatuṣhkoṇ",
+      "category": "2D Polygon",
+      "emoji": "⏢"
+    },
+    {
+      "id": 20,
+      "en": "Parallelogram",
+      "gu": "સમાંતરબાજુ ચતુષ્કોણ",
+      "transliteration": "Samāntarbāju Chatuṣhkoṇ",
+      "category": "2D Polygon",
+      "emoji": "▱"
+    },
+    {
+      "id": 21,
+      "en": "Cube",
+      "gu": "સમઘન",
+      "transliteration": "Samghan",
+      "category": "3D Solid",
+      "emoji": "🧊"
+    },
+    {
+      "id": 22,
+      "en": "Cuboid",
+      "gu": "લંબઘન",
+      "transliteration": "Lambghan",
+      "category": "3D Solid",
+      "emoji": "📦"
+    },
+    {
+      "id": 23,
+      "en": "Sphere",
+      "gu": "ગોળો",
+      "transliteration": "Goḷo",
+      "category": "3D Solid",
+      "emoji": "⚽"
+    },
+    {
+      "id": 24,
+      "en": "Cylinder",
+      "gu": "નળાકાર",
+      "transliteration": "Naḷākār",
+      "category": "3D Solid",
+      "emoji": "🛢️"
+    },
+    {
+      "id": 25,
+      "en": "Cone",
+      "gu": "શંકુ",
+      "transliteration": "Shanku",
+      "category": "3D Solid",
+      "emoji": "🍦"
+    },
+    {
+      "id": 26,
+      "en": "Pyramid",
+      "gu": "પિરામિડ",
+      "transliteration": "Piramid",
+      "category": "3D Solid",
+      "emoji": "🔺"
+    },
+    {
+      "id": 27,
+      "en": "Prism",
+      "gu": "પ્રિઝમ",
+      "transliteration": "Prizam",
+      "category": "3D Solid",
+      "emoji": "💎"
+    },
+    {
+      "id": 28,
+      "en": "Ring / Torus",
+      "gu": "કડી / વલય",
+      "transliteration": "Kaḍī / Valay",
+      "category": "3D Solid",
+      "emoji": "🍩"
+    },
+    {
+      "id": 29,
+      "en": "Line",
+      "gu": "રેખા / લીટી",
+      "transliteration": "Rekhā / Līṭī",
+      "category": "1D Linear",
+      "emoji": "📏"
+    },
+    {
+      "id": 30,
+      "en": "Spiral",
+      "gu": "કુંડળાકાર",
+      "transliteration": "Kunḍḷākār",
+      "category": "Curved",
+      "emoji": "🌀"
+    }
+  ]
+}

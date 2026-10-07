@@ -1,0 +1,328 @@
+{
+  "sectionId": 13,
+  "sectionSlug": "home-household",
+  "sectionName": "Home & Household (ઘર અને ઘરવખરી)",
+  "totalItems": 40,
+  "items": [
+    {
+      "id": 1,
+      "en": "House / Home",
+      "gu": "ઘર / મકાન",
+      "transliteration": "Ghar / Makān",
+      "category": "Structure",
+      "emoji": "🏠"
+    },
+    {
+      "id": 2,
+      "en": "Door",
+      "gu": "દરવાજો / બારણું",
+      "transliteration": "Darvājo / Bāraṇun",
+      "category": "Structure",
+      "emoji": "🚪"
+    },
+    {
+      "id": 3,
+      "en": "Window",
+      "gu": "બારી",
+      "transliteration": "Bārī",
+      "category": "Structure",
+      "emoji": "🪟"
+    },
+    {
+      "id": 4,
+      "en": "Roof / Ceiling",
+      "gu": "છત / છાપરું",
+      "transliteration": "Chhat / Chhāparun",
+      "category": "Structure",
+      "emoji": "🛖"
+    },
+    {
+      "id": 5,
+      "en": "Wall",
+      "gu": "દીવાલ",
+      "transliteration": "Dīvāl",
+      "category": "Structure",
+      "emoji": "🧱"
+    },
+    {
+      "id": 6,
+      "en": "Floor",
+      "gu": "ભોંયતળિયું / ભોંય",
+      "transliteration": "Bhonyataḷiyun",
+      "category": "Structure",
+      "emoji": "🪵"
+    },
+    {
+      "id": 7,
+      "en": "Gate",
+      "gu": "ઝાંપો / દરવાજો",
+      "transliteration": "Jhāmpo",
+      "category": "Structure",
+      "emoji": "⛩️"
+    },
+    {
+      "id": 8,
+      "en": "Living Room",
+      "gu": "બેઠકખંડ / હોલ",
+      "transliteration": "Beṭhak-khanḍ / Hall",
+      "category": "Rooms",
+      "emoji": "🛋️"
+    },
+    {
+      "id": 9,
+      "en": "Bedroom",
+      "gu": "શયનખંડ / સુવાનો રૂમ",
+      "transliteration": "Shayan-khanḍ",
+      "category": "Rooms",
+      "emoji": "🛏️"
+    },
+    {
+      "id": 10,
+      "en": "Kitchen",
+      "gu": "રસોડું",
+      "transliteration": "Rasoḍun",
+      "category": "Rooms",
+      "emoji": "🍳"
+    },
+    {
+      "id": 11,
+      "en": "Bathroom",
+      "gu": "સ્નાનઘર / ગુસલખાનું",
+      "transliteration": "Snānghar",
+      "category": "Rooms",
+      "emoji": "🚿"
+    },
+    {
+      "id": 12,
+      "en": "Balcony",
+      "gu": "બાલ્કની / અગાશી",
+      "transliteration": "Balcony / Agāshī",
+      "category": "Rooms",
+      "emoji": "🪴"
+    },
+    {
+      "id": 13,
+      "en": "Bed",
+      "gu": "પલંગ / ખાટલો",
+      "transliteration": "Palang / Khāṭlo",
+      "category": "Furniture",
+      "emoji": "🛏️"
+    },
+    {
+      "id": 14,
+      "en": "Pillow",
+      "gu": "ઓશીકું / તકિયો",
+      "transliteration": "Oshīkun / Takiyo",
+      "category": "Bedding",
+      "emoji": "🛌"
+    },
+    {
+      "id": 15,
+      "en": "Blanket",
+      "gu": "ધાબળો / ગોદડું",
+      "transliteration": "Dhābḷo / Godḍun",
+      "category": "Bedding",
+      "emoji": "🧣"
+    },
+    {
+      "id": 16,
+      "en": "Mattress",
+      "gu": "ગાદલું",
+      "transliteration": "Gādlun",
+      "category": "Bedding",
+      "emoji": "🛏️"
+    },
+    {
+      "id": 17,
+      "en": "Sofa",
+      "gu": "સોફા",
+      "transliteration": "Sofa",
+      "category": "Furniture",
+      "emoji": "🛋️"
+    },
+    {
+      "id": 18,
+      "en": "Chair",
+      "gu": "ખુરશી",
+      "transliteration": "Khurshī",
+      "category": "Furniture",
+      "emoji": "🪑"
+    },
+    {
+      "id": 19,
+      "en": "Table",
+      "gu": "મેજ / ટેબલ",
+      "transliteration": "Mej / Table",
+      "category": "Furniture",
+      "emoji": "🪵"
+    },
+    {
+      "id": 20,
+      "en": "Cupboard / Wardrobe",
+      "gu": "તિજોરી / કબાટ",
+      "transliteration": "Tijorī / Kabāṭ",
+      "category": "Furniture",
+      "emoji": "🚪"
+    },
+    {
+      "id": 21,
+      "en": "Mirror",
+      "gu": "અરીસો / કાચ",
+      "transliteration": "Arīso / Kāch",
+      "category": "Household",
+      "emoji": "🪞"
+    },
+    {
+      "id": 22,
+      "en": "Fan",
+      "gu": "પંખો",
+      "transliteration": "Pankho",
+      "category": "Appliances",
+      "emoji": "🪭"
+    },
+    {
+      "id": 23,
+      "en": "Air Conditioner",
+      "gu": "એસી / વાતાનુકૂલક",
+      "transliteration": "AC / Vātānukūlak",
+      "category": "Appliances",
+      "emoji": "❄️"
+    },
+    {
+      "id": 24,
+      "en": "Refrigerator / Fridge",
+      "gu": "ફ્રિજ",
+      "transliteration": "Fridge",
+      "category": "Appliances",
+      "emoji": "🧊"
+    },
+    {
+      "id": 25,
+      "en": "Gas Stove",
+      "gu": "ગેસનો ચૂલો",
+      "transliteration": "Gas-no Chūlo",
+      "category": "Kitchenware",
+      "emoji": "🔥"
+    },
+    {
+      "id": 26,
+      "en": "Plate",
+      "gu": "થાળી",
+      "transliteration": "Thāḷī",
+      "category": "Kitchenware",
+      "emoji": "🍽️"
+    },
+    {
+      "id": 27,
+      "en": "Bowl",
+      "gu": "વાટકો",
+      "transliteration": "Vāṭko",
+      "category": "Kitchenware",
+      "emoji": "🥣"
+    },
+    {
+      "id": 28,
+      "en": "Glass / Tumbler",
+      "gu": "પ્યાલો / ગ્લાસ",
+      "transliteration": "Pyālo / Glass",
+      "category": "Kitchenware",
+      "emoji": "🥛"
+    },
+    {
+      "id": 29,
+      "en": "Spoon",
+      "gu": "ચમચી",
+      "transliteration": "Chamchī",
+      "category": "Kitchenware",
+      "emoji": "🥄"
+    },
+    {
+      "id": 30,
+      "en": "Fork",
+      "gu": "કાંટો / કાંટાચમચી",
+      "transliteration": "Kānṭo",
+      "category": "Kitchenware",
+      "emoji": "🍴"
+    },
+    {
+      "id": 31,
+      "en": "Knife",
+      "gu": "છરી / ચપ્પુ",
+      "transliteration": "Chharī / Chappu",
+      "category": "Kitchenware",
+      "emoji": "🔪"
+    },
+    {
+      "id": 32,
+      "en": "Bucket",
+      "gu": "ડોલ",
+      "transliteration": "Ḍol",
+      "category": "Household",
+      "emoji": "🪣"
+    },
+    {
+      "id": 33,
+      "en": "Mug",
+      "gu": "ડબલું / ટમ્બલર",
+      "transliteration": "Ḍablun",
+      "category": "Household",
+      "emoji": "☕"
+    },
+    {
+      "id": 34,
+      "en": "Tap / Faucet",
+      "gu": "નળ",
+      "transliteration": "Naḷ",
+      "category": "Plumbing",
+      "emoji": "🚰"
+    },
+    {
+      "id": 35,
+      "en": "Broom",
+      "gu": "સાવરણી / ઝાડુ",
+      "transliteration": "Sāvarṇī / Jhāḍu",
+      "category": "Cleaning",
+      "emoji": "🧹"
+    },
+    {
+      "id": 36,
+      "en": "Mop",
+      "gu": "પોતું",
+      "transliteration": "Potun",
+      "category": "Cleaning",
+      "emoji": "🧽"
+    },
+    {
+      "id": 37,
+      "en": "Dustbin",
+      "gu": "કચરાપેટી",
+      "transliteration": "Kacharāpeṭī",
+      "category": "Cleaning",
+      "emoji": "🗑️"
+    },
+    {
+      "id": 38,
+      "en": "Clock",
+      "gu": "દીવાલ ઘડિયાળ",
+      "transliteration": "Dīvāl Ghaḍiyāḷ",
+      "category": "Household",
+      "emoji": "⏰"
+    },
+    {
+      "id": 39,
+      "en": "Curtain",
+      "gu": "પડદો",
+      "transliteration": "Pardo",
+      "category": "Household",
+      "emoji": "🪟"
+    },
+    {
+      "id": 40,
+      "en": "Towel",
+      "gu": "ટુવાલ",
+      "transliteration": "Ṭuvāl",
+      "category": "Household",
+      "emoji": "🧖"
+    }
+  ]
+}

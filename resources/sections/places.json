@@ -1,0 +1,312 @@
+{
+  "sectionId": 16,
+  "sectionSlug": "places",
+  "sectionName": "Places & Locations (સ્થળો અને જગ્યાઓ)",
+  "totalItems": 38,
+  "items": [
+    {
+      "id": 1,
+      "en": "Home / House",
+      "gu": "ઘર",
+      "transliteration": "Ghar",
+      "category": "Community",
+      "emoji": "🏠"
+    },
+    {
+      "id": 2,
+      "en": "School",
+      "gu": "શાળા / નિશાળ",
+      "transliteration": "Shāḷā",
+      "category": "Education",
+      "emoji": "🏫"
+    },
+    {
+      "id": 3,
+      "en": "College / University",
+      "gu": "કોલેજ / વિશ્વવિદ્યાલય",
+      "transliteration": "College / Vishvavidyālay",
+      "category": "Education",
+      "emoji": "🎓"
+    },
+    {
+      "id": 4,
+      "en": "Hospital",
+      "gu": "હોસ્પિટલ / દવાખાનું",
+      "transliteration": "Hospital / Davākhānun",
+      "category": "Healthcare",
+      "emoji": "🏥"
+    },
+    {
+      "id": 5,
+      "en": "Pharmacy / Medical Store",
+      "gu": "દવાની દુકાન / મેડિકલ",
+      "transliteration": "Davā-nī Dukān",
+      "category": "Healthcare",
+      "emoji": "💊"
+    },
+    {
+      "id": 6,
+      "en": "Police Station",
+      "gu": "પોલીસ સ્ટેશન / થાણું",
+      "transliteration": "Police Station",
+      "category": "Public Services",
+      "emoji": "🚓"
+    },
+    {
+      "id": 7,
+      "en": "Fire Station",
+      "gu": "ફાયર સ્ટેશન / લાયબંબા મથક",
+      "transliteration": "Fire Station",
+      "category": "Public Services",
+      "emoji": "🚒"
+    },
+    {
+      "id": 8,
+      "en": "Post Office",
+      "gu": "પોસ્ટ ઓફિસ / ટપાલ કચેરી",
+      "transliteration": "Post Office / Ṭapāl Kacherī",
+      "category": "Public Services",
+      "emoji": "🏤"
+    },
+    {
+      "id": 9,
+      "en": "Bank",
+      "gu": "બેંક / અધિકોષ",
+      "transliteration": "Bank",
+      "category": "Commercial",
+      "emoji": "🏦"
+    },
+    {
+      "id": 10,
+      "en": "Railway Station",
+      "gu": "રેલવે સ્ટેશન",
+      "transliteration": "Railway Station",
+      "category": "Transport Hubs",
+      "emoji": "🚉"
+    },
+    {
+      "id": 11,
+      "en": "Bus Stand / Station",
+      "gu": "બસ સ્ટેન્ડ / બસ મથક",
+      "transliteration": "Bus Stand",
+      "category": "Transport Hubs",
+      "emoji": "🚏"
+    },
+    {
+      "id": 12,
+      "en": "Airport",
+      "gu": "હવાઈ મથક / એરપોર્ટ",
+      "transliteration": "Havāī Mathak / Airport",
+      "category": "Transport Hubs",
+      "emoji": "🛫"
+    },
+    {
+      "id": 13,
+      "en": "Port / Harbor",
+      "gu": "બંદર",
+      "transliteration": "Bandar",
+      "category": "Transport Hubs",
+      "emoji": "⚓"
+    },
+    {
+      "id": 14,
+      "en": "Market / Bazaar",
+      "gu": "બજાર / હાટ",
+      "transliteration": "Bajār / Hāṭ",
+      "category": "Commercial",
+      "emoji": "🛍️"
+    },
+    {
+      "id": 15,
+      "en": "Mall / Shopping Complex",
+      "gu": "શોપિંગ મોલ",
+      "transliteration": "Shopping Mall",
+      "category": "Commercial",
+      "emoji": "🏬"
+    },
+    {
+      "id": 16,
+      "en": "Temple",
+      "gu": "મંદિર / દેવાલય",
+      "transliteration": "Mandir / Devālay",
+      "category": "Religious",
+      "emoji": "🛕"
+    },
+    {
+      "id": 17,
+      "en": "Jain Derasar",
+      "gu": "દેરાસર",
+      "transliteration": "Derāsar",
+      "category": "Religious",
+      "emoji": "🛕"
+    },
+    {
+      "id": 18,
+      "en": "Mosque",
+      "gu": "મસ્જિદ",
+      "transliteration": "Masjid",
+      "category": "Religious",
+      "emoji": "🕌"
+    },
+    {
+      "id": 19,
+      "en": "Church",
+      "gu": "ચર્ચ / ગિરજાઘર",
+      "transliteration": "Church",
+      "category": "Religious",
+      "emoji": "⛪"
+    },
+    {
+      "id": 20,
+      "en": "Gurudwara",
+      "gu": "ગુરુદ્વારા",
+      "transliteration": "Gurudwārā",
+      "category": "Religious",
+      "emoji": "🛕"
+    },
+    {
+      "id": 21,
+      "en": "Park / Garden",
+      "gu": "બગીચો / ઉપવન",
+      "transliteration": "Bagīcho / Upvan",
+      "category": "Recreation",
+      "emoji": "🏞️"
+    },
+    {
+      "id": 22,
+      "en": "Zoo",
+      "gu": "પ્રાણીસંગ્રહાલય",
+      "transliteration": "Prāṇī-sangrahālay",
+      "category": "Recreation",
+      "emoji": "🦁"
+    },
+    {
+      "id": 23,
+      "en": "Museum",
+      "gu": "સંગ્રહાલય / મ્યુઝિયમ",
+      "transliteration": "Sangrahālay / Museum",
+      "category": "Culture",
+      "emoji": "🏛️"
+    },
+    {
+      "id": 24,
+      "en": "Library",
+      "gu": "ગ્રંથાલય / પુસ્તકાલય",
+      "transliteration": "Granthālay",
+      "category": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 25,
+      "en": "Cinema / Theatre",
+      "gu": "સિનેમાઘર / નાટ્યગૃહ",
+      "transliteration": "Cinemāghar",
+      "category": "Entertainment",
+      "emoji": "🎬"
+    },
+    {
+      "id": 26,
+      "en": "Stadium / Sports Ground",
+      "gu": "સ્ટેડિયમ / રમતનું મેદાન",
+      "transliteration": "Stadium",
+      "category": "Sports",
+      "emoji": "🏟️"
+    },
+    {
+      "id": 27,
+      "en": "Hotel / Restaurant",
+      "gu": "હોટેલ / રેસ્ટોરન્ટ / ભોજનાલય",
+      "transliteration": "Hotel / Restaurant",
+      "category": "Hospitality",
+      "emoji": "🏨"
+    },
+    {
+      "id": 28,
+      "en": "Village",
+      "gu": "ગામડું / ગ્રામ",
+      "transliteration": "Gāmḍun / Grām",
+      "category": "Geography",
+      "emoji": "🏡"
+    },
+    {
+      "id": 29,
+      "en": "City / Town",
+      "gu": "શહેર / નગર",
+      "transliteration": "Shaher / Nagar",
+      "category": "Geography",
+      "emoji": "🏙️"
+    },
+    {
+      "id": 30,
+      "en": "River",
+      "gu": "નદી / સરિતા",
+      "transliteration": "Nadī / Saritā",
+      "category": "Nature",
+      "emoji": "🏞️"
+    },
+    {
+      "id": 31,
+      "en": "Lake / Pond",
+      "gu": "તળાવ / સરોવર",
+      "transliteration": "Taḷāv / Sarovar",
+      "category": "Nature",
+      "emoji": "🌊"
+    },
+    {
+      "id": 32,
+      "en": "Sea / Ocean",
+      "gu": "દરિયો / સમુદ્ર / સાગર",
+      "transliteration": "Dariyo / Samudra / Sāgar",
+      "category": "Nature",
+      "emoji": "🌊"
+    },
+    {
+      "id": 33,
+      "en": "Beach",
+      "gu": "દરિયાકિનારો / ચોપાટી",
+      "transliteration": "Dariyā-kināro",
+      "category": "Nature",
+      "emoji": "🏖️"
+    },
+    {
+      "id": 34,
+      "en": "Mountain",
+      "gu": "પર્વત / પહાડ",
+      "transliteration": "Parvat / Pahāḍ",
+      "category": "Nature",
+      "emoji": "⛰️"
+    },
+    {
+      "id": 35,
+      "en": "Forest",
+      "gu": "જંગલ / વન",
+      "transliteration": "Jangal / Van",
+      "category": "Nature",
+      "emoji": "🌲"
+    },
+    {
+      "id": 36,
+      "en": "Desert",
+      "gu": "રણ / રણપ્રદેશ",
+      "transliteration": "Raṇ / Raṇpradesh",
+      "category": "Nature",
+      "emoji": "🏜️"
+    },
+    {
+      "id": 37,
+      "en": "Farm / Field",
+      "gu": "ખેતર / વાડી",
+      "transliteration": "Khetar / Vāḍī",
+      "category": "Agriculture",
+      "emoji": "🌾"
+    },
+    {
+      "id": 38,
+      "en": "Bridge",
+      "gu": "પુલ / સેતુ",
+      "transliteration": "Pul / Setu",
+      "category": "Infrastructure",
+      "emoji": "🌉"
+    }
+  ]
+}

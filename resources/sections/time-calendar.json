@@ -1,0 +1,304 @@
+{
+  "sectionId": 18,
+  "sectionSlug": "time-calendar",
+  "sectionName": "Time, Calendar & Seasons (સમય, કેલેન્ડર અને ઋતુઓ)",
+  "totalItems": 37,
+  "items": [
+    {
+      "id": 1,
+      "en": "Time",
+      "gu": "સમય / વખત",
+      "transliteration": "Samay / Vakhat",
+      "category": "Time Units",
+      "emoji": "⏳"
+    },
+    {
+      "id": 2,
+      "en": "Clock / Watch",
+      "gu": "ઘડિયાળ",
+      "transliteration": "Ghaḍiyāḷ",
+      "category": "Time Units",
+      "emoji": "⏰"
+    },
+    {
+      "id": 3,
+      "en": "Second",
+      "gu": "સેકન્ડ / પળ",
+      "transliteration": "Second / Paḷ",
+      "category": "Time Units",
+      "emoji": "⏱️"
+    },
+    {
+      "id": 4,
+      "en": "Minute",
+      "gu": "મિનિટ",
+      "transliteration": "Minute",
+      "category": "Time Units",
+      "emoji": "⏲️"
+    },
+    {
+      "id": 5,
+      "en": "Hour",
+      "gu": "કલાક",
+      "transliteration": "Kalāk",
+      "category": "Time Units",
+      "emoji": "🕐"
+    },
+    {
+      "id": 6,
+      "en": "Day",
+      "gu": "દિવસ / દહાડો",
+      "transliteration": "Divas / Dahāḍo",
+      "category": "Periods",
+      "emoji": "☀️"
+    },
+    {
+      "id": 7,
+      "en": "Night",
+      "gu": "રાત / રાત્રિ",
+      "transliteration": "Rāt / Rātri",
+      "category": "Periods",
+      "emoji": "🌙"
+    },
+    {
+      "id": 8,
+      "en": "Morning",
+      "gu": "સવાર / પ્રભાત",
+      "transliteration": "Savār / Prabhāt",
+      "category": "Periods",
+      "emoji": "🌅"
+    },
+    {
+      "id": 9,
+      "en": "Afternoon",
+      "gu": "બપોર",
+      "transliteration": "Bapor",
+      "category": "Periods",
+      "emoji": "🌞"
+    },
+    {
+      "id": 10,
+      "en": "Evening",
+      "gu": "સાંજ / સંધ્યા",
+      "transliteration": "Sānj / Sandhyā",
+      "category": "Periods",
+      "emoji": "🌆"
+    },
+    {
+      "id": 11,
+      "en": "Today",
+      "gu": "આજે",
+      "transliteration": "Āje",
+      "category": "Relative Time",
+      "emoji": "📅"
+    },
+    {
+      "id": 12,
+      "en": "Tomorrow",
+      "gu": "આવતીકાલે / કાલે",
+      "transliteration": "Āvatīkāle / Kāle",
+      "category": "Relative Time",
+      "emoji": "⏭️"
+    },
+    {
+      "id": 13,
+      "en": "Yesterday",
+      "gu": "ગઈકાલે",
+      "transliteration": "Gaīkāle",
+      "category": "Relative Time",
+      "emoji": "⏮️"
+    },
+    {
+      "id": 14,
+      "en": "Sunday",
+      "gu": "રવિવાર",
+      "transliteration": "Ravivār",
+      "category": "Days of the Week",
+      "emoji": "☀️"
+    },
+    {
+      "id": 15,
+      "en": "Monday",
+      "gu": "સોમવાર",
+      "transliteration": "Somvār",
+      "category": "Days of the Week",
+      "emoji": "🌙"
+    },
+    {
+      "id": 16,
+      "en": "Tuesday",
+      "gu": "મંગળવાર",
+      "transliteration": "Mangaḷvār",
+      "category": "Days of the Week",
+      "emoji": "🔴"
+    },
+    {
+      "id": 17,
+      "en": "Wednesday",
+      "gu": "બુધવાર",
+      "transliteration": "Budhvār",
+      "category": "Days of the Week",
+      "emoji": "🟢"
+    },
+    {
+      "id": 18,
+      "en": "Thursday",
+      "gu": "ગુરુવાર",
+      "transliteration": "Guruvār",
+      "category": "Days of the Week",
+      "emoji": "🟡"
+    },
+    {
+      "id": 19,
+      "en": "Friday",
+      "gu": "શુક્રવાર",
+      "transliteration": "Shukravār",
+      "category": "Days of the Week",
+      "emoji": "⚪"
+    },
+    {
+      "id": 20,
+      "en": "Saturday",
+      "gu": "શનિવાર",
+      "transliteration": "Shanivār",
+      "category": "Days of the Week",
+      "emoji": "🪐"
+    },
+    {
+      "id": 21,
+      "en": "Kartak (1st Gujarati Month)",
+      "gu": "કારતક",
+      "transliteration": "Kārtak",
+      "category": "Gujarati Months",
+      "emoji": "🪔"
+    },
+    {
+      "id": 22,
+      "en": "Magshar (2nd Month)",
+      "gu": "માગશર",
+      "transliteration": "Māgshar",
+      "category": "Gujarati Months",
+      "emoji": "❄️"
+    },
+    {
+      "id": 23,
+      "en": "Posh (3rd Month)",
+      "gu": "પોષ",
+      "transliteration": "Posh",
+      "category": "Gujarati Months",
+      "emoji": "🪁"
+    },
+    {
+      "id": 24,
+      "en": "Maha (4th Month)",
+      "gu": "મહા",
+      "transliteration": "Mahā",
+      "category": "Gujarati Months",
+      "emoji": "🔱"
+    },
+    {
+      "id": 25,
+      "en": "Fagan (5th Month)",
+      "gu": "ફાગણ",
+      "transliteration": "Fāgaṇ",
+      "category": "Gujarati Months",
+      "emoji": "🎨"
+    },
+    {
+      "id": 26,
+      "en": "Chaitra (6th Month)",
+      "gu": "ચૈત્ર",
+      "transliteration": "Chaitra",
+      "category": "Gujarati Months",
+      "emoji": "🌸"
+    },
+    {
+      "id": 27,
+      "en": "Vaishakh (7th Month)",
+      "gu": "વૈશાખ",
+      "transliteration": "Vaishākh",
+      "category": "Gujarati Months",
+      "emoji": "🌞"
+    },
+    {
+      "id": 28,
+      "en": "Jeth (8th Month)",
+      "gu": "જેઠ",
+      "transliteration": "Jeṭh",
+      "category": "Gujarati Months",
+      "emoji": "☀️"
+    },
+    {
+      "id": 29,
+      "en": "Ashadh (9th Month)",
+      "gu": "અષાઢ",
+      "transliteration": "Aṣhādha",
+      "category": "Gujarati Months",
+      "emoji": "🌧️"
+    },
+    {
+      "id": 30,
+      "en": "Shravan (10th Month)",
+      "gu": "શ્રાવણ",
+      "transliteration": "Shrāvaṇ",
+      "category": "Gujarati Months",
+      "emoji": "🌿"
+    },
+    {
+      "id": 31,
+      "en": "Bhadarvo (11th Month)",
+      "gu": "ભાદરવો",
+      "transliteration": "Bhādarvo",
+      "category": "Gujarati Months",
+      "emoji": "🐘"
+    },
+    {
+      "id": 32,
+      "en": "Aso (12th Month)",
+      "gu": "આસો",
+      "transliteration": "Āso",
+      "category": "Gujarati Months",
+      "emoji": "🪔"
+    },
+    {
+      "id": 33,
+      "en": "Winter",
+      "gu": "શિયાળો",
+      "transliteration": "Shiyāḷo",
+      "category": "Seasons (ઋતુઓ)",
+      "emoji": "❄️"
+    },
+    {
+      "id": 34,
+      "en": "Summer",
+      "gu": "ઉનાળો",
+      "transliteration": "Unāḷo",
+      "category": "Seasons (ઋતુઓ)",
+      "emoji": "☀️"
+    },
+    {
+      "id": 35,
+      "en": "Monsoon / Rainy Season",
+      "gu": "ચોમાસું / વર્ષાઋતુ",
+      "transliteration": "Chomāsun / Varṣhārutu",
+      "category": "Seasons (ઋતુઓ)",
+      "emoji": "🌧️"
+    },
+    {
+      "id": 36,
+      "en": "Spring",
+      "gu": "વસંત ઋતુ",
+      "transliteration": "Vasant Ritu",
+      "category": "Seasons (ઋતુઓ)",
+      "emoji": "🌸"
+    },
+    {
+      "id": 37,
+      "en": "Autumn",
+      "gu": "શરદ ઋતુ",
+      "transliteration": "Sharad Ritu",
+      "category": "Seasons (ઋતુઓ)",
+      "emoji": "🍂"
+    }
+  ]
+}

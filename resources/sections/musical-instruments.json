@@ -1,0 +1,248 @@
+{
+  "sectionId": 12,
+  "sectionSlug": "musical-instruments",
+  "sectionName": "Musical Instruments (સંગીતના સાધનો)",
+  "totalItems": 30,
+  "items": [
+    {
+      "id": 1,
+      "en": "Harmonium",
+      "gu": "હાર્મોનિયમ / પેટી વાજું",
+      "transliteration": "Harmonium / Peṭī Vājun",
+      "category": "Keyboard / Wind",
+      "emoji": "🎹"
+    },
+    {
+      "id": 2,
+      "en": "Tabla",
+      "gu": "તબલાં",
+      "transliteration": "Tablān",
+      "category": "Percussion",
+      "emoji": "🪘"
+    },
+    {
+      "id": 3,
+      "en": "Dholak",
+      "gu": "ઢોલક",
+      "transliteration": "Ḍholak",
+      "category": "Percussion",
+      "emoji": "🪘"
+    },
+    {
+      "id": 4,
+      "en": "Dhol",
+      "gu": "ઢોલ",
+      "transliteration": "Ḍhol",
+      "category": "Percussion",
+      "emoji": "🥁"
+    },
+    {
+      "id": 5,
+      "en": "Flute / Bansuri",
+      "gu": "વાંસળી / મુરલી",
+      "transliteration": "Vānsaḷī / Murlī",
+      "category": "Wind",
+      "emoji": "🪈"
+    },
+    {
+      "id": 6,
+      "en": "Sitar",
+      "gu": "સિતાર",
+      "transliteration": "Sitār",
+      "category": "String",
+      "emoji": "🎸"
+    },
+    {
+      "id": 7,
+      "en": "Veena",
+      "gu": "વીણા",
+      "transliteration": "Vīṇā",
+      "category": "String",
+      "emoji": "🪕"
+    },
+    {
+      "id": 8,
+      "en": "Tanpura",
+      "gu": "તાનપૂરો",
+      "transliteration": "Tānpūro",
+      "category": "String",
+      "emoji": "🎻"
+    },
+    {
+      "id": 9,
+      "en": "Shehnai",
+      "gu": "શરણાઈ",
+      "transliteration": "Sharaṇāī",
+      "category": "Wind",
+      "emoji": "🎺"
+    },
+    {
+      "id": 10,
+      "en": "Manjira",
+      "gu": "મંજીરાં / કાંસીજોડા",
+      "transliteration": "Manjīrān",
+      "category": "Percussion",
+      "emoji": "🔔"
+    },
+    {
+      "id": 11,
+      "en": "Damru",
+      "gu": "ડમરુ",
+      "transliteration": "Damru",
+      "category": "Percussion",
+      "emoji": "🪘"
+    },
+    {
+      "id": 12,
+      "en": "Shankh / Conch",
+      "gu": "શંખ",
+      "transliteration": "Shankh",
+      "category": "Wind",
+      "emoji": "🐚"
+    },
+    {
+      "id": 13,
+      "en": "Ghungroo / Ankle Bells",
+      "gu": "ઘૂંઘરૂ / ઝાંઝર",
+      "transliteration": "Ghungrū / Jhānjhar",
+      "category": "Percussion",
+      "emoji": "🔔"
+    },
+    {
+      "id": 14,
+      "en": "Ektara",
+      "gu": "એકતારો",
+      "transliteration": "Ektāro",
+      "category": "String",
+      "emoji": "🪕"
+    },
+    {
+      "id": 15,
+      "en": "Sarod",
+      "gu": "સરોદ",
+      "transliteration": "Sarod",
+      "category": "String",
+      "emoji": "🎻"
+    },
+    {
+      "id": 16,
+      "en": "Sarangi",
+      "gu": "સારંગી",
+      "transliteration": "Sārangī",
+      "category": "String",
+      "emoji": "🎻"
+    },
+    {
+      "id": 17,
+      "en": "Guitar",
+      "gu": "ગિટાર",
+      "transliteration": "Guitar",
+      "category": "String",
+      "emoji": "🎸"
+    },
+    {
+      "id": 18,
+      "en": "Piano",
+      "gu": "પિયાનો",
+      "transliteration": "Piano",
+      "category": "Keyboard",
+      "emoji": "🎹"
+    },
+    {
+      "id": 19,
+      "en": "Violin",
+      "gu": "વાયોલિન",
+      "transliteration": "Violin",
+      "category": "String",
+      "emoji": "🎻"
+    },
+    {
+      "id": 20,
+      "en": "Drum / Drum Set",
+      "gu": "ડ્રમ",
+      "transliteration": "Drum",
+      "category": "Percussion",
+      "emoji": "🥁"
+    },
+    {
+      "id": 21,
+      "en": "Trumpet",
+      "gu": "ટ્રમ્પેટ / તુરાઈ",
+      "transliteration": "Trumpet / Turāī",
+      "category": "Brass / Wind",
+      "emoji": "🎺"
+    },
+    {
+      "id": 22,
+      "en": "Saxophone",
+      "gu": "સેક્સોફોન",
+      "transliteration": "Saxophone",
+      "category": "Wind",
+      "emoji": "🎷"
+    },
+    {
+      "id": 23,
+      "en": "Clarinet",
+      "gu": "ક્લેરનેટ",
+      "transliteration": "Clarinet",
+      "category": "Wind",
+      "emoji": "🪈"
+    },
+    {
+      "id": 24,
+      "en": "Accordion",
+      "gu": "એકોર્ડિયન",
+      "transliteration": "Accordion",
+      "category": "Wind / Keyboard",
+      "emoji": "🪗"
+    },
+    {
+      "id": 25,
+      "en": "Harmonica / Mouth Organ",
+      "gu": "માઉથ ઓર્ગન",
+      "transliteration": "Mouth Organ",
+      "category": "Wind",
+      "emoji": "🎶"
+    },
+    {
+      "id": 26,
+      "en": "Xylophone",
+      "gu": "ઝાયલોફોન / કાષ્ઠતરંગ",
+      "transliteration": "Xylophone",
+      "category": "Percussion",
+      "emoji": "🪵"
+    },
+    {
+      "id": 27,
+      "en": "Tambourine / Khanjari",
+      "gu": "ખંજરી",
+      "transliteration": "Khanjarī",
+      "category": "Percussion",
+      "emoji": "🪘"
+    },
+    {
+      "id": 28,
+      "en": "Cello",
+      "gu": "ચેલો",
+      "transliteration": "Cello",
+      "category": "String",
+      "emoji": "🎻"
+    },
+    {
+      "id": 29,
+      "en": "Harp",
+      "gu": "હાર્પ",
+      "transliteration": "Harp",
+      "category": "String",
+      "emoji": "🪕"
+    },
+    {
+      "id": 30,
+      "en": "Bell / Ghant",
+      "gu": "ઘંટ / ઘંટડી",
+      "transliteration": "Ghaṇṭ / Ghaṇṭaḍī",
+      "category": "Percussion",
+      "emoji": "🔔"
+    }
+  ]
+}

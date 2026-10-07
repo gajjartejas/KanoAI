@@ -1,0 +1,264 @@
+{
+  "sectionId": 22,
+  "sectionSlug": "festivals-culture",
+  "sectionName": "Festivals & Culture (તહેવારો અને સંસ્કૃતિ)",
+  "totalItems": 32,
+  "items": [
+    {
+      "id": 1,
+      "en": "Navratri (Garba Festival)",
+      "gu": "નવરાત્રિ",
+      "transliteration": "Navrātrī",
+      "category": "Major Festivals",
+      "emoji": "💃"
+    },
+    {
+      "id": 2,
+      "en": "Diwali (Festival of Lights)",
+      "gu": "દિવાળી / દીપાવલી",
+      "transliteration": "Divāḷī / Dīpāvalī",
+      "category": "Major Festivals",
+      "emoji": "🪔"
+    },
+    {
+      "id": 3,
+      "en": "New Year / Bestu Varas",
+      "gu": "બેસતું વર્ષ / નૂતન વર્ષ",
+      "transliteration": "Bestun Varṣh",
+      "category": "Major Festivals",
+      "emoji": "🎉"
+    },
+    {
+      "id": 4,
+      "en": "Bhai Dooj / Bhai Beej",
+      "gu": "ભાઈબીજ",
+      "transliteration": "Bhāī Bīj",
+      "category": "Family Festivals",
+      "emoji": "👫"
+    },
+    {
+      "id": 5,
+      "en": "Uttarayan / Makar Sankranti",
+      "gu": "ઉત્તરાયણ / મકરસંક્રાંતિ",
+      "transliteration": "Uttarāyaṇ",
+      "category": "Major Festivals",
+      "emoji": "🪁"
+    },
+    {
+      "id": 6,
+      "en": "Holi (Festival of Colors)",
+      "gu": "હોળી",
+      "transliteration": "Hoḷī",
+      "category": "Major Festivals",
+      "emoji": "🔥"
+    },
+    {
+      "id": 7,
+      "en": "Dhuleti",
+      "gu": "ધૂળેટી",
+      "transliteration": "Dhuḷeṭī",
+      "category": "Major Festivals",
+      "emoji": "🎨"
+    },
+    {
+      "id": 8,
+      "en": "Janmashtami (Krishna Janma)",
+      "gu": "જન્માષ્ટમી / ગોકુળાષ્ટમી",
+      "transliteration": "Janmāṣhṭamī",
+      "category": "Major Festivals",
+      "emoji": "🦚"
+    },
+    {
+      "id": 9,
+      "en": "Raksha Bandhan / Rakhi",
+      "gu": "રક્ષાબંધન / બળેવ",
+      "transliteration": "Rakṣhā Bandhan",
+      "category": "Family Festivals",
+      "emoji": "🧵"
+    },
+    {
+      "id": 10,
+      "en": "Ganesh Chaturthi",
+      "gu": "ગણેશ ચતુર્થી",
+      "transliteration": "Ganesh Chaturthī",
+      "category": "Major Festivals",
+      "emoji": "🐘"
+    },
+    {
+      "id": 11,
+      "en": "Maha Shivratri",
+      "gu": "મહા શિવરાત્રિ",
+      "transliteration": "Mahā Shivrātrī",
+      "category": "Major Festivals",
+      "emoji": "🔱"
+    },
+    {
+      "id": 12,
+      "en": "Ram Navami",
+      "gu": "રામનવમી",
+      "transliteration": "Rām Navamī",
+      "category": "Major Festivals",
+      "emoji": "🏹"
+    },
+    {
+      "id": 13,
+      "en": "Hanuman Jayanti",
+      "gu": "હનુમાન જયંતિ",
+      "transliteration": "Hanumān Jayantī",
+      "category": "Religious Festivals",
+      "emoji": "🚩"
+    },
+    {
+      "id": 14,
+      "en": "Mahavir Jayanti",
+      "gu": "મહાવીર જયંતિ",
+      "transliteration": "Mahāvīr Jayantī",
+      "category": "Religious Festivals",
+      "emoji": "🙏"
+    },
+    {
+      "id": 15,
+      "en": "Paryushan (Jain Festival)",
+      "gu": "પર્યુષણ પર્વ / સંવત્સરી",
+      "transliteration": "Paryuṣhaṇ Parva",
+      "category": "Religious Festivals",
+      "emoji": "🙏"
+    },
+    {
+      "id": 16,
+      "en": "Ratha Yatra",
+      "gu": "રથયાત્રા",
+      "transliteration": "Rathayātrā",
+      "category": "Major Festivals",
+      "emoji": "🛕"
+    },
+    {
+      "id": 17,
+      "en": "Eid-ul-Fitr / Ramzan Eid",
+      "gu": "રમઝાન ઈદ / ઈદ-ઉલ-ફિત્ર",
+      "transliteration": "Ramzān Eid",
+      "category": "Major Festivals",
+      "emoji": "🌙"
+    },
+    {
+      "id": 18,
+      "en": "Eid-ul-Adha / Bakra Eid",
+      "gu": "બકરી ઈદ",
+      "transliteration": "Bakrī Eid",
+      "category": "Major Festivals",
+      "emoji": "🕌"
+    },
+    {
+      "id": 19,
+      "en": "Christmas",
+      "gu": "નાતાલ / ક્રિસમસ",
+      "transliteration": "Nātāl / Christmas",
+      "category": "Major Festivals",
+      "emoji": "🎄"
+    },
+    {
+      "id": 20,
+      "en": "Good Friday",
+      "gu": "ગુડ ફ્રાઈડે",
+      "transliteration": "Good Friday",
+      "category": "Religious Festivals",
+      "emoji": "✝️"
+    },
+    {
+      "id": 21,
+      "en": "Gurpurab / Guru Nanak Jayanti",
+      "gu": "ગુરુ નાનક જયંતિ",
+      "transliteration": "Guru Nānak Jayantī",
+      "category": "Religious Festivals",
+      "emoji": "🪔"
+    },
+    {
+      "id": 22,
+      "en": "Buddha Purnima",
+      "gu": "બુદ્ધ પૂર્ણિમા",
+      "transliteration": "Buddha Pūrṇimā",
+      "category": "Religious Festivals",
+      "emoji": "☸️"
+    },
+    {
+      "id": 23,
+      "en": "Independence Day (15th August)",
+      "gu": "સ્વાતંત્ર્ય દિન",
+      "transliteration": "Svātantrya Din",
+      "category": "National Festivals",
+      "emoji": "🇮🇳"
+    },
+    {
+      "id": 24,
+      "en": "Republic Day (26th January)",
+      "gu": "પ્રજાસત્તાક દિન",
+      "transliteration": "Prajāsattāk Din",
+      "category": "National Festivals",
+      "emoji": "🇮🇳"
+    },
+    {
+      "id": 25,
+      "en": "Gandhi Jayanti (2nd October)",
+      "gu": "ગાંધી જયંતિ",
+      "transliteration": "Gāndhī Jayantī",
+      "category": "National Festivals",
+      "emoji": "👓"
+    },
+    {
+      "id": 26,
+      "en": "Garba (Traditional Dance)",
+      "gu": "ગરબા",
+      "transliteration": "Garbā",
+      "category": "Cultural Traditions",
+      "emoji": "💃"
+    },
+    {
+      "id": 27,
+      "en": "Dandiya Raas",
+      "gu": "દાંડિયારાસ",
+      "transliteration": "Dānḍiyārās",
+      "category": "Cultural Traditions",
+      "emoji": "🥢"
+    },
+    {
+      "id": 28,
+      "en": "Rangoli",
+      "gu": "રંગોળી / સાથિયા",
+      "transliteration": "Rangoli / Sāthiyā",
+      "category": "Cultural Traditions",
+      "emoji": "🎨"
+    },
+    {
+      "id": 29,
+      "en": "Toran",
+      "gu": "તોરણ",
+      "transliteration": "Toraṇ",
+      "category": "Cultural Traditions",
+      "emoji": "🌿"
+    },
+    {
+      "id": 30,
+      "en": "Diya / Deepak",
+      "gu": "દીવો / કોડિયું",
+      "transliteration": "Dīvo / Koḍiyun",
+      "category": "Cultural Traditions",
+      "emoji": "🪔"
+    },
+    {
+      "id": 31,
+      "en": "Aarti / Puja",
+      "gu": "આરતી / પૂજા",
+      "transliteration": "Āratī / Pūjā",
+      "category": "Cultural Traditions",
+      "emoji": "🔔"
+    },
+    {
+      "id": 32,
+      "en": "Prasad",
+      "gu": "પ્રસાદ",
+      "transliteration": "Prasād",
+      "category": "Cultural Traditions",
+      "emoji": "🍬"
+    }
+  ]
+}

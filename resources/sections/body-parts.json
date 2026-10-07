@@ -1,0 +1,344 @@
+{
+  "sectionId": 5,
+  "sectionSlug": "body-parts",
+  "sectionName": "Body Parts (શરીરના અંગો)",
+  "totalItems": 42,
+  "items": [
+    {
+      "id": 1,
+      "en": "Head",
+      "gu": "માથું",
+      "transliteration": "Māthun",
+      "category": "Head & Face",
+      "emoji": "🗣️"
+    },
+    {
+      "id": 2,
+      "en": "Hair",
+      "gu": "વાળ",
+      "transliteration": "Vāḷ",
+      "category": "Head & Face",
+      "emoji": "💇"
+    },
+    {
+      "id": 3,
+      "en": "Eye",
+      "gu": "આંખ",
+      "transliteration": "Āṅkh",
+      "category": "Head & Face",
+      "emoji": "👁️"
+    },
+    {
+      "id": 4,
+      "en": "Eyebrow",
+      "gu": "ભમર",
+      "transliteration": "Bhamar",
+      "category": "Head & Face",
+      "emoji": "🤨"
+    },
+    {
+      "id": 5,
+      "en": "Eyelash",
+      "gu": "પાંપણ",
+      "transliteration": "Pāmpaṇ",
+      "category": "Head & Face",
+      "emoji": "👀"
+    },
+    {
+      "id": 6,
+      "en": "Nose",
+      "gu": "નાક",
+      "transliteration": "Nāk",
+      "category": "Head & Face",
+      "emoji": "👃"
+    },
+    {
+      "id": 7,
+      "en": "Ear",
+      "gu": "કાન",
+      "transliteration": "Kān",
+      "category": "Head & Face",
+      "emoji": "👂"
+    },
+    {
+      "id": 8,
+      "en": "Mouth",
+      "gu": "મોઢું",
+      "transliteration": "Moḍhun",
+      "category": "Head & Face",
+      "emoji": "👄"
+    },
+    {
+      "id": 9,
+      "en": "Lips",
+      "gu": "હોઠ",
+      "transliteration": "Hoṭh",
+      "category": "Head & Face",
+      "emoji": "💋"
+    },
+    {
+      "id": 10,
+      "en": "Teeth",
+      "gu": "દાંત",
+      "transliteration": "Dānt",
+      "category": "Head & Face",
+      "emoji": "🦷"
+    },
+    {
+      "id": 11,
+      "en": "Tongue",
+      "gu": "જીભ",
+      "transliteration": "Jībh",
+      "category": "Head & Face",
+      "emoji": "👅"
+    },
+    {
+      "id": 12,
+      "en": "Cheek",
+      "gu": "ગાલ",
+      "transliteration": "Gāl",
+      "category": "Head & Face",
+      "emoji": "😊"
+    },
+    {
+      "id": 13,
+      "en": "Chin",
+      "gu": "હડપચી",
+      "transliteration": "Haḍpachī",
+      "category": "Head & Face",
+      "emoji": "🧔"
+    },
+    {
+      "id": 14,
+      "en": "Forehead",
+      "gu": "કપાળ",
+      "transliteration": "Kapāḷ",
+      "category": "Head & Face",
+      "emoji": "💆"
+    },
+    {
+      "id": 15,
+      "en": "Neck",
+      "gu": "ડોક / ગળું",
+      "transliteration": "Ḍok / Gaḷun",
+      "category": "Upper Body",
+      "emoji": "🧣"
+    },
+    {
+      "id": 16,
+      "en": "Shoulder",
+      "gu": "ખભો",
+      "transliteration": "Khabho",
+      "category": "Upper Body",
+      "emoji": "💪"
+    },
+    {
+      "id": 17,
+      "en": "Chest",
+      "gu": "છાતી",
+      "transliteration": "Chhātī",
+      "category": "Upper Body",
+      "emoji": "🫁"
+    },
+    {
+      "id": 18,
+      "en": "Stomach / Belly",
+      "gu": "પેટ",
+      "transliteration": "Peṭ",
+      "category": "Upper Body",
+      "emoji": "🤰"
+    },
+    {
+      "id": 19,
+      "en": "Back",
+      "gu": "પીઠ / વાંસો",
+      "transliteration": "Pīṭh / Vānso",
+      "category": "Upper Body",
+      "emoji": "🚶"
+    },
+    {
+      "id": 20,
+      "en": "Arm",
+      "gu": "હાથ / બાહુ",
+      "transliteration": "Hāth / Bāhu",
+      "category": "Arms & Hands",
+      "emoji": "💪"
+    },
+    {
+      "id": 21,
+      "en": "Elbow",
+      "gu": "કોણી",
+      "transliteration": "Koṇī",
+      "category": "Arms & Hands",
+      "emoji": "🦾"
+    },
+    {
+      "id": 22,
+      "en": "Wrist",
+      "gu": "કાંડું",
+      "transliteration": "Kānḍun",
+      "category": "Arms & Hands",
+      "emoji": "⌚"
+    },
+    {
+      "id": 23,
+      "en": "Hand",
+      "gu": "હાથ",
+      "transliteration": "Hāth",
+      "category": "Arms & Hands",
+      "emoji": "✋"
+    },
+    {
+      "id": 24,
+      "en": "Palm",
+      "gu": "હથેળી",
+      "transliteration": "Hatheḷī",
+      "category": "Arms & Hands",
+      "emoji": "🤲"
+    },
+    {
+      "id": 25,
+      "en": "Finger",
+      "gu": "આંગળી",
+      "transliteration": "Āngaḷī",
+      "category": "Arms & Hands",
+      "emoji": "☝️"
+    },
+    {
+      "id": 26,
+      "en": "Thumb",
+      "gu": "અંગૂઠો",
+      "transliteration": "Angūṭho",
+      "category": "Arms & Hands",
+      "emoji": "👍"
+    },
+    {
+      "id": 27,
+      "en": "Nail",
+      "gu": "નખ",
+      "transliteration": "Nakh",
+      "category": "Arms & Hands",
+      "emoji": "💅"
+    },
+    {
+      "id": 28,
+      "en": "Leg",
+      "gu": "પગ",
+      "transliteration": "Pag",
+      "category": "Lower Body",
+      "emoji": "🦵"
+    },
+    {
+      "id": 29,
+      "en": "Thigh",
+      "gu": "સાથળ",
+      "transliteration": "Sāthaḷ",
+      "category": "Lower Body",
+      "emoji": "🍗"
+    },
+    {
+      "id": 30,
+      "en": "Knee",
+      "gu": "ઢીંચણ / ઘૂંટણ",
+      "transliteration": "Ḍhīnchan / Ghūnṭaṇ",
+      "category": "Lower Body",
+      "emoji": "🧎"
+    },
+    {
+      "id": 31,
+      "en": "Ankle",
+      "gu": "ઘૂંટી",
+      "transliteration": "Ghūnṭī",
+      "category": "Lower Body",
+      "emoji": "🦶"
+    },
+    {
+      "id": 32,
+      "en": "Foot",
+      "gu": "પગનો પંજો",
+      "transliteration": "Pagno Panjo",
+      "category": "Lower Body",
+      "emoji": "🦶"
+    },
+    {
+      "id": 33,
+      "en": "Toe",
+      "gu": "પગની આંગળી",
+      "transliteration": "Pag-nī Āngaḷī",
+      "category": "Lower Body",
+      "emoji": "👣"
+    },
+    {
+      "id": 34,
+      "en": "Heel",
+      "gu": "એડી",
+      "transliteration": "Eḍī",
+      "category": "Lower Body",
+      "emoji": "👠"
+    },
+    {
+      "id": 35,
+      "en": "Heart",
+      "gu": "હૃદય",
+      "transliteration": "Hruday",
+      "category": "Internal Organs",
+      "emoji": "🫀"
+    },
+    {
+      "id": 36,
+      "en": "Brain",
+      "gu": "મગજ",
+      "transliteration": "Magaj",
+      "category": "Internal Organs",
+      "emoji": "🧠"
+    },
+    {
+      "id": 37,
+      "en": "Lungs",
+      "gu": "ફેફસાં",
+      "transliteration": "Fefsān",
+      "category": "Internal Organs",
+      "emoji": "🫁"
+    },
+    {
+      "id": 38,
+      "en": "Liver",
+      "gu": "યકૃત / લિવર",
+      "transliteration": "Yakrut / Liver",
+      "category": "Internal Organs",
+      "emoji": "🩺"
+    },
+    {
+      "id": 39,
+      "en": "Kidney",
+      "gu": "મૂત્રપિંડ / કિડની",
+      "transliteration": "Mūtrapinḍ / Kidney",
+      "category": "Internal Organs",
+      "emoji": "🩺"
+    },
+    {
+      "id": 40,
+      "en": "Bone",
+      "gu": "હાડકું",
+      "transliteration": "Hāḍkun",
+      "category": "Internal Organs",
+      "emoji": "🦴"
+    },
+    {
+      "id": 41,
+      "en": "Skin",
+      "gu": "ચામડી",
+      "transliteration": "Chāmaḍī",
+      "category": "General",
+      "emoji": "🧴"
+    },
+    {
+      "id": 42,
+      "en": "Blood",
+      "gu": "લોહી / રક્ત",
+      "transliteration": "Lohī / Rakta",
+      "category": "General",
+      "emoji": "🩸"
+    }
+  ]
+}

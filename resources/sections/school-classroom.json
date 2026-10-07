@@ -1,0 +1,312 @@
+{
+  "sectionId": 14,
+  "sectionSlug": "school-classroom",
+  "sectionName": "School & Classroom (શાળા અને વર્ગખંડ)",
+  "totalItems": 38,
+  "items": [
+    {
+      "id": 1,
+      "en": "School",
+      "gu": "શાળા / નિશાળ",
+      "transliteration": "Shāḷā / Nishāḷ",
+      "category": "Institution",
+      "emoji": "🏫"
+    },
+    {
+      "id": 2,
+      "en": "Classroom",
+      "gu": "વર્ગખંડ / ઓરડો",
+      "transliteration": "Vargakhanḍ",
+      "category": "Institution",
+      "emoji": "👩‍🏫"
+    },
+    {
+      "id": 3,
+      "en": "Teacher",
+      "gu": "શિક્ષક / ગુરુજી",
+      "transliteration": "Shikṣhak / Gurujī",
+      "category": "People",
+      "emoji": "👨‍🏫"
+    },
+    {
+      "id": 4,
+      "en": "Student",
+      "gu": "વિદ્યાર્થી / છાત્ર",
+      "transliteration": "Vidyārthī / Chhātra",
+      "category": "People",
+      "emoji": "🧑‍🎓"
+    },
+    {
+      "id": 5,
+      "en": "Principal",
+      "gu": "આચાર્ય / પ્રિન્સિપાલ",
+      "transliteration": "Āchārya / Principal",
+      "category": "People",
+      "emoji": "🧑‍💼"
+    },
+    {
+      "id": 6,
+      "en": "Blackboard",
+      "gu": "કાળું પાટિયું / બ્લેકબોર્ડ",
+      "transliteration": "Kāḷun Pāṭiyun",
+      "category": "Classroom Tools",
+      "emoji": "📋"
+    },
+    {
+      "id": 7,
+      "en": "Whiteboard",
+      "gu": "સફેદ પાટિયું",
+      "transliteration": "Safed Pāṭiyun",
+      "category": "Classroom Tools",
+      "emoji": "⬜"
+    },
+    {
+      "id": 8,
+      "en": "Chalk",
+      "gu": "ચોક",
+      "transliteration": "Chalk",
+      "category": "Classroom Tools",
+      "emoji": "🖍️"
+    },
+    {
+      "id": 9,
+      "en": "Duster / Eraser",
+      "gu": "ડસ્ટર / ભૂંસણું",
+      "transliteration": "Duster / Bhūnsaṇun",
+      "category": "Classroom Tools",
+      "emoji": "🧹"
+    },
+    {
+      "id": 10,
+      "en": "Marker",
+      "gu": "માર્કર પેન",
+      "transliteration": "Marker Pen",
+      "category": "Classroom Tools",
+      "emoji": "🖊️"
+    },
+    {
+      "id": 11,
+      "en": "Desk",
+      "gu": "મેજ / ડેસ્ક",
+      "transliteration": "Desk",
+      "category": "Furniture",
+      "emoji": "🪵"
+    },
+    {
+      "id": 12,
+      "en": "Bench",
+      "gu": "બેન્ચ / પાટલી",
+      "transliteration": "Bench / Pāṭlī",
+      "category": "Furniture",
+      "emoji": "🪑"
+    },
+    {
+      "id": 13,
+      "en": "School Bag / Backpack",
+      "gu": "દફતર / સ્કૂલ બેગ",
+      "transliteration": "Daftar / School Bag",
+      "category": "Supplies",
+      "emoji": "🎒"
+    },
+    {
+      "id": 14,
+      "en": "Book",
+      "gu": "પુસ્તક / ચોપડી",
+      "transliteration": "Pustak / Chopḍī",
+      "category": "Stationery",
+      "emoji": "📖"
+    },
+    {
+      "id": 15,
+      "en": "Notebook",
+      "gu": "નોટબુક / વહી",
+      "transliteration": "Notebook / Vahī",
+      "category": "Stationery",
+      "emoji": "📓"
+    },
+    {
+      "id": 16,
+      "en": "Pen",
+      "gu": "કલમ / પેન",
+      "transliteration": "Kalam / Pen",
+      "category": "Stationery",
+      "emoji": "🖊️"
+    },
+    {
+      "id": 17,
+      "en": "Pencil",
+      "gu": "પેન્સિલ",
+      "transliteration": "Pencil",
+      "category": "Stationery",
+      "emoji": "✏️"
+    },
+    {
+      "id": 18,
+      "en": "Eraser / Rubber",
+      "gu": "રબર / ભૂંસણી",
+      "transliteration": "Rabar / Bhūnsaṇī",
+      "category": "Stationery",
+      "emoji": "🩹"
+    },
+    {
+      "id": 19,
+      "en": "Sharpener",
+      "gu": "સંચો / શાર્પનર",
+      "transliteration": "Sancho / Sharpener",
+      "category": "Stationery",
+      "emoji": "🔪"
+    },
+    {
+      "id": 20,
+      "en": "Ruler / Scale",
+      "gu": "માપપટ્ટી / ફૂટપટ્ટી",
+      "transliteration": "Māppaṭṭī / Fūṭpaṭṭī",
+      "category": "Stationery",
+      "emoji": "📏"
+    },
+    {
+      "id": 21,
+      "en": "Pencil Box / Compass Box",
+      "gu": "કંપાસ બોક્સ",
+      "transliteration": "Compass Box",
+      "category": "Supplies",
+      "emoji": "🧰"
+    },
+    {
+      "id": 22,
+      "en": "Crayons",
+      "gu": "મીણિયા રંગ / ક્રેયોન્સ",
+      "transliteration": "Mīṇiyā Rang",
+      "category": "Art Supplies",
+      "emoji": "🖍️"
+    },
+    {
+      "id": 23,
+      "en": "Water Colors",
+      "gu": "વોટર કલર",
+      "transliteration": "Water Color",
+      "category": "Art Supplies",
+      "emoji": "🎨"
+    },
+    {
+      "id": 24,
+      "en": "Paintbrush",
+      "gu": "પીંછી",
+      "transliteration": "Pīnchhī",
+      "category": "Art Supplies",
+      "emoji": "🖌️"
+    },
+    {
+      "id": 25,
+      "en": "Scissors",
+      "gu": "કાતર",
+      "transliteration": "Kātar",
+      "category": "Tools",
+      "emoji": "✂️"
+    },
+    {
+      "id": 26,
+      "en": "Glue / Gum",
+      "gu": "ગુંદર",
+      "transliteration": "Gundar",
+      "category": "Supplies",
+      "emoji": "🧴"
+    },
+    {
+      "id": 27,
+      "en": "Paper / Page",
+      "gu": "કાગળ / પાનું",
+      "transliteration": "Kāgaḷ / Pānun",
+      "category": "Stationery",
+      "emoji": "📄"
+    },
+    {
+      "id": 28,
+      "en": "Library",
+      "gu": "પુસ્તકાલય / ગ્રંથાલય",
+      "transliteration": "Pustakālay",
+      "category": "Institution",
+      "emoji": "📚"
+    },
+    {
+      "id": 29,
+      "en": "Playground",
+      "gu": "રમતનું મેદાન",
+      "transliteration": "Ramat-nun Maidān",
+      "category": "Institution",
+      "emoji": "⚽"
+    },
+    {
+      "id": 30,
+      "en": "School Bell",
+      "gu": "શાળાનો ઘંટ",
+      "transliteration": "Shāḷā-no Ghaṇṭ",
+      "category": "Classroom Tools",
+      "emoji": "🔔"
+    },
+    {
+      "id": 31,
+      "en": "Examination / Test",
+      "gu": "પરીક્ષા / કસોટી",
+      "transliteration": "Parīkṣhā / Kasoṭī",
+      "category": "Academic",
+      "emoji": "📝"
+    },
+    {
+      "id": 32,
+      "en": "Homework",
+      "gu": "ગૃહકાર્ય / હોમવર્ક",
+      "transliteration": "Gruhakārya",
+      "category": "Academic",
+      "emoji": "📑"
+    },
+    {
+      "id": 33,
+      "en": "Globe",
+      "gu": "પૃથ્વીનો ગોળો",
+      "transliteration": "Pruthvī-no Goḷo",
+      "category": "Teaching Aid",
+      "emoji": "🌐"
+    },
+    {
+      "id": 34,
+      "en": "Map",
+      "gu": "નકશો",
+      "transliteration": "Naksho",
+      "category": "Teaching Aid",
+      "emoji": "🗺️"
+    },
+    {
+      "id": 35,
+      "en": "Uniform",
+      "gu": "ગણવેશ / યુનિફોર્મ",
+      "transliteration": "Gaṇavesh",
+      "category": "Supplies",
+      "emoji": "👔"
+    },
+    {
+      "id": 36,
+      "en": "Water Bottle",
+      "gu": "પાણીની બોટલ",
+      "transliteration": "Pāṇī-nī Bottle",
+      "category": "Supplies",
+      "emoji": "🍶"
+    },
+    {
+      "id": 37,
+      "en": "Lunch Box",
+      "gu": "નાસ્તાનો ડબ્બો / લંચબોક્સ",
+      "transliteration": "Nāstā-no Ḍabbo",
+      "category": "Supplies",
+      "emoji": "🍱"
+    },
+    {
+      "id": 38,
+      "en": "Report Card",
+      "gu": "પ્રગતિ પત્રક / પરિણામ",
+      "transliteration": "Pragati Patrak",
+      "category": "Academic",
+      "emoji": "📜"
+    }
+  ]
+}

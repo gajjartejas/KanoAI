@@ -1,0 +1,368 @@
+{
+  "sectionId": 8,
+  "sectionSlug": "fruits-vegetables-flowers",
+  "sectionName": "Fruits, Vegetables & Flowers (ફળો, શાકભાજી અને ફૂલો)",
+  "totalItems": 45,
+  "items": [
+    {
+      "id": 1,
+      "en": "Mango",
+      "gu": "કેરી",
+      "transliteration": "Kerī",
+      "category": "Fruits",
+      "emoji": "🥭"
+    },
+    {
+      "id": 2,
+      "en": "Apple",
+      "gu": "સફરજન",
+      "transliteration": "Safarjan",
+      "category": "Fruits",
+      "emoji": "🍎"
+    },
+    {
+      "id": 3,
+      "en": "Banana",
+      "gu": "કેળું",
+      "transliteration": "Keḷun",
+      "category": "Fruits",
+      "emoji": "🍌"
+    },
+    {
+      "id": 4,
+      "en": "Grapes",
+      "gu": "દ્રાક્ષ",
+      "transliteration": "Drākṣha",
+      "category": "Fruits",
+      "emoji": "🍇"
+    },
+    {
+      "id": 5,
+      "en": "Orange",
+      "gu": "સંતરું / નારંગી",
+      "transliteration": "Santrun / Nārangī",
+      "category": "Fruits",
+      "emoji": "🍊"
+    },
+    {
+      "id": 6,
+      "en": "Papaya",
+      "gu": "પપૈયું",
+      "transliteration": "Papaiyun",
+      "category": "Fruits",
+      "emoji": "🍈"
+    },
+    {
+      "id": 7,
+      "en": "Guava",
+      "gu": "જામફળ",
+      "transliteration": "Jāmfaḷ",
+      "category": "Fruits",
+      "emoji": "🍐"
+    },
+    {
+      "id": 8,
+      "en": "Watermelon",
+      "gu": "તરબૂચ",
+      "transliteration": "Tarbūch",
+      "category": "Fruits",
+      "emoji": "🍉"
+    },
+    {
+      "id": 9,
+      "en": "Pomegranate",
+      "gu": "દાડમ",
+      "transliteration": "Dāḍam",
+      "category": "Fruits",
+      "emoji": "🍎"
+    },
+    {
+      "id": 10,
+      "en": "Pineapple",
+      "gu": "અનાનસ",
+      "transliteration": "Anānas",
+      "category": "Fruits",
+      "emoji": "🍍"
+    },
+    {
+      "id": 11,
+      "en": "Chikoo / Sapodilla",
+      "gu": "ચીકુ",
+      "transliteration": "Chīkū",
+      "category": "Fruits",
+      "emoji": "🥔"
+    },
+    {
+      "id": 12,
+      "en": "Coconut",
+      "gu": "નાળિયેર / શ્રીફળ",
+      "transliteration": "Nāḷiyer / Shrīfaḷ",
+      "category": "Fruits",
+      "emoji": "🥥"
+    },
+    {
+      "id": 13,
+      "en": "Strawberry",
+      "gu": "સ્ટ્રોબેરી",
+      "transliteration": "Strawberry",
+      "category": "Fruits",
+      "emoji": "🍓"
+    },
+    {
+      "id": 14,
+      "en": "Lemon",
+      "gu": "લીંબુ",
+      "transliteration": "Līmbu",
+      "category": "Fruits",
+      "emoji": "🍋"
+    },
+    {
+      "id": 15,
+      "en": "Custard Apple",
+      "gu": "સીતાફળ",
+      "transliteration": "Sītāfaḷ",
+      "category": "Fruits",
+      "emoji": "🍈"
+    },
+    {
+      "id": 16,
+      "en": "Fig",
+      "gu": "અંજીર",
+      "transliteration": "Anjīr",
+      "category": "Fruits",
+      "emoji": "🫐"
+    },
+    {
+      "id": 17,
+      "en": "Dates",
+      "gu": "ખજૂર",
+      "transliteration": "Khajūr",
+      "category": "Fruits",
+      "emoji": "🌴"
+    },
+    {
+      "id": 18,
+      "en": "Potato",
+      "gu": "બટાટા / બટાકા",
+      "transliteration": "Baṭāṭā / Baṭākā",
+      "category": "Vegetables",
+      "emoji": "🥔"
+    },
+    {
+      "id": 19,
+      "en": "Tomato",
+      "gu": "ટામેટું",
+      "transliteration": "Ṭāmeṭun",
+      "category": "Vegetables",
+      "emoji": "🍅"
+    },
+    {
+      "id": 20,
+      "en": "Onion",
+      "gu": "ડુંગળી / કાંદા",
+      "transliteration": "Ḍungaḷī / Kānadā",
+      "category": "Vegetables",
+      "emoji": "🧅"
+    },
+    {
+      "id": 21,
+      "en": "Garlic",
+      "gu": "લસણ",
+      "transliteration": "Lasaṇ",
+      "category": "Vegetables",
+      "emoji": "🧄"
+    },
+    {
+      "id": 22,
+      "en": "Ginger",
+      "gu": "આદુ",
+      "transliteration": "Ādu",
+      "category": "Vegetables",
+      "emoji": "🫚"
+    },
+    {
+      "id": 23,
+      "en": "Brinjal / Eggplant",
+      "gu": "રીંગણ",
+      "transliteration": "Rīngaṇ",
+      "category": "Vegetables",
+      "emoji": "🍆"
+    },
+    {
+      "id": 24,
+      "en": "Cauliflower",
+      "gu": "ફૂલેવર",
+      "transliteration": "Fūlevar",
+      "category": "Vegetables",
+      "emoji": "🥦"
+    },
+    {
+      "id": 25,
+      "en": "Cabbage",
+      "gu": "કોબીજ",
+      "transliteration": "Kobīj",
+      "category": "Vegetables",
+      "emoji": "🥬"
+    },
+    {
+      "id": 26,
+      "en": "Ladyfinger / Okra",
+      "gu": "ભીંડો",
+      "transliteration": "Bhīnḍo",
+      "category": "Vegetables",
+      "emoji": "🫛"
+    },
+    {
+      "id": 27,
+      "en": "Green Peas",
+      "gu": "વટાણા",
+      "transliteration": "Vaṭāṇā",
+      "category": "Vegetables",
+      "emoji": "🫛"
+    },
+    {
+      "id": 28,
+      "en": "Spinach",
+      "gu": "પાલક",
+      "transliteration": "Pālak",
+      "category": "Vegetables",
+      "emoji": "🥬"
+    },
+    {
+      "id": 29,
+      "en": "Bottle Gourd",
+      "gu": "દૂધી",
+      "transliteration": "Dūdhī",
+      "category": "Vegetables",
+      "emoji": "🥒"
+    },
+    {
+      "id": 30,
+      "en": "Bitter Gourd",
+      "gu": "કારેલું",
+      "transliteration": "Kārelun",
+      "category": "Vegetables",
+      "emoji": "🥒"
+    },
+    {
+      "id": 31,
+      "en": "Fenugreek Leaves",
+      "gu": "મેથી",
+      "transliteration": "Methī",
+      "category": "Vegetables",
+      "emoji": "🌿"
+    },
+    {
+      "id": 32,
+      "en": "Carrot",
+      "gu": "ગાજર",
+      "transliteration": "Gājar",
+      "category": "Vegetables",
+      "emoji": "🥕"
+    },
+    {
+      "id": 33,
+      "en": "Radish",
+      "gu": "મૂળો",
+      "transliteration": "Mūḷo",
+      "category": "Vegetables",
+      "emoji": "🥕"
+    },
+    {
+      "id": 34,
+      "en": "Cucumber",
+      "gu": "કાકડી",
+      "transliteration": "Kākḍī",
+      "category": "Vegetables",
+      "emoji": "🥒"
+    },
+    {
+      "id": 35,
+      "en": "Beetroot",
+      "gu": "બીટ",
+      "transliteration": "Bīṭ",
+      "category": "Vegetables",
+      "emoji": "🍠"
+    },
+    {
+      "id": 36,
+      "en": "Green Chilli",
+      "gu": "લીલું મરચું",
+      "transliteration": "Līlun Marchun",
+      "category": "Vegetables",
+      "emoji": "🌶️"
+    },
+    {
+      "id": 37,
+      "en": "Coriander",
+      "gu": "કોથમીર / ધાણા",
+      "transliteration": "Kothmīr / Dhāṇā",
+      "category": "Vegetables",
+      "emoji": "🌿"
+    },
+    {
+      "id": 38,
+      "en": "Mint",
+      "gu": "ફુદીનો",
+      "transliteration": "Fudīno",
+      "category": "Vegetables",
+      "emoji": "🌱"
+    },
+    {
+      "id": 39,
+      "en": "Rose",
+      "gu": "ગુલાબ",
+      "transliteration": "Gulāb",
+      "category": "Flowers",
+      "emoji": "🌹"
+    },
+    {
+      "id": 40,
+      "en": "Lotus",
+      "gu": "કમળ",
+      "transliteration": "Kamaḷ",
+      "category": "Flowers",
+      "emoji": "🪷"
+    },
+    {
+      "id": 41,
+      "en": "Marigold",
+      "gu": "ગલગોટો",
+      "transliteration": "Galgoṭo",
+      "category": "Flowers",
+      "emoji": "🌼"
+    },
+    {
+      "id": 42,
+      "en": "Sunflower",
+      "gu": "સૂર્યમુખી",
+      "transliteration": "Sūryamukhī",
+      "category": "Flowers",
+      "emoji": "🌻"
+    },
+    {
+      "id": 43,
+      "en": "Jasmine",
+      "gu": "મોગરો / ચમેલી",
+      "transliteration": "Mogro / Chamelī",
+      "category": "Flowers",
+      "emoji": "🤍"
+    },
+    {
+      "id": 44,
+      "en": "Hibiscus",
+      "gu": "જાસૂદ",
+      "transliteration": "Jāsūd",
+      "category": "Flowers",
+      "emoji": "🌺"
+    },
+    {
+      "id": 45,
+      "en": "Champak / Plumeria",
+      "gu": "ચંપો",
+      "transliteration": "Champo",
+      "category": "Flowers",
+      "emoji": "🌸"
+    }
+  ]
+}

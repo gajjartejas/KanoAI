@@ -10,14 +10,16 @@ An open-source ecosystem bridging classical Gujarati typography, dynamic stroke 
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Stroke%20Animator-brightgreen?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/)
 [![Live Handwriting Demo](https://img.shields.io/badge/Live%20Demo-Handwriting%20Suite-blue?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/handwriting/)
+[![Live TTS Demo](https://img.shields.io/badge/Live%20Demo-TTS%20Voice%20Studio-orange?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/#tts)
 
 🌐 **Live Interactive Apps**:
 - **🖋️ Kano Stroke Animator & Audio**: [https://gajjartejas.github.io/KanoAI/](https://gajjartejas.github.io/KanoAI/)
 - **✍️ Kano Handwriting Recognition & Practice Suite**: [https://gajjartejas.github.io/KanoAI/handwriting/](https://gajjartejas.github.io/KanoAI/handwriting/)
+- **🗣️ Kano Gujarati Voice (TTS) Studio**: [https://gajjartejas.github.io/KanoAI/#tts](https://gajjartejas.github.io/KanoAI/#tts)
 
-| 🖋️ Stroke Animator & Kano Audio Suite | ✍️ Handwriting Recognition & Practice Suite |
-| :---: | :---: |
-| [![Kano Stroke Animator & Audio Suite](docs/assets/preview.png)](https://gajjartejas.github.io/KanoAI/) | [![Kano Handwriting Recognition Suite](docs/assets/preview-handwriting.png)](https://gajjartejas.github.io/KanoAI/handwriting/) |
+| 🖋️ Stroke Animator & Kano Audio Suite | ✍️ Handwriting Recognition & Practice Suite | 🗣️ Gujarati Text-to-Speech (TTS) Studio |
+| :---: | :---: | :---: |
+| [![Kano Stroke Animator & Audio Suite](docs/assets/preview.png)](https://gajjartejas.github.io/KanoAI/) | [![Kano Handwriting Recognition Suite](docs/assets/preview-handwriting.png)](https://gajjartejas.github.io/KanoAI/handwriting/) | [![Kano Gujarati TTS Studio](docs/assets/preview-tts.png)](https://gajjartejas.github.io/KanoAI/#tts) |
 
 ---
 
@@ -28,10 +30,10 @@ An open-source ecosystem bridging classical Gujarati typography, dynamic stroke 
 | **🖋️ Kano Trace** | ✅ **Live** | Stroke-by-stroke animation, EDT centerline extraction, and 565-character stroke catalog. |
 | **✍️ Kano Handwriting** | ✅ **Live** | Real-time offline recognition combining Sakoe-Chiba DTW + in-memory Tiny CNN. |
 | **🔊 Kano Audio** | ✅ **Live** | Compressed, crystal-clear native speech pronunciations for all 565 characters. |
-| **🗣️ Kano Voice (TTS)** | 🚧 **In Progress** | Neural Text-to-Speech generation optimized for Gujarati phonetics and intonation. |
+| **🗣️ Kano Voice (TTS)** | ✅ **Live** | State-of-the-art neural TTS with AI4Bharat IndicF5 & Indic-TTS / Bodhan Indic-Speak. |
 | **🎙️ Kano Listen (STT)** | 📋 **Planned** | Offline & low-latency Gujarati Speech-to-Text acoustic modeling. |
 | **🧠 Kano Grammar (AI)** | 📋 **Planned** | LLM-assisted Gujarati spell-checker, grammar analysis, sandhi/samasa parser, and NLP toolkits. |
-| **⚡ Kano API** | 📋 **Planned** | Lightweight REST / JSON microservices for characters, strokes, phonemes, and audio. |
+| **⚡ Kano API** | ✅ **Live** | Lightweight REST / JSON microservices for characters, strokes, phonemes, and audio synthesis. |
 
 ---
 
@@ -124,6 +126,63 @@ npm run build:web   # Export production bundle to docs/handwriting
 
 ---
 
+## 🗣️ Gujarati Text-to-Speech (TTS) Studio (`python/tts/`)
+
+State-of-the-Art Gujarati Neural Voice Generation integrating both primary AI4Bharat models:
+
+1. **AI4Bharat IndicF5** ([GitHub](https://github.com/AI4Bharat/IndicF5) / [HuggingFace](https://huggingface.co/ai4bharat/IndicF5)):
+   - **Architecture**: Flow-matching diffusion-style voice synthesis (24,000 Hz).
+   - **Capabilities**: Zero-shot voice conditioning, reference mimicking with Kano audio, high human prosody.
+2. **AI4Bharat Indic-TTS / Bodhan-AI Indic-Speak** ([GitHub](https://github.com/AI4Bharat/Indic-TTS) / [HuggingFace](https://huggingface.co/bodhan-ai/indic-speak)):
+   - **Architecture**: Multi-speaker fast neural acoustic model (44,100 Hz).
+   - **Capabilities**: Preset native Gujarati speaker profiles (`Dhara` - Female, `Parth` - Male), sub-5s synthesis latency.
+
+### 🖥️ TTS Studio Preview
+
+[![Gujarati Text-to-Speech Studio Preview](docs/assets/preview-tts.png)](https://gajjartejas.github.io/KanoAI/#tts)
+
+### 🚀 Running the TTS API Server & Web Studio
+
+```bash
+# 1. Start the lightweight TTS HTTP API server (port 8000)
+.venv/bin/python3 python/tts/server.py --port 8000
+
+# 2. Open the web studio in docs/ or via local server
+python3 -m http.server 8085 --directory docs
+# Navigate to: http://localhost:8085/#tts
+```
+
+### 💻 Running Locally (Offline / Custom Server Mode)
+
+To run without Hugging Face cloud dependencies or ZeroGPU rate limits, you can launch standalone local servers:
+
+```bash
+# Run local standalone IndicF5 server (port 7860):
+.venv/bin/python3 python/tts/run_local_indic_f5.py --port 7860
+
+# Run local standalone Indic-TTS server (port 7861):
+.venv/bin/python3 python/tts/run_local_indic_tts.py --port 7861
+```
+In the Web Studio UI, choose **"💻 Local Server"** or enter a **"✏️ Custom Endpoint URL"** from the settings dropdown. Custom endpoints can also be supplied programmatically via `--api-url` or REST payload (`f5_api_url`, `tts_api_url`).
+
+### 💻 TTS Command Line Interface (CLI)
+
+```bash
+# Synthesize with Indic-TTS (Dhara)
+.venv/bin/python3 python/tts/cli.py --engine indic_tts --text "નમસ્તે KanoAI" --output output/tts/dhara.wav
+
+# Synthesize with IndicF5
+.venv/bin/python3 python/tts/cli.py --engine indic_f5 --text "નમસ્તે KanoAI" --output output/tts/f5.wav
+
+# Side-by-side comparison (Both engines)
+.venv/bin/python3 python/tts/cli.py --compare --text "ગુજરાતી ભાષા ખૂબ જ સુંદર છે."
+
+# Run automated test suite
+.venv/bin/python3 python/tts/cli.py --test
+```
+
+---
+
 ## 🟢 Node.js Workspace (`node/`)
 
 Used for rendering standard glyph SVGs, CSV matrices, and Google Wavenet audio files.
@@ -183,8 +242,7 @@ All characters can be interactively browsed, animated, pronounced, and practiced
 
 - [x] **Kano Trace**: 565-character stroke animation & analytical EDT centerline extraction.
 - [x] **Kano Handwriting**: Dual DTW + Tiny CNN offline recognition engine (<20ms latency).
-- [x] **Kano Audio**: High-efficiency compressed MP3 audio pronunciations for all characters.
-- [ ] **Kano Voice (TTS)**: Neural Gujarati speech synthesis model for natural reading & pronunciation.
+- [x] **Kano Voice (TTS)**: Neural Gujarati speech synthesis model (AI4Bharat IndicF5 & Indic-TTS / Bodhan-AI Indic-Speak) with smooth 60fps waveform sync.
 - [ ] **Kano Listen (STT)**: Offline Speech-to-Text engine optimized for regional accents.
 - [ ] **Kano Grammar AI**: Contextual spell-checker, Sandhi/Samasa decomposition, and morphological analysis.
 - [ ] **Kano Cloud API**: Developer REST/GraphQL endpoints for character stroke vectors, phonetics, and datasets.

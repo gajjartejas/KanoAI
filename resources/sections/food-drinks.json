@@ -1,0 +1,368 @@
+{
+  "sectionId": 9,
+  "sectionSlug": "food-drinks",
+  "sectionName": "Food & Drinks (ખોરાક અને પીણાં)",
+  "totalItems": 45,
+  "items": [
+    {
+      "id": 1,
+      "en": "Roti / Rotli",
+      "gu": "રોટલી",
+      "transliteration": "Roṭlī",
+      "category": "Breads",
+      "emoji": "🫓"
+    },
+    {
+      "id": 2,
+      "en": "Bhakhri",
+      "gu": "ભાખરી",
+      "transliteration": "Bhākhrī",
+      "category": "Breads",
+      "emoji": "🫓"
+    },
+    {
+      "id": 3,
+      "en": "Thepla",
+      "gu": "થેપલાં",
+      "transliteration": "Theplān",
+      "category": "Breads",
+      "emoji": "🥞"
+    },
+    {
+      "id": 4,
+      "en": "Puri",
+      "gu": "પૂરી",
+      "transliteration": "Pūrī",
+      "category": "Breads",
+      "emoji": "🥟"
+    },
+    {
+      "id": 5,
+      "en": "Rotla (Millet Bread)",
+      "gu": "રોટલો",
+      "transliteration": "Roṭlo",
+      "category": "Breads",
+      "emoji": "🫓"
+    },
+    {
+      "id": 6,
+      "en": "Gujarati Dal",
+      "gu": "દાળ",
+      "transliteration": "Dāḷ",
+      "category": "Main Course",
+      "emoji": "🍲"
+    },
+    {
+      "id": 7,
+      "en": "Rice / Bhat",
+      "gu": "ભાત",
+      "transliteration": "Bhāt",
+      "category": "Main Course",
+      "emoji": "🍚"
+    },
+    {
+      "id": 8,
+      "en": "Kadhi",
+      "gu": "કઢી",
+      "transliteration": "Kaḍhī",
+      "category": "Main Course",
+      "emoji": "🥣"
+    },
+    {
+      "id": 9,
+      "en": "Khichdi",
+      "gu": "ખીચડી",
+      "transliteration": "Khīchḍī",
+      "category": "Main Course",
+      "emoji": "🍛"
+    },
+    {
+      "id": 10,
+      "en": "Sabzi / Shaak",
+      "gu": "શાક",
+      "transliteration": "Shāk",
+      "category": "Main Course",
+      "emoji": "🥘"
+    },
+    {
+      "id": 11,
+      "en": "Undhiyu",
+      "gu": "ઊંધિયું",
+      "transliteration": "Ūndhiyun",
+      "category": "Main Course",
+      "emoji": "🍲"
+    },
+    {
+      "id": 12,
+      "en": "Dhokla",
+      "gu": "ઢોકળાં",
+      "transliteration": "Ḍhokḷān",
+      "category": "Farsan (Snacks)",
+      "emoji": "🟨"
+    },
+    {
+      "id": 13,
+      "en": "Khaman",
+      "gu": "ખમણ",
+      "transliteration": "Khamaṇ",
+      "category": "Farsan (Snacks)",
+      "emoji": "🟨"
+    },
+    {
+      "id": 14,
+      "en": "Handvo",
+      "gu": "હાંડવો",
+      "transliteration": "Hānḍvo",
+      "category": "Farsan (Snacks)",
+      "emoji": "🥧"
+    },
+    {
+      "id": 15,
+      "en": "Fafda",
+      "gu": "ફાફડા",
+      "transliteration": "Fāfḍā",
+      "category": "Farsan (Snacks)",
+      "emoji": "🍟"
+    },
+    {
+      "id": 16,
+      "en": "Jalebi",
+      "gu": "જલેબી",
+      "transliteration": "Jalebī",
+      "category": "Sweets",
+      "emoji": "🥨"
+    },
+    {
+      "id": 17,
+      "en": "Patra",
+      "gu": "પાત્રા",
+      "transliteration": "Pātrā",
+      "category": "Farsan (Snacks)",
+      "emoji": "🍃"
+    },
+    {
+      "id": 18,
+      "en": "Muthiya",
+      "gu": "મુઠીયાં",
+      "transliteration": "Muṭhiyān",
+      "category": "Farsan (Snacks)",
+      "emoji": "🍢"
+    },
+    {
+      "id": 19,
+      "en": "Khakhra",
+      "gu": "ખાખરા",
+      "transliteration": "Khākhrā",
+      "category": "Farsan (Snacks)",
+      "emoji": "🍘"
+    },
+    {
+      "id": 20,
+      "en": "Gathiya",
+      "gu": "ગાંઠિયા",
+      "transliteration": "Gānṭhiyā",
+      "category": "Farsan (Snacks)",
+      "emoji": "🥨"
+    },
+    {
+      "id": 21,
+      "en": "Sev",
+      "gu": "સેવ",
+      "transliteration": "Sev",
+      "category": "Farsan (Snacks)",
+      "emoji": "🍜"
+    },
+    {
+      "id": 22,
+      "en": "Samosa",
+      "gu": "સમોસા",
+      "transliteration": "Samosā",
+      "category": "Farsan (Snacks)",
+      "emoji": "🥟"
+    },
+    {
+      "id": 23,
+      "en": "Kachori",
+      "gu": "કચોરી",
+      "transliteration": "Kachorī",
+      "category": "Farsan (Snacks)",
+      "emoji": "🥟"
+    },
+    {
+      "id": 24,
+      "en": "Bhajiya / Pakoda",
+      "gu": "ભજીયાં",
+      "transliteration": "Bhajiyān",
+      "category": "Farsan (Snacks)",
+      "emoji": "🧆"
+    },
+    {
+      "id": 25,
+      "en": "Shrikhand",
+      "gu": "શ્રીખંડ",
+      "transliteration": "Shrīkhanḍ",
+      "category": "Sweets",
+      "emoji": "🍨"
+    },
+    {
+      "id": 26,
+      "en": "Gulab Jamun",
+      "gu": "ગુલાબ જાંબુ",
+      "transliteration": "Gulāb Jāmbu",
+      "category": "Sweets",
+      "emoji": "🟤"
+    },
+    {
+      "id": 27,
+      "en": "Laddu / Ladu",
+      "gu": "લાડુ",
+      "transliteration": "Lāḍu",
+      "category": "Sweets",
+      "emoji": "🟡"
+    },
+    {
+      "id": 28,
+      "en": "Mohanthal",
+      "gu": "મોહનથાળ",
+      "transliteration": "Mohanthāḷ",
+      "category": "Sweets",
+      "emoji": "🟫"
+    },
+    {
+      "id": 29,
+      "en": "Peda",
+      "gu": "પેંડા",
+      "transliteration": "Penḍā",
+      "category": "Sweets",
+      "emoji": "🥯"
+    },
+    {
+      "id": 30,
+      "en": "Kheer",
+      "gu": "ખીર",
+      "transliteration": "Khīr",
+      "category": "Sweets",
+      "emoji": "🥣"
+    },
+    {
+      "id": 31,
+      "en": "Basundi",
+      "gu": "બાસુંદી",
+      "transliteration": "Bāsundī",
+      "category": "Sweets",
+      "emoji": "🥛"
+    },
+    {
+      "id": 32,
+      "en": "Halwa",
+      "gu": "હલવો / શીરો",
+      "transliteration": "Halvo / Shīro",
+      "category": "Sweets",
+      "emoji": "🍮"
+    },
+    {
+      "id": 33,
+      "en": "Sukhdi",
+      "gu": "સુખડી",
+      "transliteration": "Sukhḍī",
+      "category": "Sweets",
+      "emoji": "🟫"
+    },
+    {
+      "id": 34,
+      "en": "Papad",
+      "gu": "પાપડ",
+      "transliteration": "Pāpaḍ",
+      "category": "Sides",
+      "emoji": "🫓"
+    },
+    {
+      "id": 35,
+      "en": "Pickle",
+      "gu": "અથાણું",
+      "transliteration": "Athāṇun",
+      "category": "Sides",
+      "emoji": "🫙"
+    },
+    {
+      "id": 36,
+      "en": "Chutney",
+      "gu": "ચટણી",
+      "transliteration": "Chaṭṇī",
+      "category": "Sides",
+      "emoji": "🥣"
+    },
+    {
+      "id": 37,
+      "en": "Buttermilk / Chhas",
+      "gu": "છાશ",
+      "transliteration": "Chhāsh",
+      "category": "Drinks",
+      "emoji": "🥛"
+    },
+    {
+      "id": 38,
+      "en": "Milk",
+      "gu": "દૂધ",
+      "transliteration": "Dūdh",
+      "category": "Drinks",
+      "emoji": "🥛"
+    },
+    {
+      "id": 39,
+      "en": "Curd / Yogurt",
+      "gu": "દહીં",
+      "transliteration": "Dahīn",
+      "category": "Dairy",
+      "emoji": "🥣"
+    },
+    {
+      "id": 40,
+      "en": "Butter / Makhan",
+      "gu": "માખણ",
+      "transliteration": "Mākhaṇ",
+      "category": "Dairy",
+      "emoji": "🧈"
+    },
+    {
+      "id": 41,
+      "en": "Ghee",
+      "gu": "ઘી",
+      "transliteration": "Ghī",
+      "category": "Dairy",
+      "emoji": "🫙"
+    },
+    {
+      "id": 42,
+      "en": "Tea / Chai",
+      "gu": "ચા",
+      "transliteration": "Chā",
+      "category": "Drinks",
+      "emoji": "☕"
+    },
+    {
+      "id": 43,
+      "en": "Coffee",
+      "gu": "કોફી",
+      "transliteration": "Coffee",
+      "category": "Drinks",
+      "emoji": "☕"
+    },
+    {
+      "id": 44,
+      "en": "Water",
+      "gu": "પાણી / જળ",
+      "transliteration": "Pāṇī / Jaḷ",
+      "category": "Drinks",
+      "emoji": "💧"
+    },
+    {
+      "id": 45,
+      "en": "Fruit Juice",
+      "gu": "શરબત / રસ",
+      "transliteration": "Sharbat / Ras",
+      "category": "Drinks",
+      "emoji": "🧃"
+    }
+  ]
+}

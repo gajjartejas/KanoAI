@@ -1,0 +1,248 @@
+{
+  "sectionId": 17,
+  "sectionSlug": "directions-earth",
+  "sectionName": "Directions & Earth (દિશાઓ અને પૃથ્વી)",
+  "totalItems": 30,
+  "items": [
+    {
+      "id": 1,
+      "en": "East",
+      "gu": "પૂર્વ / ઊગમણી દિશા",
+      "transliteration": "Pūrva / Ūgamaṇī",
+      "category": "Cardinal Directions",
+      "emoji": "🌅"
+    },
+    {
+      "id": 2,
+      "en": "West",
+      "gu": "પશ્ચિમ / આથમણી દિશા",
+      "transliteration": "Pashchim / Āthamaṇī",
+      "category": "Cardinal Directions",
+      "emoji": "🌇"
+    },
+    {
+      "id": 3,
+      "en": "North",
+      "gu": "ઉત્તર",
+      "transliteration": "Uttar",
+      "category": "Cardinal Directions",
+      "emoji": "🧭"
+    },
+    {
+      "id": 4,
+      "en": "South",
+      "gu": "દક્ષિણ",
+      "transliteration": "Dakṣhiṇ",
+      "category": "Cardinal Directions",
+      "emoji": "🧭"
+    },
+    {
+      "id": 5,
+      "en": "North-East",
+      "gu": "ઈશાન",
+      "transliteration": "Īshān",
+      "category": "Ordinal Directions",
+      "emoji": "↗️"
+    },
+    {
+      "id": 6,
+      "en": "South-East",
+      "gu": "અગ્નિ",
+      "transliteration": "Agni",
+      "category": "Ordinal Directions",
+      "emoji": "↘️"
+    },
+    {
+      "id": 7,
+      "en": "South-West",
+      "gu": "નૈઋત્ય",
+      "transliteration": "Nairutya",
+      "category": "Ordinal Directions",
+      "emoji": "↙️"
+    },
+    {
+      "id": 8,
+      "en": "North-West",
+      "gu": "વાયવ્ય",
+      "transliteration": "Vāyavya",
+      "category": "Ordinal Directions",
+      "emoji": "↖️"
+    },
+    {
+      "id": 9,
+      "en": "Up / Above",
+      "gu": "ઉપર / ઊંચે",
+      "transliteration": "Ūpar / Ūnche",
+      "category": "Spatial Orientation",
+      "emoji": "⬆️"
+    },
+    {
+      "id": 10,
+      "en": "Down / Below",
+      "gu": "નીચે",
+      "transliteration": "Nīche",
+      "category": "Spatial Orientation",
+      "emoji": "⬇️"
+    },
+    {
+      "id": 11,
+      "en": "Left",
+      "gu": "ડાબું",
+      "transliteration": "Ḍābun",
+      "category": "Spatial Orientation",
+      "emoji": "⬅️"
+    },
+    {
+      "id": 12,
+      "en": "Right",
+      "gu": "જમણું",
+      "transliteration": "Jamṇun",
+      "category": "Spatial Orientation",
+      "emoji": "➡️"
+    },
+    {
+      "id": 13,
+      "en": "Front / Forward",
+      "gu": "આગળ",
+      "transliteration": "Āgaḷ",
+      "category": "Spatial Orientation",
+      "emoji": "⏩"
+    },
+    {
+      "id": 14,
+      "en": "Back / Behind",
+      "gu": "પાછળ",
+      "transliteration": "Pāchhaḷ",
+      "category": "Spatial Orientation",
+      "emoji": "⏪"
+    },
+    {
+      "id": 15,
+      "en": "Inside",
+      "gu": "અંદર",
+      "transliteration": "Andar",
+      "category": "Spatial Orientation",
+      "emoji": "📥"
+    },
+    {
+      "id": 16,
+      "en": "Outside",
+      "gu": "બહાર",
+      "transliteration": "Bahār",
+      "category": "Spatial Orientation",
+      "emoji": "📤"
+    },
+    {
+      "id": 17,
+      "en": "Middle / Center",
+      "gu": "વચ્ચે / મધ્ય",
+      "transliteration": "Vachche / Madhya",
+      "category": "Spatial Orientation",
+      "emoji": "🎯"
+    },
+    {
+      "id": 18,
+      "en": "Near / Close",
+      "gu": "નજીક / પાસે",
+      "transliteration": "Najīk / Pāse",
+      "category": "Spatial Orientation",
+      "emoji": "📍"
+    },
+    {
+      "id": 19,
+      "en": "Far / Distant",
+      "gu": "દૂર / છેટું",
+      "transliteration": "Dūr / Chheṭun",
+      "category": "Spatial Orientation",
+      "emoji": "🔭"
+    },
+    {
+      "id": 20,
+      "en": "Earth / World",
+      "gu": "પૃથ્વી / ધરતી / દુનિયા",
+      "transliteration": "Pruthvī / Dhartī",
+      "category": "Celestial & Earth",
+      "emoji": "🌍"
+    },
+    {
+      "id": 21,
+      "en": "Sky",
+      "gu": "આકાશ / આભ / ગગન",
+      "transliteration": "Ākāsh / Ābh",
+      "category": "Celestial & Earth",
+      "emoji": "🌌"
+    },
+    {
+      "id": 22,
+      "en": "Sun",
+      "gu": "સૂર્ય / સૂરજ / ભાસ્કર",
+      "transliteration": "Sūrya / Sūraj",
+      "category": "Celestial & Earth",
+      "emoji": "☀️"
+    },
+    {
+      "id": 23,
+      "en": "Moon",
+      "gu": "ચંદ્ર / ચાંદો / શશી",
+      "transliteration": "Chandra / Chāndo",
+      "category": "Celestial & Earth",
+      "emoji": "🌙"
+    },
+    {
+      "id": 24,
+      "en": "Star",
+      "gu": "તારો / નક્ષત્ર",
+      "transliteration": "Tāro / Nakṣhatra",
+      "category": "Celestial & Earth",
+      "emoji": "⭐"
+    },
+    {
+      "id": 25,
+      "en": "Planet",
+      "gu": "ગ્રહ",
+      "transliteration": "Graha",
+      "category": "Celestial & Earth",
+      "emoji": "🪐"
+    },
+    {
+      "id": 26,
+      "en": "Horizon",
+      "gu": "ક્ષિતિજ",
+      "transliteration": "Kṣhitij",
+      "category": "Earth & Nature",
+      "emoji": "🌅"
+    },
+    {
+      "id": 27,
+      "en": "Ocean",
+      "gu": "મહાસાગર / સમુદ્ર",
+      "transliteration": "Mahāsāgar / Samudra",
+      "category": "Earth & Nature",
+      "emoji": "🌊"
+    },
+    {
+      "id": 28,
+      "en": "Continent",
+      "gu": "ખંડ",
+      "transliteration": "Khanḍ",
+      "category": "Earth & Nature",
+      "emoji": "🗺️"
+    },
+    {
+      "id": 29,
+      "en": "Island",
+      "gu": "ટાપુ / દ્વીપ",
+      "transliteration": "Ṭāpu / Dvīp",
+      "category": "Earth & Nature",
+      "emoji": "🏝️"
+    },
+    {
+      "id": 30,
+      "en": "Soil / Mud",
+      "gu": "માટી / ધૂળ",
+      "transliteration": "Māṭī / Dhūḷ",
+      "category": "Earth & Nature",
+      "emoji": "🪴"
+    }
+  ]
+}

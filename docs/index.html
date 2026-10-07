@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/stage.css">
   <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/tts.css">
 
   <style>
     @keyframes drawStroke {
@@ -52,17 +53,22 @@
       </div>
     </div>
 
-    <!-- Segmented Two-Tab Navigation -->
+    <!-- Segmented Three-Tab Navigation -->
     <nav class="suite-tabs-nav" role="tablist" aria-label="Gujarati Language Suite Modules">
       <button class="suite-tab-btn active" id="tab-btn-animator" onclick="switchSuite('animator')" role="tab" aria-selected="true" aria-controls="section-animator">
         <span class="tab-icon">🖋️</span>
-        <span class="tab-label">Stroke Animator & Kano Audio</span>
+        <span class="tab-label">Stroke Animator</span>
         <span class="tab-badge">565 Glyphs</span>
       </button>
       <button class="suite-tab-btn" id="tab-btn-handwriting" onclick="switchSuite('handwriting')" role="tab" aria-selected="false" aria-controls="section-handwriting">
         <span class="tab-icon">✍️</span>
-        <span class="tab-label">Handwriting Recognition</span>
+        <span class="tab-label">Handwriting Practice</span>
         <span class="tab-badge">DTW + CNN</span>
+      </button>
+      <button class="suite-tab-btn" id="tab-btn-tts" onclick="switchSuite('tts')" role="tab" aria-selected="false" aria-controls="section-tts">
+        <span class="tab-icon">🗣️</span>
+        <span class="tab-label">Text-to-Speech (TTS)</span>
+        <span class="tab-badge">IndicF5 + Indic-TTS</span>
       </button>
     </nav>
   </header>
@@ -186,6 +192,183 @@
   </div>
 </main>
 
+<!-- Module 3: Text-to-Speech (TTS) Studio -->
+<main id="section-tts" class="suite-main-section" style="display: none;">
+  <div class="tts-workspace">
+    <!-- Header & Server Status Card -->
+    <div class="tts-header-card">
+      <div class="tts-title-group">
+        <h2>🗣️ ગુજરાતી Text-to-Speech (TTS) Studio</h2>
+        <p>State-of-the-Art Gujarati Neural Voice Generation &bull; AI4Bharat IndicF5 (Flow-Matching) & Indic-TTS / Indic-Speak (Multi-Speaker)</p>
+      </div>
+      <div class="tts-status-badge fallback" id="tts-server-status" title="Local server: python3 python/tts/server.py">
+        <span class="tts-status-dot"></span>
+        <span id="tts-status-text">Checking Server...</span>
+      </div>
+    </div>
+
+    <!-- Engine Mode Selection Cards -->
+    <div class="tts-engine-grid">
+      <!-- Engine 1: Indic-TTS (Bodhan AI Indic-Speak) -->
+      <div class="tts-engine-card active" data-engine="indic_tts">
+        <div class="tts-engine-card-header">
+          <span class="tts-engine-name">AI4Bharat Indic-TTS</span>
+          <span class="tts-engine-badge">Fast & Clear</span>
+        </div>
+        <p>Multi-speaker neural TTS with crystal-clear native Gujarati pronunciation by Dhara & Parth.</p>
+        <div class="tts-engine-meta">
+          <span>🎼 44.1 kHz</span>
+          <span>⚡ 5-10s Latency</span>
+          <span>👥 Dhara / Parth</span>
+        </div>
+      </div>
+
+      <!-- Engine 2: IndicF5 -->
+      <div class="tts-engine-card" data-engine="indic_f5">
+        <div class="tts-engine-card-header">
+          <span class="tts-engine-name">AI4Bharat IndicF5</span>
+          <span class="tts-engine-badge">Flow-Matching</span>
+        </div>
+        <p>Zero-shot flow-matching voice conditioning and cloning with natural human prosody & rhythm.</p>
+        <div class="tts-engine-meta">
+          <span>🎼 24 kHz</span>
+          <span>🎙️ Voice Cloning</span>
+          <span>🧠 F5-TTS Core</span>
+        </div>
+      </div>
+
+      <!-- Engine 3: Dual AB Comparison -->
+      <div class="tts-engine-card" data-engine="compare">
+        <div class="tts-engine-card-header">
+          <span class="tts-engine-name">Dual AB Comparison</span>
+          <span class="tts-engine-badge">Side-by-Side</span>
+        </div>
+        <p>Synthesize with both IndicF5 and Indic-TTS concurrently to evaluate voice timbre and accuracy.</p>
+        <div class="tts-engine-meta">
+          <span>⚖️ Comparative</span>
+          <span>📊 Waveform Diff</span>
+          <span>🎧 Dual Sync</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input & Controls Container -->
+    <div class="tts-input-container">
+      <!-- Left Panel: Text Area & Presets -->
+      <div class="tts-text-panel">
+        <div class="tts-panel-title">
+          <span>Gujarati Text Input (ગુજરાતી લખાણ)</span>
+          <span class="tts-text-counter-bar">
+            <span id="tts-char-count">0 chars</span> &bull; <span id="tts-word-count">0 words</span>
+          </span>
+        </div>
+
+        <div class="tts-textarea-wrapper">
+          <textarea id="tts-input-text" class="tts-textarea" placeholder="અહીં ગુજરાતીમાં વાક્ય અથવા શબ્દ લખો... (Type Gujarati text here)" rows="4">નમસ્તે! ગુજરાતી ભાષા KanoAI માં આપનું હાર્દિક સ્વાગત છે.</textarea>
+        </div>
+
+        <!-- Quick Presets -->
+        <div class="tts-presets-wrapper">
+          <span class="tts-presets-label">⚡ Quick Sample Sentences:</span>
+          <div class="tts-presets-list" id="tts-presets-list"></div>
+        </div>
+      </div>
+
+      <!-- Right Panel: Voice / Speaker Settings & Generate Button -->
+      <div class="tts-settings-panel">
+        <div class="tts-panel-title">
+          <span>Voice & Conditioning Settings</span>
+        </div>
+
+        <!-- Indic-TTS Settings -->
+        <div class="tts-setting-row" id="tts-indictts-settings">
+          <label class="tts-setting-label">Voice / Speaker Profile:</label>
+          <select id="tts-speaker-select" class="tts-select">
+            <option value="dhara" selected>Dhara (ધરા) - Female (Natural & Clear)</option>
+            <option value="parth">Parth (પાર્થ) - Male (Deep & Articulate)</option>
+          </select>
+          <div class="tts-speaker-preview-box" id="tts-speaker-preview">
+            Warm, natural, and expressive female voice with clear Gujarati diction.
+          </div>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">
+            <span>Indic-TTS API Endpoint:</span>
+          </label>
+          <select id="tts-indictts-endpoint-select" class="tts-select">
+            <option value="cloud" selected>🌐 Cloud HF (bodhan-ai-indic-speak.hf.space)</option>
+            <option value="local">💻 Local Server (http://localhost:7861)</option>
+            <option value="custom">✏️ Custom Endpoint URL...</option>
+          </select>
+          <input type="text" id="tts-indictts-custom-url" class="tts-input-field" placeholder="https://bodhan-ai-indic-speak.hf.space" style="display: none; margin-top: 4px;">
+          <div class="tts-speaker-preview-box" id="tts-indictts-endpoint-hint" style="font-size: 11px; margin-top: 4px;">
+            Local server command: <code>python python/tts/run_local_indic_tts.py --port 7861</code>
+          </div>
+        </div>
+
+        <!-- IndicF5 Settings -->
+        <div class="tts-setting-row" id="tts-indicf5-settings" style="display: none;">
+          <label class="tts-setting-label">Reference Audio:</label>
+          <select id="tts-ref-audio-select" class="tts-select">
+            <option value="kakko_ka" selected>Kano Native Kakko 'Ka' Voice (Built-in)</option>
+          </select>
+          <div class="tts-speaker-preview-box">
+            Voice conditioning from native Kano pronunciation dataset (Kakko 1_ka.mp3).
+          </div>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">
+            <span>IndicF5 API Endpoint:</span>
+          </label>
+          <select id="tts-indicf5-endpoint-select" class="tts-select">
+            <option value="cloud" selected>🌐 Cloud HF Space (ai4bharat/IndicF5)</option>
+            <option value="local">💻 Local Server (http://localhost:7860)</option>
+            <option value="custom">✏️ Custom Endpoint URL...</option>
+          </select>
+          <input type="text" id="tts-indicf5-custom-url" class="tts-input-field" placeholder="http://localhost:7860" style="display: none; margin-top: 4px;">
+          <div class="tts-speaker-preview-box" id="tts-indicf5-endpoint-hint" style="font-size: 11px; margin-top: 4px;">
+            Local server command: <code>python python/tts/run_local_indic_f5.py --port 7860</code>
+          </div>
+
+          <div id="tts-indicf5-token-group">
+            <label class="tts-setting-label" style="margin-top: 8px;">
+              <span>Hugging Face Token (Cloud ZeroGPU):</span>
+              <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-stroke); font-size: 11px; text-decoration: underline;">Get free token ↗</a>
+            </label>
+            <input type="password" id="tts-hf-token-input" class="tts-input-field" placeholder="hf_... (Optional when running locally)">
+          </div>
+        </div>
+
+        <!-- Speech Rate / Pacing -->
+        <div class="tts-setting-row" style="margin-top: 10px;">
+          <label class="tts-setting-label">Speech Pacing & Speed:</label>
+          <select id="tts-pacing-select" class="tts-select">
+            <option value="0.75" selected>🐢 0.75x (Calm & Clear - Recommended)</option>
+            <option value="0.65">🚶 0.65x (Slow & Educational)</option>
+            <option value="0.85">🗣️ 0.85x (Natural Conversational)</option>
+            <option value="1.0">⚡ 1.0x (Standard Fast)</option>
+          </select>
+        </div>
+
+        <!-- Synthesize Button -->
+        <div class="tts-action-container">
+          <button id="btn-tts-synthesize" class="btn-tts-synthesize">
+            <span class="tts-spinner" id="tts-spinner" style="display: none;"></span>
+            <span id="tts-btn-label">🎙️ ગુજરાતી સ્પીચ જનરેટ કરો (Synthesize Speech)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Section (Generated Audio Player) -->
+    <div class="tts-results-section" id="tts-results-container" style="display: none;"></div>
+
+    <!-- History Strip -->
+    <div class="tts-history-container" id="tts-history-container" style="display: none;">
+      <div class="tts-history-header">🕒 Recent Generations</div>
+      <div class="tts-history-items" id="tts-history-items"></div>
+    </div>
+  </div>
+</main>
+
 <!-- Unified Character Catalog Browser (565 Characters) - Shared across both suites -->
 <section class="catalog-section" id="common-catalog-section">
   <div class="catalog-toolbar">
@@ -229,6 +412,7 @@
   <script src="js/theme.js"></script>
   <script src="js/audio.js"></script>
   <script src="js/stage.js"></script>
+  <script src="js/tts.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

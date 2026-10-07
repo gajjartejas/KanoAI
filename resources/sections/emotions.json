@@ -1,0 +1,208 @@
+{
+  "sectionId": 20,
+  "sectionSlug": "emotions",
+  "sectionName": "Emotions & Feelings (લાગણીઓ અને ભાવો)",
+  "totalItems": 25,
+  "items": [
+    {
+      "id": 1,
+      "en": "Happy / Joyful",
+      "gu": "ખુશ / આનંદી / રાજી",
+      "transliteration": "Khush / Ānandī / Rājī",
+      "category": "Positive",
+      "emoji": "😊"
+    },
+    {
+      "id": 2,
+      "en": "Sad / Unhappy",
+      "gu": "ઉદાસ / દુઃખી",
+      "transliteration": "Udās / Duḥkhī",
+      "category": "Negative",
+      "emoji": "😢"
+    },
+    {
+      "id": 3,
+      "en": "Angry / Furious",
+      "gu": "ગુસ્સે / ક્રોધિત",
+      "transliteration": "Gusse / Krodhit",
+      "category": "Negative",
+      "emoji": "😡"
+    },
+    {
+      "id": 4,
+      "en": "Surprised / Shocked",
+      "gu": "આશ્ચર્યચકિત / અચરજ",
+      "transliteration": "Āshcharyachakit",
+      "category": "Neutral/Reactive",
+      "emoji": "😲"
+    },
+    {
+      "id": 5,
+      "en": "Scared / Afraid",
+      "gu": "ડરેલું / ભયભીત",
+      "transliteration": "Darelu / Bhaybhīt",
+      "category": "Negative",
+      "emoji": "😨"
+    },
+    {
+      "id": 6,
+      "en": "Excited",
+      "gu": "ઉત્સાહિત",
+      "transliteration": "Utsāhit",
+      "category": "Positive",
+      "emoji": "🤩"
+    },
+    {
+      "id": 7,
+      "en": "Calm / Peaceful",
+      "gu": "શાંત / પ્રસન્ન",
+      "transliteration": "Shānt / Prasanna",
+      "category": "Positive",
+      "emoji": "😌"
+    },
+    {
+      "id": 8,
+      "en": "Love / Affection",
+      "gu": "પ્રેમ / વહાલ / સ્નેહ",
+      "transliteration": "Prem / Vahāl / Sneh",
+      "category": "Positive",
+      "emoji": "❤️"
+    },
+    {
+      "id": 9,
+      "en": "Laugh / Laughter",
+      "gu": "હાસ્ય / હસવું",
+      "transliteration": "Hāsya / Hasvun",
+      "category": "Expressions",
+      "emoji": "😂"
+    },
+    {
+      "id": 10,
+      "en": "Crying / Tears",
+      "gu": "રડવું / આંસુ",
+      "transliteration": "Radvun / Ānsu",
+      "category": "Expressions",
+      "emoji": "😭"
+    },
+    {
+      "id": 11,
+      "en": "Proud",
+      "gu": "ગર્વ / અભિમાન",
+      "transliteration": "Garva / Abhimān",
+      "category": "Positive",
+      "emoji": "🦚"
+    },
+    {
+      "id": 12,
+      "en": "Shy",
+      "gu": "શરમાળ / સંકોચી",
+      "transliteration": "Sharmāḷ / Sankochī",
+      "category": "Social",
+      "emoji": "🙈"
+    },
+    {
+      "id": 13,
+      "en": "Confused",
+      "gu": "મૂંઝાયેલું",
+      "transliteration": "Mūnjhāyelun",
+      "category": "Cognitive",
+      "emoji": "😕"
+    },
+    {
+      "id": 14,
+      "en": "Bored",
+      "gu": "કંટાળેલું",
+      "transliteration": "Kanṭāḷelun",
+      "category": "Negative",
+      "emoji": "🥱"
+    },
+    {
+      "id": 15,
+      "en": "Tired / Exhausted",
+      "gu": "થાકેલું / શ્રમિત",
+      "transliteration": "Thākelun",
+      "category": "Physical/Mental",
+      "emoji": "😫"
+    },
+    {
+      "id": 16,
+      "en": "Hopeful",
+      "gu": "આશાવાદી",
+      "transliteration": "Āshāvādī",
+      "category": "Positive",
+      "emoji": "🌟"
+    },
+    {
+      "id": 17,
+      "en": "Brave / Courageous",
+      "gu": "બહાદુર / નીડર",
+      "transliteration": "Bahādur / Nīḍar",
+      "category": "Positive",
+      "emoji": "🦁"
+    },
+    {
+      "id": 18,
+      "en": "Nervous / Anxious",
+      "gu": "ગભરાયેલું / બેચેન",
+      "transliteration": "Ghabrāyelun / Bechen",
+      "category": "Negative",
+      "emoji": "😰"
+    },
+    {
+      "id": 19,
+      "en": "Kind / Compassionate",
+      "gu": "દયાળુ / માયાળુ",
+      "transliteration": "Dayāḷu / Māyāḷu",
+      "category": "Positive",
+      "emoji": "🤝"
+    },
+    {
+      "id": 20,
+      "en": "Grateful / Thankful",
+      "gu": "આભારી / કૃતજ્ઞ",
+      "transliteration": "Ābhārī / Krutajña",
+      "category": "Positive",
+      "emoji": "🙏"
+    },
+    {
+      "id": 21,
+      "en": "Jealous / Envious",
+      "gu": "ઈર્ષાળુ / અદેખું",
+      "transliteration": "Īrṣhāḷu / Adekhun",
+      "category": "Negative",
+      "emoji": "😒"
+    },
+    {
+      "id": 22,
+      "en": "Disgusted",
+      "gu": "અણગમો / ચીડ",
+      "transliteration": "Aṇgamo / Chīḍ",
+      "category": "Negative",
+      "emoji": "🤢"
+    },
+    {
+      "id": 23,
+      "en": "Sleepy",
+      "gu": "ઊંઘરેટું",
+      "transliteration": "Ūnghreṭun",
+      "category": "Physical",
+      "emoji": "😴"
+    },
+    {
+      "id": 24,
+      "en": "Curious",
+      "gu": "જિજ્ઞાસુ / આતુર",
+      "transliteration": "Jijñāsu / Ātur",
+      "category": "Cognitive",
+      "emoji": "🧐"
+    },
+    {
+      "id": 25,
+      "en": "Lonely",
+      "gu": "એકલવાયું",
+      "transliteration": "Ekalvāyun",
+      "category": "Negative",
+      "emoji": "🥺"
+    }
+  ]
+}
