@@ -33,6 +33,22 @@ class TestTTSService(unittest.TestCase):
         self.assertIn("dhara", speaker_ids)
         self.assertIn("parth", speaker_ids)
 
+        engine_ids = [e["id"] for e in presets["engines"]]
+        self.assertIn("mms_tts", engine_ids)
+        self.assertIn("indic_f5", engine_ids)
+        self.assertIn("indic_tts", engine_ids)
+
+    def test_synthesize_routing_mms_tts(self):
+        self.service.mms_tts.synthesize = MagicMock(return_value={
+            "offline": True,
+            "engine": "mms_tts",
+            "audio_base64": "mms_dummy_b64"
+        })
+        res = self.service.synthesize("mms_tts", "ક")
+        self.assertTrue(res.get("offline"))
+        self.assertEqual(res.get("engine"), "mms_tts")
+        self.service.mms_tts.synthesize.assert_called_once()
+
     def test_synthesize_routing_indic_f5(self):
         self.service.indic_f5.synthesize = MagicMock(return_value={
             "success": True,
@@ -59,7 +75,12 @@ class TestTTSService(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.service.synthesize("unknown_engine_xyz", "નમસ્તે")
 
-    def test_compare_synthesizes_both_engines(self):
+    def test_compare_synthesizes_all_engines(self):
+        self.service.mms_tts.synthesize = MagicMock(return_value={
+            "offline": True,
+            "engine": "mms_tts",
+            "audio_base64": "mms_audio"
+        })
         self.service.indic_f5.synthesize = MagicMock(return_value={
             "success": True,
             "engine": "indic_f5",
@@ -73,8 +94,10 @@ class TestTTSService(unittest.TestCase):
 
         res = self.service.compare("ગુજરાતી ભાષા")
         self.assertEqual(res.get("text"), "ગુજરાતી ભાષા")
+        self.assertTrue(res.get("has_mms"))
         self.assertTrue(res.get("has_f5"))
         self.assertTrue(res.get("has_tts"))
+        self.assertEqual(res.get("mms_tts", {}).get("audio_base64"), "mms_audio")
         self.assertEqual(res.get("indic_f5", {}).get("audio_base64"), "f5_audio")
         self.assertEqual(res.get("indic_tts", {}).get("audio_base64"), "tts_audio")
 

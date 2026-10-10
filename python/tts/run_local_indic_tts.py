@@ -99,22 +99,17 @@ def synthesize_local(text: str, description: str = "", mock: bool = False, speed
         raw_wav = out_buf.getvalue()
         sr = model.config.sampling_rate
 
-    # Local synthesis: generate spoken Gujarati for the full input text
+    # 100% Offline local neural synthesis fallback via Meta MMS-TTS
     if raw_wav is None and text and text.strip():
         try:
-            import urllib.request
-            import urllib.parse
-            encoded = urllib.parse.quote(text.strip())
-            tts_url = f"https://translate.google.com/translate_tts?ie=UTF-8&q={encoded}&tl=gu&client=tw-ob"
-            req = urllib.request.Request(tts_url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=10) as resp:
-                audio_raw = resp.read()
-            if sf is not None and audio_raw:
-                data, in_sr = sf.read(io.BytesIO(audio_raw))
-                out_buf = io.BytesIO()
-                sf.write(out_buf, data, samplerate=24000, format='WAV')
-                raw_wav = out_buf.getvalue()
-                sr = 24000
+            try:
+                from .mms_tts import MMSTTSEngine
+            except (ImportError, ValueError):
+                from mms_tts import MMSTTSEngine
+            mms_engine = MMSTTSEngine()
+            mms_res = mms_engine.synthesize(text=text, speed=speed, mock=mock)
+            raw_wav = base64.b64decode(mms_res["audio_base64"])
+            sr = mms_res.get("sample_rate", 16000)
         except Exception:
             pass
 

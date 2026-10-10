@@ -127,7 +127,7 @@ def run_server(host: str = "127.0.0.1", port: int = 8000):
     print(f"==================================================")
     print(f"🎙️  KanoAI Gujarati TTS API Server running!")
     print(f"🌐  Host: http://{host}:{port}")
-    print(f"🔊  Engines: AI4Bharat IndicF5 & Indic-TTS / Indic-Speak")
+    print(f"🔊  Engines: Meta MMS-TTS (Offline), IndicF5 & Indic-TTS")
     print(f"👉  Health: http://{host}:{port}/api/health")
     print(f"==================================================")
     try:

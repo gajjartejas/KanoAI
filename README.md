@@ -157,12 +157,16 @@ npm run build:web   # Export production bundle to docs/handwriting
 
 ## 🗣️ Gujarati Text-to-Speech (TTS) Studio (`python/tts/`)
 
-State-of-the-Art Gujarati Neural Voice Generation integrating both primary AI4Bharat models:
+State-of-the-Art Gujarati Neural Voice Generation integrating 100% offline local models and AI4Bharat architectures:
 
-1. **AI4Bharat IndicF5** ([GitHub](https://github.com/AI4Bharat/IndicF5) / [HuggingFace](https://huggingface.co/ai4bharat/IndicF5)):
+1. **Meta MMS-TTS (`facebook/mms-tts-guj`)** ★ **100% Offline & Local**:
+   - **Architecture**: End-to-end Variational Inference with Adversarial Learning (VITS, 16,000 Hz).
+   - **Execution**: 100% offline and local inference on Apple Silicon MPS, NVIDIA CUDA, or CPU with zero cloud rate limits.
+   - **Capabilities**: High-fidelity isolated consonant, syllable, Barakhadi, and numeral synthesis with automated verbalization (`૧` → `એક`, `૧૦` → `દસ`).
+2. **AI4Bharat IndicF5** ([GitHub](https://github.com/AI4Bharat/IndicF5) / [HuggingFace](https://huggingface.co/ai4bharat/IndicF5)):
    - **Architecture**: Flow-matching diffusion-style voice synthesis (24,000 Hz).
    - **Capabilities**: Zero-shot voice conditioning, reference mimicking with Kano audio, high human prosody.
-2. **AI4Bharat Indic-TTS / Bodhan-AI Indic-Speak** ([GitHub](https://github.com/AI4Bharat/Indic-TTS) / [HuggingFace](https://huggingface.co/bodhan-ai/indic-speak)):
+3. **AI4Bharat Indic-TTS / Bodhan-AI Indic-Speak** ([GitHub](https://github.com/AI4Bharat/Indic-TTS) / [HuggingFace](https://huggingface.co/bodhan-ai/indic-speak)):
    - **Architecture**: Multi-speaker fast neural acoustic model (44,100 Hz).
    - **Capabilities**: Preset native Gujarati speaker profiles (`Dhara` - Female, `Parth` - Male), sub-5s synthesis latency.
 
@@ -181,29 +185,37 @@ python3 -m http.server 8085 --directory docs
 # Navigate to: http://localhost:8085/#tts
 ```
 
-### 💻 Running Locally (Offline / Custom Server Mode)
+### 🎙️ Standalone Batch Audio Generator (`python/audio_generation/`)
 
-To run without Hugging Face cloud dependencies or ZeroGPU rate limits, you can launch standalone local servers:
+Dedicated offline batch pronunciation generator for Kakko, Barakhadi series, and numerals with optional FFmpeg MP3 compression:
 
 ```bash
-# Run local standalone IndicF5 server (port 7860):
-.venv/bin/python3 python/tts/run_local_indic_f5.py --port 7860
+# 1. Run pronunciation benchmark across sample isolated characters & numerals:
+.venv/bin/python3 python/audio_generation/generate_tts_local.py --benchmark
 
-# Run local standalone Indic-TTS server (port 7861):
-.venv/bin/python3 python/tts/run_local_indic_tts.py --port 7861
+# 2. Synthesize custom Gujarati text directly to MP3:
+.venv/bin/python3 python/audio_generation/generate_tts_local.py --text "કક્કો" --output out.mp3 --format mp3
+
+# 3. Batch generate isolated Kakko consonants (WAV or MP3):
+.venv/bin/python3 python/audio_generation/generate_tts_local.py --category kakko --output-dir output/tts/kakko --format mp3
+
+# 4. Batch generate numerals (૧ to ૧૦૦):
+.venv/bin/python3 python/audio_generation/generate_tts_local.py --category numerals --output-dir output/tts/numerals --format mp3
 ```
-In the Web Studio UI, choose **"💻 Local Server"** or enter a **"✏️ Custom Endpoint URL"** from the settings dropdown. Custom endpoints can also be supplied programmatically via `--api-url` or REST payload (`f5_api_url`, `tts_api_url`).
 
 ### 💻 TTS Command Line Interface (CLI)
 
 ```bash
+# Synthesize with Meta MMS-TTS (Offline VITS)
+.venv/bin/python3 python/tts/cli.py --engine mms_tts --text "નમસ્તે KanoAI" --output output/tts/mms.wav
+
 # Synthesize with Indic-TTS (Dhara)
 .venv/bin/python3 python/tts/cli.py --engine indic_tts --text "નમસ્તે KanoAI" --output output/tts/dhara.wav
 
 # Synthesize with IndicF5
 .venv/bin/python3 python/tts/cli.py --engine indic_f5 --text "નમસ્તે KanoAI" --output output/tts/f5.wav
 
-# Side-by-side comparison (Both engines)
+# Multi-engine side-by-side comparison
 .venv/bin/python3 python/tts/cli.py --compare --text "ગુજરાતી ભાષા ખૂબ જ સુંદર છે."
 
 # Run automated test suite
@@ -367,6 +379,7 @@ All characters can be interactively browsed, animated, pronounced, and practiced
 KanoAI proudly stands on the shoulders of the open-source and scientific research communities. We gratefully acknowledge the following projects, models, datasets, and libraries:
 
 ### 🧠 Neural AI Models & Machine Learning Research
+- **[Meta MMS-TTS](https://huggingface.co/facebook/mms-tts-guj)** (Meta AI Research): Scaling Speech Technology to 1,000+ languages; Variational Inference with Adversarial Learning (VITS) Gujarati neural speech checkpoint (`facebook/mms-tts-guj`).
 - **[AI4Bharat IndicF5](https://github.com/AI4Bharat/IndicF5)** (IIT Madras & AI4Bharat): Reference-conditioned Flow-Matching Speech Synthesis for Indian languages ([Hugging Face Space](https://huggingface.co/ai4bharat/IndicF5)).
 - **[AI4Bharat Indic-TTS](https://github.com/AI4Bharat/Indic-TTS)** (IIT Madras & AI4Bharat): Multi-speaker neural text-to-speech acoustic models for Indian languages ([Hugging Face](https://huggingface.co/ai4bharat/indic-parler-tts)).
 - **[Bodhan AI (Indic-Speak)](https://huggingface.co/bodhan-ai/indic-speak)**: Natural Gujarati female (`Dhara`) and male (`Parth`) neural speaker profiles.

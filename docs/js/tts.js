@@ -226,7 +226,10 @@ class TTSStudio {
     const indicTTSSettings = document.getElementById('tts-indictts-settings');
     const indicF5Settings = document.getElementById('tts-indicf5-settings');
 
-    if (this.currentEngine === 'indic_tts') {
+    if (this.currentEngine === 'mms_tts') {
+      if (indicTTSSettings) indicTTSSettings.style.display = 'none';
+      if (indicF5Settings) indicF5Settings.style.display = 'none';
+    } else if (this.currentEngine === 'indic_tts') {
       if (indicTTSSettings) indicTTSSettings.style.display = 'flex';
       if (indicF5Settings) indicF5Settings.style.display = 'none';
     } else if (this.currentEngine === 'indic_f5') {
@@ -354,9 +357,15 @@ class TTSStudio {
     resultsContainer.style.display = 'flex';
     resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
+    const isMMS = data.engine === 'mms_tts';
     const isF5 = data.engine === 'indic_f5';
-    const engineTitle = isF5 ? 'AI4Bharat IndicF5' : `AI4Bharat Indic-TTS (${data.speaker || 'Dhara'})`;
-    const sampleRate = data.sample_rate ? `${(data.sample_rate / 1000).toFixed(1)} kHz` : '44.1 kHz';
+    const engineTitle = isMMS
+      ? 'Meta MMS-TTS (Offline VITS)'
+      : isF5
+      ? 'AI4Bharat IndicF5'
+      : `AI4Bharat Indic-TTS (${data.speaker || 'Dhara'})`;
+    const engineBadge = isMMS ? '100% Offline VITS' : (isF5 ? 'Flow-Matching' : 'Multi-Speaker');
+    const sampleRate = data.sample_rate ? `${(data.sample_rate / 1000).toFixed(1)} kHz` : '16.0 kHz';
     const duration = data.duration ? `${data.duration}s` : 'Audio';
     const latency = data.elapsed_seconds ? `${data.elapsed_seconds}s` : '';
     const audioSrc = `data:${data.mime_type || 'audio/wav'};base64,${data.audio_base64}`;
@@ -367,7 +376,7 @@ class TTSStudio {
           <div class="tts-player-meta-info">
             <div class="tts-player-title">
               <span>🔊 ${engineTitle}</span>
-              <span class="tts-metric-tag highlight">${isF5 ? 'Flow-Matching' : 'Multi-Speaker'}</span>
+              <span class="tts-metric-tag highlight">${engineBadge}</span>
             </div>
             <div class="tts-player-subtext">${this.escapeHtml(text)}</div>
           </div>
@@ -416,13 +425,47 @@ class TTSStudio {
     resultsContainer.style.display = 'flex';
     resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
+    const mmsData = data.mms_tts || (data.results && data.results.mms_tts) || null;
     const f5Data = data.indic_f5 || (data.results && data.results.indic_f5) || null;
     const ttsData = data.indic_tts || (data.results && data.results.indic_tts) || null;
+    const mmsError = (data.errors && data.errors.mms_tts) || null;
     const f5Error = (data.errors && data.errors.indic_f5) || null;
     const ttsError = (data.errors && data.errors.indic_tts) || null;
 
+    const mmsSrc = (mmsData && mmsData.audio_base64) ? `data:audio/wav;base64,${mmsData.audio_base64}` : null;
     const f5Src = (f5Data && f5Data.audio_base64) ? `data:audio/wav;base64,${f5Data.audio_base64}` : null;
     const ttsSrc = (ttsData && ttsData.audio_base64) ? `data:audio/wav;base64,${ttsData.audio_base64}` : null;
+
+    let mmsColHTML = '';
+    if (mmsSrc) {
+      mmsColHTML = `
+        <div class="tts-waveform-container" id="waveform-wrap-mms">
+          <canvas class="tts-waveform-canvas" id="waveform-canvas-mms"></canvas>
+          <div class="tts-waveform-played-mask" id="waveform-played-mms"></div>
+          <div class="tts-waveform-progress-line" id="waveform-progress-mms"></div>
+        </div>
+        <div class="tts-controls-bar">
+          <div class="tts-controls-left">
+            <button class="btn-tts-play" id="btn-play-mms" title="Play Meta MMS-TTS">▶</button>
+            <span class="tts-time-display" id="time-display-mms">0:00</span>
+          </div>
+          <div class="tts-controls-right">
+            <div class="tts-speed-selector">
+              <button class="tts-speed-btn ${this.playbackRate === 0.75 ? 'active' : ''}" data-speed="0.75">0.75x</button>
+              <button class="tts-speed-btn ${this.playbackRate === 1.0 ? 'active' : ''}" data-speed="1.0">1.0x</button>
+            </div>
+            <a href="${mmsSrc}" download="gujarati_mms_tts_${Date.now()}.wav" class="btn-tts-download">⬇️ WAV</a>
+          </div>
+        </div>
+      `;
+    } else {
+      mmsColHTML = `
+        <div style="background: rgba(255, 107, 53, 0.08); border: 1px dashed var(--border-accent); border-radius: var(--radius-md); padding: 16px; font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+          <div style="color: var(--accent-primary); font-weight: 700; margin-bottom: 6px;">⚠️ Meta MMS-TTS Status</div>
+          <div>${this.escapeHtml(mmsError || 'Speech synthesis pending or failed.')}</div>
+        </div>
+      `;
+    }
 
     let f5ColHTML = '';
     if (f5Src) {
@@ -493,24 +536,24 @@ class TTSStudio {
         <div class="tts-player-header">
           <div class="tts-player-meta-info">
             <div class="tts-player-title">
-              <span>⚖️ Side-by-Side Dual Engine Comparison</span>
-              <span class="tts-metric-tag highlight">IndicF5 vs Indic-TTS</span>
+              <span>⚖️ Side-by-Side Multi-Engine Comparison</span>
+              <span class="tts-metric-tag highlight">MMS-TTS vs Indic-TTS vs IndicF5</span>
             </div>
             <div class="tts-player-subtext">${this.escapeHtml(text)}</div>
           </div>
         </div>
 
         <div class="tts-comparison-grid">
-          <!-- Col 1: IndicF5 -->
+          <!-- Col 1: Meta MMS-TTS -->
           <div class="tts-comparison-col">
             <div class="tts-comp-header">
-              <span class="tts-comp-model-title">1️⃣ AI4Bharat IndicF5</span>
+              <span class="tts-comp-model-title">1️⃣ Meta MMS-TTS (Offline)</span>
               <div class="tts-metrics-bar">
-                <span class="tts-metric-tag">⚡ ${f5Data && f5Data.elapsed_seconds ? f5Data.elapsed_seconds + 's' : '-'}</span>
-                <span class="tts-metric-tag">🎼 24 kHz</span>
+                <span class="tts-metric-tag">⚡ ${mmsData && mmsData.elapsed_seconds ? mmsData.elapsed_seconds + 's' : '-'}</span>
+                <span class="tts-metric-tag">🎼 16 kHz</span>
               </div>
             </div>
-            ${f5ColHTML}
+            ${mmsColHTML}
           </div>
 
           <!-- Col 2: Indic-TTS -->
@@ -524,10 +567,23 @@ class TTSStudio {
             </div>
             ${ttsColHTML}
           </div>
+
+          <!-- Col 3: IndicF5 -->
+          <div class="tts-comparison-col">
+            <div class="tts-comp-header">
+              <span class="tts-comp-model-title">3️⃣ AI4Bharat IndicF5</span>
+              <div class="tts-metrics-bar">
+                <span class="tts-metric-tag">⚡ ${f5Data && f5Data.elapsed_seconds ? f5Data.elapsed_seconds + 's' : '-'}</span>
+                <span class="tts-metric-tag">🎼 24 kHz</span>
+              </div>
+            </div>
+            ${f5ColHTML}
+          </div>
         </div>
       </div>
     `;
 
+    if (mmsSrc) this.attachAudioPlayer(mmsSrc, 'mms');
     if (f5Src) this.attachAudioPlayer(f5Src, 'f5');
     if (ttsSrc) this.attachAudioPlayer(ttsSrc, 'tts');
   }
