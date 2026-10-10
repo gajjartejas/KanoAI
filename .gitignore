@@ -131,21 +131,55 @@ dist
 
 # IDE
 .idea/
+.vscode/
+*.swp
+*.swo
+
+# System / OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
 # Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.venv*/
 .venv/
 venv/
 env/
 *.egg-info/
 .pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Large Neural Models, Weights & Hugging Face Cache
+models/
+*.onnx
+*.pth
+*.pt
+*.bin
+*.safetensors
+checkpoints/
+.cache/
+.huggingface/
+huggingface/
 
 # Generated Outputs, Temp & Assets
 output/
 temp/
+tmp/
+*.tmp
 preview_svgs/
 generated_svgs/
+
 # Playwright
 .playwright-cli/
 
@@ -153,3 +187,4 @@ generated_svgs/
 .expo/
 web-build/
 dist/
+

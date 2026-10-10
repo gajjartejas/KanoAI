@@ -11,15 +11,38 @@ An open-source ecosystem bridging classical Gujarati typography, dynamic stroke 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Stroke%20Animator-brightgreen?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/)
 [![Live Handwriting Demo](https://img.shields.io/badge/Live%20Demo-Handwriting%20Suite-blue?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/handwriting/)
 [![Live TTS Demo](https://img.shields.io/badge/Live%20Demo-TTS%20Voice%20Studio-orange?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/#tts)
+[![Live OCR Demo](https://img.shields.io/badge/Live%20Demo-OCR%20Vision%20Studio-teal?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/#ocr)
 
 🌐 **Live Interactive Apps**:
 - **🖋️ Kano Stroke Animator & Audio**: [https://gajjartejas.github.io/KanoAI/](https://gajjartejas.github.io/KanoAI/)
 - **✍️ Kano Handwriting Recognition & Practice Suite**: [https://gajjartejas.github.io/KanoAI/handwriting/](https://gajjartejas.github.io/KanoAI/handwriting/)
 - **🗣️ Kano Gujarati Voice (TTS) Studio**: [https://gajjartejas.github.io/KanoAI/#tts](https://gajjartejas.github.io/KanoAI/#tts)
+- **📸 Kano Gujarati OCR & Vision Studio**: [https://gajjartejas.github.io/KanoAI/#ocr](https://gajjartejas.github.io/KanoAI/#ocr)
 
-| 🖋️ Stroke Animator & Kano Audio Suite | ✍️ Handwriting Recognition & Practice Suite | 🗣️ Gujarati Text-to-Speech (TTS) Studio |
-| :---: | :---: | :---: |
-| [![Kano Stroke Animator & Audio Suite](docs/assets/preview.png)](https://gajjartejas.github.io/KanoAI/) | [![Kano Handwriting Recognition Suite](docs/assets/preview-handwriting.png)](https://gajjartejas.github.io/KanoAI/handwriting/) | [![Kano Gujarati TTS Studio](docs/assets/preview-tts.png)](https://gajjartejas.github.io/KanoAI/#tts) |
+| 🖋️ Stroke Animator & Kano Audio Suite | ✍️ Handwriting Practice Suite | 🗣️ Gujarati Text-to-Speech (TTS) Studio | 📸 Gujarati OCR & Vision Studio |
+| :---: | :---: | :---: | :---: |
+| [![Kano Stroke Animator & Audio Suite](docs/assets/preview.png)](https://gajjartejas.github.io/KanoAI/) | [![Kano Handwriting Recognition Suite](docs/assets/preview-handwriting.png)](https://gajjartejas.github.io/KanoAI/handwriting/) | [![Kano Gujarati TTS Studio](docs/assets/preview-tts.png)](https://gajjartejas.github.io/KanoAI/#tts) | [![Kano Gujarati OCR & Vision Studio](docs/assets/preview-ocr.png)](https://gajjartejas.github.io/KanoAI/#ocr) |
+
+---
+
+## ⚡ Quickstart: Launch All Servers & Open Webpage
+
+Run the one-click launcher to start the Python Unified Backend API Server (OCR + TTS on port 8000) and the Local Web Studio (port 8085), perform health checks, and automatically open the suite in your default browser:
+
+```bash
+# Using Bash (macOS / Linux):
+./start_all.sh
+
+# Or using Python (macOS / Windows / Linux):
+python3 start_all.py
+```
+
+**Options & Flags:**
+- `./start_all.sh --tab tts` &bull; Open directly to the Text-to-Speech (TTS) Studio (`#tts`)
+- `./start_all.sh --tab ocr` &bull; Open directly to the OCR & Vision Studio (`#ocr`)
+- `./start_all.sh --tab handwriting` &bull; Open directly to the Handwriting Suite (`/handwriting/`)
+- `./start_all.sh --no-browser` &bull; Start servers in background without opening browser
+- `./start_all.sh --api-port 8000 --web-port 8085` &bull; Custom ports
 
 ---
 
@@ -31,6 +54,7 @@ An open-source ecosystem bridging classical Gujarati typography, dynamic stroke 
 | **✍️ Kano Handwriting** | ✅ **Live** | Real-time offline recognition combining Sakoe-Chiba DTW + in-memory Tiny CNN. |
 | **🔊 Kano Audio** | ✅ **Live** | Compressed, crystal-clear native speech pronunciations for all 565 characters. |
 | **🗣️ Kano Voice (TTS)** | ✅ **Live** | State-of-the-art neural TTS with AI4Bharat IndicF5 & Indic-TTS / Bodhan Indic-Speak. |
+| **📸 Kano Vision (OCR)** | ✅ **Live** | Multi-engine Gujarati OCR (Bhashini IndicPhotoOCR, Gujarati TrOCR, GujaratiHCR) with voice playback bridge. |
 | **🎙️ Kano Listen (STT)** | 📋 **Planned** | Offline & low-latency Gujarati Speech-to-Text acoustic modeling. |
 | **🧠 Kano Grammar (AI)** | 📋 **Planned** | LLM-assisted Gujarati spell-checker, grammar analysis, sandhi/samasa parser, and NLP toolkits. |
 | **⚡ Kano API** | ✅ **Live** | Lightweight REST / JSON microservices for characters, strokes, phonemes, and audio synthesis. |
@@ -183,6 +207,57 @@ In the Web Studio UI, choose **"💻 Local Server"** or enter a **"✏️ Custom
 
 ---
 
+## 📸 Gujarati OCR & Vision Studio (`python/ocr/`)
+
+Multi-Engine Gujarati Optical Character Recognition (OCR) covering printed literature, official scanned certificates, camera scene text / signboards, and handwritten notebook pages.
+
+1. **Bhashini-IITJ IndicPhotoOCR** ([GitHub](https://github.com/Bhashini-IITJ/IndicPhotoOCR) / [HuggingFace Space](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR)):
+   - **Architecture**: DBNet Text Detector + Indic Multilingual Sequence Recognition.
+   - **Best For**: Natural scene text, street signs, posters, and full page document localization with bounding box coordinates.
+2. **Gujarati TrOCR** ([HuggingFace](https://huggingface.co/umangchaudhari/gujarati-ocr)):
+   - **Architecture**: Vision Transformer (TrOCR) encoder-decoder trained on Gujarati typography and conjuncts.
+   - **Best For**: Scanned books and printed literature (**96.2% exact word accuracy, 1.35% CER**).
+3. **GujaratiHCR Research Pipeline**:
+   - **Architecture**: Adaptive binarization, horizontal/vertical projection profiling for line/word segmentation, contour isolation, and CNN-LSTM recognition.
+   - **Best For**: Cursive Gujarati handwriting, ruled notebook pages, and individual handwritten characters.
+
+### 🖥️ OCR Studio Preview
+
+[![Gujarati OCR & Vision Studio Preview](docs/assets/preview-ocr.png)](https://gajjartejas.github.io/KanoAI/#ocr)
+
+### 🚀 Running the Unified OCR & TTS Backend Server
+
+```bash
+# 1. Start the unified OCR & TTS HTTP API server (port 8000)
+.venv/bin/python3 python/ocr/server.py --port 8000
+
+# 2. Open the web studio in docs/ or via local server
+python3 -m http.server 8085 --directory docs
+# Navigate to: http://localhost:8085/#ocr
+```
+
+### 💻 OCR Command Line Interface (CLI)
+
+```bash
+# Recognize scene photo or document with Bhashini IndicPhotoOCR
+.venv/bin/python3 python/ocr/cli.py --image docs/assets/ocr_samples/sample_1_printed_book.png --engine indic_photo_ocr
+
+# Recognize printed document with Gujarati TrOCR
+.venv/bin/python3 python/ocr/cli.py --image docs/assets/ocr_samples/sample_4_official_doc.png --engine gujarati_trocr
+
+# Run Handwriting HCR line segmentation
+.venv/bin/python3 python/ocr/cli.py --image docs/assets/ocr_samples/sample_3_handwritten_note.png --engine gujarati_hcr
+
+# Compare all 3 OCR engines side-by-side
+.venv/bin/python3 python/ocr/cli.py --image docs/assets/ocr_samples/sample_1_printed_book.png --compare
+
+# Run OCR automated self-test
+.venv/bin/python3 python/ocr/cli.py --test
+```
+👉 See [OCR Documentation (`python/ocr/README.md`)](python/ocr/README.md) for full API specifications.
+
+---
+
 ## 🟢 Node.js Workspace (`node/`)
 
 Used for rendering standard glyph SVGs, CSV matrices, and Google Wavenet audio files.
@@ -243,6 +318,7 @@ All characters can be interactively browsed, animated, pronounced, and practiced
 - [x] **Kano Trace**: 565-character stroke animation & analytical EDT centerline extraction.
 - [x] **Kano Handwriting**: Dual DTW + Tiny CNN offline recognition engine (<20ms latency).
 - [x] **Kano Voice (TTS)**: Neural Gujarati speech synthesis model (AI4Bharat IndicF5 & Indic-TTS / Bodhan-AI Indic-Speak) with smooth 60fps waveform sync.
+- [x] **Kano Vision (OCR)**: Multi-engine Gujarati OCR studio (Bhashini-IITJ IndicPhotoOCR, Gujarati TrOCR, GujaratiHCR) with voice playback bridge.
 - [ ] **Kano Listen (STT)**: Offline Speech-to-Text engine optimized for regional accents.
 - [ ] **Kano Grammar AI**: Contextual spell-checker, Sandhi/Samasa decomposition, and morphological analysis.
 - [ ] **Kano Cloud API**: Developer REST/GraphQL endpoints for character stroke vectors, phonetics, and datasets.

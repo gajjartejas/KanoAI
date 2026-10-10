@@ -311,15 +311,18 @@ class App {
 window.switchSuite = function(suite) {
   const isHandwriting = suite === 'handwriting';
   const isTTS = suite === 'tts';
-  const isAnimator = !isHandwriting && !isTTS;
+  const isOCR = suite === 'ocr';
+  const isAnimator = !isHandwriting && !isTTS && !isOCR;
 
   const tabAnimator = document.getElementById('tab-btn-animator');
   const tabHandwriting = document.getElementById('tab-btn-handwriting');
   const tabTTS = document.getElementById('tab-btn-tts');
+  const tabOCR = document.getElementById('tab-btn-ocr');
 
   const secAnimator = document.getElementById('section-animator');
   const secHandwriting = document.getElementById('section-handwriting');
   const secTTS = document.getElementById('section-tts');
+  const secOCR = document.getElementById('section-ocr');
   const tagline = document.getElementById('suite-tagline');
 
   if (tabAnimator) {
@@ -333,6 +336,10 @@ window.switchSuite = function(suite) {
   if (tabTTS) {
     tabTTS.classList.toggle('active', isTTS);
     tabTTS.setAttribute('aria-selected', isTTS.toString());
+  }
+  if (tabOCR) {
+    tabOCR.classList.toggle('active', isOCR);
+    tabOCR.setAttribute('aria-selected', isOCR.toString());
   }
 
   if (secAnimator) secAnimator.style.display = isAnimator ? 'flex' : 'none';
@@ -364,9 +371,18 @@ window.switchSuite = function(suite) {
       window.ttsStudio.initialized = true;
     }
   }
+  if (secOCR) {
+    secOCR.style.display = isOCR ? 'flex' : 'none';
+    if (isOCR && window.ocrStudio && !window.ocrStudio.initialized) {
+      window.ocrStudio.init();
+      window.ocrStudio.initialized = true;
+    }
+  }
 
   if (tagline) {
-    if (isTTS) {
+    if (isOCR) {
+      tagline.textContent = 'Bhashini IndicPhotoOCR, Gujarati TrOCR & GujaratiHCR • Neural Vision for Scene, Printed & Handwritten Documents';
+    } else if (isTTS) {
       tagline.textContent = 'AI4Bharat IndicF5 (Flow-Matching) & Indic-TTS / Bodhan Indic-Speak • Neural Gujarati Voice Studio';
     } else if (isHandwriting) {
       tagline.textContent = 'Interactive Tracing, Word Quiz, Free Draw ML & Offline Benchmarks';
@@ -375,7 +391,7 @@ window.switchSuite = function(suite) {
     }
   }
 
-  const hash = isTTS ? '#tts' : (isHandwriting ? '#handwriting' : '#animator');
+  const hash = isOCR ? '#ocr' : (isTTS ? '#tts' : (isHandwriting ? '#handwriting' : '#animator'));
   if (window.history && window.history.replaceState) {
     window.history.replaceState(null, '', hash);
   } else {
@@ -438,7 +454,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const initialHash = window.location.hash;
-  if (initialHash === '#tts') {
+  if (initialHash === '#ocr') {
+    window.switchSuite('ocr');
+  } else if (initialHash === '#tts') {
     window.switchSuite('tts');
   } else if (initialHash === '#handwriting') {
     window.switchSuite('handwriting');
@@ -448,7 +466,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('hashchange', () => {
     const currentHash = window.location.hash;
-    if (currentHash === '#tts') {
+    if (currentHash === '#ocr') {
+      window.switchSuite('ocr');
+    } else if (currentHash === '#tts') {
       window.switchSuite('tts');
     } else if (currentHash === '#handwriting') {
       window.switchSuite('handwriting');
