@@ -203,6 +203,7 @@ class IndicF5Engine:
         audio_b64 = base64.b64encode(audio_bytes).decode("utf-8")
 
         return {
+            "success": True,
             "engine": "indic_f5",
             "model_name": "ai4bharat/IndicF5",
             "text": text,

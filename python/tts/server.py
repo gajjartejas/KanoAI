@@ -32,12 +32,16 @@ class TTSRequestHandler(BaseHTTPRequestHandler):
         self._set_cors_headers(200)
 
     def do_GET(self):
-        if self.path == "/api/health" or self.path == "/health":
+        if self.path in ["/api/health", "/health"]:
             self._set_cors_headers(200)
-            self.wfile.write(json.dumps({"status": "ok", "service": "KanoAI Gujarati TTS Server"}).encode("utf-8"))
-        elif self.path == "/api/presets" or self.path == "/presets":
+            self.wfile.write(json.dumps({"status": "ok", "service": "kano_gujarati_tts"}).encode("utf-8"))
+        elif self.path in ["/api/presets", "/presets", "/api/tts/presets"]:
             self._set_cors_headers(200)
             self.wfile.write(json.dumps(self.service.get_presets(), ensure_ascii=False).encode("utf-8"))
+        elif self.path in ["/api/voices", "/voices", "/api/tts/voices"]:
+            self._set_cors_headers(200)
+            voices = self.service.get_presets().get("speakers", [])
+            self.wfile.write(json.dumps(voices, ensure_ascii=False).encode("utf-8"))
         else:
             self._set_cors_headers(404)
             self.wfile.write(json.dumps({"error": "Endpoint not found"}).encode("utf-8"))
@@ -53,7 +57,7 @@ class TTSRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps({"error": f"Invalid JSON payload: {str(e)}"}).encode("utf-8"))
             return
 
-        if self.path == "/api/synthesize":
+        if self.path in ["/api/synthesize", "/api/tts/synthesize"]:
             text = body.get("text", "").strip()
             engine = body.get("engine", "indic_f5").strip()
             speaker_id = body.get("speaker_id", "dhara")
