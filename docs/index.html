@@ -315,12 +315,12 @@
             <span>Indic-TTS API Endpoint:</span>
           </label>
           <select id="tts-indictts-endpoint-select" class="tts-select">
-            <option value="cloud" selected>🌐 Cloud HF (bodhan-ai-indic-speak.hf.space)</option>
-            <option value="local">💻 Local Server (http://localhost:7861)</option>
+            <option value="local" selected>💻 Local Engine (http://localhost:7861 - Offline Fast)</option>
+            <option value="cloud">🌐 Cloud HF (ai4bharat-indic-parler-tts.hf.space)</option>
             <option value="custom">✏️ Custom Endpoint URL...</option>
           </select>
-          <input type="text" id="tts-indictts-custom-url" class="tts-input-field" placeholder="https://bodhan-ai-indic-speak.hf.space" style="display: none; margin-top: 4px;">
-          <div class="tts-speaker-preview-box" id="tts-indictts-endpoint-hint" style="font-size: 11px; margin-top: 4px;">
+          <input type="text" id="tts-indictts-custom-url" class="tts-input-field" placeholder="http://localhost:7861" style="display: none; margin-top: 4px;">
+          <div class="tts-speaker-preview-box" id="tts-indictts-endpoint-hint" style="font-size: 11px; margin-top: 4px; display: block;">
             Local server command: <code>python python/tts/run_local_indic_tts.py --port 7861</code>
           </div>
         </div>

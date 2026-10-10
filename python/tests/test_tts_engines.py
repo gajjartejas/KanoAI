@@ -52,6 +52,28 @@ class TestTTSEngines(unittest.TestCase):
         self.assertEqual(res.get("speaker_id"), "dhara")
         self.assertIn("audio_base64", res)
 
+    def test_indic_tts_mock_flag(self):
+        engine = IndicTTSEngine()
+        res = engine.synthesize(text="નમસ્તે", mock=True)
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("engine"), "indic_tts")
+        self.assertIn("audio_base64", res)
+
+    @patch("requests.post")
+    def test_indic_tts_remote_failure_fallback(self, mock_post):
+        mock_post.side_effect = Exception("Remote HF connection timed out")
+        engine = IndicTTSEngine()
+        # Should gracefully fallback to local neural synthesis instead of raising 500
+        res = engine.synthesize(
+            text="નમસ્તે",
+            speaker_id="dhara",
+            api_url="https://broken-space.hf.space",
+            mock=True,
+        )
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("engine"), "indic_tts")
+        self.assertIn("audio_base64", res)
+
 
 if __name__ == "__main__":
     unittest.main()
