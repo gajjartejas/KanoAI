@@ -75,5 +75,26 @@ class TestTTSEngines(unittest.TestCase):
         self.assertIn("audio_base64", res)
 
 
+    def test_indic_f5_mock_flag(self):
+        engine = IndicF5Engine()
+        res = engine.synthesize(text="નમસ્તે", mock=True)
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("engine"), "indic_f5")
+        self.assertIn("audio_base64", res)
+
+    @patch("requests.post")
+    def test_indic_f5_remote_failure_fallback(self, mock_post):
+        mock_post.side_effect = Exception("Could not get Gradio config from: http://localhost:7860/")
+        engine = IndicF5Engine()
+        res = engine.synthesize(
+            text="નમસ્તે",
+            api_url="http://localhost:7860",
+            mock=True,
+        )
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("engine"), "indic_f5")
+        self.assertIn("audio_base64", res)
+
+
 if __name__ == "__main__":
     unittest.main()

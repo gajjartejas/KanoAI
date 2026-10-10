@@ -257,7 +257,7 @@ class LocalIndicF5Handler(BaseHTTPRequestHandler):
         sys.stderr.write(f"[Local IndicF5] {format % args}\n")
 
 
-def run(host: str = "127.0.0.1", port: int = 7860, mock: bool = False):
+def run(host: str = "127.0.0.1", port: int = 7865, mock: bool = False):
     LocalIndicF5Handler.mock = mock
     if not mock:
         init_neural_model()
@@ -279,7 +279,7 @@ def run(host: str = "127.0.0.1", port: int = 7860, mock: bool = False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Local AI4Bharat IndicF5 Server")
     parser.add_argument("--host", default="127.0.0.1", help="Host binding (default: 127.0.0.1)")
-    parser.add_argument("--port", type=int, default=7860, help="Port binding (default: 7860)")
+    parser.add_argument("--port", type=int, default=7865, help="Port binding (default: 7865)")
     parser.add_argument("--mock", action="store_true", help="Run in mock/instant response mode")
     args = parser.parse_args()
     run(args.host, args.port, args.mock)

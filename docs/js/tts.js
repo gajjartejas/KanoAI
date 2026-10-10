@@ -94,8 +94,12 @@ class TTSStudio {
     const f5TokenGroup = document.getElementById('tts-indicf5-token-group');
     const f5Hint = document.getElementById('tts-indicf5-endpoint-hint');
     if (f5EndpointSelect && f5CustomUrlInput) {
-      const savedF5Endpoint = localStorage.getItem('kano_f5_api_mode') || 'cloud';
-      const savedF5Url = localStorage.getItem('kano_f5_custom_url') || 'http://localhost:7860';
+      const savedF5Endpoint = localStorage.getItem('kano_f5_api_mode') || 'local';
+      let savedF5Url = localStorage.getItem('kano_f5_custom_url') || 'http://localhost:7865';
+      if (savedF5Url.includes('7860')) {
+        savedF5Url = savedF5Url.replace('7860', '7865');
+        localStorage.setItem('kano_f5_custom_url', savedF5Url);
+      }
       f5EndpointSelect.value = savedF5Endpoint;
       f5CustomUrlInput.value = savedF5Url;
       f5CustomUrlInput.style.display = savedF5Endpoint === 'custom' ? 'block' : 'none';
@@ -278,10 +282,15 @@ class TTSStudio {
       // Resolve IndicF5 endpoint
       const f5Select = document.getElementById('tts-indicf5-endpoint-select');
       const f5Custom = document.getElementById('tts-indicf5-custom-url');
-      let f5ApiUrl = 'ai4bharat/IndicF5';
+      let f5ApiUrl = 'http://localhost:7865';
       if (f5Select) {
-        if (f5Select.value === 'local') f5ApiUrl = 'http://localhost:7860';
-        else if (f5Select.value === 'custom' && f5Custom) f5ApiUrl = f5Custom.value.trim() || 'http://localhost:7860';
+        if (f5Select.value === 'local') f5ApiUrl = 'http://localhost:7865';
+        else if (f5Select.value === 'cloud') f5ApiUrl = 'ai4bharat/IndicF5';
+        else if (f5Select.value === 'custom' && f5Custom) {
+          let customUrl = f5Custom.value.trim() || 'http://localhost:7865';
+          if (customUrl.includes(':7860')) customUrl = customUrl.replace(':7860', ':7865');
+          f5ApiUrl = customUrl;
+        }
       }
 
       // Resolve Indic-TTS endpoint

@@ -339,16 +339,16 @@
             <span>IndicF5 API Endpoint:</span>
           </label>
           <select id="tts-indicf5-endpoint-select" class="tts-select">
-            <option value="cloud" selected>🌐 Cloud HF Space (ai4bharat/IndicF5)</option>
-            <option value="local">💻 Local Server (http://localhost:7860)</option>
+            <option value="local" selected>💻 Local Engine (http://localhost:7865 - Offline Fast)</option>
+            <option value="cloud">🌐 Cloud HF Space (ai4bharat/IndicF5)</option>
             <option value="custom">✏️ Custom Endpoint URL...</option>
           </select>
-          <input type="text" id="tts-indicf5-custom-url" class="tts-input-field" placeholder="http://localhost:7860" style="display: none; margin-top: 4px;">
-          <div class="tts-speaker-preview-box" id="tts-indicf5-endpoint-hint" style="font-size: 11px; margin-top: 4px;">
-            Local server command: <code>python python/tts/run_local_indic_f5.py --port 7860</code>
+          <input type="text" id="tts-indicf5-custom-url" class="tts-input-field" placeholder="http://localhost:7865" style="display: none; margin-top: 4px;">
+          <div class="tts-speaker-preview-box" id="tts-indicf5-endpoint-hint" style="font-size: 11px; margin-top: 4px; display: block;">
+            Local server command: <code>python python/tts/run_local_indic_f5.py --port 7865</code>
           </div>
 
-          <div id="tts-indicf5-token-group">
+          <div id="tts-indicf5-token-group" style="display: none;">
             <label class="tts-setting-label" style="margin-top: 8px;">
               <span>Hugging Face Token (Cloud ZeroGPU):</span>
               <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-stroke); font-size: 11px; text-decoration: underline;">Get free token ↗</a>
