@@ -70,8 +70,10 @@ def main():
     parser.add_argument("--api-port", type=int, default=8000, help="Port for Backend API (default: 8000)")
     parser.add_argument("--indic-port", type=int, default=7860, help="Port for IndicPhotoOCR (default: 7860)")
     parser.add_argument("--trocr-port", type=int, default=7862, help="Port for Gujarati TrOCR (default: 7862)")
+    parser.add_argument("--tts-port", type=int, default=7861, help="Port for Indic-TTS (default: 7861)")
+    parser.add_argument("--f5-port", type=int, default=7865, help="Port for IndicF5 (default: 7865)")
     parser.add_argument("--web-port", type=int, default=8085, help="Port for Web Studio (default: 8085)")
-    parser.add_argument("--no-engines", action="store_true", help="Skip dedicated standalone OCR engines (ports 7860, 7862)")
+    parser.add_argument("--no-engines", action="store_true", help="Skip dedicated standalone OCR/TTS engines (ports 7860, 7861, 7862, 7865)")
     parser.add_argument("--tab", type=str, default="", choices=["", "animator", "handwriting", "tts", "ocr"], help="Tab to open")
     parser.add_argument("--no-browser", action="store_true", help="Do not open browser automatically")
     args = parser.parse_args()
@@ -94,7 +96,9 @@ def main():
     if not args.no_engines:
         port_targets.extend([
             (args.indic_port, "IndicPhotoOCR Engine"),
-            (args.trocr_port, "TrOCR Engine")
+            (args.trocr_port, "TrOCR Engine"),
+            (args.tts_port, "Indic-TTS Engine"),
+            (args.f5_port, "IndicF5 Engine"),
         ])
 
     for port, label in port_targets:
@@ -103,7 +107,7 @@ def main():
 
     processes = []
 
-    # 1. Start Local Standalone OCR Engines (if enabled)
+    # 1. Start Local Standalone OCR & TTS Engines (if enabled)
     if not args.no_engines:
         trocr_script = os.path.join(REPO_ROOT, "python", "ocr", "run_local_trocr.py")
         print(f"🤖 Starting Local TrOCR Engine Server on port {args.trocr_port}...")
@@ -131,6 +135,26 @@ def main():
             stderr=subprocess.DEVNULL,
         )
         processes.append(("IndicPhotoOCR", indic_proc))
+
+        tts_script = os.path.join(REPO_ROOT, "python", "tts", "run_local_indic_tts.py")
+        print(f"🎙️ Starting Local Indic-TTS Engine Server on port {args.tts_port}...")
+        tts_proc = subprocess.Popen(
+            [python_bin, tts_script, "--port", str(args.tts_port)],
+            cwd=REPO_ROOT,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        processes.append(("Indic-TTS", tts_proc))
+
+        f5_script = os.path.join(REPO_ROOT, "python", "tts", "run_local_indic_f5.py")
+        print(f"🌊 Starting Local IndicF5 Engine Server on port {args.f5_port}...")
+        f5_proc = subprocess.Popen(
+            [python_bin, f5_script, "--port", str(args.f5_port)],
+            cwd=REPO_ROOT,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        processes.append(("IndicF5", f5_proc))
 
     # 2. Start Backend API Server
     ocr_server_script = os.path.join(REPO_ROOT, "python", "ocr", "server.py")
@@ -178,6 +202,10 @@ def main():
             print(f"✓ IndicPhotoOCR ready: http://localhost:{args.indic_port}/api/health")
         if wait_for_url(f"http://localhost:{args.trocr_port}/health", timeout=6.0):
             print(f"✓ TrOCR Engine ready:   http://localhost:{args.trocr_port}/health")
+        if wait_for_url(f"http://localhost:{args.tts_port}/", timeout=6.0):
+            print(f"✓ Indic-TTS ready:     http://localhost:{args.tts_port}/")
+        if wait_for_url(f"http://localhost:{args.f5_port}/", timeout=6.0):
+            print(f"✓ IndicF5 Engine ready: http://localhost:{args.f5_port}/")
 
     if wait_for_url(f"http://localhost:{args.api_port}/api/health", timeout=8.0):
         print(f"✓ Backend API ready:    http://localhost:{args.api_port}/api/health")
@@ -210,6 +238,9 @@ def main():
     if not args.no_engines:
         print(f"   🔬  IndicPhotoOCR (Port 7860):  http://localhost:{args.indic_port}/api/health")
         print(f"   🤖  Gujarati TrOCR (Port 7862): http://localhost:{args.trocr_port}/health")
+        print(f"   🎙️  Indic-TTS (Port 7861):     http://localhost:{args.tts_port}/")
+        print(f"   🌊  IndicF5 (Port 7865):        http://localhost:{args.f5_port}/")
+    print(f"   🧠  Offline Neural TTS:         Meta MMS-TTS, Piper TTS, eSpeak-NG")
     print("=" * 65)
     print("   Press Ctrl+C anytime to stop all servers.")
     print("")
