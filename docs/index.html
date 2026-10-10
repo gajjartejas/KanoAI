@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/stage.css">
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/tts.css">
+  <link rel="stylesheet" href="css/ocr.css">
 
   <style>
     @keyframes drawStroke {
@@ -69,6 +70,11 @@
         <span class="tab-icon">🗣️</span>
         <span class="tab-label">Text-to-Speech (TTS)</span>
         <span class="tab-badge">IndicF5 + Indic-TTS</span>
+      </button>
+      <button class="suite-tab-btn" id="tab-btn-ocr" onclick="switchSuite('ocr')" role="tab" aria-selected="false" aria-controls="section-ocr">
+        <span class="tab-icon">📸</span>
+        <span class="tab-label">OCR & Vision</span>
+        <span class="tab-badge">IndicPhotoOCR + TrOCR</span>
       </button>
     </nav>
   </header>
@@ -369,6 +375,201 @@
   </div>
 </main>
 
+<!-- Module 4: Gujarati Optical Character Recognition (OCR) Studio -->
+<main id="section-ocr" class="suite-main-section" style="display: none;">
+  <div class="ocr-workspace">
+    <!-- Header Card -->
+    <div class="ocr-header-card">
+      <div class="ocr-title-group">
+        <h2>
+          <span>📸</span>
+          <span>ગુજરાતી ઓપ્ટિકલ કેરેક્ટર રેકગ્નિશન (Gujarati OCR Studio)</span>
+        </h2>
+        <p>AI4Bharat & Bhashini IndicPhotoOCR, Gujarati TrOCR & GujaratiHCR &bull; Neural Vision for Scene, Printed & Handwritten Documents</p>
+      </div>
+
+      <div class="ocr-status-badge" id="ocr-server-status">
+        <span class="ocr-status-dot" id="ocr-status-dot"></span>
+        <span id="ocr-status-label">Checking API Server...</span>
+      </div>
+    </div>
+
+    <!-- Benchmark Sample Showcase -->
+    <div class="ocr-samples-panel">
+      <div class="ocr-samples-header">
+        <div class="ocr-samples-label">
+          <span>📚 Benchmark Preset Samples (Click to load sample image)</span>
+        </div>
+      </div>
+      <div class="ocr-samples-grid" id="ocr-samples-grid"></div>
+    </div>
+
+    <!-- Main Two-Column Layout -->
+    <div class="ocr-main-layout">
+      <!-- Left Column: Image Canvas & Dropzone Stage -->
+      <div class="ocr-stage-panel">
+        <div class="ocr-stage-toolbar">
+          <div class="ocr-mode-pills">
+            <button class="ocr-pill-btn active" id="ocr-pill-annotated">🖼️ Detection View</button>
+            <button class="ocr-pill-btn" id="ocr-pill-original">👁️ Original</button>
+            <button class="ocr-pill-btn" id="ocr-pill-draw">✍️ Draw Whiteboard</button>
+          </div>
+
+          <div>
+            <input type="file" id="ocr-file-input" accept="image/png, image/jpeg, image/webp, image/bmp, image/tiff" style="display: none;">
+            <button class="btn-ocr-tool" onclick="document.getElementById('ocr-file-input').click()">
+              📁 Upload Image
+            </button>
+          </div>
+        </div>
+
+        <!-- Dropzone / Canvas Container -->
+        <div class="ocr-dropzone-container" id="ocr-dropzone-container">
+          <!-- Empty Dropzone State -->
+          <div class="ocr-dropzone-empty" id="ocr-dropzone-empty">
+            <div class="ocr-dropzone-icon">📥</div>
+            <div class="ocr-dropzone-text">Drag & Drop Gujarati Image Here, Paste (Ctrl+V), or Click to Browse</div>
+            <div class="ocr-dropzone-hint">Supports JPG, PNG, WEBP &bull; Printed pages, Signboards, Handwritten Notes</div>
+          </div>
+
+          <!-- Active Image Stage -->
+          <div class="ocr-canvas-wrapper" id="ocr-canvas-wrapper">
+            <img class="ocr-display-img" id="ocr-display-img" alt="Uploaded Document" />
+            <div class="ocr-bounding-box-overlay" id="ocr-bounding-box-overlay"></div>
+          </div>
+
+          <!-- Drawing Canvas Container -->
+          <div class="ocr-draw-canvas-container" id="ocr-draw-container">
+            <canvas class="ocr-draw-canvas" id="ocr-draw-canvas"></canvas>
+            <div class="ocr-draw-toolbar">
+              <button class="btn-ocr-tool" id="btn-ocr-draw-clear">🧹 Clear</button>
+              <button class="btn-ocr-tool btn-ocr-voice" id="btn-ocr-draw-use">✓ Use Drawing for OCR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Model Settings & Controls -->
+      <div class="ocr-settings-panel">
+        <!-- Engine Selector -->
+        <div class="ocr-setting-row">
+          <label class="ocr-setting-label">
+            <span>OCR Engine:</span>
+          </label>
+          <select id="ocr-engine-select" class="ocr-select">
+            <option value="indic_photo_ocr" selected>🌟 Bhashini IndicPhotoOCR (Photo / Scene / Full Page)</option>
+            <option value="gujarati_trocr">📖 Gujarati TrOCR (Printed Text & Conjuncts)</option>
+            <option value="gujarati_hcr">✍️ GujaratiHCR (Handwritten Notes & Segmentation)</option>
+          </select>
+          <div class="ocr-info-box" id="ocr-engine-info">
+            <strong>Bhashini-IITJ IndicPhotoOCR (Offline Mode)</strong>: Local scene text detection (TextBPN++ contour pipeline) & Gujarati recognition on port 7860/8000.
+          </div>
+        </div>
+
+        <!-- IndicPhotoOCR Execution Mode: Offline vs Online -->
+        <div class="ocr-setting-row" id="ocr-indic-mode-row">
+          <label class="ocr-setting-label">
+            <span>IndicPhotoOCR Mode:</span>
+          </label>
+          <div class="ocr-mode-pills" id="ocr-indic-mode-pills" style="width: 100%; display: flex;">
+            <button type="button" class="ocr-pill-btn active" id="btn-indic-mode-offline" data-mode="offline" style="flex: 1; text-align: center;">💻 Offline (Local Server / 7860)</button>
+            <button type="button" class="ocr-pill-btn" id="btn-indic-mode-online" data-mode="online" style="flex: 1; text-align: center;">☁️ Online (Bhashini HF Space)</button>
+          </div>
+        </div>
+
+        <!-- IndicPhotoOCR Local Endpoint URL (Optional) -->
+        <div class="ocr-setting-row" id="ocr-indic-url-row" style="display: none;">
+          <label class="ocr-setting-label">
+            <span>IndicPhotoOCR Server URL:</span>
+            <span id="ocr-indic-status-tag" style="font-size: 11px; color: #10b981;">● Active (Port 7860 / 8000)</span>
+          </label>
+          <input type="text" id="ocr-indic-url-input" class="ocr-input-field" value="http://localhost:7860/api/recognize" placeholder="http://localhost:7860/api/recognize">
+        </div>
+
+        <!-- TrOCR Execution Mode: Offline vs Online -->
+        <div class="ocr-setting-row" id="ocr-trocr-mode-row" style="display: none;">
+          <label class="ocr-setting-label">
+            <span>TrOCR Mode:</span>
+          </label>
+          <div class="ocr-mode-pills" id="ocr-trocr-mode-pills" style="width: 100%; display: flex;">
+            <button type="button" class="ocr-pill-btn active" id="btn-trocr-mode-offline" data-mode="offline" style="flex: 1; text-align: center;">💻 Offline (Port 7862)</button>
+            <button type="button" class="ocr-pill-btn" id="btn-trocr-mode-online" data-mode="online" style="flex: 1; text-align: center;">☁️ Online (HF Cloud)</button>
+          </div>
+        </div>
+
+        <!-- TrOCR Local Endpoint URL (Optional) -->
+        <div class="ocr-setting-row" id="ocr-trocr-url-row" style="display: none;">
+          <label class="ocr-setting-label">
+            <span>TrOCR Local Server URL:</span>
+            <span id="ocr-trocr-status-tag" style="font-size: 11px; color: #10b981;">● Online (7862)</span>
+          </label>
+          <input type="text" id="ocr-trocr-url-input" class="ocr-input-field" value="http://localhost:7862/api/recognize" placeholder="http://localhost:7862/api/recognize">
+        </div>
+
+        <!-- Language Selector -->
+        <div class="ocr-setting-row">
+          <label class="ocr-setting-label">Language Identifier:</label>
+          <select id="ocr-lang-select" class="ocr-select">
+            <option value="gujarati" selected>ગુજરાતી (Gujarati)</option>
+            <option value="auto">🌐 Auto-Detect Indian Script</option>
+            <option value="hindi">હિન્દી (Hindi)</option>
+          </select>
+        </div>
+
+        <!-- Hugging Face Token (Optional) -->
+        <div class="ocr-setting-row" id="ocr-hf-token-row">
+          <label class="ocr-setting-label">
+            <span>Hugging Face Token (Optional):</span>
+            <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-stroke); font-size: 11px; text-decoration: underline;">Get Token ↗</a>
+          </label>
+          <input type="password" id="ocr-hf-token-input" class="ocr-input-field" placeholder="hf_... (For TrOCR router quota)">
+        </div>
+
+        <!-- Extract Action Button -->
+        <button id="btn-ocr-extract" class="btn-ocr-extract">
+          <span class="ocr-spinner" id="ocr-spinner" style="display: none;"></span>
+          <span id="ocr-btn-label">🔍 એક્સટ્રેક્ટ કરો (Extract Gujarati Text)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Recognition Results Panel -->
+    <div class="ocr-results-panel" id="ocr-results-container" style="display: none;">
+      <div class="ocr-results-header">
+        <div class="ocr-results-title">
+          <span>📝 Recognition Results & Extracted Text</span>
+        </div>
+        <div class="ocr-metrics-bar">
+          <span class="ocr-metric-tag highlight" id="ocr-metric-model">IndicPhotoOCR</span>
+          <span class="ocr-metric-tag" id="ocr-metric-latency">⚡ 1.2s</span>
+          <span class="ocr-metric-tag" id="ocr-metric-words">📝 0 Words</span>
+          <span class="ocr-metric-tag" id="ocr-metric-conf">🎯 95% Conf</span>
+        </div>
+      </div>
+
+      <!-- Text Output Area -->
+      <div class="ocr-text-output-wrapper">
+        <textarea id="ocr-text-output" class="ocr-text-output" placeholder="Recognized Gujarati text will appear here..."></textarea>
+      </div>
+
+      <!-- Action Toolbar -->
+      <div class="ocr-actions-bar">
+        <div class="ocr-actions-group">
+          <button class="btn-ocr-tool" id="btn-ocr-copy">📋 Copy Text</button>
+          <button class="btn-ocr-tool" id="btn-ocr-download-txt">💾 Download TXT</button>
+          <button class="btn-ocr-tool" id="btn-ocr-download-json">📊 Download JSON Data</button>
+        </div>
+
+        <div class="ocr-actions-group">
+          <button class="btn-ocr-tool btn-ocr-voice" id="btn-ocr-speak-tts">
+            <span>🔊 Speak with Kano Voice (TTS)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
 <!-- Unified Character Catalog Browser (565 Characters) - Shared across both suites -->
 <section class="catalog-section" id="common-catalog-section">
   <div class="catalog-toolbar">
@@ -413,6 +614,7 @@
   <script src="js/audio.js"></script>
   <script src="js/stage.js"></script>
   <script src="js/tts.js"></script>
+  <script src="js/ocr.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
