@@ -25,6 +25,7 @@ WEB_PORT=8085
 INDIC_PORT=7860
 TROCR_PORT=7862
 TTS_PORT=7861
+F5_PORT=7865
 TARGET_TAB=""
 OPEN_BROWSER=true
 ENABLE_ENGINES=true
@@ -60,6 +61,10 @@ while [[ $# -gt 0 ]]; do
       TTS_PORT="$2"
       shift 2
       ;;
+    --f5-port)
+      F5_PORT="$2"
+      shift 2
+      ;;
     --tab)
       TARGET_TAB="$2"
       shift 2
@@ -74,6 +79,7 @@ while [[ $# -gt 0 ]]; do
       echo "  --indic-port <port>  Port for Local IndicPhotoOCR Engine (default: 7860)"
       echo "  --trocr-port <port>  Port for Local Gujarati TrOCR Engine (default: 7862)"
       echo "  --tts-port <port>    Port for Local Indic-TTS Engine (default: 7861)"
+      echo "  --f5-port <port>     Port for Local IndicF5 Engine (default: 7865)"
       echo "  --web-port <port>    Port for Local Web Studio (default: 8085)"
       echo "  --tab <name>         Open directly to tab: animator, handwriting, tts, ocr"
       echo "  -h, --help           Show this help message"
@@ -147,6 +153,7 @@ if [ "$ENABLE_ENGINES" = true ]; then
   clean_port "${INDIC_PORT}" "IndicPhotoOCR Engine"
   clean_port "${TROCR_PORT}" "TrOCR Engine"
   clean_port "${TTS_PORT}" "Indic-TTS Engine"
+  clean_port "${F5_PORT}" "IndicF5 Engine"
 fi
 
 # Variables to track background PIDs
@@ -155,12 +162,13 @@ WEB_PID=""
 INDIC_PID=""
 TROCR_PID=""
 TTS_PID=""
+F5_PID=""
 
 # Cleanup trap on exit / Ctrl+C
 cleanup() {
   echo ""
   echo -e "${YELLOW}🛑 Shutting down KanoAI servers...${NC}"
-  for pid in "${INDIC_PID}" "${TROCR_PID}" "${TTS_PID}" "${API_PID}" "${WEB_PID}"; do
+  for pid in "${INDIC_PID}" "${TROCR_PID}" "${TTS_PID}" "${F5_PID}" "${API_PID}" "${WEB_PID}"; do
     if [ -n "${pid}" ]; then
       kill "${pid}" 2>/dev/null || true
     fi
@@ -183,6 +191,10 @@ if [ "$ENABLE_ENGINES" = true ]; then
   echo -e "🎙️ Starting Local Indic-TTS Engine Server on port ${TTS_PORT}..."
   "${PYTHON_BIN}" "${REPO_ROOT}/python/tts/run_local_indic_tts.py" --port "${TTS_PORT}" > /tmp/kano_indic_tts_server.log 2>&1 &
   TTS_PID=$!
+
+  echo -e "🌊 Starting Local IndicF5 Engine Server on port ${F5_PORT}..."
+  "${PYTHON_BIN}" "${REPO_ROOT}/python/tts/run_local_indic_f5.py" --port "${F5_PORT}" > /tmp/kano_indic_f5_server.log 2>&1 &
+  F5_PID=$!
 fi
 
 # 4. Start Backend API Server (python/ocr/server.py on port 8000)
@@ -221,6 +233,9 @@ if [ "$ENABLE_ENGINES" = true ]; then
   fi
   if wait_for_url "http://localhost:${TTS_PORT}/"; then
     echo -e "${GREEN}✓ Local Indic-TTS Engine ready: http://localhost:${TTS_PORT}/${NC}"
+  fi
+  if wait_for_url "http://localhost:${F5_PORT}/"; then
+    echo -e "${GREEN}✓ Local IndicF5 Engine ready: http://localhost:${F5_PORT}/${NC}"
   fi
 fi
 
@@ -271,6 +286,7 @@ if [ "$ENABLE_ENGINES" = true ]; then
   echo -e "   🔬  IndicPhotoOCR (Port 7860):  ${CYAN}http://localhost:${INDIC_PORT}/api/health${NC}"
   echo -e "   🤖  Gujarati TrOCR (Port 7862): ${CYAN}http://localhost:${TROCR_PORT}/health${NC}"
   echo -e "   🎙️  Indic-TTS (Port 7861):      ${CYAN}http://localhost:${TTS_PORT}/${NC}"
+  echo -e "   🌊  IndicF5 (Port 7865):        ${CYAN}http://localhost:${F5_PORT}/${NC}"
 fi
 echo -e "${BOLD}${GREEN}=================================================================${NC}"
 echo -e "   Press ${BOLD}Ctrl+C${NC} anytime to stop all servers."
@@ -293,4 +309,4 @@ if [ "$OPEN_BROWSER" = true ]; then
 fi
 
 # Keep script running to maintain servers until user hits Ctrl+C
-wait "${API_PID}" "${WEB_PID}" "${INDIC_PID}" "${TROCR_PID}" "${TTS_PID}" 2>/dev/null || true
+wait "${API_PID}" "${WEB_PID}" "${INDIC_PID}" "${TROCR_PID}" "${TTS_PID}" "${F5_PID}" 2>/dev/null || true

@@ -104,6 +104,7 @@ class TTSService:
                 hf_token=kwargs.get("hf_token"),
                 api_url=kwargs.get("f5_api_url") or kwargs.get("api_url"),
                 speed=speed,
+                mock=kwargs.get("mock", False),
             )
         elif engine_normalized in ["indic_tts", "indictts", "indic_speak", "indicspeak", "parler"]:
             return self.indic_tts.synthesize(
@@ -137,6 +138,7 @@ class TTSService:
                 hf_token=kwargs.get("hf_token"),
                 api_url=kwargs.get("f5_api_url") or kwargs.get("api_url"),
                 speed=speed,
+                mock=mock,
             )
         except Exception as e:
             errors["indic_f5"] = str(e)
