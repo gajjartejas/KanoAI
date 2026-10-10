@@ -708,3 +708,29 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Phoneme Diagnostics Chips (eSpeak-NG) */
+.tts-phoneme-debug-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tts-phoneme-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  transition: all var(--transition-fast);
+}
+
+.tts-phoneme-chip:hover {
+  background: rgba(0, 229, 255, 0.15);
+  border-color: var(--cyan-stroke);
+  color: #ffffff;
+  transform: translateY(-1px);
+}

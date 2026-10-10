@@ -154,7 +154,9 @@ class OCRRequestHandler(BaseHTTPRequestHandler):
             text = body.get("text", "").strip()
             engine = body.get("engine", "mms_tts").strip()
             speaker_id = body.get("speaker_id", "dhara")
-            speed = float(body.get("speed", 1.0 if engine in ["mms_tts", "mms"] else 0.75))
+            voice_id = body.get("voice_id") or body.get("voice", "rohan")
+            lang = body.get("lang", "gu")
+            speed = float(body.get("speed", 1.0 if engine in ["mms_tts", "mms", "piper_tts", "piper", "espeak_ng", "espeak"] else 0.75))
 
             if not text:
                 self._set_cors_headers(400)
@@ -166,6 +168,9 @@ class OCRRequestHandler(BaseHTTPRequestHandler):
                     engine=engine,
                     text=text,
                     speaker_id=speaker_id,
+                    voice_id=voice_id,
+                    voice=voice_id,
+                    lang=lang,
                     speed=speed,
                     hf_token=body.get("hf_token"),
                     api_url=body.get("api_url"),
@@ -185,7 +190,9 @@ class OCRRequestHandler(BaseHTTPRequestHandler):
         elif clean_path in ["/api/compare", "/api/tts/compare"] and tts_service:
             text = body.get("text", "").strip()
             speaker_id = body.get("speaker_id", "dhara")
-            speed = float(body.get("speed", 0.75))
+            voice_id = body.get("voice_id") or body.get("voice", "rohan")
+            lang = body.get("lang", "gu")
+            speed = float(body.get("speed", 1.0))
 
             if not text:
                 self._set_cors_headers(400)
@@ -196,6 +203,8 @@ class OCRRequestHandler(BaseHTTPRequestHandler):
                 res = tts_service.compare(
                     text=text,
                     speaker_id=speaker_id,
+                    voice_id=voice_id,
+                    lang=lang,
                     speed=speed,
                     hf_token=body.get("hf_token"),
                     api_url=body.get("api_url"),

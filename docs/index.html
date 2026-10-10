@@ -216,7 +216,7 @@
     <!-- Engine Mode Selection Cards -->
     <div class="tts-engine-grid">
       <!-- Engine 1: Meta MMS-TTS (Offline VITS) -->
-      <div class="tts-engine-card" data-engine="mms_tts">
+      <div class="tts-engine-card active" data-engine="mms_tts">
         <div class="tts-engine-card-header">
           <span class="tts-engine-name">Meta MMS-TTS</span>
           <span class="tts-engine-badge">100% Offline VITS</span>
@@ -229,8 +229,36 @@
         </div>
       </div>
 
-      <!-- Engine 2: Indic-TTS (Bodhan AI Indic-Speak) -->
-      <div class="tts-engine-card active" data-engine="indic_tts">
+      <!-- Engine 2: Piper TTS (Ultra-Fast ONNX) -->
+      <div class="tts-engine-card" data-engine="piper_tts">
+        <div class="tts-engine-card-header">
+          <span class="tts-engine-name">Piper TTS</span>
+          <span class="tts-engine-badge">Ultra-Fast ONNX</span>
+        </div>
+        <p>Neural text-to-speech running locally on ONNX Runtime with sub-100ms inference on CPU.</p>
+        <div class="tts-engine-meta">
+          <span>🎼 22.05 kHz</span>
+          <span>⚡ &lt;100ms ONNX</span>
+          <span>🎙️ Rohan / Gujarati</span>
+        </div>
+      </div>
+
+      <!-- Engine 3: eSpeak-NG (Formant & Phoneme Debugger) -->
+      <div class="tts-engine-card" data-engine="espeak_ng">
+        <div class="tts-engine-card-header">
+          <span class="tts-engine-name">eSpeak-NG</span>
+          <span class="tts-engine-badge">Formant & Phonemes</span>
+        </div>
+        <p>Formant synthesis (&lt;10 MB, zero neural weights). Native Gujarati (gu) & Hindi (hi) phoneme debugging.</p>
+        <div class="tts-engine-meta">
+          <span>🔬 IPA Phonemes</span>
+          <span>⚡ Instant &lt;10ms</span>
+          <span>🧩 Zero Weights</span>
+        </div>
+      </div>
+
+      <!-- Engine 4: Indic-TTS (Bodhan AI Indic-Speak) -->
+      <div class="tts-engine-card" data-engine="indic_tts">
         <div class="tts-engine-card-header">
           <span class="tts-engine-name">AI4Bharat Indic-TTS</span>
           <span class="tts-engine-badge">Fast & Clear</span>
@@ -243,7 +271,7 @@
         </div>
       </div>
 
-      <!-- Engine 3: IndicF5 -->
+      <!-- Engine 5: IndicF5 -->
       <div class="tts-engine-card" data-engine="indic_f5">
         <div class="tts-engine-card-header">
           <span class="tts-engine-name">AI4Bharat IndicF5</span>
@@ -257,10 +285,10 @@
         </div>
       </div>
 
-      <!-- Engine 4: Dual AB Comparison -->
+      <!-- Engine 6: Multi-Engine Comparison -->
       <div class="tts-engine-card" data-engine="compare">
         <div class="tts-engine-card-header">
-          <span class="tts-engine-name">Dual AB Comparison</span>
+          <span class="tts-engine-name">Multi Comparison</span>
           <span class="tts-engine-badge">Side-by-Side</span>
         </div>
         <p>Synthesize with all engines concurrently to evaluate voice timbre, prosody, and phonetic accuracy.</p>
@@ -300,8 +328,34 @@
           <span>Voice & Conditioning Settings</span>
         </div>
 
+        <!-- Piper TTS Settings -->
+        <div class="tts-setting-row" id="tts-piper-settings" style="display: none;">
+          <label class="tts-setting-label">Piper Neural Voice Model:</label>
+          <select id="tts-piper-voice-select" class="tts-select">
+            <option value="rohan" selected>Rohan (રોહન) - Hindi / Indic (Ultra-Fast ONNX)</option>
+            <option value="pratham">Pratham (પ્રથમ) - Hindi / Indic (Conversational)</option>
+            <option value="priyamvada">Priyamvada (પ્રિયંવદા) - Female (Clear Diction)</option>
+            <option value="gujarati_male">Gujarati Male (Arjun4707 / AI4Bharat Dataset)</option>
+          </select>
+          <div class="tts-speaker-preview-box" id="tts-piper-preview">
+            Ultra-fast neural text-to-speech running locally via ONNX Runtime with sub-100ms CPU inference.
+          </div>
+        </div>
+
+        <!-- eSpeak-NG Settings -->
+        <div class="tts-setting-row" id="tts-espeak-settings" style="display: none;">
+          <label class="tts-setting-label">eSpeak-NG Phoneme Table:</label>
+          <select id="tts-espeak-lang-select" class="tts-select">
+            <option value="gu" selected>Gujarati (gu) - Native Phoneme & Consonant Table</option>
+            <option value="hi">Hindi (hi) - Native Phoneme Table</option>
+          </select>
+          <div class="tts-speaker-preview-box">
+            Formant acoustic synthesis (&lt;10 MB, zero neural weights). Ideal for instant offline IPA and consonant debugging.
+          </div>
+        </div>
+
         <!-- Indic-TTS Settings -->
-        <div class="tts-setting-row" id="tts-indictts-settings">
+        <div class="tts-setting-row" id="tts-indictts-settings" style="display: none;">
           <label class="tts-setting-label">Voice / Speaker Profile:</label>
           <select id="tts-speaker-select" class="tts-select">
             <option value="dhara" selected>Dhara (ધરા) - Female (Natural & Clear)</option>
