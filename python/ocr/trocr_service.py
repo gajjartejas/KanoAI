@@ -97,6 +97,10 @@ class GujaratiTrOCR:
                 img_np = cv2.cvtColor(np.array(image_input), cv2.COLOR_RGB2BGR)
                 _, buf = cv2.imencode(".png", img_np)
                 img_bytes = buf.tobytes()
+            elif isinstance(image_input, np.ndarray):
+                img_np = image_input
+                _, buf = cv2.imencode(".png", img_np)
+                img_bytes = buf.tobytes()
             else:
                 raise ValueError("Unsupported image input type")
 
@@ -149,6 +153,7 @@ class GujaratiTrOCR:
                     print(f"[TrOCR Service] Local server query failed ({local_err}), continuing...")
 
             if token:
+                headers = {"Authorization": f"Bearer {token}"}
                 resp = requests.post(target_url, headers=headers, data=img_bytes, timeout=30)
                 if resp.status_code == 200:
                     res_json = resp.json()

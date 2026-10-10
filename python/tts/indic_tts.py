@@ -99,6 +99,7 @@ class IndicTTSEngine:
                         if "audio_base64" in data and data["audio_base64"]:
                             raw_bytes = base64.b64decode(data["audio_base64"])
                             return {
+                                "success": True,
                                 "engine": "indic_tts",
                                 "model_name": data.get("model_name", "AI4Bharat Indic-TTS (Local Server)"),
                                 "text": text,
@@ -184,6 +185,7 @@ class IndicTTSEngine:
         audio_b64 = base64.b64encode(audio_bytes).decode("utf-8")
 
         return {
+            "success": True,
             "engine": "indic_tts",
             "model_name": "ai4bharat/indic-parler-tts (bodhan-ai/indic-speak)",
             "text": text,

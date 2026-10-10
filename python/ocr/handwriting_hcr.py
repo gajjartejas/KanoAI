@@ -167,6 +167,8 @@ class GujaratiHCR:
                     raise FileNotFoundError(f"Image not found: {image_input}")
             elif isinstance(image_input, Image.Image):
                 img_np = cv2.cvtColor(np.array(image_input), cv2.COLOR_RGB2BGR)
+            elif isinstance(image_input, np.ndarray):
+                img_np = image_input
             else:
                 raise ValueError("Unsupported image input type")
 

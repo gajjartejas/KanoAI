@@ -79,6 +79,9 @@ KanoAI/
 ├── python/                       # Python workspace
 │   ├── setup_venv.sh             # Industry-standard virtual environment setup script
 │   ├── README.md                 # Python workspace overview & venv instructions
+│   ├── ocr/                      # Multi-Engine Gujarati OCR Studio (IndicPhotoOCR, TrOCR, GujaratiHCR)
+│   ├── tts/                      # Neural Gujarati Voice Studio (IndicF5 & Indic-TTS)
+│   ├── tests/                    # Comprehensive unit tests for OCR, TTS, APIs & services
 │   └── char_stroke_generation/   # Dedicated character stroke generation package
 │       ├── stroke_generator/     # Core library (Bézier, EDT, HarfBuzz, IoU matching)
 │       ├── scripts/              # Standalone CLI runners
@@ -88,11 +91,13 @@ KanoAI/
 │       └── README.md             # Technical documentation & math formulations
 ├── docs/                         # Live GitHub Pages interactive frontend & Kano audio suite
 │   ├── index.html                # Semantic responsive single-page web application
-│   ├── css/                      # Modular styling (main, stage comparison, character grid)
-│   ├── js/                       # Theme toggle, Kano audio player, stage renderer, app coordinator
-│   ├── assets/                   # Full 565-character SVG catalog, compressed MP3 audio & previews
+│   ├── css/                      # Modular styling (main, stage comparison, ocr, character grid)
+│   ├── js/                       # Stage renderer, Kano audio player, OCR studio, app coordinator
+│   ├── assets/                   # Full 565-character SVG catalog, OCR sample documents & previews
 │   └── handwriting/              # Production web build for the Handwriting Recognition Suite
-├── scripts/                      # Automated asset optimization & screenshot capture utilities
+├── scripts/                      # Launchers (start_all.sh/py), test runners (run_tests.sh/py) & asset tools
+├── start_all.sh                  # One-click suite launcher (Bash)
+├── start_all.py                  # One-click suite launcher (Python)
 ├── fonts/                        # Shared TrueType/OpenType Gujarati fonts
 ├── resources/                    # Shared JSON definitions & raw datasets (Kakko, Barakhadi, Numerals)
 ├── interpolate-svg/              # Manual reference SVG stroke templates
@@ -255,6 +260,38 @@ python3 -m http.server 8085 --directory docs
 .venv/bin/python3 python/ocr/cli.py --test
 ```
 👉 See [OCR Documentation (`python/ocr/README.md`)](python/ocr/README.md) for full API specifications.
+
+---
+
+## 🧪 Automated Unit Testing & CI Verification (`python/tests/`)
+
+The KanoAI suite includes a comprehensive Python unit test suite verifying OCR, TTS, API request handlers, image segmentation, and system launchers:
+
+### 🚀 Running All Tests
+
+```bash
+# Run using the automated shell test runner (macOS / Linux):
+./scripts/run_tests.sh
+
+# Or run using the cross-platform Python runner:
+python3 scripts/run_tests.py
+
+# Or directly with Python standard library unittest:
+PYTHONPATH=python python3 -m unittest discover -s python/tests -p "test_*.py" -v
+```
+
+### 📋 Test Coverage Matrix (37 Tests)
+
+| Component | Test Module | Description |
+| :--- | :--- | :--- |
+| **📸 OCR Service Coordinator** | `test_ocr_service.py` | Multi-engine routing (`indic_photo_ocr`, `gujarati_trocr`, `gujarati_hcr`), automatic fallback chain, sample catalog schema, comparison mode. |
+| **✍️ GujaratiHCR Segmentation** | `test_ocr_hcr.py` | Grayscale & Otsu binarization, horizontal/vertical projection slicing, normalized bounding box coordinates (`norm_x`, `norm_y`, `norm_w`, `norm_h`), network timeout fallback. |
+| **📖 Gujarati TrOCR** | `test_ocr_trocr.py` | Multi-line document contour slicing, input formats (PIL, NumPy, base64 data URIs, files), Hugging Face router & local server mocks. |
+| **⚡ OCR Server API** | `test_ocr_server.py` | HTTP microservice endpoints (`/api/health`, `/api/ocr/samples`, `/api/ocr/recognize`, `/api/ocr/compare`), CORS preflight OPTIONS, 400 Bad Request handling. |
+| **🗣️ TTS Service Coordinator** | `test_tts_service.py` | Unified preset catalogue, dual-engine voice routing (`indic_f5`, `indic_tts`), side-by-side comparison synthesis, speaker registry. |
+| **🎙️ Neural TTS Engines** | `test_tts_engines.py` | `IndicF5Engine` and `IndicTTSEngine` parameter validations, empty input assertions, base64 audio payload encoding, speaker profiles (`Dhara`, `Parth`). |
+| **⚡ TTS Server API** | `test_tts_server.py` | HTTP microservice endpoints (`/api/health`, `/api/tts/voices`, `/api/tts/synthesize`, `/api/tts/presets`), CORS headers, malformed payload recovery. |
+| **🚀 System Launchers** | `test_launcher.py` | Cross-platform port availability check (`is_port_in_use`), health check wait loop (`wait_for_url`), repository root path resolution. |
 
 ---
 
