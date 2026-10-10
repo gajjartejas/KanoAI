@@ -75,7 +75,7 @@ class OCRRequestHandler(BaseHTTPRequestHandler):
             samples = self.ocr_service.get_sample_catalogs()
             self.wfile.write(json.dumps(samples, ensure_ascii=False).encode("utf-8"))
 
-        elif clean_path in ["/api/presets", "/presets"] and tts_service:
+        elif clean_path in ["/api/presets", "/presets", "/api/tts/presets"] and tts_service:
             self._set_cors_headers(200)
             self.wfile.write(json.dumps(tts_service.get_presets(), ensure_ascii=False).encode("utf-8"))
 
@@ -150,11 +150,11 @@ class OCRRequestHandler(BaseHTTPRequestHandler):
                 self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
 
         # 3. TTS Speech Synthesis (if requested from OCR extracted text or TTS tab)
-        elif clean_path in ["/api/synthesize"] and tts_service:
+        elif clean_path in ["/api/synthesize", "/api/tts/synthesize"] and tts_service:
             text = body.get("text", "").strip()
-            engine = body.get("engine", "indic_f5").strip()
+            engine = body.get("engine", "mms_tts").strip()
             speaker_id = body.get("speaker_id", "dhara")
-            speed = float(body.get("speed", 0.75))
+            speed = float(body.get("speed", 1.0 if engine in ["mms_tts", "mms"] else 0.75))
 
             if not text:
                 self._set_cors_headers(400)
@@ -167,7 +167,43 @@ class OCRRequestHandler(BaseHTTPRequestHandler):
                     text=text,
                     speaker_id=speaker_id,
                     speed=speed,
-                    hf_token=body.get("hf_token")
+                    hf_token=body.get("hf_token"),
+                    api_url=body.get("api_url"),
+                    f5_api_url=body.get("f5_api_url"),
+                    tts_api_url=body.get("tts_api_url"),
+                    ref_audio_path=body.get("ref_audio_path"),
+                    ref_text=body.get("ref_text"),
+                    mock=body.get("mock", False),
+                )
+                self._set_cors_headers(200)
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+            except Exception as e:
+                self._set_cors_headers(500)
+                self.wfile.write(json.dumps({"error": str(e), "engine": engine}).encode("utf-8"))
+
+        # 4. TTS Multi-Engine Comparison
+        elif clean_path in ["/api/compare", "/api/tts/compare"] and tts_service:
+            text = body.get("text", "").strip()
+            speaker_id = body.get("speaker_id", "dhara")
+            speed = float(body.get("speed", 0.75))
+
+            if not text:
+                self._set_cors_headers(400)
+                self.wfile.write(json.dumps({"error": "Missing 'text' in request"}).encode("utf-8"))
+                return
+
+            try:
+                res = tts_service.compare(
+                    text=text,
+                    speaker_id=speaker_id,
+                    speed=speed,
+                    hf_token=body.get("hf_token"),
+                    api_url=body.get("api_url"),
+                    f5_api_url=body.get("f5_api_url"),
+                    tts_api_url=body.get("tts_api_url"),
+                    ref_audio_path=body.get("ref_audio_path"),
+                    ref_text=body.get("ref_text"),
+                    mock=body.get("mock", False),
                 )
                 self._set_cors_headers(200)
                 self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))

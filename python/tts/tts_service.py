@@ -112,6 +112,7 @@ class TTSService:
                 description_override=kwargs.get("description"),
                 api_url=kwargs.get("tts_api_url") or kwargs.get("api_url"),
                 speed=speed,
+                mock=kwargs.get("mock", False),
             )
         else:
             raise ValueError(f"Unknown TTS engine '{engine}'. Choose 'mms_tts', 'indic_f5', or 'indic_tts'.")
@@ -147,6 +148,7 @@ class TTSService:
                 description_override=kwargs.get("description"),
                 api_url=kwargs.get("tts_api_url") or kwargs.get("api_url"),
                 speed=speed,
+                mock=mock,
             )
         except Exception as e:
             errors["indic_tts"] = str(e)

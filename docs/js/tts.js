@@ -120,7 +120,7 @@ class TTSStudio {
     const ttsCustomUrlInput = document.getElementById('tts-indictts-custom-url');
     const ttsHint = document.getElementById('tts-indictts-endpoint-hint');
     if (ttsEndpointSelect && ttsCustomUrlInput) {
-      const savedTtsEndpoint = localStorage.getItem('kano_tts_api_mode') || 'cloud';
+      const savedTtsEndpoint = localStorage.getItem('kano_tts_api_mode') || 'local';
       const savedTtsUrl = localStorage.getItem('kano_tts_custom_url') || 'http://localhost:7861';
       ttsEndpointSelect.value = savedTtsEndpoint;
       ttsCustomUrlInput.value = savedTtsUrl;
@@ -287,9 +287,10 @@ class TTSStudio {
       // Resolve Indic-TTS endpoint
       const ttsSelect = document.getElementById('tts-indictts-endpoint-select');
       const ttsCustom = document.getElementById('tts-indictts-custom-url');
-      let ttsApiUrl = 'https://bodhan-ai-indic-speak.hf.space';
+      let ttsApiUrl = 'http://localhost:7861';
       if (ttsSelect) {
         if (ttsSelect.value === 'local') ttsApiUrl = 'http://localhost:7861';
+        else if (ttsSelect.value === 'cloud') ttsApiUrl = 'https://ai4bharat-indic-parler-tts.hf.space';
         else if (ttsSelect.value === 'custom' && ttsCustom) ttsApiUrl = ttsCustom.value.trim() || 'http://localhost:7861';
       }
 
