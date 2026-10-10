@@ -102,3 +102,13 @@ The OCR Studio is integrated directly into the KanoAI web interface at [`docs/in
 - **Bounding Box Overlay**: Interactive toggle to visualize detected lines and text bounding boxes with confidence tooltips.
 - **Voice Bridge**: Click `🔊 Speak with Kano TTS` to seamlessly read extracted text aloud using AI4Bharat Indic-TTS or IndicF5 voice synthesis.
 - **Export Options**: 1-click clipboard copy and `.txt` file download.
+
+---
+
+## 🙏 Third-Party Credits & Acknowledgements
+
+- **Bhashini-IITJ IndicPhotoOCR**: Digital India Bhashini & IIT Jodhpur ([GitHub](https://github.com/Bhashini-IITJ/IndicPhotoOCR) / [Hugging Face Space](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR)).
+- **Gujarati TrOCR**: Fine-tuned Vision Transformer by Umang Chaudhari ([Hugging Face](https://huggingface.co/umangchaudhari/gujarati-ocr)).
+- **Microsoft TrOCR**: Transformer-based Optical Character Recognition architecture ([Microsoft Research](https://github.com/microsoft/unilm/tree/master/trocr)).
+- **OpenCV & Pillow**: High-performance image processing, Otsu thresholding, and morphological operations.
+

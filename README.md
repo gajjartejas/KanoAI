@@ -360,6 +360,36 @@ All characters can be interactively browsed, animated, pronounced, and practiced
 - [ ] **Kano Grammar AI**: Contextual spell-checker, Sandhi/Samasa decomposition, and morphological analysis.
 - [ ] **Kano Cloud API**: Developer REST/GraphQL endpoints for character stroke vectors, phonetics, and datasets.
 
-## License
+---
+
+## 🙏 Third-Party Credits & Acknowledgements
+
+KanoAI proudly stands on the shoulders of the open-source and scientific research communities. We gratefully acknowledge the following projects, models, datasets, and libraries:
+
+### 🧠 Neural AI Models & Machine Learning Research
+- **[AI4Bharat IndicF5](https://github.com/AI4Bharat/IndicF5)** (IIT Madras & AI4Bharat): Reference-conditioned Flow-Matching Speech Synthesis for Indian languages ([Hugging Face Space](https://huggingface.co/ai4bharat/IndicF5)).
+- **[AI4Bharat Indic-TTS](https://github.com/AI4Bharat/Indic-TTS)** (IIT Madras & AI4Bharat): Multi-speaker neural text-to-speech acoustic models for Indian languages ([Hugging Face](https://huggingface.co/ai4bharat/indic-parler-tts)).
+- **[Bodhan AI (Indic-Speak)](https://huggingface.co/bodhan-ai/indic-speak)**: Natural Gujarati female (`Dhara`) and male (`Parth`) neural speaker profiles.
+- **[Bhashini-IITJ IndicPhotoOCR](https://github.com/Bhashini-IITJ/IndicPhotoOCR)** (Digital India Bhashini & IIT Jodhpur): Scene text detection (DBNet) and multilingual Indic sequence recognition ([Hugging Face Space](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR)).
+- **[Gujarati TrOCR](https://huggingface.co/umangchaudhari/gujarati-ocr)** by Umang Chaudhari: Vision Transformer (ViT + RoBERTa) encoder-decoder fine-tuned specifically for Gujarati text and conjuncts.
+- **[Microsoft TrOCR](https://github.com/microsoft/unilm/tree/master/trocr)** (Microsoft Research): Transformer-based Optical Character Recognition architecture for document processing.
+
+### 🔤 Open-Source Fonts & Typography
+- **[Google Noto Fonts](https://fonts.google.com/noto/specimen/Noto+Sans+Gujarati)**: Noto Sans Gujarati and Noto Serif Gujarati by Google Fonts and the Monotype design team (SIL Open Font License).
+- **Gujarati Open-Source Typefaces**: Rasa, Mogra, Shrikhand, Padauk, and Anek Gujarati created and published under the SIL Open Font License (OFL).
+
+### 🛠️ Core Libraries & Open-Source Software
+- **[OpenCV (cv2)](https://opencv.org/)**: Real-time computer vision, Otsu adaptive thresholding, morphological filtering, and contour extraction.
+- **[PyTorch](https://pytorch.org/) & [Hugging Face Transformers](https://huggingface.co/docs/transformers)**: Tensor processing, tokenizer runtime, and neural inference pipelines.
+- **[Gradio Client](https://www.gradio.app/docs/python-client)**: Asynchronous event-driven streaming client for neural inference endpoints.
+- **[Pillow (PIL)](https://python-pillow.org/)**: Raster image processing and format decoding.
+- **[SoundFile](https://python-soundfile.readthedocs.io/) & [NumPy](https://numpy.org/)**: High-performance numerical computing and WAV audio serialization.
+- **[React Native Web](https://necolas.github.io/react-native-web/) & [Expo](https://expo.dev/)**: Multi-platform web application runtime for the handwriting practice suite.
+- **[Jest](https://jestjs.io/)**: Fast and delighting JavaScript testing framework.
+- **[Simple Icons](https://simpleicons.org/) & [Lucide Icons](https://lucide.dev/)**: High-quality SVG brand icons and clean UI vectors.
+
+---
+
+## 📄 License
 
 KanoAI is licensed under the [GNU GENERAL PUBLIC LICENSE](https://github.com/gajjartejas/KanoAI/blob/main/LICENSE).
