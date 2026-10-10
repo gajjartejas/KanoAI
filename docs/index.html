@@ -215,7 +215,21 @@
 
     <!-- Engine Mode Selection Cards -->
     <div class="tts-engine-grid">
-      <!-- Engine 1: Indic-TTS (Bodhan AI Indic-Speak) -->
+      <!-- Engine 1: Meta MMS-TTS (Offline VITS) -->
+      <div class="tts-engine-card" data-engine="mms_tts">
+        <div class="tts-engine-card-header">
+          <span class="tts-engine-name">Meta MMS-TTS</span>
+          <span class="tts-engine-badge">100% Offline VITS</span>
+        </div>
+        <p>End-to-end Variational Inference TTS (facebook/mms-tts-guj) running 100% locally on CPU/MPS.</p>
+        <div class="tts-engine-meta">
+          <span>🎼 16 kHz</span>
+          <span>⚡ 0.1-0.3s Local</span>
+          <span>🏠 Zero Cloud</span>
+        </div>
+      </div>
+
+      <!-- Engine 2: Indic-TTS (Bodhan AI Indic-Speak) -->
       <div class="tts-engine-card active" data-engine="indic_tts">
         <div class="tts-engine-card-header">
           <span class="tts-engine-name">AI4Bharat Indic-TTS</span>
@@ -229,7 +243,7 @@
         </div>
       </div>
 
-      <!-- Engine 2: IndicF5 -->
+      <!-- Engine 3: IndicF5 -->
       <div class="tts-engine-card" data-engine="indic_f5">
         <div class="tts-engine-card-header">
           <span class="tts-engine-name">AI4Bharat IndicF5</span>
@@ -243,17 +257,17 @@
         </div>
       </div>
 
-      <!-- Engine 3: Dual AB Comparison -->
+      <!-- Engine 4: Dual AB Comparison -->
       <div class="tts-engine-card" data-engine="compare">
         <div class="tts-engine-card-header">
           <span class="tts-engine-name">Dual AB Comparison</span>
           <span class="tts-engine-badge">Side-by-Side</span>
         </div>
-        <p>Synthesize with both IndicF5 and Indic-TTS concurrently to evaluate voice timbre and accuracy.</p>
+        <p>Synthesize with all engines concurrently to evaluate voice timbre, prosody, and phonetic accuracy.</p>
         <div class="tts-engine-meta">
           <span>⚖️ Comparative</span>
           <span>📊 Waveform Diff</span>
-          <span>🎧 Dual Sync</span>
+          <span>🎧 Multi Sync</span>
         </div>
       </div>
     </div>

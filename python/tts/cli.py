@@ -71,6 +71,26 @@ def run_test():
     except Exception as e:
         print(f"   ❌ Indic-TTS Failed: {e}\n")
 
+    # Test 3: Meta MMS-TTS (Offline VITS)
+    print("▶ 3. Testing Meta MMS-TTS (100% Offline VITS facebook/mms-tts-guj)...")
+    try:
+        mms_res = service.synthesize(engine="mms_tts", text=test_phrase)
+        print(f"   ✅ MMS-TTS Success!")
+        print(f"      • Model: {mms_res['model_name']}")
+        print(f"      • Sample Rate: {mms_res['sample_rate']} Hz")
+        print(f"      • Duration: {mms_res['duration']}s")
+        print(f"      • Time Elapsed: {mms_res['elapsed_seconds']}s")
+        print(f"      • File Size: {mms_res['file_size']} bytes")
+
+        output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "output", "tts"))
+        os.makedirs(output_dir, exist_ok=True)
+        out_mms = os.path.join(output_dir, "test_mms_tts.wav")
+        with open(out_mms, "wb") as f:
+            f.write(base64.b64decode(mms_res["audio_base64"]))
+        print(f"      • Saved: {out_mms}\n")
+    except Exception as e:
+        print(f"   ❌ MMS-TTS Failed: {e}\n")
+
     print("=" * 60)
     print("🎉 Testing completed!")
     print("=" * 60)
@@ -78,17 +98,17 @@ def run_test():
 
 def main():
     parser = argparse.ArgumentParser(description="KanoAI Gujarati TTS CLI")
-    parser.add_argument("--test", action="store_true", help="Run automated test suite for both engines")
-    parser.add_argument("--engine", choices=["indic_f5", "indic_tts"], default="indic_f5", help="TTS Engine")
+    parser.add_argument("--test", action="store_true", help="Run automated test suite for all engines")
+    parser.add_argument("--engine", choices=["mms_tts", "indic_f5", "indic_tts"], default="mms_tts", help="TTS Engine")
     parser.add_argument("--text", type=str, help="Gujarati text to synthesize")
     parser.add_argument("--speaker", type=str, default="dhara", help="Speaker for Indic-TTS (dhara, parth)")
     parser.add_argument("--output", type=str, default="output.wav", help="Output audio file path")
-    parser.add_argument("--compare", action="store_true", help="Synthesize with both engines")
+    parser.add_argument("--compare", action="store_true", help="Synthesize with all engines")
     parser.add_argument("--api-url", type=str, help="Custom API or server URL (e.g. http://localhost:7860)")
     parser.add_argument("--f5-api-url", type=str, help="Custom IndicF5 server URL")
     parser.add_argument("--tts-api-url", type=str, help="Custom Indic-TTS server URL")
     parser.add_argument("--token", type=str, help="Hugging Face User Token for ZeroGPU")
-    parser.add_argument("--speed", type=float, default=0.75, help="Speech rate multiplier (default: 0.75)")
+    parser.add_argument("--speed", type=float, default=1.0, help="Speech rate multiplier (default: 1.0)")
 
     args = parser.parse_args()
 
@@ -103,7 +123,7 @@ def main():
     service = TTSService()
 
     if args.compare:
-        print(f"Comparing both engines for: '{args.text}' (speed: {args.speed}x)")
+        print(f"Comparing all engines for: '{args.text}' (speed: {args.speed}x)")
         comp = service.compare(
             text=args.text,
             speaker_id=args.speaker,
@@ -113,6 +133,10 @@ def main():
             speed=args.speed,
         )
         os.makedirs("output/tts", exist_ok=True)
+        if comp.get("has_mms"):
+            with open("output/tts/compare_mms.wav", "wb") as f:
+                f.write(base64.b64decode(comp["results"]["mms_tts"]["audio_base64"]))
+            print("Saved MMS-TTS: output/tts/compare_mms.wav")
         if comp["has_f5"]:
             with open("output/tts/compare_f5.wav", "wb") as f:
                 f.write(base64.b64decode(comp["results"]["indic_f5"]["audio_base64"]))
@@ -140,3 +164,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

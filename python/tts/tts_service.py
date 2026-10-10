@@ -6,6 +6,7 @@ Coordinates IndicF5 and Indic-TTS / Indic-Speak engines.
 from typing import Dict, Any, List, Optional
 from .indic_f5_tts import IndicF5Engine
 from .indic_tts import IndicTTSEngine
+from .mms_tts import MMSTTSEngine
 
 DEFAULT_GUJARATI_SAMPLES = [
     {
@@ -45,6 +46,7 @@ class TTSService:
     def __init__(self):
         self.indic_f5 = IndicF5Engine()
         self.indic_tts = IndicTTSEngine()
+        self.mms_tts = MMSTTSEngine()
 
     def get_presets(self) -> Dict[str, Any]:
         """Return available sample texts and speaker profiles."""
@@ -55,6 +57,14 @@ class TTSService:
                 for k, v in self.indic_tts.SPEAKERS.items()
             ],
             "engines": [
+                {
+                    "id": "mms_tts",
+                    "name": "Meta MMS-TTS (Offline VITS)",
+                    "type": "End-to-End Variational Inference TTS",
+                    "features": ["100% Offline & Local", "Zero Cloud Dependency", "Accurate Gujarati Phonetics"],
+                    "sample_rate": 16000,
+                    "url": "https://huggingface.co/facebook/mms-tts-guj",
+                },
                 {
                     "id": "indic_f5",
                     "name": "AI4Bharat IndicF5",
@@ -78,9 +88,15 @@ class TTSService:
         """Synthesize speech using selected engine."""
         engine_normalized = engine.lower().replace("-", "_")
 
-        speed = kwargs.get("speed", 0.75)
+        speed = kwargs.get("speed", 1.0 if engine_normalized in ["mms_tts", "mms", "meta_mms", "vits"] else 0.75)
 
-        if engine_normalized in ["indic_f5", "indicf5", "f5"]:
+        if engine_normalized in ["mms_tts", "mms", "meta_mms", "vits"]:
+            return self.mms_tts.synthesize(
+                text=text,
+                speed=speed,
+                mock=kwargs.get("mock", False),
+            )
+        elif engine_normalized in ["indic_f5", "indicf5", "f5"]:
             return self.indic_f5.synthesize(
                 text=text,
                 ref_audio_path=kwargs.get("ref_audio_path"),
@@ -98,13 +114,19 @@ class TTSService:
                 speed=speed,
             )
         else:
-            raise ValueError(f"Unknown TTS engine '{engine}'. Choose 'indic_f5' or 'indic_tts'.")
+            raise ValueError(f"Unknown TTS engine '{engine}'. Choose 'mms_tts', 'indic_f5', or 'indic_tts'.")
 
     def compare(self, text: str, **kwargs) -> Dict[str, Any]:
-        """Synthesize speech with BOTH engines for side-by-side evaluation."""
+        """Synthesize speech with ALL engines for side-by-side evaluation."""
         results = {}
         errors = {}
         speed = kwargs.get("speed", 0.75)
+        mock = kwargs.get("mock", False)
+
+        try:
+            results["mms_tts"] = self.mms_tts.synthesize(text=text, speed=1.0, mock=mock)
+        except Exception as e:
+            errors["mms_tts"] = str(e)
 
         try:
             results["indic_f5"] = self.indic_f5.synthesize(
@@ -131,10 +153,13 @@ class TTSService:
 
         return {
             "text": text,
+            "mms_tts": results.get("mms_tts"),
             "indic_f5": results.get("indic_f5"),
             "indic_tts": results.get("indic_tts"),
             "results": results,
             "errors": errors,
+            "has_mms": "mms_tts" in results,
             "has_f5": "indic_f5" in results,
             "has_tts": "indic_tts" in results,
         }
+
