@@ -163,10 +163,18 @@ State-of-the-Art Gujarati Neural Voice Generation integrating 100% offline local
    - **Architecture**: End-to-end Variational Inference with Adversarial Learning (VITS, 16,000 Hz).
    - **Execution**: 100% offline and local inference on Apple Silicon MPS, NVIDIA CUDA, or CPU with zero cloud rate limits.
    - **Capabilities**: High-fidelity isolated consonant, syllable, Barakhadi, and numeral synthesis with automated verbalization (`૧` → `એક`, `૧૦` → `દસ`).
-2. **AI4Bharat IndicF5** ([GitHub](https://github.com/AI4Bharat/IndicF5) / [HuggingFace](https://huggingface.co/ai4bharat/IndicF5)):
+2. **Piper TTS (`piper-tts`)** ★ **Ultra-Fast ONNX Runtime**:
+   - **Architecture**: Neural text-to-speech running locally on ONNX Runtime with sub-100ms inference on low-resource CPUs.
+   - **Models**: Native Hindi / Indic voices (`Rohan`, `Pratham`, `Priyamvada` via `rhasspy/piper-voices`) and community Gujarati checkpoint (`Arjun4707/piper-gujarati-male` trained on AI4Bharat dataset).
+   - **Capabilities**: Ultra-lightweight CPU execution, numeral verbalization, and seamless cross-venv bridge.
+3. **eSpeak-NG (Python Wrapper & Formant Engine)** ★ **Lightweight Phoneme Debugger**:
+   - **Architecture**: Formant-based synthesis, lightweight (<10 MB), zero neural weights.
+   - **Languages**: Native `gu` (Gujarati) and `hi` (Hindi) phoneme tables.
+   - **Capabilities**: Instant offline phonetic IPA and consonant debugging (swars, vyanjans, matras, virama) with pure acoustic formant synthesis.
+4. **AI4Bharat IndicF5** ([GitHub](https://github.com/AI4Bharat/IndicF5) / [HuggingFace](https://huggingface.co/ai4bharat/IndicF5)):
    - **Architecture**: Flow-matching diffusion-style voice synthesis (24,000 Hz).
    - **Capabilities**: Zero-shot voice conditioning, reference mimicking with Kano audio, high human prosody.
-3. **AI4Bharat Indic-TTS / Bodhan-AI Indic-Speak** ([GitHub](https://github.com/AI4Bharat/Indic-TTS) / [HuggingFace](https://huggingface.co/bodhan-ai/indic-speak)):
+5. **AI4Bharat Indic-TTS / Bodhan-AI Indic-Speak** ([GitHub](https://github.com/AI4Bharat/Indic-TTS) / [HuggingFace](https://huggingface.co/bodhan-ai/indic-speak)):
    - **Architecture**: Multi-speaker fast neural acoustic model (44,100 Hz).
    - **Capabilities**: Preset native Gujarati speaker profiles (`Dhara` - Female, `Parth` - Male), sub-5s synthesis latency.
 
@@ -209,13 +217,19 @@ Dedicated offline batch pronunciation generator for Kakko, Barakhadi series, and
 # Synthesize with Meta MMS-TTS (Offline VITS)
 .venv/bin/python3 python/tts/cli.py --engine mms_tts --text "નમસ્તે KanoAI" --output output/tts/mms.wav
 
+# Synthesize with Piper TTS (Rohan - ONNX Runtime)
+.venv/bin/python3 python/tts/cli.py --engine piper_tts --voice rohan --text "નમસ્તે KanoAI" --output output/tts/piper.wav
+
+# Synthesize and debug phonemes with eSpeak-NG (Gujarati)
+.venv/bin/python3 python/tts/cli.py --engine espeak_ng --lang gu --text "નમસ્તે KanoAI" --output output/tts/espeak.wav
+
 # Synthesize with Indic-TTS (Dhara)
 .venv/bin/python3 python/tts/cli.py --engine indic_tts --text "નમસ્તે KanoAI" --output output/tts/dhara.wav
 
 # Synthesize with IndicF5
 .venv/bin/python3 python/tts/cli.py --engine indic_f5 --text "નમસ્તે KanoAI" --output output/tts/f5.wav
 
-# Multi-engine side-by-side comparison
+# Multi-engine side-by-side comparison across all 5 engines
 .venv/bin/python3 python/tts/cli.py --compare --text "ગુજરાતી ભાષા ખૂબ જ સુંદર છે."
 
 # Run automated test suite
@@ -380,6 +394,9 @@ KanoAI proudly stands on the shoulders of the open-source and scientific researc
 
 ### 🧠 Neural AI Models & Machine Learning Research
 - **[Meta MMS-TTS](https://huggingface.co/facebook/mms-tts-guj)** (Meta AI Research): Scaling Speech Technology to 1,000+ languages; Variational Inference with Adversarial Learning (VITS) Gujarati neural speech checkpoint (`facebook/mms-tts-guj`).
+- **[Piper TTS](https://github.com/rhasspy/piper)** (Rhasspy / Michael Hansen & community): Fast, local neural text-to-speech engine running on ONNX Runtime ([Hugging Face Voices](https://huggingface.co/rhasspy/piper-voices)).
+- **[Arjun4707/piper-gujarati-male](https://huggingface.co/Arjun4707/piper-gujarati-male)**: Community Gujarati Piper model trained on the AI4Bharat dataset.
+- **[eSpeak-NG](https://github.com/espeak-ng/espeak-ng)**: Multi-lingual software speech synthesizer with zero neural weights, formant acoustic modeling, and native Gujarati (`gu`) & Hindi (`hi`) phoneme tables.
 - **[AI4Bharat IndicF5](https://github.com/AI4Bharat/IndicF5)** (IIT Madras & AI4Bharat): Reference-conditioned Flow-Matching Speech Synthesis for Indian languages ([Hugging Face Space](https://huggingface.co/ai4bharat/IndicF5)).
 - **[AI4Bharat Indic-TTS](https://github.com/AI4Bharat/Indic-TTS)** (IIT Madras & AI4Bharat): Multi-speaker neural text-to-speech acoustic models for Indian languages ([Hugging Face](https://huggingface.co/ai4bharat/indic-parler-tts)).
 - **[Bodhan AI (Indic-Speak)](https://huggingface.co/bodhan-ai/indic-speak)**: Natural Gujarati female (`Dhara`) and male (`Parth`) neural speaker profiles.

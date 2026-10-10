@@ -229,20 +229,40 @@ class TTSStudio {
   updateEngineUI() {
     const indicTTSSettings = document.getElementById('tts-indictts-settings');
     const indicF5Settings = document.getElementById('tts-indicf5-settings');
+    const piperSettings = document.getElementById('tts-piper-settings');
+    const espeakSettings = document.getElementById('tts-espeak-settings');
 
     if (this.currentEngine === 'mms_tts') {
       if (indicTTSSettings) indicTTSSettings.style.display = 'none';
       if (indicF5Settings) indicF5Settings.style.display = 'none';
+      if (piperSettings) piperSettings.style.display = 'none';
+      if (espeakSettings) espeakSettings.style.display = 'none';
+    } else if (this.currentEngine === 'piper_tts') {
+      if (indicTTSSettings) indicTTSSettings.style.display = 'none';
+      if (indicF5Settings) indicF5Settings.style.display = 'none';
+      if (piperSettings) piperSettings.style.display = 'flex';
+      if (espeakSettings) espeakSettings.style.display = 'none';
+    } else if (this.currentEngine === 'espeak_ng') {
+      if (indicTTSSettings) indicTTSSettings.style.display = 'none';
+      if (indicF5Settings) indicF5Settings.style.display = 'none';
+      if (piperSettings) piperSettings.style.display = 'none';
+      if (espeakSettings) espeakSettings.style.display = 'flex';
     } else if (this.currentEngine === 'indic_tts') {
       if (indicTTSSettings) indicTTSSettings.style.display = 'flex';
       if (indicF5Settings) indicF5Settings.style.display = 'none';
+      if (piperSettings) piperSettings.style.display = 'none';
+      if (espeakSettings) espeakSettings.style.display = 'none';
     } else if (this.currentEngine === 'indic_f5') {
       if (indicTTSSettings) indicTTSSettings.style.display = 'none';
       if (indicF5Settings) indicF5Settings.style.display = 'flex';
+      if (piperSettings) piperSettings.style.display = 'none';
+      if (espeakSettings) espeakSettings.style.display = 'none';
     } else {
-      // compare mode: show both or general settings
+      // compare mode: show all
       if (indicTTSSettings) indicTTSSettings.style.display = 'flex';
       if (indicF5Settings) indicF5Settings.style.display = 'flex';
+      if (piperSettings) piperSettings.style.display = 'flex';
+      if (espeakSettings) espeakSettings.style.display = 'flex';
     }
   }
 
@@ -276,6 +296,11 @@ class TTSStudio {
     try {
       const speakerSelect = document.getElementById('tts-speaker-select');
       const speakerId = speakerSelect ? speakerSelect.value : 'dhara';
+      const piperVoiceSelect = document.getElementById('tts-piper-voice-select');
+      const piperVoice = piperVoiceSelect ? piperVoiceSelect.value : 'rohan';
+      const espeakLangSelect = document.getElementById('tts-espeak-lang-select');
+      const espeakLang = espeakLangSelect ? espeakLangSelect.value : 'gu';
+
       const tokenInput = document.getElementById('tts-hf-token-input');
       const hfToken = (tokenInput && tokenInput.value.trim()) || localStorage.getItem('kano_hf_token') || '';
 
@@ -311,6 +336,9 @@ class TTSStudio {
       let payload = {
         text: text,
         speaker_id: speakerId,
+        voice_id: piperVoice,
+        voice: piperVoice,
+        lang: espeakLang,
         f5_api_url: f5ApiUrl,
         tts_api_url: ttsApiUrl,
         speed: speed,
@@ -368,17 +396,54 @@ class TTSStudio {
     resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     const isMMS = data.engine === 'mms_tts';
+    const isPiper = data.engine === 'piper_tts';
+    const isEspeak = data.engine === 'espeak_ng';
     const isF5 = data.engine === 'indic_f5';
-    const engineTitle = isMMS
-      ? 'Meta MMS-TTS (Offline VITS)'
-      : isF5
-      ? 'AI4Bharat IndicF5'
-      : `AI4Bharat Indic-TTS (${data.speaker || 'Dhara'})`;
-    const engineBadge = isMMS ? '100% Offline VITS' : (isF5 ? 'Flow-Matching' : 'Multi-Speaker');
-    const sampleRate = data.sample_rate ? `${(data.sample_rate / 1000).toFixed(1)} kHz` : '16.0 kHz';
-    const duration = data.duration ? `${data.duration}s` : 'Audio';
-    const latency = data.elapsed_seconds ? `${data.elapsed_seconds}s` : '';
+
+    let engineTitle = 'KanoAI TTS';
+    let engineBadge = 'Neural';
+    if (isMMS) {
+      engineTitle = 'Meta MMS-TTS (Offline VITS)';
+      engineBadge = '100% Offline VITS';
+    } else if (isPiper) {
+      engineTitle = `Piper TTS (${data.voice_name || data.voice_id || 'Rohan'})`;
+      engineBadge = data.is_mock ? 'Synthetic Fallback' : 'Ultra-Fast ONNX';
+    } else if (isEspeak) {
+      engineTitle = `eSpeak-NG (${data.lang === 'hi' ? 'Hindi' : 'Gujarati'})`;
+      engineBadge = 'Formant Synthesis (<10 MB)';
+    } else if (isF5) {
+      engineTitle = 'AI4Bharat IndicF5';
+      engineBadge = 'Flow-Matching';
+    } else {
+      engineTitle = `AI4Bharat Indic-TTS (${data.speaker || 'Dhara'})`;
+      engineBadge = 'Multi-Speaker';
+    }
+
+    const sampleRate = data.sample_rate ? `${(data.sample_rate / 1000).toFixed(1)} kHz` : '22.0 kHz';
+    const duration = (data.duration || data.duration_seconds) ? `${data.duration || data.duration_seconds}s` : 'Audio';
+    const latency = data.elapsed_seconds ? `${data.elapsed_seconds}s` : (data.inference_time_ms ? `${data.inference_time_ms} ms` : '');
     const audioSrc = `data:${data.mime_type || 'audio/wav'};base64,${data.audio_base64}`;
+
+    let debugPhonemesHTML = '';
+    if (data.debug && data.debug.ipa) {
+      const tokensHTML = (data.debug.tokens || []).map(t => `
+        <span class="tts-phoneme-chip" title="${t.name} (${t.type})">
+          <strong>${t.char}</strong> → /${t.ipa || '-'}/
+        </span>
+      `).join('');
+
+      debugPhonemesHTML = `
+        <div class="tts-phoneme-debug-card" style="margin-top: 14px; padding: 12px 16px; background: rgba(0, 229, 255, 0.05); border: 1px dashed var(--border-accent); border-radius: var(--radius-md);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-weight: 700; font-size: 13px; color: var(--accent-primary);">🔬 IPA Phonetic Transcription:</span>
+            <span style="font-family: monospace; font-size: 13px; color: var(--cyan-stroke); background: rgba(0,0,0,0.25); padding: 2px 8px; border-radius: 4px;">/${data.debug.ipa}/</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px;">
+            ${tokensHTML}
+          </div>
+        </div>
+      `;
+    }
 
     resultsContainer.innerHTML = `
       <div class="tts-player-card">
@@ -392,9 +457,9 @@ class TTSStudio {
           </div>
           <div class="tts-metrics-bar">
             <span class="tts-metric-tag">⏱️ Duration: ${duration}</span>
-            <span class="tts-metric-tag">⚡ Latency: ${latency}</span>
+            ${latency ? `<span class="tts-metric-tag">⚡ Latency: ${latency}</span>` : ''}
             <span class="tts-metric-tag">🎼 ${sampleRate}</span>
-            <span class="tts-metric-tag">📦 ${(data.file_size / 1024).toFixed(1)} KB</span>
+            ${data.file_size ? `<span class="tts-metric-tag">📦 ${(data.file_size / 1024).toFixed(1)} KB</span>` : ''}
           </div>
         </div>
 
@@ -422,6 +487,8 @@ class TTSStudio {
             </a>
           </div>
         </div>
+
+        ${debugPhonemesHTML}
       </div>
     `;
 
@@ -436,13 +503,20 @@ class TTSStudio {
     resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     const mmsData = data.mms_tts || (data.results && data.results.mms_tts) || null;
+    const piperData = data.piper_tts || (data.results && data.results.piper_tts) || null;
+    const espeakData = data.espeak_ng || (data.results && data.results.espeak_ng) || null;
     const f5Data = data.indic_f5 || (data.results && data.results.indic_f5) || null;
     const ttsData = data.indic_tts || (data.results && data.results.indic_tts) || null;
+
     const mmsError = (data.errors && data.errors.mms_tts) || null;
+    const piperError = (data.errors && data.errors.piper_tts) || null;
+    const espeakError = (data.errors && data.errors.espeak_ng) || null;
     const f5Error = (data.errors && data.errors.indic_f5) || null;
     const ttsError = (data.errors && data.errors.indic_tts) || null;
 
     const mmsSrc = (mmsData && mmsData.audio_base64) ? `data:audio/wav;base64,${mmsData.audio_base64}` : null;
+    const piperSrc = (piperData && piperData.audio_base64) ? `data:audio/wav;base64,${piperData.audio_base64}` : null;
+    const espeakSrc = (espeakData && espeakData.audio_base64) ? `data:audio/wav;base64,${espeakData.audio_base64}` : null;
     const f5Src = (f5Data && f5Data.audio_base64) ? `data:audio/wav;base64,${f5Data.audio_base64}` : null;
     const ttsSrc = (ttsData && ttsData.audio_base64) ? `data:audio/wav;base64,${ttsData.audio_base64}` : null;
 
@@ -473,6 +547,68 @@ class TTSStudio {
         <div style="background: rgba(255, 107, 53, 0.08); border: 1px dashed var(--border-accent); border-radius: var(--radius-md); padding: 16px; font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
           <div style="color: var(--accent-primary); font-weight: 700; margin-bottom: 6px;">⚠️ Meta MMS-TTS Status</div>
           <div>${this.escapeHtml(mmsError || 'Speech synthesis pending or failed.')}</div>
+        </div>
+      `;
+    }
+
+    let piperColHTML = '';
+    if (piperSrc) {
+      piperColHTML = `
+        <div class="tts-waveform-container" id="waveform-wrap-piper">
+          <canvas class="tts-waveform-canvas" id="waveform-canvas-piper"></canvas>
+          <div class="tts-waveform-played-mask" id="waveform-played-piper"></div>
+          <div class="tts-waveform-progress-line" id="waveform-progress-piper"></div>
+        </div>
+        <div class="tts-controls-bar">
+          <div class="tts-controls-left">
+            <button class="btn-tts-play" id="btn-play-piper" title="Play Piper TTS">▶</button>
+            <span class="tts-time-display" id="time-display-piper">0:00</span>
+          </div>
+          <div class="tts-controls-right">
+            <div class="tts-speed-selector">
+              <button class="tts-speed-btn ${this.playbackRate === 0.75 ? 'active' : ''}" data-speed="0.75">0.75x</button>
+              <button class="tts-speed-btn ${this.playbackRate === 1.0 ? 'active' : ''}" data-speed="1.0">1.0x</button>
+            </div>
+            <a href="${piperSrc}" download="gujarati_piper_tts_${Date.now()}.wav" class="btn-tts-download">⬇️ WAV</a>
+          </div>
+        </div>
+      `;
+    } else {
+      piperColHTML = `
+        <div style="background: rgba(255, 107, 53, 0.08); border: 1px dashed var(--border-accent); border-radius: var(--radius-md); padding: 16px; font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+          <div style="color: var(--accent-primary); font-weight: 700; margin-bottom: 6px;">⚠️ Piper TTS Status</div>
+          <div>${this.escapeHtml(piperError || 'Speech synthesis pending or failed.')}</div>
+        </div>
+      `;
+    }
+
+    let espeakColHTML = '';
+    if (espeakSrc) {
+      espeakColHTML = `
+        <div class="tts-waveform-container" id="waveform-wrap-espeak">
+          <canvas class="tts-waveform-canvas" id="waveform-canvas-espeak"></canvas>
+          <div class="tts-waveform-played-mask" id="waveform-played-espeak"></div>
+          <div class="tts-waveform-progress-line" id="waveform-progress-espeak"></div>
+        </div>
+        <div class="tts-controls-bar">
+          <div class="tts-controls-left">
+            <button class="btn-tts-play" id="btn-play-espeak" title="Play eSpeak-NG">▶</button>
+            <span class="tts-time-display" id="time-display-espeak">0:00</span>
+          </div>
+          <div class="tts-controls-right">
+            <div class="tts-speed-selector">
+              <button class="tts-speed-btn ${this.playbackRate === 0.75 ? 'active' : ''}" data-speed="0.75">0.75x</button>
+              <button class="tts-speed-btn ${this.playbackRate === 1.0 ? 'active' : ''}" data-speed="1.0">1.0x</button>
+            </div>
+            <a href="${espeakSrc}" download="gujarati_espeak_ng_${Date.now()}.wav" class="btn-tts-download">⬇️ WAV</a>
+          </div>
+        </div>
+      `;
+    } else {
+      espeakColHTML = `
+        <div style="background: rgba(255, 107, 53, 0.08); border: 1px dashed var(--border-accent); border-radius: var(--radius-md); padding: 16px; font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
+          <div style="color: var(--accent-primary); font-weight: 700; margin-bottom: 6px;">⚠️ eSpeak-NG Status</div>
+          <div>${this.escapeHtml(espeakError || 'Speech synthesis pending or failed.')}</div>
         </div>
       `;
     }
@@ -547,7 +683,7 @@ class TTSStudio {
           <div class="tts-player-meta-info">
             <div class="tts-player-title">
               <span>⚖️ Side-by-Side Multi-Engine Comparison</span>
-              <span class="tts-metric-tag highlight">MMS-TTS vs Indic-TTS vs IndicF5</span>
+              <span class="tts-metric-tag highlight">MMS-TTS vs Piper vs eSpeak vs Indic-TTS vs IndicF5</span>
             </div>
             <div class="tts-player-subtext">${this.escapeHtml(text)}</div>
           </div>
@@ -566,10 +702,34 @@ class TTSStudio {
             ${mmsColHTML}
           </div>
 
-          <!-- Col 2: Indic-TTS -->
+          <!-- Col 2: Piper TTS -->
           <div class="tts-comparison-col">
             <div class="tts-comp-header">
-              <span class="tts-comp-model-title">2️⃣ Indic-TTS (${(ttsData && ttsData.speaker) || 'Dhara'})</span>
+              <span class="tts-comp-model-title">2️⃣ Piper TTS (${(piperData && piperData.voice_name) || 'Rohan'})</span>
+              <div class="tts-metrics-bar">
+                <span class="tts-metric-tag">⚡ ${piperData && piperData.inference_time_ms ? piperData.inference_time_ms + ' ms' : '-'}</span>
+                <span class="tts-metric-tag">🎼 22 kHz</span>
+              </div>
+            </div>
+            ${piperColHTML}
+          </div>
+
+          <!-- Col 3: eSpeak-NG -->
+          <div class="tts-comparison-col">
+            <div class="tts-comp-header">
+              <span class="tts-comp-model-title">3️⃣ eSpeak-NG (IPA Formants)</span>
+              <div class="tts-metrics-bar">
+                <span class="tts-metric-tag">⚡ ${espeakData && espeakData.inference_time_ms ? espeakData.inference_time_ms + ' ms' : '-'}</span>
+                <span class="tts-metric-tag">🔬 IPA</span>
+              </div>
+            </div>
+            ${espeakColHTML}
+          </div>
+
+          <!-- Col 4: Indic-TTS -->
+          <div class="tts-comparison-col">
+            <div class="tts-comp-header">
+              <span class="tts-comp-model-title">4️⃣ Indic-TTS (${(ttsData && ttsData.speaker) || 'Dhara'})</span>
               <div class="tts-metrics-bar">
                 <span class="tts-metric-tag">⚡ ${ttsData && ttsData.elapsed_seconds ? ttsData.elapsed_seconds + 's' : '-'}</span>
                 <span class="tts-metric-tag">🎼 44.1 kHz</span>
@@ -578,10 +738,10 @@ class TTSStudio {
             ${ttsColHTML}
           </div>
 
-          <!-- Col 3: IndicF5 -->
+          <!-- Col 5: IndicF5 -->
           <div class="tts-comparison-col">
             <div class="tts-comp-header">
-              <span class="tts-comp-model-title">3️⃣ AI4Bharat IndicF5</span>
+              <span class="tts-comp-model-title">5️⃣ AI4Bharat IndicF5</span>
               <div class="tts-metrics-bar">
                 <span class="tts-metric-tag">⚡ ${f5Data && f5Data.elapsed_seconds ? f5Data.elapsed_seconds + 's' : '-'}</span>
                 <span class="tts-metric-tag">🎼 24 kHz</span>
@@ -594,6 +754,8 @@ class TTSStudio {
     `;
 
     if (mmsSrc) this.attachAudioPlayer(mmsSrc, 'mms');
+    if (piperSrc) this.attachAudioPlayer(piperSrc, 'piper');
+    if (espeakSrc) this.attachAudioPlayer(espeakSrc, 'espeak');
     if (f5Src) this.attachAudioPlayer(f5Src, 'f5');
     if (ttsSrc) this.attachAudioPlayer(ttsSrc, 'tts');
   }

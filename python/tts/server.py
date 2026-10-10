@@ -59,20 +59,25 @@ class TTSRequestHandler(BaseHTTPRequestHandler):
 
         if self.path in ["/api/synthesize", "/api/tts/synthesize"]:
             text = body.get("text", "").strip()
-            engine = body.get("engine", "indic_f5").strip()
+            engine = body.get("engine", "mms_tts").strip()
             speaker_id = body.get("speaker_id", "dhara")
+            voice_id = body.get("voice_id") or body.get("voice", "rohan")
+            lang = body.get("lang", "gu")
 
             if not text:
                 self._set_cors_headers(400)
                 self.wfile.write(json.dumps({"error": "Missing 'text' in request"}).encode("utf-8"))
                 return
 
-            speed = float(body.get("speed", 0.75))
+            speed = float(body.get("speed", 1.0 if engine in ["mms_tts", "mms", "piper_tts", "piper", "espeak_ng", "espeak"] else 0.75))
             try:
                 result = self.service.synthesize(
                     engine=engine,
                     text=text,
                     speaker_id=speaker_id,
+                    voice_id=voice_id,
+                    voice=voice_id,
+                    lang=lang,
                     ref_text=body.get("ref_text"),
                     ref_audio_path=body.get("ref_audio_path"),
                     hf_token=body.get("hf_token"),
@@ -90,7 +95,9 @@ class TTSRequestHandler(BaseHTTPRequestHandler):
         elif self.path == "/api/compare":
             text = body.get("text", "").strip()
             speaker_id = body.get("speaker_id", "dhara")
-            speed = float(body.get("speed", 0.75))
+            voice_id = body.get("voice_id") or body.get("voice", "rohan")
+            lang = body.get("lang", "gu")
+            speed = float(body.get("speed", 1.0))
 
             if not text:
                 self._set_cors_headers(400)
@@ -101,6 +108,8 @@ class TTSRequestHandler(BaseHTTPRequestHandler):
                 result = self.service.compare(
                     text=text,
                     speaker_id=speaker_id,
+                    voice_id=voice_id,
+                    lang=lang,
                     hf_token=body.get("hf_token"),
                     f5_api_url=body.get("f5_api_url") or body.get("api_url"),
                     tts_api_url=body.get("tts_api_url"),
