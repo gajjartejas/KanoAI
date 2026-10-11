@@ -64,6 +64,24 @@ class OCRStudio {
         ground_truth: 'ગુજરાતી જોડાક્ષરો (Conjuncts) અને સંખ્યાઓ (Numerals)\nક્ષ   જ્ઞ   ત્ર   શ્ર   દ્વ   દ્ભ   હ્મ   ઙ\nશબ્દો: વિદ્યા   સૂર્ય   કૃષ્ણ   બુદ્ધિ   જ્ઞાન   સત્ય\nગુજરાતી અંકો: ૦  ૧  ૨  ૩  ૪  ૫  ૬  ૭  ૮  ૯  ૧૦\nગણતરી: ૧૨૫ + ૩૭૫ = ૫૦૦  |  તારીખ: ૨૦૨૬'
       }
     ];
+    this.preloadSamples();
+  }
+
+  preloadSamples() {
+    this.samples.forEach(async (sample) => {
+      try {
+        const res = await fetch(sample.url);
+        const blob = await res.blob();
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          sample.base64 = e.target.result;
+          if (this.currentSampleId === sample.id && !this.currentImageBase64) {
+            this.currentImageBase64 = e.target.result;
+          }
+        };
+        reader.readAsDataURL(blob);
+      } catch (e) {}
+    });
   }
 
   init() {
@@ -72,7 +90,7 @@ class OCRStudio {
     this.bindEvents();
     this.initDrawingCanvas();
     this.checkServerHealth();
-    // Preload first sample
+    // Preload and immediately display first sample
     this.loadSample(this.samples[0]);
     this.initialized = true;
   }
@@ -97,49 +115,134 @@ class OCRStudio {
     label.textContent = 'Direct Bhashini-IITJ Cloud Mode';
   }
 
-  renderSamples() {
-    const container = document.getElementById('ocr-samples-grid');
-    if (!container) return;
-    container.innerHTML = '';
-
-    this.samples.forEach((sample, idx) => {
-      const card = document.createElement('div');
-      card.className = `ocr-sample-card ${idx === 0 ? 'active' : ''}`;
-      card.id = `ocr-sample-${sample.id}`;
-      card.innerHTML = `
-        <img class="ocr-sample-thumb" src="${sample.url}" alt="${sample.title}" loading="lazy" />
-        <span class="ocr-sample-badge">${sample.badge}</span>
-        <div class="ocr-sample-title">${sample.title}</div>
-      `;
-      card.addEventListener('click', () => {
-        document.querySelectorAll('.ocr-sample-card').forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-        this.loadSample(sample);
-      });
-      container.appendChild(card);
-    });
+  loadSampleById(sampleId) {
+    if (!sampleId) return;
+    const sample = this.samples.find(s => s.id === sampleId);
+    if (sample) {
+      this.loadSample(sample);
+    }
   }
 
-  async loadSample(sample) {
-    try {
-      this.currentSampleId = sample.id;
-      // Set recommended engine
-      const engineSelect = document.getElementById('ocr-engine-select');
-      if (engineSelect && sample.engine) {
-        engineSelect.value = sample.engine;
-        this.currentEngine = sample.engine;
-        engineSelect.dispatchEvent(new Event('change'));
-      }
+  renderSamples() {
+    const select = document.getElementById('ocr-sample-select');
+    if (!select) return;
 
-      const res = await fetch(sample.url);
-      const blob = await res.blob();
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        this.setImage(e.target.result, false);
+    if (select.options.length === 0) {
+      this.samples.forEach((sample) => {
+        const opt = document.createElement('option');
+        opt.value = sample.id;
+        opt.textContent = `${sample.title} — [${sample.badge}]`;
+        select.appendChild(opt);
+      });
+    }
+
+    select.value = this.currentSampleId || this.samples[0].id;
+
+    if (!select.dataset.listenerBound) {
+      select.dataset.listenerBound = 'true';
+      const onSelectChange = (e) => {
+        this.loadSampleById(e.target.value);
       };
-      reader.readAsDataURL(blob);
-    } catch (e) {
-      console.warn('Error loading sample image:', e);
+      select.addEventListener('change', onSelectChange);
+      select.addEventListener('input', onSelectChange);
+    }
+
+    const initial = this.samples.find(s => s.id === select.value) || this.samples[0];
+    this.updateSampleHint(initial);
+  }
+
+  updateSampleHint(sample) {
+    const hint = document.getElementById('ocr-sample-hint');
+    if (!hint) return;
+    if (!sample) {
+      hint.innerHTML = '<em>Custom image loaded. Select any benchmark preset above to test standard Gujarati samples.</em>';
+      return;
+    }
+    const engineMap = {
+      'indic_photo_ocr': 'Bhashini IndicPhotoOCR (Fast)',
+      'gujarati_trocr': 'Gujarati TrOCR Transformer (Scene & Conjuncts)',
+      'gujarati_hcr': 'Gujarati HCR Neural Network (Handwritten)'
+    };
+    const engineLabel = engineMap[sample.engine] || sample.engine;
+    hint.innerHTML = `<strong>${sample.badge}:</strong> ${sample.desc} &bull; <em>Recommended Engine: ${engineLabel}</em>`;
+  }
+
+  loadSample(sample) {
+    if (!sample) return;
+    this.currentSampleId = sample.id;
+
+    const select = document.getElementById('ocr-sample-select');
+    if (select) {
+      const customOpt = select.querySelector('option[value="custom"]');
+      if (customOpt) customOpt.remove();
+      if (select.value !== sample.id) {
+        select.value = sample.id;
+      }
+    }
+    this.updateSampleHint(sample);
+
+    // Set recommended engine immediately
+    const engineSelect = document.getElementById('ocr-engine-select');
+    if (engineSelect && sample.engine && engineSelect.value !== sample.engine) {
+      engineSelect.value = sample.engine;
+      this.currentEngine = sample.engine;
+      engineSelect.dispatchEvent(new Event('change'));
+    }
+
+    // Instantly show image on the stage canvas without waiting for network/FileReader
+    const emptyState = document.getElementById('ocr-dropzone-empty');
+    const canvasWrap = document.getElementById('ocr-canvas-wrapper');
+    const displayImg = document.getElementById('ocr-display-img');
+    const overlay = document.getElementById('ocr-bounding-box-overlay');
+    const drawContainer = document.getElementById('ocr-draw-container');
+    const dropzone = document.getElementById('ocr-dropzone-container');
+    const resultsPanel = document.getElementById('ocr-results-container');
+
+    if (drawContainer) drawContainer.style.display = 'none';
+    if (emptyState) emptyState.style.display = 'none';
+    if (canvasWrap) canvasWrap.style.display = 'flex';
+    if (overlay) overlay.innerHTML = '';
+    if (dropzone) dropzone.style.borderStyle = 'solid';
+    if (resultsPanel) resultsPanel.style.display = 'none';
+
+    // Instant image update
+    const targetSrc = sample.base64 || sample.url;
+    if (displayImg) {
+      displayImg.src = targetSrc;
+    }
+
+    // Reset view pills to Annotated view
+    const pillAnnotated = document.getElementById('ocr-pill-annotated');
+    const pillOriginal = document.getElementById('ocr-pill-original');
+    const pillDraw = document.getElementById('ocr-pill-draw');
+    if (pillAnnotated) pillAnnotated.classList.add('active');
+    if (pillOriginal) pillOriginal.classList.remove('active');
+    if (pillDraw) pillDraw.classList.remove('active');
+    this.currentViewMode = 'annotated';
+    this.isDrawingMode = false;
+
+    // Cache or set base64 string for OCR backend extraction
+    if (sample.base64) {
+      this.currentImageBase64 = sample.base64;
+      this.currentProcessedImageBase64 = null;
+      this.currentBoxes = [];
+    } else {
+      fetch(sample.url)
+        .then(res => res.blob())
+        .then(blob => {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            sample.base64 = e.target.result;
+            if (this.currentSampleId === sample.id) {
+              this.currentImageBase64 = e.target.result;
+              this.currentProcessedImageBase64 = null;
+              this.currentBoxes = [];
+              if (displayImg) displayImg.src = e.target.result;
+            }
+          };
+          reader.readAsDataURL(blob);
+        })
+        .catch(e => console.warn('Sample load error:', e));
     }
   }
 
@@ -149,7 +252,18 @@ class OCRStudio {
     this.currentBoxes = [];
     if (isCustom) {
       this.currentSampleId = null;
-      document.querySelectorAll('.ocr-sample-card').forEach(c => c.classList.remove('active'));
+      const select = document.getElementById('ocr-sample-select');
+      if (select) {
+        let customOpt = select.querySelector('option[value="custom"]');
+        if (!customOpt) {
+          customOpt = document.createElement('option');
+          customOpt.value = 'custom';
+          customOpt.textContent = '📁 Custom Uploaded / Whiteboard Image';
+          select.insertBefore(customOpt, select.firstChild);
+        }
+        select.value = 'custom';
+      }
+      this.updateSampleHint(null);
     }
 
     const dropzone = document.getElementById('ocr-dropzone-container');
@@ -784,3 +898,26 @@ class OCRStudio {
 }
 
 window.ocrStudio = new OCRStudio();
+
+// Global listener for instant preset switching anytime the select changes
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    const select = document.getElementById('ocr-sample-select');
+    if (select) {
+      const handler = (e) => {
+        if (window.ocrStudio) {
+          window.ocrStudio.loadSampleById(e.target.value);
+        }
+      };
+      select.addEventListener('change', handler);
+      select.addEventListener('input', handler);
+    }
+  });
+
+  // Event delegation as an extra fallback
+  document.addEventListener('change', (e) => {
+    if (e.target && e.target.id === 'ocr-sample-select' && window.ocrStudio) {
+      window.ocrStudio.loadSampleById(e.target.value);
+    }
+  });
+}

@@ -167,16 +167,30 @@ State-of-the-Art Gujarati Neural Voice Generation integrating 100% offline local
    - **Architecture**: Neural text-to-speech running locally on ONNX Runtime with sub-100ms inference on low-resource CPUs.
    - **Models**: Native Hindi / Indic voices (`Rohan`, `Pratham`, `Priyamvada` via `rhasspy/piper-voices`) and community Gujarati checkpoint (`Arjun4707/piper-gujarati-male` trained on AI4Bharat dataset).
    - **Capabilities**: Ultra-lightweight CPU execution, numeral verbalization, and seamless cross-venv bridge.
-3. **eSpeak-NG (Python Wrapper & Formant Engine)** ★ **Lightweight Phoneme Debugger**:
+3. **Parler-TTS Indic (`ai4bharat/indic-parler-tts`)** ★ **Prompt-Guided Expressive Audio**:
+   - **Architecture**: Natural language audio codec synthesis (24,000 Hz) guided by descriptive English prompts.
+   - **Presets**: Warm & Gentle Female, Expressive Storyteller, Authoritative Broadcaster Male, Intimate Whisper, or custom freeform prompts.
+   - **Endpoints**: Local Engine (port 7861), Cloud HuggingFace Spaces ZeroGPU, or Custom Endpoint URL.
+4. **Browser Native Web Speech API** ★ **Zero-Latency Client-Side**:
+   - **Architecture**: W3C `SpeechSynthesis` hardware-accelerated synthesis executing directly inside the client's browser.
+   - **Capabilities**: Zero server latency (0ms), dynamic pitch/rate controls, automatically detects OS Gujarati (`gu-IN`) voices (Apple & Google).
+5. **Bhashini Official Neural TTS (Digital India / IIT Madras)** ★ **National Benchmark**:
+   - **Architecture**: Official Digital India Bhashini Mission benchmark neural models for formal academic and news diction.
+   - **Voice Profiles**: Bhashini Official Female (Priyamvada neural model fallback) and Bhashini Official Male.
+   - **Endpoints**: 100% Local Offline Engine (no API key needed), Official ULCA Cloud API (`dhruva-api.bhashini.gov.in`), or Custom URL.
+6. **Google Cloud Neural2 / Wavenet (`gu-IN`)** ★ **Studio Quality Commercial Neural**:
+   - **Architecture**: Google DeepMind Wavenet, Standard, and Neural2 models (`gu-IN-Wavenet-A/B`, `gu-IN-Neural2-A/B`).
+   - **Endpoints**: Official Google Cloud REST API with Linear16 audio, Local Offline Neural Fallback, or Custom Proxy URL.
+7. **AI4Bharat IndicF5** ([GitHub](https://github.com/AI4Bharat/IndicF5) / [HuggingFace](https://huggingface.co/ai4bharat/IndicF5)):
+   - **Architecture**: Flow-matching diffusion-style voice synthesis (24,000 Hz).
+   - **Endpoints**: Local Server (port 7865), Cloud Hugging Face Space, or Custom Endpoint URL.
+8. **AI4Bharat Indic-TTS / Bodhan-AI Indic-Speak** ([GitHub](https://github.com/AI4Bharat/Indic-TTS) / [HuggingFace](https://huggingface.co/bodhan-ai/indic-speak)):
+   - **Architecture**: Multi-speaker fast neural acoustic model (44,100 Hz).
+   - **Endpoints**: Local Server (port 7861), Cloud Hugging Face Space, or Custom Endpoint URL.
+9. **eSpeak-NG (Python Wrapper & Formant Engine)** ★ **Lightweight Phoneme Debugger**:
    - **Architecture**: Formant-based synthesis, lightweight (<10 MB), zero neural weights.
    - **Languages**: Native `gu` (Gujarati) and `hi` (Hindi) phoneme tables.
    - **Capabilities**: Instant offline phonetic IPA and consonant debugging (swars, vyanjans, matras, virama) with pure acoustic formant synthesis.
-4. **AI4Bharat IndicF5** ([GitHub](https://github.com/AI4Bharat/IndicF5) / [HuggingFace](https://huggingface.co/ai4bharat/IndicF5)):
-   - **Architecture**: Flow-matching diffusion-style voice synthesis (24,000 Hz).
-   - **Capabilities**: Zero-shot voice conditioning, reference mimicking with Kano audio, high human prosody.
-5. **AI4Bharat Indic-TTS / Bodhan-AI Indic-Speak** ([GitHub](https://github.com/AI4Bharat/Indic-TTS) / [HuggingFace](https://huggingface.co/bodhan-ai/indic-speak)):
-   - **Architecture**: Multi-speaker fast neural acoustic model (44,100 Hz).
-   - **Capabilities**: Preset native Gujarati speaker profiles (`Dhara` - Female, `Parth` - Male), sub-5s synthesis latency.
 
 ### 🖥️ TTS Studio Preview
 
@@ -396,10 +410,14 @@ KanoAI proudly stands on the shoulders of the open-source and scientific researc
 - **[Meta MMS-TTS](https://huggingface.co/facebook/mms-tts-guj)** (Meta AI Research): Scaling Speech Technology to 1,000+ languages; Variational Inference with Adversarial Learning (VITS) Gujarati neural speech checkpoint (`facebook/mms-tts-guj`).
 - **[Piper TTS](https://github.com/rhasspy/piper)** (Rhasspy / Michael Hansen & community): Fast, local neural text-to-speech engine running on ONNX Runtime ([Hugging Face Voices](https://huggingface.co/rhasspy/piper-voices)).
 - **[Arjun4707/piper-gujarati-male](https://huggingface.co/Arjun4707/piper-gujarati-male)**: Community Gujarati Piper model trained on the AI4Bharat dataset.
-- **[eSpeak-NG](https://github.com/espeak-ng/espeak-ng)**: Multi-lingual software speech synthesizer with zero neural weights, formant acoustic modeling, and native Gujarati (`gu`) & Hindi (`hi`) phoneme tables.
+- **[Digital India Bhashini Mission / IIT Madras](https://bhashini.gov.in/)**: National Language Translation Mission (NLTM) official benchmark neural text-to-speech and Dhruva ULCA inference pipelines.
+- **[Google Cloud Text-to-Speech](https://cloud.google.com/text-to-speech)**: Google DeepMind WaveNet & Neural2 commercial neural speech synthesis models for Gujarati (`gu-IN`).
+- **[AI4Bharat Parler-TTS Indic](https://huggingface.co/ai4bharat/indic-parler-tts)** (IIT Madras & AI4Bharat): Natural language prompt-guided expressive text-to-speech for Indian languages.
 - **[AI4Bharat IndicF5](https://github.com/AI4Bharat/IndicF5)** (IIT Madras & AI4Bharat): Reference-conditioned Flow-Matching Speech Synthesis for Indian languages ([Hugging Face Space](https://huggingface.co/ai4bharat/IndicF5)).
 - **[AI4Bharat Indic-TTS](https://github.com/AI4Bharat/Indic-TTS)** (IIT Madras & AI4Bharat): Multi-speaker neural text-to-speech acoustic models for Indian languages ([Hugging Face](https://huggingface.co/ai4bharat/indic-parler-tts)).
 - **[Bodhan AI (Indic-Speak)](https://huggingface.co/bodhan-ai/indic-speak)**: Natural Gujarati female (`Dhara`) and male (`Parth`) neural speaker profiles.
+- **[eSpeak-NG](https://github.com/espeak-ng/espeak-ng)**: Multi-lingual software speech synthesizer with zero neural weights, formant acoustic modeling, and native Gujarati (`gu`) & Hindi (`hi`) phoneme tables.
+- **[W3C Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)**: Client-side device-native hardware speech synthesis specification for zero-latency in-browser vocalization.
 - **[Bhashini-IITJ IndicPhotoOCR](https://github.com/Bhashini-IITJ/IndicPhotoOCR)** (Digital India Bhashini & IIT Jodhpur): Scene text detection (DBNet) and multilingual Indic sequence recognition ([Hugging Face Space](https://huggingface.co/spaces/Bhashini-IITJ/IndicPhotoOCR)).
 - **[Gujarati TrOCR](https://huggingface.co/umangchaudhari/gujarati-ocr)** by Umang Chaudhari: Vision Transformer (ViT + RoBERTa) encoder-decoder fine-tuned specifically for Gujarati text and conjuncts.
 - **[Microsoft TrOCR](https://github.com/microsoft/unilm/tree/master/trocr)** (Microsoft Research): Transformer-based Optical Character Recognition architecture for document processing.

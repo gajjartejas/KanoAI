@@ -83,7 +83,7 @@ def adjust_audio_speed(wav_bytes: bytes, speed: float = 0.75) -> bytes:
     return wav_bytes
 
 
-def synthesize_local(text: str, description: str = "", mock: bool = False, speed: float = 0.75):
+def synthesize_local(text: str, description: str = "", mock: bool = False, speed: float = 0.75, gender: str = "male", preset: str = "", pitch_factor: Optional[float] = None):
     """Generate audio for text using local model or clean synthetic waveform with natural pacing."""
     raw_wav = None
     sr = 44100
@@ -99,17 +99,32 @@ def synthesize_local(text: str, description: str = "", mock: bool = False, speed
         raw_wav = out_buf.getvalue()
         sr = model.config.sampling_rate
 
-    # 100% Offline local neural synthesis fallback via Meta MMS-TTS
+    # 100% Offline local neural synthesis
     if raw_wav is None and text and text.strip():
+        if gender == "female":
+            try:
+                try:
+                    from .piper_tts import PiperTTSEngine
+                except (ImportError, ValueError):
+                    from piper_tts import PiperTTSEngine
+                piper_res = PiperTTSEngine().synthesize(text=text, voice_id="priyamvada", speed=speed, mock=mock)
+                if piper_res.get("audio_base64"):
+                    raw_wav = base64.b64decode(piper_res["audio_base64"])
+                    sr = piper_res.get("sample_rate", 22050)
+                    return raw_wav, sr
+            except Exception:
+                pass
+
         try:
             try:
                 from .mms_tts import MMSTTSEngine
             except (ImportError, ValueError):
                 from mms_tts import MMSTTSEngine
             mms_engine = MMSTTSEngine()
-            mms_res = mms_engine.synthesize(text=text, speed=speed, mock=mock)
+            mms_res = mms_engine.synthesize(text=text, speed=speed, mock=mock, gender=gender, preset=preset, pitch_factor=pitch_factor)
             raw_wav = base64.b64decode(mms_res["audio_base64"])
             sr = mms_res.get("sample_rate", 16000)
+            return raw_wav, sr
         except Exception:
             pass
 
@@ -124,7 +139,7 @@ def synthesize_local(text: str, description: str = "", mock: bool = False, speed
         else:
             raw_wav = b""
 
-    # Adjust pacing
+    # Adjust pacing for custom waveform / model.generate
     adjusted_wav = adjust_audio_speed(raw_wav, speed=speed)
     return adjusted_wav, sr
 
@@ -161,9 +176,20 @@ class LocalIndicTTSHandler(BaseHTTPRequestHandler):
             body = {}
 
         text = body.get("text", "")
-        description = body.get("description", "A natural female Gujarati voice")
+        description = body.get("description", "") or body.get("prompt", "")
         speaker_id = body.get("speaker_id", "dhara")
         speed = float(body.get("speed", 0.75))
+
+        gender = body.get("gender")
+        if not gender:
+            desc_lower = (description + " " + speaker_id).lower()
+            if any(w in desc_lower for w in ["female", "woman", "dhara", "girl", "priyamvada", "warm_female", "expressive_story", "gentle_whisper"]):
+                gender = "female"
+            else:
+                gender = "male"
+
+        preset = body.get("preset", "")
+        pitch_factor = body.get("pitch_factor")
 
         if not text:
             self._set_headers(400)
@@ -171,7 +197,15 @@ class LocalIndicTTSHandler(BaseHTTPRequestHandler):
             return
 
         try:
-            wav_bytes, sr = synthesize_local(text=text, description=description, mock=self.mock, speed=speed)
+            wav_bytes, sr = synthesize_local(
+                text=text,
+                description=description,
+                mock=self.mock,
+                speed=speed,
+                gender=gender,
+                preset=preset,
+                pitch_factor=pitch_factor,
+            )
             audio_b64 = base64.b64encode(wav_bytes).decode("utf-8")
             duration = round(len(wav_bytes) / (sr * 2), 2)
 

@@ -177,12 +177,13 @@ class MMSTTSEngine:
                 return c
         return None
 
-    def _synthesize_via_subprocess(self, text: str, speed: float = 1.0) -> bytes:
+    def _synthesize_via_subprocess(self, text: str, speed: float = 1.0, model_id: Optional[str] = None) -> bytes:
         """Executes MMS-TTS in a child process using .venv_trocr python if current venv lacks torch."""
         trocr_py = self._find_trocr_venv_python()
         if not trocr_py:
             raise RuntimeError("PyTorch is not available in current environment and .venv_trocr was not found.")
 
+        target_model = model_id or self.model_id
         script = """
 import sys, json, base64, io, wave
 import numpy as np
@@ -217,7 +218,7 @@ with wave.open(bio, "wb") as wf:
 
 sys.stdout.write(base64.b64encode(bio.getvalue()).decode("ascii"))
 """
-        cmd = [trocr_py, "-c", script, self.model_id, text]
+        cmd = [trocr_py, "-c", script, target_model, text]
         proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=60)
         if proc.returncode != 0:
             raise RuntimeError(f"Subprocess MMS-TTS synthesis failed: {proc.stderr}")
@@ -268,6 +269,53 @@ sys.stdout.write(base64.b64encode(bio.getvalue()).decode("ascii"))
             pass
         return wav_bytes
 
+    def adjust_gender_pitch_ffmpeg(self, wav_bytes: bytes, gender: str = "male", pitch_factor: Optional[float] = None, preset: Optional[str] = None) -> bytes:
+        """
+        Shifts pitch and formants to transform into natural adult female vocal tract.
+        - Adult male fundamental: ~110-125 Hz
+        - Adult warm female fundamental: ~150-170 Hz (natural adult ratio: ~1.18 - 1.22)
+        - Applies chest resonance EQ (350 Hz) to give adult female body and avoid child-like thinness.
+        """
+        if not wav_bytes or len(wav_bytes) < 44:
+            return wav_bytes
+
+        factor = 1.0
+        if pitch_factor is not None:
+            factor = float(pitch_factor)
+        elif gender and str(gender).lower() in ["female", "woman", "girl", "dhara", "priyamvada"]:
+            norm_preset = (preset or "").lower()
+            if "story" in norm_preset or "expressive" in norm_preset:
+                factor = 1.22
+            elif "whisper" in norm_preset:
+                factor = 1.15
+            else:
+                # Default "warm_female": warm, mature adult woman
+                factor = 1.19
+
+        if abs(factor - 1.0) < 0.02:
+            return wav_bytes
+
+        try:
+            af_filter = (
+                f"asetrate={int(self.sample_rate * factor)},"
+                f"atempo={1.0 / factor:.5f},"
+                f"aresample={self.sample_rate},"
+                f"equalizer=f=350:t=q:w=1.2:g=2.0,"
+                f"equalizer=f=3500:t=q:w=1.5:g=-1.5"
+            )
+            cmd = [
+                "ffmpeg", "-y", "-f", "wav", "-i", "pipe:0",
+                "-af", af_filter,
+                "-f", "wav", "pipe:1"
+            ]
+            proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+            out, _ = proc.communicate(input=wav_bytes, timeout=10)
+            if out and len(out) > 44:
+                return out
+        except Exception:
+            pass
+        return wav_bytes
+
     def synthesize(self, text: str, speed: float = 1.0, mock: bool = False, **kwargs) -> Dict[str, Any]:
         """
         Synthesize speech for given Gujarati text.
@@ -275,6 +323,11 @@ sys.stdout.write(base64.b64encode(bio.getvalue()).decode("ascii"))
         """
         if not text or not text.strip():
             raise ValueError("Input text cannot be empty.")
+
+        target_model = kwargs.get("model_id") or kwargs.get("model") or self.model_id
+        if target_model != self.model_id:
+            self.model_id = target_model
+            self._is_loaded = False
 
         start_time = time.time()
         normalized_text = normalize_gujarati_text(text)
@@ -297,7 +350,7 @@ sys.stdout.write(base64.b64encode(bio.getvalue()).decode("ascii"))
                 trocr_py = self._find_trocr_venv_python()
                 if trocr_py:
                     try:
-                        wav_bytes = self._synthesize_via_subprocess(normalized_text, speed)
+                        wav_bytes = self._synthesize_via_subprocess(normalized_text, speed, target_model)
                     except Exception:
                         wav_bytes = self._generate_mock_wav(normalized_text)
                 else:
@@ -305,13 +358,23 @@ sys.stdout.write(base64.b64encode(bio.getvalue()).decode("ascii"))
         else:
             # Running in non-torch venv: delegate to .venv_trocr if available
             try:
-                wav_bytes = self._synthesize_via_subprocess(normalized_text, speed)
+                wav_bytes = self._synthesize_via_subprocess(normalized_text, speed, target_model)
             except Exception:
                 wav_bytes = self._generate_mock_wav(normalized_text)
 
         # Apply speed adjustment if requested
         if speed != 1.0:
             wav_bytes = self.adjust_speed_ffmpeg(wav_bytes, speed)
+
+        # Apply gender pitch adjustment if requested
+        gender = kwargs.get("gender") or kwargs.get("voice_gender")
+        if gender:
+            wav_bytes = self.adjust_gender_pitch_ffmpeg(
+                wav_bytes,
+                gender=gender,
+                pitch_factor=kwargs.get("pitch_factor"),
+                preset=kwargs.get("preset"),
+            )
 
         # Compute duration from WAV bytes
         duration = 0.0
