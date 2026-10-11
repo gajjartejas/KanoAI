@@ -9,6 +9,9 @@ from .indic_tts import IndicTTSEngine
 from .mms_tts import MMSTTSEngine
 from .piper_tts import PiperTTSEngine
 from .espeak_tts import ESpeakTTSEngine
+from .parler_tts import ParlerTTSEngine
+from .bhashini_tts import BhashiniTTSEngine
+from .google_tts import GoogleCloudTTSEngine
 
 DEFAULT_GUJARATI_SAMPLES = [
     {
@@ -51,6 +54,9 @@ class TTSService:
         self.mms_tts = MMSTTSEngine()
         self.piper_tts = PiperTTSEngine()
         self.espeak_tts = ESpeakTTSEngine()
+        self.parler_tts = ParlerTTSEngine()
+        self.bhashini_tts = BhashiniTTSEngine()
+        self.google_tts = GoogleCloudTTSEngine()
 
     def get_presets(self) -> Dict[str, Any]:
         """Return available sample texts, speaker profiles, and engine capabilities."""
@@ -70,6 +76,12 @@ class TTSService:
                 }
                 for k, v in self.piper_tts.VOICES.items()
             ],
+            "parler_presets": [
+                {"id": k, "name": v["name"], "prompt": v["prompt"]}
+                for k, v in self.parler_tts.PROMPT_PRESETS.items()
+            ],
+            "bhashini_voices": self.bhashini_tts.get_supported_voices(),
+            "google_voices": self.google_tts.get_supported_voices(),
             "engines": [
                 {
                     "id": "mms_tts",
@@ -86,6 +98,38 @@ class TTSService:
                     "features": ["Sub-100ms Inference", "Lightweight CPU Execution", "Native Hindi & Gujarati Models"],
                     "sample_rate": 22050,
                     "url": "https://github.com/rhasspy/piper",
+                },
+                {
+                    "id": "parler_tts",
+                    "name": "Parler-TTS Indic (Prompt-Guided)",
+                    "type": "Natural Language Audio Codec Synthesis",
+                    "features": ["Controllable Emotion & Style", "Prompt Description Guided", "Near-Human Prosody"],
+                    "sample_rate": 24000,
+                    "url": "https://huggingface.co/ai4bharat/indic-parler-tts",
+                },
+                {
+                    "id": "web_speech",
+                    "name": "Browser Native Web Speech API (Client-Side)",
+                    "type": "Device Hardware Native SpeechSynthesis",
+                    "features": ["Zero Server Latency", "100% Client-Side", "Native OS gu-IN Neural Voices"],
+                    "sample_rate": 44100,
+                    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API",
+                },
+                {
+                    "id": "bhashini_tts",
+                    "name": "Bhashini Official Neural TTS",
+                    "type": "Digital India Bhashini Mission / IIT Madras",
+                    "features": ["National Benchmark Standard", "Formal Academic Diction", "Female & Male Profiles"],
+                    "sample_rate": 22050,
+                    "url": "https://bhashini.gov.in/",
+                },
+                {
+                    "id": "google_cloud_tts",
+                    "name": "Google Cloud Neural2 / Wavenet (gu-IN)",
+                    "type": "Commercial Neural Synthesis",
+                    "features": ["Standard, Wavenet & Neural2", "Studio Broadcast Clarity", "Dual Gender Profiles"],
+                    "sample_rate": 24000,
+                    "url": "https://cloud.google.com/text-to-speech",
                 },
                 {
                     "id": "espeak_ng",
@@ -118,12 +162,13 @@ class TTSService:
         """Synthesize speech using selected engine."""
         engine_normalized = engine.lower().replace("-", "_")
 
-        speed = kwargs.get("speed", 1.0 if engine_normalized in ["mms_tts", "mms", "meta_mms", "vits", "piper_tts", "piper", "onnx", "espeak_ng", "espeak"] else 0.75)
+        speed = kwargs.get("speed", 1.0 if engine_normalized in ["mms_tts", "mms", "meta_mms", "vits", "piper_tts", "piper", "onnx", "espeak_ng", "espeak", "web_speech"] else 0.75)
 
         if engine_normalized in ["mms_tts", "mms", "meta_mms", "vits"]:
             return self.mms_tts.synthesize(
                 text=text,
                 speed=speed,
+                model_id=kwargs.get("model_id") or kwargs.get("model") or "facebook/mms-tts-guj",
                 mock=kwargs.get("mock", False),
             )
         elif engine_normalized in ["piper_tts", "piper", "onnx"]:
@@ -134,11 +179,60 @@ class TTSService:
                 mock=kwargs.get("mock", False),
                 hf_token=kwargs.get("hf_token"),
             )
+        elif engine_normalized in ["parler_tts", "parler", "indic_parler"]:
+            prompt_str = kwargs.get("prompt") or kwargs.get("description") or ""
+            preset_str = kwargs.get("preset", "warm_female")
+            gender_kw = kwargs.get("gender")
+            if not gender_kw:
+                is_fem = any(w in (prompt_str + " " + preset_str).lower() for w in ["female", "woman", "girl", "dhara", "warm_female", "expressive_story", "gentle_whisper"])
+                gender_kw = "female" if is_fem else "male"
+            return self.parler_tts.synthesize(
+                text=text,
+                prompt=prompt_str,
+                preset=preset_str,
+                gender=gender_kw,
+                api_url=kwargs.get("parler_api_url") or kwargs.get("api_url"),
+                speed=speed,
+                pitch_factor=kwargs.get("pitch_factor"),
+                mock=kwargs.get("mock", False),
+            )
+        elif engine_normalized in ["web_speech", "browser_speech", "browser", "webspeech"]:
+            return {
+                "success": True,
+                "engine": "web_speech",
+                "client_side": True,
+                "client_side_only": True,
+                "text": text,
+                "message": "Synthesized directly via Client-Side Web Speech API (window.speechSynthesis).",
+            }
+        elif engine_normalized in ["bhashini_tts", "bhashini", "ulca"]:
+            return self.bhashini_tts.synthesize(
+                text=text,
+                voice_id=kwargs.get("voice_id") or kwargs.get("voice", "gu_female"),
+                api_key=kwargs.get("bhashini_key") or kwargs.get("api_key"),
+                api_url=kwargs.get("bhashini_url") or kwargs.get("api_url"),
+                mode=kwargs.get("bhashini_mode") or kwargs.get("mode"),
+                speed=speed,
+                mock=kwargs.get("mock", False),
+            )
+        elif engine_normalized in ["google_cloud_tts", "google_tts", "google", "wavenet", "neural2"]:
+            return self.google_tts.synthesize(
+                text=text,
+                voice_id=kwargs.get("voice_id") or kwargs.get("voice", "gu-IN-Wavenet-A"),
+                api_key=kwargs.get("google_key") or kwargs.get("api_key"),
+                api_url=kwargs.get("google_url") or kwargs.get("api_url"),
+                mode=kwargs.get("google_mode") or kwargs.get("mode"),
+                speed=speed,
+                pitch=float(kwargs.get("pitch", 0.0)),
+                mock=kwargs.get("mock", False),
+            )
         elif engine_normalized in ["espeak_ng", "espeak", "espeakng"]:
             return self.espeak_tts.synthesize(
                 text=text,
                 lang=kwargs.get("lang", "gu"),
                 speed=speed,
+                variant=kwargs.get("variant") or kwargs.get("voice_variant") or kwargs.get("voice"),
+                pitch=kwargs.get("pitch", 50),
                 mock=kwargs.get("mock", False),
             )
         elif engine_normalized in ["indic_f5", "indicf5", "f5"]:
@@ -151,7 +245,7 @@ class TTSService:
                 speed=speed,
                 mock=kwargs.get("mock", False),
             )
-        elif engine_normalized in ["indic_tts", "indictts", "indic_speak", "indicspeak", "parler"]:
+        elif engine_normalized in ["indic_tts", "indictts", "indic_speak", "indicspeak"]:
             return self.indic_tts.synthesize(
                 text=text,
                 speaker_id=kwargs.get("speaker_id", "dhara"),
@@ -161,7 +255,7 @@ class TTSService:
                 mock=kwargs.get("mock", False),
             )
         else:
-            raise ValueError(f"Unknown TTS engine '{engine}'. Choose 'mms_tts', 'piper_tts', 'espeak_ng', 'indic_f5', or 'indic_tts'.")
+            raise ValueError(f"Unknown TTS engine '{engine}'. Choose 'mms_tts', 'piper_tts', 'parler_tts', 'web_speech', 'bhashini_tts', 'google_cloud_tts', 'espeak_ng', 'indic_f5', or 'indic_tts'.")
 
     def compare(self, text: str, **kwargs) -> Dict[str, Any]:
         """Synthesize speech with ALL engines for side-by-side evaluation."""
@@ -220,10 +314,45 @@ class TTSService:
         except Exception as e:
             errors["indic_tts"] = str(e)
 
+        try:
+            results["parler_tts"] = self.parler_tts.synthesize(
+                text=text,
+                prompt=kwargs.get("prompt"),
+                speed=1.0,
+                mock=mock,
+            )
+        except Exception as e:
+            errors["parler_tts"] = str(e)
+
+        try:
+            results["bhashini_tts"] = self.bhashini_tts.synthesize(
+                text=text,
+                voice_id=kwargs.get("voice_id", "gu_female"),
+                api_key=kwargs.get("bhashini_key"),
+                speed=1.0,
+                mock=mock,
+            )
+        except Exception as e:
+            errors["bhashini_tts"] = str(e)
+
+        try:
+            results["google_cloud_tts"] = self.google_tts.synthesize(
+                text=text,
+                voice_id=kwargs.get("google_voice_id", "gu-IN-Wavenet-A"),
+                api_key=kwargs.get("google_key"),
+                speed=1.0,
+                mock=mock,
+            )
+        except Exception as e:
+            errors["google_cloud_tts"] = str(e)
+
         return {
             "text": text,
             "mms_tts": results.get("mms_tts"),
             "piper_tts": results.get("piper_tts"),
+            "parler_tts": results.get("parler_tts"),
+            "bhashini_tts": results.get("bhashini_tts"),
+            "google_cloud_tts": results.get("google_cloud_tts"),
             "espeak_ng": results.get("espeak_ng"),
             "indic_f5": results.get("indic_f5"),
             "indic_tts": results.get("indic_tts"),
@@ -231,6 +360,9 @@ class TTSService:
             "errors": errors,
             "has_mms": "mms_tts" in results,
             "has_piper": "piper_tts" in results,
+            "has_parler": "parler_tts" in results,
+            "has_bhashini": "bhashini_tts" in results,
+            "has_google": "google_cloud_tts" in results,
             "has_espeak": "espeak_ng" in results,
             "has_f5": "indic_f5" in results,
             "has_tts": "indic_tts" in results,

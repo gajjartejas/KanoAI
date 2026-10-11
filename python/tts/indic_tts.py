@@ -129,12 +129,40 @@ class IndicTTSEngine:
         # Helper for offline neural fallback
         def _fallback_to_local_mms(reason: str) -> Dict[str, Any]:
             print(f"[Indic-TTS] {reason}. Falling back to local offline neural TTS...")
+            if speaker_info.get("gender") == "female":
+                try:
+                    try:
+                        from .piper_tts import PiperTTSEngine
+                    except (ImportError, ValueError):
+                        from piper_tts import PiperTTSEngine
+                    piper_res = PiperTTSEngine().synthesize(text=text, voice_id="priyamvada", speed=speed, mock=mock)
+                    if piper_res.get("audio_base64"):
+                        return {
+                            "success": True,
+                            "engine": "indic_tts",
+                            "model_name": "AI4Bharat Indic-TTS (Local Female Neural: Priyamvada)",
+                            "note": f"Remote cloud endpoint unavailable ({reason}). Seamlessly synthesized via local adult female neural engine.",
+                            "text": text,
+                            "speaker": speaker_info["name"],
+                            "speaker_id": speaker_id,
+                            "gender": "female",
+                            "sample_rate": piper_res.get("sample_rate", 22050),
+                            "duration": piper_res.get("duration_seconds", 0.0),
+                            "elapsed_seconds": round(time.time() - start_time, 2),
+                            "format": "wav",
+                            "mime_type": "audio/wav",
+                            "audio_base64": piper_res["audio_base64"],
+                            "file_size": len(piper_res["audio_base64"]),
+                        }
+                except Exception:
+                    pass
+
             try:
                 from .mms_tts import MMSTTSEngine
             except (ImportError, ValueError):
                 from mms_tts import MMSTTSEngine
             mms_engine = MMSTTSEngine()
-            mms_res = mms_engine.synthesize(text=text, speed=speed, mock=mock)
+            mms_res = mms_engine.synthesize(text=text, speed=speed, mock=mock, gender=speaker_info.get("gender", "female"))
             return {
                 "success": True,
                 "engine": "indic_tts",
@@ -143,6 +171,7 @@ class IndicTTSEngine:
                 "text": text,
                 "speaker": speaker_info["name"],
                 "speaker_id": speaker_id,
+                "gender": speaker_info.get("gender", "female"),
                 "sample_rate": mms_res.get("sample_rate", 16000),
                 "duration": mms_res.get("duration", 0.0),
                 "elapsed_seconds": round(time.time() - start_time, 2),
@@ -160,7 +189,13 @@ class IndicTTSEngine:
                     direct_url = f"{endpoint}{rest_path}"
                     res_direct = requests.post(
                         direct_url,
-                        json={"text": text.strip(), "speaker_id": speaker_id, "description": description, "speed": speed},
+                        json={
+                            "text": text.strip(),
+                            "speaker_id": speaker_id,
+                            "description": description,
+                            "speed": speed,
+                            "gender": speaker_info.get("gender", "female"),
+                        },
                         timeout=10 if "7861" in endpoint else 15,
                     )
                     if res_direct.status_code == 200:

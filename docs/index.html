@@ -213,93 +213,6 @@
       </div>
     </div>
 
-    <!-- Engine Mode Selection Cards -->
-    <div class="tts-engine-grid">
-      <!-- Engine 1: Meta MMS-TTS (Offline VITS) -->
-      <div class="tts-engine-card active" data-engine="mms_tts">
-        <div class="tts-engine-card-header">
-          <span class="tts-engine-name">Meta MMS-TTS</span>
-          <span class="tts-engine-badge">100% Offline VITS</span>
-        </div>
-        <p>End-to-end Variational Inference TTS (facebook/mms-tts-guj) running 100% locally on CPU/MPS.</p>
-        <div class="tts-engine-meta">
-          <span>🎼 16 kHz</span>
-          <span>⚡ 0.1-0.3s Local</span>
-          <span>🏠 Zero Cloud</span>
-        </div>
-      </div>
-
-      <!-- Engine 2: Piper TTS (Ultra-Fast ONNX) -->
-      <div class="tts-engine-card" data-engine="piper_tts">
-        <div class="tts-engine-card-header">
-          <span class="tts-engine-name">Piper TTS</span>
-          <span class="tts-engine-badge">Ultra-Fast ONNX</span>
-        </div>
-        <p>Neural text-to-speech running locally on ONNX Runtime with sub-100ms inference on CPU.</p>
-        <div class="tts-engine-meta">
-          <span>🎼 22.05 kHz</span>
-          <span>⚡ &lt;100ms ONNX</span>
-          <span>🎙️ Rohan / Gujarati</span>
-        </div>
-      </div>
-
-      <!-- Engine 3: eSpeak-NG (Formant & Phoneme Debugger) -->
-      <div class="tts-engine-card" data-engine="espeak_ng">
-        <div class="tts-engine-card-header">
-          <span class="tts-engine-name">eSpeak-NG</span>
-          <span class="tts-engine-badge">Formant & Phonemes</span>
-        </div>
-        <p>Formant synthesis (&lt;10 MB, zero neural weights). Native Gujarati (gu) & Hindi (hi) phoneme debugging.</p>
-        <div class="tts-engine-meta">
-          <span>🔬 IPA Phonemes</span>
-          <span>⚡ Instant &lt;10ms</span>
-          <span>🧩 Zero Weights</span>
-        </div>
-      </div>
-
-      <!-- Engine 4: Indic-TTS (Bodhan AI Indic-Speak) -->
-      <div class="tts-engine-card" data-engine="indic_tts">
-        <div class="tts-engine-card-header">
-          <span class="tts-engine-name">AI4Bharat Indic-TTS</span>
-          <span class="tts-engine-badge">Fast & Clear</span>
-        </div>
-        <p>Multi-speaker neural TTS with crystal-clear native Gujarati pronunciation by Dhara & Parth.</p>
-        <div class="tts-engine-meta">
-          <span>🎼 44.1 kHz</span>
-          <span>⚡ 5-10s Latency</span>
-          <span>👥 Dhara / Parth</span>
-        </div>
-      </div>
-
-      <!-- Engine 5: IndicF5 -->
-      <div class="tts-engine-card" data-engine="indic_f5">
-        <div class="tts-engine-card-header">
-          <span class="tts-engine-name">AI4Bharat IndicF5</span>
-          <span class="tts-engine-badge">Flow-Matching</span>
-        </div>
-        <p>Zero-shot flow-matching voice conditioning and cloning with natural human prosody & rhythm.</p>
-        <div class="tts-engine-meta">
-          <span>🎼 24 kHz</span>
-          <span>🎙️ Voice Cloning</span>
-          <span>🧠 F5-TTS Core</span>
-        </div>
-      </div>
-
-      <!-- Engine 6: Multi-Engine Comparison -->
-      <div class="tts-engine-card" data-engine="compare">
-        <div class="tts-engine-card-header">
-          <span class="tts-engine-name">Multi Comparison</span>
-          <span class="tts-engine-badge">Side-by-Side</span>
-        </div>
-        <p>Synthesize with all engines concurrently to evaluate voice timbre, prosody, and phonetic accuracy.</p>
-        <div class="tts-engine-meta">
-          <span>⚖️ Comparative</span>
-          <span>📊 Waveform Diff</span>
-          <span>🎧 Multi Sync</span>
-        </div>
-      </div>
-    </div>
-
     <!-- Input & Controls Container -->
     <div class="tts-input-container">
       <!-- Left Panel: Text Area & Presets -->
@@ -328,6 +241,154 @@
           <span>Voice & Conditioning Settings</span>
         </div>
 
+        <!-- Active TTS Engine Selector -->
+        <div class="tts-setting-row" id="tts-engine-setting-row">
+          <label class="tts-setting-label">
+            <span>TTS Engine / Architecture:</span>
+            <span id="tts-engine-badge-pill" class="tts-engine-badge">100% Offline VITS</span>
+          </label>
+          <select id="tts-engine-select" class="tts-select">
+            <option value="mms_tts" selected>🌟 Meta MMS-TTS (Natural Human Voice - Offline VITS)</option>
+            <option value="piper_tts">⚡ Piper TTS (Natural Human Voice - Fast ONNX)</option>
+            <option value="parler_tts">🎙️ Parler-TTS Indic (Prompt-Guided Expressive Voice)</option>
+            <option value="web_speech">🌐 Browser Native Web Speech API (Client-Side gu-IN)</option>
+            <option value="bhashini_tts">🏛️ Bhashini Official Neural TTS (IIT Madras / Digital India)</option>
+            <option value="google_cloud_tts">☁️ Google Cloud Neural2 / Wavenet (gu-IN)</option>
+            <option value="indic_tts">🔊 AI4Bharat Indic-TTS (Natural Neural Voice)</option>
+            <option value="indic_f5">🌊 AI4Bharat IndicF5 (Voice Cloning & Flow-Matching)</option>
+            <option value="espeak_ng">🤖 eSpeak-NG (Robotic Formant Voice & Phoneme Debugger)</option>
+            <option value="compare">⚖️ Multi Comparison (Side-by-Side)</option>
+          </select>
+          <div class="tts-speaker-preview-box" id="tts-engine-hint">
+            End-to-end Variational Inference TTS (facebook/mms-tts-guj) running 100% locally on CPU/MPS with zero cloud dependency.
+          </div>
+        </div>
+
+        <!-- Parler-TTS Indic Settings -->
+        <div class="tts-setting-row" id="tts-parler-settings" style="display: none;">
+          <label class="tts-setting-label">Style / Voice Conditioning Preset:</label>
+          <select id="tts-parler-preset-select" class="tts-select">
+            <option value="warm_female" selected>Warm & Gentle (Female) - Cheerful & Studio Quality</option>
+            <option value="expressive_story">Expressive Storyteller (Female) - Lively & Animated</option>
+            <option value="news_broadcast">Authoritative Broadcaster (Male) - Deep & Confident</option>
+            <option value="gentle_whisper">Intimate Whisper (Female) - Soft & Close Proximity</option>
+            <option value="custom">✏️ Custom Natural Language Description...</option>
+          </select>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">Natural Language Voice Prompt:</label>
+          <textarea id="tts-parler-prompt-input" class="tts-input-field" rows="2" style="font-size: 12px; resize: vertical;" placeholder="Describe voice: A female Gujarati speaker speaks in a calm, cheerful voice with natural pacing and studio quality audio..."></textarea>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">
+            <span>Parler API Endpoint:</span>
+          </label>
+          <select id="tts-parler-endpoint-select" class="tts-select">
+            <option value="cloud" selected>🌐 Cloud HuggingFace (ai4bharat-indic-parler-tts)</option>
+            <option value="local">💻 Local Server (http://localhost:7861 - Offline Fast)</option>
+            <option value="custom">✏️ Custom Endpoint URL...</option>
+          </select>
+          <input type="text" id="tts-parler-custom-url" class="tts-input-field" placeholder="http://localhost:7861" style="display: none; margin-top: 4px;">
+          <div class="tts-speaker-preview-box" id="tts-parler-endpoint-hint" style="font-size: 11px; margin-top: 4px; display: block;">
+            Cloud ZeroGPU backend on Hugging Face Spaces.
+          </div>
+        </div>
+
+        <!-- Browser Native Web Speech API Settings -->
+        <div class="tts-setting-row" id="tts-webspeech-settings" style="display: none;">
+          <label class="tts-setting-label">Device Native Gujarati Voice:</label>
+          <select id="tts-webspeech-voice-select" class="tts-select">
+            <option value="default" selected>Detecting device voices...</option>
+          </select>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">Voice Pitch:</label>
+          <select id="tts-webspeech-pitch-select" class="tts-select">
+            <option value="0.85">Deep / Low (0.85x)</option>
+            <option value="1.0" selected>Normal Natural (1.0x)</option>
+            <option value="1.15">High / Cheerful (1.15x)</option>
+          </select>
+          <div class="tts-speaker-preview-box">
+            ⚡ 100% Client-Side. Runs directly inside your browser via OS hardware speech synthesis (Google / Apple gu-IN) with 0ms server latency.
+          </div>
+        </div>
+
+        <!-- Bhashini Official Neural TTS Settings -->
+        <div class="tts-setting-row" id="tts-bhashini-settings" style="display: none;">
+          <label class="tts-setting-label">Bhashini Voice Profile:</label>
+          <select id="tts-bhashini-voice-select" class="tts-select">
+            <option value="gu_female" selected>Bhashini Official Female (Formal Educational / News Diction)</option>
+            <option value="gu_male">Bhashini Official Male (Authoritative Broadcaster)</option>
+          </select>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">
+            <span>Bhashini API Endpoint:</span>
+          </label>
+          <select id="tts-bhashini-endpoint-select" class="tts-select">
+            <option value="local" selected>💻 Local Engine (100% Offline Fast - Priyamvada / MMS)</option>
+            <option value="cloud">🌐 Official Digital India Cloud (dhruva-api.bhashini.gov.in)</option>
+            <option value="custom">✏️ Custom Endpoint URL...</option>
+          </select>
+          <input type="text" id="tts-bhashini-custom-url" class="tts-input-field" placeholder="https://dhruva-api.bhashini.gov.in/services/inference/pipeline" style="display: none; margin-top: 4px;">
+          <div class="tts-speaker-preview-box" id="tts-bhashini-endpoint-hint" style="font-size: 11px; margin-top: 4px; display: block;">
+            ⚡ Operates 100% locally and offline on your machine with zero cloud dependency.
+          </div>
+
+          <div id="tts-bhashini-key-group" style="display: none;">
+            <label class="tts-setting-label" style="margin-top: 8px;">Bhashini ULCA API Key:</label>
+            <input type="password" id="tts-bhashini-key-input" class="tts-input-field" placeholder="Enter ULCA / Bhashini API Key...">
+          </div>
+        </div>
+
+        <!-- Google Cloud TTS Settings -->
+        <div class="tts-setting-row" id="tts-google-settings" style="display: none;">
+          <label class="tts-setting-label">Google Cloud Voice Model:</label>
+          <select id="tts-google-voice-select" class="tts-select">
+            <option value="gu-IN-Wavenet-A" selected>gu-IN-Wavenet-A (Female Neural - Studio Quality)</option>
+            <option value="gu-IN-Wavenet-B">gu-IN-Wavenet-B (Male Neural - Studio Quality)</option>
+            <option value="gu-IN-Neural2-A">gu-IN-Neural2-A (Female Deep Learning Premium)</option>
+            <option value="gu-IN-Neural2-B">gu-IN-Neural2-B (Male Deep Learning Premium)</option>
+            <option value="gu-IN-Standard-A">gu-IN-Standard-A (Female Standard)</option>
+            <option value="gu-IN-Standard-B">gu-IN-Standard-B (Male Standard)</option>
+          </select>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">
+            <span>Google Cloud API Endpoint:</span>
+          </label>
+          <select id="tts-google-endpoint-select" class="tts-select">
+            <option value="cloud" selected>🌐 Cloud Google API (texttospeech.googleapis.com)</option>
+            <option value="local">💻 Local Offline Engine (100% Offline Fast - Priyamvada / MMS)</option>
+            <option value="custom">✏️ Custom Endpoint URL...</option>
+          </select>
+          <input type="text" id="tts-google-custom-url" class="tts-input-field" placeholder="https://texttospeech.googleapis.com/v1/text:synthesize" style="display: none; margin-top: 4px;">
+          <div class="tts-speaker-preview-box" id="tts-google-endpoint-hint" style="font-size: 11px; margin-top: 4px; display: block;">
+            Cloud Text-to-Speech API with Linear16 studio audio. Requires Google Cloud API Key.
+          </div>
+
+          <div id="tts-google-key-group">
+            <label class="tts-setting-label" style="margin-top: 8px;">Google Cloud API Key:</label>
+            <input type="password" id="tts-google-key-input" class="tts-input-field" placeholder="AIzaSy... (Saved in browser localStorage)">
+          </div>
+        </div>
+
+        <!-- Meta MMS-TTS Settings -->
+        <div class="tts-setting-row" id="tts-mms-settings">
+          <label class="tts-setting-label">Model Checkpoint:</label>
+          <select id="tts-mms-model-select" class="tts-select">
+            <option value="facebook/mms-tts-guj" selected>facebook/mms-tts-guj (Gujarati VITS - 100% Offline)</option>
+            <option value="facebook/mms-tts-hin">facebook/mms-tts-hin (Hindi VITS - 100% Offline)</option>
+          </select>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">
+            <span>MMS-TTS API Endpoint:</span>
+          </label>
+          <select id="tts-mms-endpoint-select" class="tts-select">
+            <option value="local" selected>💻 Local Engine (Unified Backend - Port 8000 Offline)</option>
+            <option value="custom">✏️ Custom Endpoint URL...</option>
+          </select>
+          <input type="text" id="tts-mms-custom-url" class="tts-input-field" placeholder="http://localhost:8000" style="display: none; margin-top: 4px;">
+          <div class="tts-speaker-preview-box" id="tts-mms-endpoint-hint" style="font-size: 11px; margin-top: 4px; display: block;">
+            100% Offline CPU/MPS VITS inference via local Unified Backend (port 8000).
+          </div>
+        </div>
+
         <!-- Piper TTS Settings -->
         <div class="tts-setting-row" id="tts-piper-settings" style="display: none;">
           <label class="tts-setting-label">Piper Neural Voice Model:</label>
@@ -337,6 +398,18 @@
             <option value="priyamvada">Priyamvada (પ્રિયંવદા) - Female (Clear Diction)</option>
             <option value="gujarati_male">Gujarati Male (Arjun4707 / AI4Bharat Dataset)</option>
           </select>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">
+            <span>Piper TTS API Endpoint:</span>
+          </label>
+          <select id="tts-piper-endpoint-select" class="tts-select">
+            <option value="local" selected>💻 Local Engine (Unified Backend - Port 8000 ONNX)</option>
+            <option value="custom">✏️ Custom Endpoint URL...</option>
+          </select>
+          <input type="text" id="tts-piper-custom-url" class="tts-input-field" placeholder="http://localhost:8000" style="display: none; margin-top: 4px;">
+          <div class="tts-speaker-preview-box" id="tts-piper-endpoint-hint" style="font-size: 11px; margin-top: 4px; display: block;">
+            Sub-100ms ultra-fast ONNX neural runtime via local Unified Backend (port 8000).
+          </div>
           <div class="tts-speaker-preview-box" id="tts-piper-preview">
             Ultra-fast neural text-to-speech running locally via ONNX Runtime with sub-100ms CPU inference.
           </div>
@@ -349,8 +422,19 @@
             <option value="gu" selected>Gujarati (gu) - Native Phoneme & Consonant Table</option>
             <option value="hi">Hindi (hi) - Native Phoneme Table</option>
           </select>
+
+          <label class="tts-setting-label" style="margin-top: 8px;">Voice Timbre & Filter Variant:</label>
+          <select id="tts-espeak-variant-select" class="tts-select">
+            <option value="klatt" selected>Klatt Resonator (Smoother, less robotic)</option>
+            <option value="default">Standard Formant (Classic Mechanical)</option>
+            <option value="f2">Female Voice (Soft)</option>
+            <option value="f3">Female Voice (Articulate)</option>
+            <option value="m3">Male Voice (Deep)</option>
+            <option value="whisper">Whisper Effect</option>
+          </select>
+
           <div class="tts-speaker-preview-box">
-            Formant acoustic synthesis (&lt;10 MB, zero neural weights). Ideal for instant offline IPA and consonant debugging.
+            💡 <em>Notice:</em> eSpeak-NG is a 1990s rule-based formant acoustic synthesizer (&lt;2 MB, zero neural weights), so it has an inherently synthetic/robotic timbre. For realistic, authentic human speech, select <strong>Meta MMS-TTS</strong> or <strong>Piper TTS</strong>.
           </div>
         </div>
 
@@ -462,16 +546,6 @@
       </div>
     </div>
 
-    <!-- Benchmark Sample Showcase -->
-    <div class="ocr-samples-panel">
-      <div class="ocr-samples-header">
-        <div class="ocr-samples-label">
-          <span>📚 Benchmark Preset Samples (Click to load sample image)</span>
-        </div>
-      </div>
-      <div class="ocr-samples-grid" id="ocr-samples-grid"></div>
-    </div>
-
     <!-- Main Two-Column Layout -->
     <div class="ocr-main-layout">
       <!-- Left Column: Image Canvas & Dropzone Stage -->
@@ -519,6 +593,23 @@
 
       <!-- Right Column: Model Settings & Controls -->
       <div class="ocr-settings-panel">
+        <!-- Benchmark Preset Samples Selector -->
+        <div class="ocr-setting-row" id="ocr-sample-setting-row">
+          <label class="ocr-setting-label">
+            <span>📚 Benchmark Preset Samples:</span>
+          </label>
+          <select id="ocr-sample-select" class="ocr-select" onchange="window.ocrStudio && window.ocrStudio.loadSampleById(this.value)" oninput="window.ocrStudio && window.ocrStudio.loadSampleById(this.value)">
+            <option value="sample_1_printed_book" selected>📖 Printed Book (પંચતંત્ર) — [Printed Text]</option>
+            <option value="sample_2_photo_signboard">🚏 Photo Sign (અમદાવાદ જંકશન) — [Scene / Signboard]</option>
+            <option value="sample_3_handwritten_note">✍️ Handwritten (ગાંધીજી સુવિચાર) — [Handwritten]</option>
+            <option value="sample_4_official_doc">🏛️ Certificate (શિક્ષણ બોર્ડ) — [Official Doc]</option>
+            <option value="sample_5_conjuncts">🔤 Conjuncts (જોડાક્ષરો & અંકો) — [Isolated Glyphs]</option>
+          </select>
+          <div class="ocr-info-box" id="ocr-sample-hint">
+            <strong>Printed Text:</strong> Storybook page with headers and paragraphs. &bull; <em>Recommended Engine: Bhashini IndicPhotoOCR (Fast)</em>
+          </div>
+        </div>
+
         <!-- Engine Selector -->
         <div class="ocr-setting-row">
           <label class="ocr-setting-label">
@@ -681,8 +772,8 @@
   <script src="js/theme.js"></script>
   <script src="js/audio.js"></script>
   <script src="js/stage.js"></script>
-  <script src="js/tts.js"></script>
-  <script src="js/ocr.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/tts.js?v=2.2"></script>
+  <script src="js/ocr.js?v=2.2"></script>
+  <script src="js/app.js?v=2.2"></script>
 </body>
 </html>

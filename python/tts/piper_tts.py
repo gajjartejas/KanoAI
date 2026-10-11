@@ -259,11 +259,12 @@ class PiperTTSEngine:
         is_mock = False
 
         if onnx_path and config_path:
+            phonetic_text = "".join(chr(ord(ch) - 0x180) if '\u0a80' <= ch <= '\u0aff' else ch for ch in norm_text)
             try:
                 if HAS_PIPER:
-                    wav_bytes = self._synthesize_in_process(norm_text, onnx_path, config_path, speed=speed)
+                    wav_bytes = self._synthesize_in_process(phonetic_text, onnx_path, config_path, speed=speed)
                 else:
-                    wav_bytes = self._synthesize_cross_venv(norm_text, onnx_path, config_path, speed=speed)
+                    wav_bytes = self._synthesize_cross_venv(phonetic_text, onnx_path, config_path, speed=speed)
             except Exception as e:
                 # If ONNX fails at runtime, fallback to synthetic audio
                 wav_bytes = self._generate_mock_wav(norm_text, sample_rate=sample_rate)

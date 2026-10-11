@@ -18,6 +18,7 @@ import json
 import base64
 import wave
 import shutil
+import tempfile
 import subprocess
 from typing import Dict, Any, Optional, Tuple, List
 
@@ -124,11 +125,25 @@ class ESpeakTTSEngine:
         self.cli_binary = self._detect_cli_binary()
 
     def _detect_cli_binary(self) -> Optional[str]:
-        """Detects if espeak-ng or espeak CLI binary exists on system PATH."""
-        for name in ["espeak-ng", "espeak"]:
-            path = shutil.which(name)
-            if path:
-                return path
+        """Detects if espeak-ng or espeak CLI binary exists on system PATH or standard binary paths."""
+        candidates = [
+            "espeak-ng",
+            "espeak",
+            "/usr/local/bin/espeak-ng",
+            "/opt/homebrew/bin/espeak-ng",
+            "/usr/bin/espeak-ng",
+            "/usr/local/bin/espeak",
+            "/opt/homebrew/bin/espeak",
+            "/usr/bin/espeak",
+        ]
+        for candidate in candidates:
+            if os.path.isabs(candidate):
+                if os.path.isfile(candidate) and os.access(candidate, os.X_OK):
+                    return candidate
+            else:
+                path = shutil.which(candidate)
+                if path:
+                    return path
         return None
 
     def get_supported_languages(self) -> List[Dict[str, str]]:
@@ -229,8 +244,16 @@ sys.stdout.write(json.dumps(flat))
         norm_text = text.strip() if text else "નમસ્તે"
         sample_rate = 22050
 
+        # Freshly detect CLI binary if not yet resolved
+        if not self.cli_binary:
+            self.cli_binary = self._detect_cli_binary()
+
         # Step 1: Extract phonemes and debugging information
         debug_info = self.extract_phonemes(norm_text, lang=lang)
+
+        # Extract voice variant and pitch options
+        variant = kwargs.get("variant") or kwargs.get("voice_variant") or kwargs.get("voice")
+        pitch = int(kwargs.get("pitch", 50))
 
         # Step 2: Generate audio (CLI if present, otherwise pure formant acoustic synthesis)
         wav_bytes = None
@@ -238,7 +261,7 @@ sys.stdout.write(json.dumps(flat))
 
         if not mock and self.cli_binary:
             try:
-                wav_bytes = self._synthesize_cli(norm_text, lang=lang, speed=speed)
+                wav_bytes = self._synthesize_cli(norm_text, lang=lang, speed=speed, variant=variant, pitch=pitch)
                 method = "espeak_ng_cli"
             except Exception:
                 wav_bytes = self._synthesize_formants(debug_info["raw_phonemes"], speed=speed, sample_rate=sample_rate)
@@ -257,6 +280,7 @@ sys.stdout.write(json.dumps(flat))
             "text": text,
             "engine": "espeak_ng",
             "lang": lang,
+            "variant": variant or "default",
             "method": method,
             "duration_seconds": round(duration_s, 2),
             "inference_time_ms": elapsed_ms,
@@ -266,23 +290,56 @@ sys.stdout.write(json.dumps(flat))
                 "tokens": debug_info["tokens"],
                 "has_cli": self.cli_binary is not None,
                 "cli_binary": self.cli_binary,
+                "variant": variant or "default",
+                "pitch": pitch,
             },
             "is_mock": mock,
         }
 
-    def _synthesize_cli(self, text: str, lang: str = "gu", speed: float = 1.0) -> bytes:
-        """Invokes espeak-ng CLI executable and pipes output to WAV."""
-        wpm = int(160 * speed)
-        cmd = [self.cli_binary, f"-v{lang}", f"-s{wpm}", "--stdout", text]
-        proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15)
-        if proc.returncode != 0 or not proc.stdout:
-            raise RuntimeError(f"espeak-ng CLI failed: {proc.stderr.decode('utf-8', errors='ignore')}")
-        return proc.stdout
+    def _synthesize_cli(
+        self,
+        text: str,
+        lang: str = "gu",
+        speed: float = 1.0,
+        variant: Optional[str] = None,
+        pitch: int = 50
+    ) -> bytes:
+        """Invokes espeak-ng CLI executable with variant/pitch options and writes directly to WAV."""
+        if not self.cli_binary:
+            raise RuntimeError("espeak-ng binary not detected")
+        wpm = max(80, min(350, int(160 * speed)))
+        p = max(0, min(99, int(pitch)))
+
+        # Format voice argument with variant (e.g. gu+klatt, gu+f2, gu+m3)
+        if variant and variant not in ["default", "none", "standard"]:
+            v_clean = variant.replace("+", "").strip()
+            voice_arg = f"{lang}+{v_clean}"
+        else:
+            voice_arg = lang
+
+        # Use -w to a temporary file rather than --stdout to ensure a complete, non-streaming WAV header
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tf:
+            tmp_wav_path = tf.name
+
+        try:
+            cmd = [self.cli_binary, f"-v{voice_arg}", f"-s{wpm}", f"-p{p}", "-w", tmp_wav_path, text]
+            proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15)
+            if proc.returncode != 0 or not os.path.exists(tmp_wav_path) or os.path.getsize(tmp_wav_path) == 0:
+                err = proc.stderr.decode("utf-8", errors="ignore").strip()
+                raise RuntimeError(f"espeak-ng CLI failed (code {proc.returncode}): {err}")
+            with open(tmp_wav_path, "rb") as f:
+                return f.read()
+        finally:
+            if os.path.exists(tmp_wav_path):
+                try:
+                    os.remove(tmp_wav_path)
+                except OSError:
+                    pass
 
     def _synthesize_formants(self, phonemes: List[str], speed: float = 1.0, sample_rate: int = 22050) -> bytes:
         """
-        Pure formant synthesis generating acoustic phoneme waveforms (F0, F1, F2, F3 resonances).
-        Lightweight, runs offline in <10ms with zero neural models.
+        Formant synthesis generating acoustic phoneme waveforms (F0, F1, F2, F3 resonances).
+        Uses continuous glottal pulse shaping and resonance modulation without premature decay.
         """
         sr = sample_rate
         f0 = 135.0  # Natural fundamental frequency (voice pitch)
@@ -310,22 +367,29 @@ sys.stdout.write(json.dumps(flat))
             n_samples = max(int(sr * seg_dur), 64)
             t = np.linspace(0, seg_dur, n_samples, False)
 
-            # Glottal pulse excitation modulated with vocal tract resonances
+            # Continuous glottal excitation throughout the phoneme window
             glottal = (t * f0) % 1.0
-            pulse = np.sin(2 * np.pi * glottal) * np.exp(-glottal * 3.0)
+            pulse = 0.5 * (1.0 - np.cos(2 * np.pi * glottal)) * np.exp(-glottal * 2.0)
 
-            # Triple-formant acoustic filter synthesis
-            formant1 = 0.50 * np.sin(2 * np.pi * f1 * t) * np.exp(-t * (f1 / 10.0))
-            formant2 = 0.35 * np.sin(2 * np.pi * f2 * t) * np.exp(-t * (f2 / 12.0))
-            formant3 = 0.15 * np.sin(2 * np.pi * f3 * t) * np.exp(-t * (f3 / 15.0))
+            # Formant resonances sustained over pitch cycles
+            formant1 = 0.50 * np.sin(2 * np.pi * f1 * t)
+            formant2 = 0.35 * np.sin(2 * np.pi * f2 * t)
+            formant3 = 0.15 * np.sin(2 * np.pi * f3 * t)
 
-            wave_chunk = pulse * (formant1 + formant2 + formant3)
+            wave_chunk = (0.7 * pulse + 0.3) * (formant1 + formant2 + formant3)
 
-            # Smooth edge windowing
-            fade = min(32, n_samples // 4)
+            # For sibilant/fricative phonemes (s, sh, h, f), blend filtered turbulent noise
+            if any(s in p_clean for s in ["s", "ʃ", "ʂ", "h", "f", "x", "z"]):
+                noise = np.random.uniform(-0.35, 0.35, n_samples)
+                wave_chunk = 0.6 * noise + 0.4 * wave_chunk
+
+            # Smooth trapezoidal envelope to avoid onset/offset clicks
+            fade = min(int(sr * 0.008), n_samples // 4)
             if fade > 0:
-                wave_chunk[:fade] *= np.linspace(0, 1, fade)
-                wave_chunk[-fade:] *= np.linspace(1, 0, fade)
+                env = np.ones(n_samples)
+                env[:fade] = np.linspace(0.0, 1.0, fade)
+                env[-fade:] = np.linspace(1.0, 0.0, fade)
+                wave_chunk *= env
 
             audio_segments.append(wave_chunk)
 
@@ -350,11 +414,16 @@ sys.stdout.write(json.dumps(flat))
         return bio.getvalue()
 
     def _calculate_wav_duration(self, wav_bytes: bytes, sample_rate: int = 22050) -> float:
-        """Calculates audio duration in seconds from WAV header."""
+        """Calculates audio duration in seconds from WAV header with streaming overflow protection."""
         try:
             with wave.open(io.BytesIO(wav_bytes), "rb") as wf:
                 frames = wf.getnframes()
                 rate = wf.getframerate()
-                return frames / float(rate)
+                dur = frames / float(rate)
+                # Guard against corrupted / streaming placeholder chunk sizes (e.g. duration > 1 hour)
+                if 0 < dur < 3600:
+                    return dur
         except Exception:
-            return len(wav_bytes) / (sample_rate * 2.0)
+            pass
+        pcm_bytes = max(0, len(wav_bytes) - 44)
+        return pcm_bytes / (sample_rate * 2.0)
