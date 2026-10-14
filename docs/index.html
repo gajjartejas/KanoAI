@@ -207,9 +207,16 @@
         <h2>🗣️ ગુજરાતી Text-to-Speech (TTS) Studio</h2>
         <p>State-of-the-Art Gujarati Neural Voice Generation &bull; AI4Bharat IndicF5 (Flow-Matching) & Indic-TTS / Indic-Speak (Multi-Speaker)</p>
       </div>
-      <div class="tts-status-badge fallback" id="tts-server-status" title="Local server: python3 python/tts/server.py">
-        <span class="tts-status-dot"></span>
-        <span id="tts-status-text">Checking Server...</span>
+      <div class="tts-header-actions">
+        <a href="tts-comparison/" class="tts-compare-btn" title="Compare all offline and online TTS models side-by-side in 3 columns">
+          <span>📊</span>
+          <span>Side-by-Side Model Comparison</span>
+          <span class="btn-arrow">&rarr;</span>
+        </a>
+        <div class="tts-status-badge fallback" id="tts-server-status" title="Local server: python3 python/tts/server.py">
+          <span class="tts-status-dot"></span>
+          <span id="tts-status-text">Checking Server...</span>
+        </div>
       </div>
     </div>
 
@@ -262,6 +269,10 @@
           <div class="tts-speaker-preview-box" id="tts-engine-hint">
             End-to-end Variational Inference TTS (facebook/mms-tts-guj) running 100% locally on CPU/MPS with zero cloud dependency.
           </div>
+          <a href="tts-comparison/" class="tts-engine-compare-link" target="_blank" title="Open 3-Column Side-by-Side Audio Comparison">
+            <span>📊</span>
+            <span>Listen to side-by-side audio comparison of all 8 models & 25 flavours &rarr;</span>
+          </a>
         </div>
 
         <!-- Parler-TTS Indic Settings -->

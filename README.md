@@ -11,12 +11,14 @@ An open-source ecosystem bridging classical Gujarati typography, dynamic stroke 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Stroke%20Animator-brightgreen?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/)
 [![Live Handwriting Demo](https://img.shields.io/badge/Live%20Demo-Handwriting%20Suite-blue?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/handwriting/)
 [![Live TTS Demo](https://img.shields.io/badge/Live%20Demo-TTS%20Voice%20Studio-orange?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/#tts)
+[![Live TTS Comparison](https://img.shields.io/badge/Live%20Demo-TTS%20Comparison-purple?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/tts-comparison/)
 [![Live OCR Demo](https://img.shields.io/badge/Live%20Demo-OCR%20Vision%20Studio-teal?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/#ocr)
 
 🌐 **Live Interactive Apps**:
 - **🖋️ Kano Stroke Animator & Audio**: [https://gajjartejas.github.io/KanoAI/](https://gajjartejas.github.io/KanoAI/)
 - **✍️ Kano Handwriting Recognition & Practice Suite**: [https://gajjartejas.github.io/KanoAI/handwriting/](https://gajjartejas.github.io/KanoAI/handwriting/)
 - **🗣️ Kano Gujarati Voice (TTS) Studio**: [https://gajjartejas.github.io/KanoAI/#tts](https://gajjartejas.github.io/KanoAI/#tts)
+- **📊 Kano Gujarati TTS Model Comparison (3-Column Matrix)**: [https://gajjartejas.github.io/KanoAI/tts-comparison/](https://gajjartejas.github.io/KanoAI/tts-comparison/)
 - **📸 Kano Gujarati OCR & Vision Studio**: [https://gajjartejas.github.io/KanoAI/#ocr](https://gajjartejas.github.io/KanoAI/#ocr)
 
 | 🖋️ Stroke Animator & Kano Audio Suite | ✍️ Handwriting Practice Suite | 🗣️ Gujarati Text-to-Speech (TTS) Studio | 📸 Gujarati OCR & Vision Studio |
