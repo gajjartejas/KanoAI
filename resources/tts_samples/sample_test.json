@@ -1,0 +1,17 @@
+[
+  {
+    "id": "line_1",
+    "text": "નમસ્તે! ગુજરાતી ભાષા KanoAI માં આપનું હાર્દિક સ્વાગત છે.",
+    "category": "Welcome Greeting (Mixed Gujarati + KanoAI)"
+  },
+  {
+    "id": "line_2",
+    "text": "KanoAI સાથે Gujarati અને English બંને ભાષાઓ સરળતાથી શીખો.",
+    "category": "Educational Prompt (Mixed Gujarati + English Words)"
+  },
+  {
+    "id": "line_3",
+    "text": "આજે આપણે Mobile App દ્વારા નવું Gujarati Vocabulary શીખીશું.",
+    "category": "App Feature (Mixed Gujarati + Mobile App Vocabulary)"
+  }
+]
