@@ -101,7 +101,7 @@ export const BenchmarkRunner: React.FC<BenchmarkRunnerProps> = ({ templates }) =
       }
       const mlDuration = (performance.now() - tMlStart) / mlIters;
       items.push({
-        name: 'Lightweight ML Fallback (64x64 Raster)',
+        name: 'Raster Similarity Fallback (64x64)',
         target: '50–150 ms',
         measured: Number(mlDuration.toFixed(2)),
         status: mlDuration <= 150 ? 'PASS' : 'WARN',

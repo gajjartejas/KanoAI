@@ -3,7 +3,7 @@ import { rasterizeStrokes, BITMAP_SIZE } from './rasterizer';
 import { calculateCosineEmbedding } from './tiny_cnn';
 
 /**
- * Default embedded cross-platform classifier.
+ * Default embedded raster-template classifier (legacy class name).
  * Compares user rasterized strokes against precomputed/cached character templates.
  * Provides fallback when user draws multi-stroke character as a single stroke
  * or in non-standard sequence.

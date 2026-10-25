@@ -1,4 +1,4 @@
-import { evaluateUserDrawing, recognizeHandwriting } from '../src/engine/recognizer';
+import { evaluateGuidedDrawing, evaluateUserDrawing, recognizeHandwriting } from '../src/engine/recognizer';
 import { CharacterTemplate, Strokes } from '../src/types/handwriting';
 
 describe('Hybrid Recognizer Engine (DTW + ML Fallback)', () => {
@@ -55,6 +55,10 @@ describe('Hybrid Recognizer Engine (DTW + ML Fallback)', () => {
     expect(result.character).toBe('ક');
     // ML fallback should rescue the match
     expect(result.confidence).toBeGreaterThan(60);
+    expect(result.errors.missingStrokes).toBe(1);
+    const guided = evaluateGuidedDrawing(singleStroke, mockTemplateKa);
+    expect(guided.isCorrect).toBe(false);
+    expect(guided.method).toBe('dtw');
   });
 
   test('recognizeHandwriting accurately recognizes character A (અ) when drawn as a single continuous stroke', () => {
@@ -74,7 +78,7 @@ describe('Hybrid Recognizer Engine (DTW + ML Fallback)', () => {
     // #1 candidate must be 'અ' (A)
     expect(candidates[0].template.gujarati).toBe('અ');
     expect(candidates[0].confidence).toBeGreaterThanOrEqual(85);
-    expect(candidates[0].method).toBe('ml-fallback');
+    expect(['dtw', 'ml-fallback']).toContain(candidates[0].method);
   });
 });
 

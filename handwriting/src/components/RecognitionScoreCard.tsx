@@ -49,7 +49,7 @@ export const RecognitionScoreCard: React.FC<RecognitionScoreCardProps> = ({ resu
               {isCorrect ? '✓ Excellent Drawing' : confidence >= 50 ? 'Needs Improvement' : 'Try Again'}
             </Text>
             <Text style={styles.methodText}>
-              Engine: {method === 'dtw' ? '⚡ DTW Deterministic' : '🧠 Tiny CNN Fallback'}
+              Engine: {method === 'dtw' ? '⚡ DTW Deterministic' : 'Raster Similarity Fallback'}
             </Text>
           </View>
         </View>

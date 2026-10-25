@@ -40,7 +40,7 @@ export const BenchmarkScreen: React.FC<BenchmarkScreenProps> = ({
 
             <View style={styles.specRow}>
               <Text style={styles.specLabel}>Architecture:</Text>
-              <Text style={styles.specVal}>Hybrid (DTW Deterministic + Tiny CNN Fallback)</Text>
+              <Text style={styles.specVal}>DTW + raster-template similarity</Text>
             </View>
 
             <View style={styles.specRow}>
@@ -64,8 +64,8 @@ export const BenchmarkScreen: React.FC<BenchmarkScreenProps> = ({
             </View>
 
             <View style={styles.specRow}>
-              <Text style={styles.specLabel}>ML Fallback Model:</Text>
-              <Text style={styles.specVal}>Tiny CNN (Conv2D x2, MaxPool, Dense) ~90KB INT8</Text>
+              <Text style={styles.specLabel}>Fallback:</Text>
+              <Text style={styles.specVal}>64x64 raster similarity (no trained model loaded)</Text>
             </View>
 
             <View style={styles.specRow}>

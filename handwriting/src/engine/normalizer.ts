@@ -127,8 +127,10 @@ export function resampleStroke(stroke: Stroke, targetPoints = POINTS_PER_STROKE)
  * 4. Resamples each stroke to exactly 32 points
  */
 export function normalizeStrokes(rawStrokes: Strokes, targetPoints = POINTS_PER_STROKE): Strokes {
+  const rawBox = getStrokesBoundingBox(rawStrokes);
+  const jitterDistance = Math.min(0.5, Math.max(rawBox.width, rawBox.height) * 0.005);
   const filteredStrokes = rawStrokes
-    .map(s => filterStrokeJitter(s))
+    .map(s => filterStrokeJitter(s, jitterDistance))
     .filter(s => s.length > 0);
 
   if (filteredStrokes.length === 0) return [];

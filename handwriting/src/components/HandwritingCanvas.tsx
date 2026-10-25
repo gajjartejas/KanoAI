@@ -4,6 +4,8 @@ import React, {
   useImperativeHandle,
   forwardRef,
   useCallback,
+  useEffect,
+  useMemo,
 } from 'react';
 import {
   View,
@@ -45,17 +47,41 @@ export const HandwritingCanvas = forwardRef<HandwritingCanvasRef, HandwritingCan
     const [currentStroke, setCurrentStroke] = useState<Stroke>([]);
 
     const strokesRef = useRef<Strokes>([]);
-    strokesRef.current = strokes;
-
     const currentStrokeRef = useRef<Stroke>([]);
-    currentStrokeRef.current = currentStroke;
+    const sizeRef = useRef(size);
+    sizeRef.current = size;
+    const previousSizeRef = useRef(size);
+    const callbacksRef = useRef({ onStrokeEnd, onStrokesChange });
+    callbacksRef.current = { onStrokeEnd, onStrokesChange };
+    const drawFrameRef = useRef<number | null>(null);
 
-    const containerRef = useRef<View>(null);
-    const canvasOffsetRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+    useEffect(() => () => {
+      if (drawFrameRef.current !== null) cancelAnimationFrame(drawFrameRef.current);
+    }, []);
+
+    useEffect(() => {
+      const previous = previousSizeRef.current;
+      if (previous === size) return;
+      previousSizeRef.current = size;
+      const scale = (size - 48) / Math.max(1, previous - 48);
+      const resizePoint = (point: Point): Point => ({
+        ...point,
+        x: 24 + (point.x - 24) * scale,
+        y: 24 + (point.y - 24) * scale,
+      });
+      const resized = strokesRef.current.map(stroke => stroke.map(resizePoint));
+      strokesRef.current = resized;
+      setStrokes(resized);
+      const resizedCurrent = currentStrokeRef.current.map(resizePoint);
+      currentStrokeRef.current = resizedCurrent;
+      setCurrentStroke(resizedCurrent);
+    }, [size]);
 
     const clear = useCallback(() => {
       setStrokes([]);
       setCurrentStroke([]);
+      if (drawFrameRef.current !== null) cancelAnimationFrame(drawFrameRef.current);
+      drawFrameRef.current = null;
       strokesRef.current = [];
       currentStrokeRef.current = [];
       onStrokesChange?.([]);
@@ -63,14 +89,12 @@ export const HandwritingCanvas = forwardRef<HandwritingCanvasRef, HandwritingCan
     }, [onStrokeEnd, onStrokesChange]);
 
     const undo = useCallback(() => {
-      setStrokes(prev => {
-        const next = prev.slice(0, -1);
-        strokesRef.current = next;
-        onStrokesChange?.(next);
-        onStrokeEnd?.(next);
-        return next;
-      });
-    }, [onStrokeEnd, onStrokesChange]);
+      const next = strokesRef.current.slice(0, -1);
+      strokesRef.current = next;
+      setStrokes(next);
+      callbacksRef.current.onStrokesChange?.(next);
+      callbacksRef.current.onStrokeEnd?.(next);
+    }, []);
 
     useImperativeHandle(
       ref,
@@ -82,51 +106,50 @@ export const HandwritingCanvas = forwardRef<HandwritingCanvasRef, HandwritingCan
       [clear, undo]
     );
 
-    const updateCanvasOffset = () => {
-      if (containerRef.current && Platform.OS !== 'web') {
-        containerRef.current.measure((_x, _y, _width, _height, pageX, pageY) => {
-          canvasOffsetRef.current = { x: pageX, y: pageY };
-        });
-      }
-    };
-
     // Mobile PanResponder
-    const panResponder = useRef(
-      PanResponder.create({
+    const panResponder = useMemo(
+      () => PanResponder.create({
         onStartShouldSetPanResponder: () => true,
         onMoveShouldSetPanResponder: () => true,
         onPanResponderGrant: evt => {
-          updateCanvasOffset();
           const { locationX, locationY } = evt.nativeEvent;
-          const x = Math.max(0, Math.min(size, locationX));
-          const y = Math.max(0, Math.min(size, locationY));
+          const x = Math.max(0, Math.min(sizeRef.current, locationX));
+          const y = Math.max(0, Math.min(sizeRef.current, locationY));
           const pt: Point = { x, y, t: Date.now() };
           currentStrokeRef.current = [pt];
           setCurrentStroke([pt]);
         },
         onPanResponderMove: evt => {
           const { locationX, locationY } = evt.nativeEvent;
-          const x = Math.max(0, Math.min(size, locationX));
-          const y = Math.max(0, Math.min(size, locationY));
+          const x = Math.max(0, Math.min(sizeRef.current, locationX));
+          const y = Math.max(0, Math.min(sizeRef.current, locationY));
           const pt: Point = { x, y, t: Date.now() };
-
-          const updated = [...currentStrokeRef.current, pt];
-          currentStrokeRef.current = updated;
-          setCurrentStroke(updated);
+          if (currentStrokeRef.current.length < 384) currentStrokeRef.current.push(pt);
+          if (drawFrameRef.current === null) {
+            drawFrameRef.current = requestAnimationFrame(() => {
+              drawFrameRef.current = null;
+              setCurrentStroke([...currentStrokeRef.current]);
+            });
+          }
         },
         onPanResponderRelease: () => {
           if (currentStrokeRef.current.length > 0) {
-            const newStrokes = [...strokesRef.current, currentStrokeRef.current];
+            const newStrokes = [...strokesRef.current, [...currentStrokeRef.current]];
             strokesRef.current = newStrokes;
             setStrokes(newStrokes);
             setCurrentStroke([]);
             currentStrokeRef.current = [];
-            onStrokesChange?.(newStrokes);
-            onStrokeEnd?.(newStrokes);
+            callbacksRef.current.onStrokesChange?.(newStrokes);
+            callbacksRef.current.onStrokeEnd?.(newStrokes);
           }
         },
-      })
-    ).current;
+        onPanResponderTerminate: () => {
+          currentStrokeRef.current = [];
+          setCurrentStroke([]);
+        },
+      }),
+      []
+    );
 
     // Web mouse/touch handlers for seamless cross-platform browser support
     const isDrawingWebRef = useRef(false);
@@ -223,7 +246,6 @@ export const HandwritingCanvas = forwardRef<HandwritingCanvasRef, HandwritingCan
 
     return (
       <View
-        ref={containerRef}
         style={[styles.container, { width: size, height: size }]}
         {...(Platform.OS === 'web' ? webProps : panResponder.panHandlers)}
       >

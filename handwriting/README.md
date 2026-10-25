@@ -1,6 +1,6 @@
 # ✍️ KanoAI: Real-Time Gujarati Handwriting Recognition Suite
 
-A production-grade, 100% offline handwriting recognition and stroke evaluation engine for the Gujarati script, powering the handwriting intelligence module of **KanoAI**. Built with a **Hybrid Architecture** combining deterministic **Sakoe-Chiba Dynamic Time Warping (DTW)** and a lightweight **Cross-Platform Tiny CNN (Conv2D/MaxPool/Dense)**.
+An offline Gujarati handwriting prototype with guided stroke evaluation and freehand template matching. The current fallback compares rasterized drawings with template rasters; it does not run a trained CNN or TFLite model. Validate accuracy and latency on representative Android and iOS devices before using freehand results to award learning progress.
 
 [![Handwriting Recognition & Practice Suite Preview](../docs/assets/preview-handwriting.png)](https://gajjartejas.github.io/KanoAI/handwriting/)
 
@@ -15,7 +15,7 @@ A production-grade, 100% offline handwriting recognition and stroke evaluation e
    - Replay modal and printable SVG/HTML worksheet generator.
 
 2. **🎬 Animated Player (`AnimatedDrawingScreen`)**:
-   - Progressive stroke-by-stroke animated visualization of all 565 Gujarati characters.
+   - Progressive stroke-by-stroke animated visualization of 521 unique SVG templates (567 learning entries include repeated forms).
    - Playback speed adjustment, step navigation, and stroke order verification.
    - High-fidelity Kano audio pronunciation integration.
 
@@ -26,12 +26,12 @@ A production-grade, 100% offline handwriting recognition and stroke evaluation e
 
 4. **🔍 Free Drawing & Recognition (`FreeDrawingScreen`)**:
    - Unconstrained handwriting canvas supporting multi-stroke characters.
-   - Dual-engine recognition: DTW template matching + Tiny CNN raster classification.
+   - DTW template matching with raster similarity fallback. The CNN utilities are experimental and are not wired into the recognizer.
    - Real-time top-3 predictions with confidence metrics and stroke diagnostics.
 
 5. **⚡ Benchmark Suite (`BenchmarkScreen`)**:
    - Automated testing suite verifying inference latency and accuracy across character sets.
-   - Real-time profiling: DTW (<20ms) and Tiny CNN forward pass (<10ms).
+   - Local profiling tools for DTW and raster similarity. Their timings are not a device performance guarantee.
 
 ---
 
@@ -41,9 +41,9 @@ A production-grade, 100% offline handwriting recognition and stroke evaluation e
 handwriting/
 ├── src/
 │   ├── components/       # UI Components (Canvas, Overlay, ScoreCard, Diagnostics, Replay, Worksheet)
-│   ├── data/             # Character templates (565 glyphs), word associations, catalog
+│   ├── data/             # Character templates (521 SVG guides), word associations, catalog
 │   ├── engine/           # Deterministic DTW, normalizer, direction matcher, scoring, feedback
-│   ├── ml/               # Tiny CNN (Conv2D, MaxPool, Dense), rasterizer (64x64), weights
+│   ├── ml/               # Raster similarity fallback, experimental CNN utilities and weights
 │   ├── screens/          # GuidedPractice, AnimatedDrawing, QuizGame, FreeDrawing, Benchmark
 │   ├── types/            # TypeScript interfaces (Point, Stroke, CharacterTemplate, etc.)
 │   └── utils/            # Audio & Web Speech synthesis integration
@@ -71,7 +71,7 @@ npm install
 ```bash
 npm test
 ```
-Runs all 7 Jest test suites covering normalization, DTW, direction vectors, scoring, CNN forward pass, quiz logic, and hybrid recognizer.
+Runs the Jest suites covering normalization, DTW, direction vectors, scoring, guided tracing, CNN utility functions, quiz logic, and hybrid recognizer.
 
 ### 3. Launch Development Server
 ```bash

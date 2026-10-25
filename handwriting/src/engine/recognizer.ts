@@ -18,8 +18,24 @@ export interface RecognizerOptions {
 
 /**
  * Compares user handwritten strokes against a specific expected character template (Guided Practice).
- * Uses hybrid architecture: DTW deterministic core + continuous stroke DTW + ML fallback on stroke mismatch.
+ * Uses DTW plus raster-template similarity on stroke mismatch.
  */
+export function evaluateGuidedDrawing(rawStrokes: Strokes, targetTemplate: CharacterTemplate): RecognitionResult {
+  const feedback = generateFeedback(normalizeStrokes(rawStrokes), targetTemplate);
+  return {
+    character: targetTemplate.gujarati,
+    id: targetTemplate.id,
+    confidence: feedback.confidence,
+    isCorrect: feedback.isCorrect,
+    overallScore: feedback.finalScore,
+    shapeScore: feedback.shapeScore,
+    directionScore: feedback.directionScore,
+    strokeCountScore: feedback.strokeCountScore,
+    errors: feedback.errors,
+    method: 'dtw',
+  };
+}
+
 export function evaluateUserDrawing(
   rawStrokes: Strokes,
   targetTemplate: CharacterTemplate
@@ -49,7 +65,7 @@ export function evaluateUserDrawing(
   // 1. Standard stroke-by-stroke DTW evaluation
   const feedback = generateFeedback(normalizedUserStrokes, targetTemplate);
 
-  // 2. Continuous stroke & ML Fallback check:
+  // 2. Continuous stroke and raster similarity fallback:
   // Triggered when user draws in continuous stroke (e.g. 1 stroke for a 2-or-3 stroke char like 'અ' or 'ક'),
   // or when stroke counts mismatch or DTW confidence is low.
   const isContinuous =
@@ -67,7 +83,7 @@ export function evaluateUserDrawing(
       contScore = dtwDistanceToShapeScore(contDist);
     }
 
-    // Check ML 64x64 raster visual classifier
+    // Compare 64x64 rasters; this does not run trained model inference.
     const classifier = getClassifier([targetTemplate]);
     const mlCandidates = classifier.classify(rawStrokes, [targetTemplate], 1);
     const mlResult = mlCandidates[0];
@@ -86,22 +102,13 @@ export function evaluateUserDrawing(
         isCorrect,
         overallScore: bestAlternativeScore,
         shapeScore: bestAlternativeScore,
-        directionScore: 0.85,
-        strokeCountScore: isContinuous ? 0.9 : 0.8,
+        directionScore: feedback.directionScore,
+        strokeCountScore: feedback.strokeCountScore,
         errors: {
-          missingStrokes: isCorrect ? 0 : Math.max(0, targetTemplate.strokeCount - normalizedUserStrokes.length),
-          extraStrokes: isCorrect ? 0 : Math.max(0, normalizedUserStrokes.length - targetTemplate.strokeCount),
-          wrongDirection: false,
-          strokeDetails: [
-            {
-              strokeIndex: 0,
-              passed: isCorrect,
-              wrongDirection: false,
-              shapeScore: bestAlternativeScore,
-              directionScore: 0.85,
-              dtwDistance: 0.1,
-            },
-          ],
+          missingStrokes: feedback.errors.missingStrokes,
+          extraStrokes: feedback.errors.extraStrokes,
+          wrongDirection: feedback.errors.wrongDirection,
+          strokeDetails: feedback.errors.strokeDetails,
         },
         method: 'ml-fallback',
       };

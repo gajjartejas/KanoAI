@@ -20,10 +20,12 @@ export function generateFeedback(
   const extraStrokes = Math.max(0, actualCount - expectedCount);
   const wrongDirection = evalResult.wrongDirection;
 
-  // Correctness criteria: confidence >= 70%, no missing strokes, no reversed strokes
+  // Guided stroke scoring requires the exact count, not merely a count penalty.
   const isCorrect =
     evalResult.confidence >= PASSING_CONFIDENCE_THRESHOLD &&
     missingStrokes === 0 &&
+    extraStrokes === 0 &&
+    evalResult.strokeDetails.every(stroke => stroke.passed) &&
     !wrongDirection;
 
   return {

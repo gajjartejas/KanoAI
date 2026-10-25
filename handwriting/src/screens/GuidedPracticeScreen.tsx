@@ -17,7 +17,8 @@ import { DrawingReplayModal } from '../components/DrawingReplayModal';
 import { WorksheetModal } from '../components/WorksheetModal';
 import { RecognitionScoreCard } from '../components/RecognitionScoreCard';
 import { StrokeDiagnostics } from '../components/StrokeDiagnostics';
-import { evaluateUserDrawing } from '../engine/recognizer';
+import { evaluateGuidedDrawing } from '../engine/recognizer';
+import { evaluateGuidedTrace } from '../engine/guidedTrace';
 import { speakGujarati } from '../utils/speech';
 import { ModeSelector, ActiveTab } from '../components/ModeSelector';
 
@@ -37,6 +38,7 @@ export const GuidedPracticeScreen: React.FC<GuidedPracticeScreenProps> = ({
   onSelectTab,
 }) => {
   const canvasRef = useRef<HandwritingCanvasRef>(null);
+  const validatedCountRef = useRef(0);
 
   const [selectedTemplate, setSelectedTemplate] = useState<CharacterTemplate>(
     initialTemplate || templates.find(t => t.id === '1_k' || t.gujarati === 'ક') || templates[0] || ({} as CharacterTemplate)
@@ -48,6 +50,7 @@ export const GuidedPracticeScreen: React.FC<GuidedPracticeScreenProps> = ({
       canvasRef.current?.clear();
       setUserStrokes([]);
       setResult(null);
+      validatedCountRef.current = 0;
     }
   }, [initialTemplate]);
 
@@ -68,32 +71,38 @@ export const GuidedPracticeScreen: React.FC<GuidedPracticeScreenProps> = ({
 
   const handleStrokesEnd = useCallback(
     (strokes: Strokes) => {
-      setUserStrokes(strokes);
-      if (strokes.length === 0) {
+      if (strokes.length <= validatedCountRef.current) {
+        validatedCountRef.current = strokes.length;
+        setUserStrokes(strokes);
         setResult(null);
         return;
       }
-      const evalResult = evaluateUserDrawing(strokes, selectedTemplate);
-      setResult(evalResult);
+      const nextIndex = validatedCountRef.current;
+      const guide = selectedTemplate.strokes[nextIndex];
+      if (!guide || !evaluateGuidedTrace(strokes[nextIndex], guide, canvasSize)) {
+        canvasRef.current?.undo();
+        return;
+      }
+      validatedCountRef.current = strokes.length;
+      setUserStrokes(strokes);
+      setResult(strokes.length === selectedTemplate.strokeCount ? evaluateGuidedDrawing(strokes, selectedTemplate) : null);
     },
-    [selectedTemplate]
+    [canvasSize, selectedTemplate]
   );
-
-  const handleStrokesChange = useCallback((strokes: Strokes) => {
-    setUserStrokes(strokes);
-  }, []);
 
   const handleSelectTemplate = (t: CharacterTemplate) => {
     setSelectedTemplate(t);
     canvasRef.current?.clear();
     setUserStrokes([]);
     setResult(null);
+    validatedCountRef.current = 0;
   };
 
   const handleClear = () => {
     canvasRef.current?.clear();
     setUserStrokes([]);
     setResult(null);
+    validatedCountRef.current = 0;
   };
 
   const handleUndo = () => {
@@ -211,7 +220,7 @@ export const GuidedPracticeScreen: React.FC<GuidedPracticeScreenProps> = ({
                   </View>
                 )}
                 <View style={styles.badgeHeaderDtw}>
-                  <Text style={styles.badgeHeaderDtwText}>Real-Time DTW + CNN</Text>
+                  <Text style={styles.badgeHeaderDtwText}>Guided stroke check</Text>
                 </View>
               </View>
             </View>
@@ -227,7 +236,6 @@ export const GuidedPracticeScreen: React.FC<GuidedPracticeScreenProps> = ({
                     strokeColor={strokeColor}
                     strokeWidth={5}
                     onStrokeEnd={handleStrokesEnd}
-                    onStrokesChange={handleStrokesChange}
                   >
                     {showOverlay && (
                       <GuidedOverlay

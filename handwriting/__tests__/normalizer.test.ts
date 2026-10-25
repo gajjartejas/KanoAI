@@ -86,4 +86,15 @@ describe('Vector Normalization Pipeline', () => {
       expect(pt.y).toBeLessThanOrEqual(1.0001);
     }
   });
+
+  test('normalizing an already unit-scaled drawing preserves its curve', () => {
+    const unitStroke: Stroke = Array.from({ length: 32 }, (_, index) => ({
+      x: index / 31,
+      y: Math.sin(index / 31 * Math.PI) * 0.4,
+    }));
+    const normalized = normalizeStrokes([unitStroke])[0];
+    expect(normalized[16].y).toBeGreaterThan(0.35);
+    expect(normalized[16].x).toBeGreaterThan(0.45);
+    expect(normalized[16].x).toBeLessThan(0.6);
+  });
 });

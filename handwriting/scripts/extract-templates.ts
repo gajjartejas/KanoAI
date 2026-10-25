@@ -89,6 +89,36 @@ function round4(val: number): number {
   return Math.round(val * 10000) / 10000;
 }
 
+type Matrix = [number, number, number, number, number, number];
+const multiply = (a: Matrix, b: Matrix): Matrix => [
+  a[0] * b[0] + a[2] * b[1], a[1] * b[0] + a[3] * b[1],
+  a[0] * b[2] + a[2] * b[3], a[1] * b[2] + a[3] * b[3],
+  a[0] * b[4] + a[2] * b[5] + a[4], a[1] * b[4] + a[3] * b[5] + a[5],
+];
+
+function transformPoint(point: Point, transform: string): Point {
+  let matrix: Matrix = [1, 0, 0, 1, 0, 0];
+  for (const operation of transform.matchAll(/(matrix|translate|scale|rotate)\s*\(([^)]*)\)/g)) {
+    const values = operation[2].split(/[\s,]+/).filter(Boolean).map(Number);
+    let next: Matrix;
+    if (operation[1] === 'matrix') next = values as Matrix;
+    else if (operation[1] === 'translate') next = [1, 0, 0, 1, values[0] || 0, values[1] || 0];
+    else if (operation[1] === 'scale') next = [values[0], 0, 0, values[1] ?? values[0], 0, 0];
+    else {
+      const angle = values[0] * Math.PI / 180;
+      const rotation: Matrix = [Math.cos(angle), Math.sin(angle), -Math.sin(angle), Math.cos(angle), 0, 0];
+      const x = values[1] || 0;
+      const y = values[2] || 0;
+      next = multiply(multiply([1, 0, 0, 1, x, y], rotation), [1, 0, 0, 1, -x, -y]);
+    }
+    matrix = multiply(matrix, next);
+  }
+  return {
+    x: matrix[0] * point.x + matrix[2] * point.y + matrix[4],
+    y: matrix[1] * point.x + matrix[3] * point.y + matrix[5],
+  };
+}
+
 function resamplePoints(rawPoints: Point[], targetCount = 32): Point[] {
   if (rawPoints.length === 0) return [];
   if (rawPoints.length === 1) {
@@ -175,13 +205,21 @@ function parseSvgFile(filePath: string): {
           const rawPts: Point[] = [];
           for (let s = 0; s < sampleCount; s++) {
             const pt = props.getPointAtLength((s / (sampleCount - 1)) * totalLen);
-            rawPts.push({ x: pt.x, y: pt.y });
+            let transformed: Point = { x: pt.x, y: pt.y };
+            let ancestor = p.parentNode as Element | null;
+            while (ancestor && ancestor.tagName !== 'svg') {
+              const transform = ancestor.getAttribute?.('transform');
+              if (transform) transformed = transformPoint(transformed, transform);
+              ancestor = ancestor.parentNode as Element | null;
+            }
+            rawPts.push(transformed);
           }
 
           strokeList.push({
             id: label,
             rawPoints: rawPts,
-            length: totalLen,
+            length: rawPts.reduce((sum, pt, index) =>
+              index ? sum + Math.hypot(pt.x - rawPts[index - 1].x, pt.y - rawPts[index - 1].y) : sum, 0),
           });
         } catch {
           // ignore parsing error for invalid path
@@ -344,8 +382,8 @@ async function extractAll() {
   // 3. Numbers from numbers/
   const numbersDir = path.join(ASSETS_DIR, 'numbers');
   if (fs.existsSync(numbersDir)) {
-    // Single digit numbers 0_num.svg to 9_num.svg
-    for (let i = 0; i <= 9; i++) {
+    // All numerals available to the mobile learning chart (0 through 100).
+    for (let i = 0; i <= 100; i++) {
       const file = `${i}_num.svg`;
       const filePath = path.join(numbersDir, file);
       if (fs.existsSync(filePath)) {
@@ -362,25 +400,6 @@ async function extractAll() {
       }
     }
 
-    // Additional common numbers (10, 20, 50, 100)
-    const extraNumbers = [10, 20, 25, 50, 75, 100];
-    for (const num of extraNumbers) {
-      const file = `${num}_num.svg`;
-      const filePath = path.join(numbersDir, file);
-      if (fs.existsSync(filePath)) {
-        const parsed = parseSvgFile(filePath);
-        const gujNum = num.toString().split('').map(d => GUJARATI_NUMBERS[parseInt(d, 10)]).join('');
-        const tmpl = normalizeAndBuildTemplate(
-          `number_${num}`,
-          `Number ${num}`,
-          gujNum,
-          `${num}`,
-          'number',
-          parsed
-        );
-        if (tmpl) templates.push(tmpl);
-      }
-    }
   }
 
   console.log(`Extracted ${templates.length} character templates.`);

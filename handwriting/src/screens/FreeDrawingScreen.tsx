@@ -94,7 +94,7 @@ export const FreeDrawingScreen: React.FC<FreeDrawingScreenProps> = ({
             <View style={styles.bannerInfo}>
               <Text style={styles.bannerTitle}>🔍 Free Drawing & Recognition</Text>
               <Text style={styles.bannerSubtitle}>
-                Draw any Gujarati letter or number. The DTW + Tiny CNN engine identifies it in real time.
+                Draw a Gujarati letter or number. DTW and raster similarity suggest possible matches.
               </Text>
             </View>
             <View style={styles.badgeOffline}>
@@ -235,7 +235,7 @@ export const FreeDrawingScreen: React.FC<FreeDrawingScreenProps> = ({
                       {cand.template.name}
                     </Text>
                     <Text style={styles.candidateMethod}>
-                      {cand.method === 'dtw' ? 'DTW Match' : 'ML Fallback'}
+                      {cand.method === 'dtw' ? 'DTW Match' : 'Raster Match'}
                     </Text>
                     <Text style={styles.practiceHint}>Practice ➔</Text>
                   </TouchableOpacity>
