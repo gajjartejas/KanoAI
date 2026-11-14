@@ -33,6 +33,7 @@ CANONICAL_AUDIO_DIR = KANO_APP_ROOT / "assets" / "audio"
 COLORS_JSON_PATH = KANO_APP_ROOT / "app" / "assets" / "lang" / "sections" / "colors.json"
 NUMERALS_JSON_PATH = KANO_APP_ROOT / "app" / "assets" / "lang" / "numerals" / "numerals.json"
 BARAKHADI_JSON_PATH = KANO_APP_ROOT / "app" / "assets" / "lang" / "barakhadi" / "barakhadi.json"
+JODAKSHAR_JSON_PATH = KANO_APP_ROOT / "app" / "assets" / "lang" / "sections" / "jodakshar.json"
 
 # Slug map for colors
 COLOR_SLUG_MAP = {
@@ -233,6 +234,38 @@ def prepare_barakhadi_tasks(force: bool = True) -> List[Tuple[str, str, Path]]:
     return tasks
 
 
+def prepare_jodakshar_tasks(force: bool = True) -> List[Tuple[str, str, Path]]:
+    with open(JODAKSHAR_JSON_PATH, "r", encoding="utf-8") as f:
+        jodakshar_data = json.load(f)
+
+    tasks = []
+    jodakshar_dir = CANONICAL_AUDIO_DIR / "jodakshar"
+    jodakshar_dir.mkdir(parents=True, exist_ok=True)
+
+    for item in jodakshar_data.get("items", []):
+        iid = item["id"]
+        cluster = item["cluster"]
+
+        letter_dest = jodakshar_dir / f"jodakshar_{iid}_letter.mp3"
+        if force or not letter_dest.exists() or letter_dest.stat().st_size < 1000:
+            tasks.append((f"Jodakshar [{cluster}] Letter", cluster, letter_dest))
+
+        for e_idx, ex in enumerate(item.get("examples", [])):
+            word = ex.get("word", "")
+            suffix = "" if e_idx == 0 else f"_{e_idx + 1}"
+            word_dest = jodakshar_dir / f"jodakshar_{iid}_word{suffix}.mp3"
+            if force or not word_dest.exists() or word_dest.stat().st_size < 1000:
+                tasks.append((f"Jodakshar [{cluster}] Word '{word}'", word, word_dest))
+
+            sent_gu = ex.get("sentence_gu", "")
+            if sent_gu:
+                sent_dest = jodakshar_dir / f"jodakshar_{iid}_sentence{suffix}.mp3"
+                if force or not sent_dest.exists() or sent_dest.stat().st_size < 1000:
+                    tasks.append((f"Jodakshar [{cluster}] Sentence '{sent_gu}'", sent_gu, sent_dest))
+
+    return tasks
+
+
 def run_generation(section: str = "all", workers: int = 6, force: bool = True, speed: float = 0.90):
     print("=" * 80)
     print("🔊 KANO APP AUDIO SYNTHESIS: GOOGLE NEURAL / WAVENET GUJARATI (gu-IN)")
@@ -261,6 +294,11 @@ def run_generation(section: str = "all", workers: int = 6, force: bool = True, s
         barakhadi_tasks = prepare_barakhadi_tasks(force=force)
         print(f"📋 Queued {len(barakhadi_tasks)} Barakhadi tasks (35 series x 12)")
         tasks.extend(barakhadi_tasks)
+
+    if section in ("all", "jodakshar"):
+        jodakshar_tasks = prepare_jodakshar_tasks(force=force)
+        print(f"📋 Queued {len(jodakshar_tasks)} Jodakshar tasks (30 clusters x letter/word/sentence)")
+        tasks.extend(jodakshar_tasks)
 
     total_tasks = len(tasks)
     print(f"\n🚀 Starting batch synthesis of {total_tasks} audio files at {speed:.2f}x speed...\n")
@@ -318,7 +356,7 @@ def run_generation(section: str = "all", workers: int = 6, force: bool = True, s
 
 def main():
     parser = argparse.ArgumentParser(description="Generate TTS audio for Kano app")
-    parser.add_argument("--section", choices=["all", "colors", "numbers", "barakhadi"], default="all")
+    parser.add_argument("--section", choices=["all", "colors", "numbers", "barakhadi", "jodakshar"], default="all")
     parser.add_argument("--workers", type=int, default=6)
     parser.add_argument("--speed", type=float, default=0.90, help="Speech tempo multiplier (default: 0.90 for natural clarity)")
     parser.add_argument("--no-force", action="store_true", help="Do not overwrite existing valid files")
