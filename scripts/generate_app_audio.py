@@ -34,6 +34,7 @@ COLORS_JSON_PATH = KANO_APP_ROOT / "app" / "assets" / "lang" / "sections" / "col
 NUMERALS_JSON_PATH = KANO_APP_ROOT / "app" / "assets" / "lang" / "numerals" / "numerals.json"
 BARAKHADI_JSON_PATH = KANO_APP_ROOT / "app" / "assets" / "lang" / "barakhadi" / "barakhadi.json"
 JODAKSHAR_JSON_PATH = KANO_APP_ROOT / "app" / "assets" / "lang" / "sections" / "jodakshar.json"
+GHADIYA_JSON_PATH = KANO_APP_ROOT / "app" / "assets" / "lang" / "sections" / "ghadiya.json"
 
 # Slug map for colors
 COLOR_SLUG_MAP = {
@@ -99,25 +100,47 @@ def synthesize_google_neural(text: str, api_key: Optional[str] = None, speed: fl
             pass
 
     # 2. Google Gujarati Neural Voice endpoint with exponential backoff
-    encoded_text = urllib.parse.quote(clean_text)
-    url = f"https://translate.google.com/translate_tts?ie=UTF-8&tl=gu&client=tw-ob&q={encoded_text}"
-    req = urllib.request.Request(
-        url,
-        headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"}
-    )
+    def fetch_single_chunk(chunk_text: str) -> bytes:
+        encoded_text = urllib.parse.quote(chunk_text)
+        chunk_url = f"https://translate.google.com/translate_tts?ie=UTF-8&tl=gu&client=tw-ob&q={encoded_text}"
+        req = urllib.request.Request(
+            chunk_url,
+            headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"}
+        )
+        chunk_err = None
+        for attempt in range(max_retries):
+            try:
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    chunk_data = resp.read()
+                    if len(chunk_data) > 100:
+                        return chunk_data
+            except Exception as e:
+                chunk_err = e
+                time.sleep(1.0 * (attempt + 1))
+        raise RuntimeError(f"Failed to synthesize chunk '{chunk_text}' after {max_retries} attempts: {chunk_err}")
 
-    last_error = None
-    for attempt in range(max_retries):
-        try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                data = resp.read()
-                if len(data) > 200:
-                    return data
-        except Exception as e:
-            last_error = e
-            time.sleep(1.0 * (attempt + 1))
+    if len(clean_text) <= 100:
+        return fetch_single_chunk(clean_text)
 
-    raise RuntimeError(f"Failed to synthesize '{clean_text}' after {max_retries} attempts: {last_error}")
+    # For longer text (e.g. multi-step full chants), split by comma or whitespace into chunks <= 100 chars
+    parts = [p.strip() for p in clean_text.split(",") if p.strip()]
+    chunks: list[str] = []
+    current_chunk = ""
+    for part in parts:
+        candidate = f"{current_chunk}, {part}" if current_chunk else part
+        if len(candidate) <= 90:
+            current_chunk = candidate
+        else:
+            if current_chunk:
+                chunks.append(current_chunk)
+            current_chunk = part
+    if current_chunk:
+        chunks.append(current_chunk)
+
+    combined_bytes = bytearray()
+    for chunk in chunks:
+        combined_bytes.extend(fetch_single_chunk(chunk))
+    return bytes(combined_bytes)
 
 
 def convert_audio_to_mp3(input_bytes: bytes, mp3_path: Path, bitrate: str = "96k", speed: float = 0.90) -> bool:
@@ -266,6 +289,34 @@ def prepare_jodakshar_tasks(force: bool = True) -> List[Tuple[str, str, Path]]:
     return tasks
 
 
+def prepare_ghadiya_tasks(force: bool = True) -> List[Tuple[str, str, Path]]:
+    if not GHADIYA_JSON_PATH.exists():
+        return []
+    with open(GHADIYA_JSON_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    tasks = []
+    ghadiya_dir = CANONICAL_AUDIO_DIR / "ghadiya"
+    ghadiya_dir.mkdir(parents=True, exist_ok=True)
+
+    for table in data.get("tables", []):
+        t_num = table["table_number"]
+        # Full table continuous chant
+        full_dest = ghadiya_dir / f"ghadiya_table_{t_num}_full.mp3"
+        if force or not full_dest.exists() or full_dest.stat().st_size < 1000:
+            full_text = ", ".join(s["spoken_gu"] for s in table.get("steps", [])) + "."
+            tasks.append((f"Ghadiya Table {t_num} Full Chant", full_text, full_dest))
+
+        # Individual 10 steps
+        for step in table.get("steps", []):
+            m_num = step["multiplier"]
+            step_dest = ghadiya_dir / f"ghadiya_{t_num}_{m_num}.mp3"
+            if force or not step_dest.exists() or step_dest.stat().st_size < 1000:
+                tasks.append((f"Ghadiya [{t_num}x{m_num}] '{step['spoken_gu']}'", step["spoken_gu"], step_dest))
+
+    return tasks
+
+
 def run_generation(section: str = "all", workers: int = 6, force: bool = True, speed: float = 0.90):
     print("=" * 80)
     print("🔊 KANO APP AUDIO SYNTHESIS: GOOGLE NEURAL / WAVENET GUJARATI (gu-IN)")
@@ -299,6 +350,11 @@ def run_generation(section: str = "all", workers: int = 6, force: bool = True, s
         jodakshar_tasks = prepare_jodakshar_tasks(force=force)
         print(f"📋 Queued {len(jodakshar_tasks)} Jodakshar tasks (30 clusters x letter/word/sentence)")
         tasks.extend(jodakshar_tasks)
+
+    if section in ("all", "ghadiya"):
+        ghadiya_tasks = prepare_ghadiya_tasks(force=force)
+        print(f"📋 Queued {len(ghadiya_tasks)} Ghadiya tasks (20 tables x 10 steps + 20 full chants)")
+        tasks.extend(ghadiya_tasks)
 
     total_tasks = len(tasks)
     print(f"\n🚀 Starting batch synthesis of {total_tasks} audio files at {speed:.2f}x speed...\n")
@@ -356,7 +412,7 @@ def run_generation(section: str = "all", workers: int = 6, force: bool = True, s
 
 def main():
     parser = argparse.ArgumentParser(description="Generate TTS audio for Kano app")
-    parser.add_argument("--section", choices=["all", "colors", "numbers", "barakhadi", "jodakshar"], default="all")
+    parser.add_argument("--section", choices=["all", "colors", "numbers", "barakhadi", "jodakshar", "ghadiya"], default="all")
     parser.add_argument("--workers", type=int, default=6)
     parser.add_argument("--speed", type=float, default=0.90, help="Speech tempo multiplier (default: 0.90 for natural clarity)")
     parser.add_argument("--no-force", action="store_true", help="Do not overwrite existing valid files")
