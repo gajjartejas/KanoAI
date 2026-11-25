@@ -4,11 +4,13 @@
   "description": "SVG resource generation, phonetic matrices, and audio pipelines for KanoAI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "node index.js",
+    "test": "node --test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "harfbuzzjs": "^1.6.4",
     "node-fetch": "^2.6.12",
     "svg-path-properties": "^1.2.0",
     "text-to-svg": "^3.1.5"

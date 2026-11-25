@@ -6,6 +6,11 @@
 
 **The Comprehensive All-in-One Gujarati Language & AI Intelligence Suite.**
 
+**Manual tracing studio:** Select Kano characters, draw ordered strokes, snap to the
+computed centerline, adjust path accuracy, preview animation, and download compatible
+SVGs. Start with `.venv/bin/python scripts/start_manual_tracing.py` and open
+`http://127.0.0.1:8090`. See [setup, workflow and accuracy limits](python/manual_tracing/README.md).
+
 An open-source ecosystem bridging classical Gujarati typography, dynamic stroke animations, real-time handwriting recognition, native audio generation, Speech-to-Text (STT), Text-to-Speech (TTS), and AI grammar intelligence.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Stroke%20Animator-brightgreen?style=for-the-badge&logo=github)](https://gajjartejas.github.io/KanoAI/)

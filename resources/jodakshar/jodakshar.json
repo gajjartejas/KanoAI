@@ -1,0 +1,2670 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "level": "beginner",
+      "cluster": "ક્ર",
+      "components": [
+        "ક્",
+        "ર"
+      ],
+      "romanization": "kra",
+      "pattern": "r-blend",
+      "examples": [
+        {
+          "word": "ક્રમ",
+          "meaning_en": "order",
+          "target_cluster": "ક્ર",
+          "audio_ios": "audio/jodakshar/jodakshar_1_word.mp3",
+          "audio_android": "audio_jodakshar_1_word.mp3",
+          "meaning_gu": "ક્રમ",
+          "sentence_gu": "ક્રમ પ્રમાણે વાંચો.",
+          "sentence_en": "Read in order.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_1_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_1_sentence.mp3"
+        },
+        {
+          "word": "ચક્ર",
+          "meaning_en": "wheel",
+          "meaning_gu": "ચક્ર",
+          "target_cluster": "ક્ર",
+          "sentence_gu": "ચક્ર ગોળ ફરે છે.",
+          "sentence_en": "The wheel turns around.",
+          "audio_ios": "audio/jodakshar/jodakshar_1_word_2.mp3",
+          "audio_android": "audio_jodakshar_1_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_1_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_1_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_1_letter.mp3",
+      "audio_android": "audio_jodakshar_1_letter.mp3",
+      "svg": "svgs/jodakshar/1_kra.svg",
+      "total_length": 172.01,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 2,
+      "level": "beginner",
+      "cluster": "પ્ર",
+      "components": [
+        "પ્",
+        "ર"
+      ],
+      "romanization": "pra",
+      "pattern": "r-blend",
+      "examples": [
+        {
+          "word": "પ્રેમ",
+          "meaning_en": "love",
+          "target_cluster": "પ્ર",
+          "audio_ios": "audio/jodakshar/jodakshar_2_word.mp3",
+          "audio_android": "audio_jodakshar_2_word.mp3",
+          "meaning_gu": "પ્રેમ",
+          "sentence_gu": "માતા આપણને પ્રેમ કરે છે.",
+          "sentence_en": "Mother loves us.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_2_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_2_sentence.mp3"
+        },
+        {
+          "word": "પ્રકાશ",
+          "meaning_en": "light",
+          "meaning_gu": "અજવાળું",
+          "target_cluster": "પ્ર",
+          "sentence_gu": "સૂર્યનો પ્રકાશ આવે છે.",
+          "sentence_en": "Sunlight comes in.",
+          "audio_ios": "audio/jodakshar/jodakshar_2_word_2.mp3",
+          "audio_android": "audio_jodakshar_2_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_2_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_2_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_2_letter.mp3",
+      "audio_android": "audio_jodakshar_2_letter.mp3",
+      "svg": "svgs/jodakshar/2_pra.svg",
+      "total_length": 150.553,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 3,
+      "level": "beginner",
+      "cluster": "ત્ર",
+      "components": [
+        "ત્",
+        "ર"
+      ],
+      "romanization": "tra",
+      "pattern": "r-blend",
+      "examples": [
+        {
+          "word": "મિત્ર",
+          "meaning_en": "friend",
+          "target_cluster": "ત્ર",
+          "audio_ios": "audio/jodakshar/jodakshar_3_word.mp3",
+          "audio_android": "audio_jodakshar_3_word.mp3",
+          "meaning_gu": "મિત્ર",
+          "sentence_gu": "મારો મિત્ર રમે છે.",
+          "sentence_en": "My friend plays.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_3_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_3_sentence.mp3"
+        },
+        {
+          "word": "ત્રણ",
+          "meaning_en": "three",
+          "meaning_gu": "ત્રણ",
+          "target_cluster": "ત્ર",
+          "sentence_gu": "મારી પાસે ત્રણ પેન છે.",
+          "sentence_en": "I have three pens.",
+          "audio_ios": "audio/jodakshar/jodakshar_3_word_2.mp3",
+          "audio_android": "audio_jodakshar_3_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_3_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_3_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_3_letter.mp3",
+      "audio_android": "audio_jodakshar_3_letter.mp3",
+      "svg": "svgs/jodakshar/3_tra.svg",
+      "total_length": 139.158,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 4,
+      "level": "beginner",
+      "cluster": "સ્વ",
+      "components": [
+        "સ્",
+        "વ"
+      ],
+      "romanization": "sva",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "સ્વર",
+          "meaning_en": "sound / vowel",
+          "target_cluster": "સ્વ",
+          "audio_ios": "audio/jodakshar/jodakshar_4_word.mp3",
+          "audio_android": "audio_jodakshar_4_word.mp3",
+          "meaning_gu": "અવાજ / સ્વર",
+          "sentence_gu": "અ એક સ્વર છે.",
+          "sentence_en": "A is a vowel.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_4_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_4_sentence.mp3"
+        },
+        {
+          "word": "સ્વચ્છ",
+          "meaning_en": "clean",
+          "meaning_gu": "ચોખ્ખું",
+          "target_cluster": "સ્વ",
+          "sentence_gu": "આપણું ઘર સ્વચ્છ રાખો.",
+          "sentence_en": "Keep our home clean.",
+          "audio_ios": "audio/jodakshar/jodakshar_4_word_2.mp3",
+          "audio_android": "audio_jodakshar_4_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_4_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_4_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_4_letter.mp3",
+      "audio_android": "audio_jodakshar_4_letter.mp3",
+      "svg": "svgs/jodakshar/4_sva.svg",
+      "total_length": 274.173,
+      "groups": 1,
+      "formation_type": "touching_conjoin"
+    },
+    {
+      "id": 5,
+      "level": "beginner",
+      "cluster": "સ્ક",
+      "components": [
+        "સ્",
+        "ક"
+      ],
+      "romanization": "ska",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "સ્કૂલ",
+          "meaning_en": "school",
+          "target_cluster": "સ્ક",
+          "audio_ios": "audio/jodakshar/jodakshar_5_word.mp3",
+          "audio_android": "audio_jodakshar_5_word.mp3",
+          "meaning_gu": "શાળા",
+          "sentence_gu": "હું સ્કૂલમાં જાઉં છું.",
+          "sentence_en": "I go to school.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_5_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_5_sentence.mp3"
+        },
+        {
+          "word": "નમસ્કાર",
+          "meaning_en": "greeting",
+          "meaning_gu": "અભિવાદન",
+          "target_cluster": "સ્ક",
+          "sentence_gu": "દાદાને નમસ્કાર કરો.",
+          "sentence_en": "Greet grandfather.",
+          "audio_ios": "audio/jodakshar/jodakshar_5_word_2.mp3",
+          "audio_android": "audio_jodakshar_5_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_5_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_5_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_5_letter.mp3",
+      "audio_android": "audio_jodakshar_5_letter.mp3",
+      "svg": "svgs/jodakshar/5_ska.svg",
+      "total_length": 282.949,
+      "groups": 1,
+      "formation_type": "touching_conjoin"
+    },
+    {
+      "id": 6,
+      "level": "beginner",
+      "cluster": "ક્ષ",
+      "components": [
+        "ક્",
+        "ષ"
+      ],
+      "romanization": "ksha",
+      "pattern": "ligature",
+      "examples": [
+        {
+          "word": "ક્ષમા",
+          "meaning_en": "forgiveness",
+          "target_cluster": "ક્ષ",
+          "audio_ios": "audio/jodakshar/jodakshar_6_word.mp3",
+          "audio_android": "audio_jodakshar_6_word.mp3",
+          "meaning_gu": "માફી",
+          "sentence_gu": "કૃપા કરીને મને ક્ષમા કરજો.",
+          "sentence_en": "Please forgive me.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_6_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_6_sentence.mp3"
+        },
+        {
+          "word": "રક્ષા",
+          "meaning_en": "protection",
+          "meaning_gu": "સુરક્ષા",
+          "target_cluster": "ક્ષ",
+          "sentence_gu": "વૃક્ષો પ્રકૃતિની રક્ષા કરે છે.",
+          "sentence_en": "Trees protect nature.",
+          "audio_ios": "audio/jodakshar/jodakshar_6_word_2.mp3",
+          "audio_android": "audio_jodakshar_6_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_6_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_6_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_6_letter.mp3",
+      "audio_android": "audio_jodakshar_6_letter.mp3",
+      "svg": "svgs/jodakshar/6_ksha.svg",
+      "total_length": 467.2063783171594,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 7,
+      "level": "beginner",
+      "cluster": "જ્ઞ",
+      "components": [
+        "જ્",
+        "ઞ"
+      ],
+      "romanization": "gnya",
+      "pattern": "ligature",
+      "examples": [
+        {
+          "word": "જ્ઞાન",
+          "meaning_en": "knowledge",
+          "target_cluster": "જ્ઞ",
+          "audio_ios": "audio/jodakshar/jodakshar_7_word.mp3",
+          "audio_android": "audio_jodakshar_7_word.mp3",
+          "meaning_gu": "જ્ઞાન",
+          "sentence_gu": "પુસ્તકથી જ્ઞાન મળે છે.",
+          "sentence_en": "Books give us knowledge.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_7_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_7_sentence.mp3"
+        },
+        {
+          "word": "વિજ્ઞાન",
+          "meaning_en": "science",
+          "meaning_gu": "વિજ્ઞાન",
+          "target_cluster": "જ્ઞ",
+          "sentence_gu": "મને વિજ્ઞાન ગમે છે.",
+          "sentence_en": "I like science.",
+          "audio_ios": "audio/jodakshar/jodakshar_7_word_2.mp3",
+          "audio_android": "audio_jodakshar_7_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_7_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_7_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_7_letter.mp3",
+      "audio_android": "audio_jodakshar_7_letter.mp3",
+      "svg": "svgs/jodakshar/7_gnya.svg",
+      "total_length": 419.3536555532116,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 8,
+      "level": "intermediate",
+      "cluster": "ક્ક",
+      "components": [
+        "ક્",
+        "ક"
+      ],
+      "romanization": "kka",
+      "pattern": "double",
+      "examples": [
+        {
+          "word": "અક્કલ",
+          "meaning_en": "sense",
+          "target_cluster": "ક્ક",
+          "audio_ios": "audio/jodakshar/jodakshar_8_word.mp3",
+          "audio_android": "audio_jodakshar_8_word.mp3",
+          "meaning_gu": "સમજ",
+          "sentence_gu": "તે ખૂબ અક્કલવાળો છે.",
+          "sentence_en": "He is very sensible.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_8_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_8_sentence.mp3"
+        },
+        {
+          "word": "પાક્કું",
+          "meaning_en": "certain / firm",
+          "meaning_gu": "નિશ્ચિત",
+          "target_cluster": "ક્ક",
+          "sentence_gu": "મારું વચન પાક્કું છે.",
+          "sentence_en": "My promise is firm.",
+          "audio_ios": "audio/jodakshar/jodakshar_8_word_2.mp3",
+          "audio_android": "audio_jodakshar_8_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_8_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_8_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_8_letter.mp3",
+      "audio_android": "audio_jodakshar_8_letter.mp3",
+      "svg": "svgs/jodakshar/8_kka.svg",
+      "total_length": 298.707,
+      "groups": 1,
+      "formation_type": "geminate_double"
+    },
+    {
+      "id": 9,
+      "level": "intermediate",
+      "cluster": "ચ્ચ",
+      "components": [
+        "ચ્",
+        "ચ"
+      ],
+      "romanization": "chcha",
+      "pattern": "double",
+      "examples": [
+        {
+          "word": "ઉચ્ચાર",
+          "meaning_en": "pronunciation",
+          "target_cluster": "ચ્ચ",
+          "audio_ios": "audio/jodakshar/jodakshar_9_word.mp3",
+          "audio_android": "audio_jodakshar_9_word.mp3",
+          "meaning_gu": "ઉચ્ચાર",
+          "sentence_gu": "શબ્દનો સાચો ઉચ્ચાર કરો.",
+          "sentence_en": "Pronounce the word correctly.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_9_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_9_sentence.mp3"
+        },
+        {
+          "word": "બચ્ચું",
+          "meaning_en": "young animal",
+          "meaning_gu": "પ્રાણીનું નાનું બાળક",
+          "target_cluster": "ચ્ચ",
+          "sentence_gu": "બિલાડીનું બચ્ચું રમે છે.",
+          "sentence_en": "The kitten plays.",
+          "audio_ios": "audio/jodakshar/jodakshar_9_word_2.mp3",
+          "audio_android": "audio_jodakshar_9_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_9_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_9_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_9_letter.mp3",
+      "audio_android": "audio_jodakshar_9_letter.mp3",
+      "svg": "svgs/jodakshar/9_chcha.svg",
+      "total_length": 273.027,
+      "groups": 1,
+      "formation_type": "geminate_double"
+    },
+    {
+      "id": 10,
+      "level": "intermediate",
+      "cluster": "ત્ત",
+      "components": [
+        "ત્",
+        "ત"
+      ],
+      "romanization": "tta",
+      "pattern": "double",
+      "examples": [
+        {
+          "word": "સત્તા",
+          "meaning_en": "power",
+          "target_cluster": "ત્ત",
+          "audio_ios": "audio/jodakshar/jodakshar_10_word.mp3",
+          "audio_android": "audio_jodakshar_10_word.mp3",
+          "meaning_gu": "શક્તિ",
+          "sentence_gu": "જનતા પાસે મોટી સત્તા છે.",
+          "sentence_en": "The people hold great power.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_10_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_10_sentence.mp3"
+        },
+        {
+          "word": "પત્તું",
+          "meaning_en": "leaf / card",
+          "meaning_gu": "પાન અથવા રમવાનું પત્તું",
+          "target_cluster": "ત્ત",
+          "sentence_gu": "આ રમવાનું પત્તું છે.",
+          "sentence_en": "This is a playing card.",
+          "audio_ios": "audio/jodakshar/jodakshar_10_word_2.mp3",
+          "audio_android": "audio_jodakshar_10_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_10_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_10_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_10_letter.mp3",
+      "audio_android": "audio_jodakshar_10_letter.mp3",
+      "svg": "svgs/jodakshar/10_tta.svg",
+      "total_length": 155.673,
+      "groups": 1,
+      "formation_type": "geminate_double"
+    },
+    {
+      "id": 11,
+      "level": "intermediate",
+      "cluster": "દ્દ",
+      "components": [
+        "દ્",
+        "દ"
+      ],
+      "romanization": "dda",
+      "pattern": "double",
+      "examples": [
+        {
+          "word": "ઉદ્દેશ",
+          "meaning_en": "purpose",
+          "target_cluster": "દ્દ",
+          "audio_ios": "audio/jodakshar/jodakshar_11_word.mp3",
+          "audio_android": "audio_jodakshar_11_word.mp3",
+          "meaning_gu": "હેતુ",
+          "sentence_gu": "આપણો ઉદ્દેશ ભણવાનો છે.",
+          "sentence_en": "Our purpose is to learn.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_11_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_11_sentence.mp3"
+        },
+        {
+          "word": "મુદ્દો",
+          "meaning_en": "point / topic",
+          "meaning_gu": "મુખ્ય વાત",
+          "target_cluster": "દ્દ",
+          "sentence_gu": "આ મુદ્દો સમજાવો.",
+          "sentence_en": "Explain this point.",
+          "audio_ios": "audio/jodakshar/jodakshar_11_word_2.mp3",
+          "audio_android": "audio_jodakshar_11_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_11_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_11_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_11_letter.mp3",
+      "audio_android": "audio_jodakshar_11_letter.mp3",
+      "svg": "svgs/jodakshar/11_dda.svg",
+      "total_length": 128.667,
+      "groups": 1,
+      "formation_type": "geminate_double"
+    },
+    {
+      "id": 12,
+      "level": "intermediate",
+      "cluster": "ન્ન",
+      "components": [
+        "ન્",
+        "ન"
+      ],
+      "romanization": "nna",
+      "pattern": "double",
+      "examples": [
+        {
+          "word": "અન્ન",
+          "meaning_en": "grain",
+          "target_cluster": "ન્ન",
+          "audio_ios": "audio/jodakshar/jodakshar_12_word.mp3",
+          "audio_android": "audio_jodakshar_12_word.mp3",
+          "meaning_gu": "અનાજ",
+          "sentence_gu": "અન્નનો ક્યારેય બગાડ ન કરવો.",
+          "sentence_en": "Never waste food.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_12_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_12_sentence.mp3"
+        },
+        {
+          "word": "પ્રસન્ન",
+          "meaning_en": "happy",
+          "meaning_gu": "ખુશ",
+          "target_cluster": "ન્ન",
+          "sentence_gu": "બાળક પ્રસન્ન છે.",
+          "sentence_en": "The child is happy.",
+          "audio_ios": "audio/jodakshar/jodakshar_12_word_2.mp3",
+          "audio_android": "audio_jodakshar_12_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_12_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_12_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_12_letter.mp3",
+      "audio_android": "audio_jodakshar_12_letter.mp3",
+      "svg": "svgs/jodakshar/12_nna.svg",
+      "total_length": 131.513,
+      "groups": 1,
+      "formation_type": "geminate_double"
+    },
+    {
+      "id": 13,
+      "level": "intermediate",
+      "cluster": "પ્પ",
+      "components": [
+        "પ્",
+        "પ"
+      ],
+      "romanization": "ppa",
+      "pattern": "double",
+      "examples": [
+        {
+          "word": "છપ્પન",
+          "meaning_en": "fifty-six",
+          "target_cluster": "પ્પ",
+          "audio_ios": "audio/jodakshar/jodakshar_13_word.mp3",
+          "audio_android": "audio_jodakshar_13_word.mp3",
+          "meaning_gu": "૫૬",
+          "sentence_gu": "ગુજરાતમાં છપ્પન ભોગ ધરાવાય છે.",
+          "sentence_en": "Fifty-six delicacies are offered in Gujarat.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_13_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_13_sentence.mp3"
+        },
+        {
+          "word": "ચપ્પલ",
+          "meaning_en": "slippers",
+          "meaning_gu": "પગમાં પહેરવાનું પગરખું",
+          "target_cluster": "પ્પ",
+          "sentence_gu": "મારી ચપ્પલ વાદળી છે.",
+          "sentence_en": "My slippers are blue.",
+          "audio_ios": "audio/jodakshar/jodakshar_13_word_2.mp3",
+          "audio_android": "audio_jodakshar_13_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_13_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_13_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_13_letter.mp3",
+      "audio_android": "audio_jodakshar_13_letter.mp3",
+      "svg": "svgs/jodakshar/13_ppa.svg",
+      "total_length": 200.603,
+      "groups": 1,
+      "formation_type": "geminate_double"
+    },
+    {
+      "id": 14,
+      "level": "intermediate",
+      "cluster": "ટ્ટ",
+      "components": [
+        "ટ્",
+        "ટ"
+      ],
+      "romanization": "tta",
+      "pattern": "double",
+      "examples": [
+        {
+          "word": "પટ્ટો",
+          "meaning_en": "strip",
+          "target_cluster": "ટ્ટ",
+          "audio_ios": "audio/jodakshar/jodakshar_14_word.mp3",
+          "audio_android": "audio_jodakshar_14_word.mp3",
+          "meaning_gu": "પટ્ટો",
+          "sentence_gu": "કુતરાના ગળામાં પટ્ટો છે.",
+          "sentence_en": "There is a collar on the dog's neck.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_14_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_14_sentence.mp3"
+        },
+        {
+          "word": "પટ્ટી",
+          "meaning_en": "strip / bandage",
+          "meaning_gu": "પાટો અથવા પટ્ટી",
+          "target_cluster": "ટ્ટ",
+          "sentence_gu": "આ પટ્ટી સફેદ છે.",
+          "sentence_en": "This strip is white.",
+          "audio_ios": "audio/jodakshar/jodakshar_14_word_2.mp3",
+          "audio_android": "audio_jodakshar_14_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_14_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_14_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_14_letter.mp3",
+      "audio_android": "audio_jodakshar_14_letter.mp3",
+      "svg": "svgs/jodakshar/14_tta.svg",
+      "total_length": 171.972,
+      "groups": 1,
+      "formation_type": "geminate_double"
+    },
+    {
+      "id": 15,
+      "level": "intermediate",
+      "cluster": "ત્ય",
+      "components": [
+        "ત્",
+        "ય"
+      ],
+      "romanization": "tya",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "સત્ય",
+          "meaning_en": "truth",
+          "target_cluster": "ત્ય",
+          "audio_ios": "audio/jodakshar/jodakshar_15_word.mp3",
+          "audio_android": "audio_jodakshar_15_word.mp3",
+          "meaning_gu": "સાચું",
+          "sentence_gu": "ગાંધીજી હંમેશા સત્ય બોલતા.",
+          "sentence_en": "Gandhiji always spoke the truth.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_15_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_15_sentence.mp3"
+        },
+        {
+          "word": "નૃત્ય",
+          "meaning_en": "dance",
+          "meaning_gu": "નાચ",
+          "target_cluster": "ત્ય",
+          "sentence_gu": "મને નૃત્ય ગમે છે.",
+          "sentence_en": "I like dance.",
+          "audio_ios": "audio/jodakshar/jodakshar_15_word_2.mp3",
+          "audio_android": "audio_jodakshar_15_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_15_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_15_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_15_letter.mp3",
+      "audio_android": "audio_jodakshar_15_letter.mp3",
+      "svg": "svgs/jodakshar/15_tya.svg",
+      "total_length": 206.86,
+      "groups": 1,
+      "formation_type": "danda_removal"
+    },
+    {
+      "id": 16,
+      "level": "intermediate",
+      "cluster": "ન્ય",
+      "components": [
+        "ન્",
+        "ય"
+      ],
+      "romanization": "nya",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "ન્યાય",
+          "meaning_en": "justice",
+          "target_cluster": "ન્ય",
+          "audio_ios": "audio/jodakshar/jodakshar_16_word.mp3",
+          "audio_android": "audio_jodakshar_16_word.mp3",
+          "meaning_gu": "ન્યાય",
+          "sentence_gu": "અદાલત સાચો ન્યાય કરે છે.",
+          "sentence_en": "The court delivers true justice.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_16_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_16_sentence.mp3"
+        },
+        {
+          "word": "અન્ય",
+          "meaning_en": "other",
+          "meaning_gu": "બીજું",
+          "target_cluster": "ન્ય",
+          "sentence_gu": "અન્ય બાળકો પણ રમે છે.",
+          "sentence_en": "Other children play too.",
+          "audio_ios": "audio/jodakshar/jodakshar_16_word_2.mp3",
+          "audio_android": "audio_jodakshar_16_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_16_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_16_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_16_letter.mp3",
+      "audio_android": "audio_jodakshar_16_letter.mp3",
+      "svg": "svgs/jodakshar/16_nya.svg",
+      "total_length": 165.113,
+      "groups": 1,
+      "formation_type": "danda_removal"
+    },
+    {
+      "id": 17,
+      "level": "intermediate",
+      "cluster": "દ્ય",
+      "components": [
+        "દ્",
+        "ય"
+      ],
+      "romanization": "dya",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "વિદ્યા",
+          "meaning_en": "knowledge",
+          "target_cluster": "દ્ય",
+          "audio_ios": "audio/jodakshar/jodakshar_17_word.mp3",
+          "audio_android": "audio_jodakshar_17_word.mp3",
+          "meaning_gu": "ભણતર",
+          "sentence_gu": "વિદ્યા વિનયથી શોભે છે.",
+          "sentence_en": "Knowledge is adorned with humility.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_17_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_17_sentence.mp3"
+        },
+        {
+          "word": "વિદ્યાર્થી",
+          "meaning_en": "student",
+          "meaning_gu": "ભણનાર બાળક",
+          "target_cluster": "દ્ય",
+          "sentence_gu": "વિદ્યાર્થી પુસ્તક વાંચે છે.",
+          "sentence_en": "The student reads a book.",
+          "audio_ios": "audio/jodakshar/jodakshar_17_word_2.mp3",
+          "audio_android": "audio_jodakshar_17_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_17_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_17_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_17_letter.mp3",
+      "audio_android": "audio_jodakshar_17_letter.mp3",
+      "svg": "svgs/jodakshar/17_dya.svg",
+      "total_length": 187.067,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 18,
+      "level": "intermediate",
+      "cluster": "દ્વ",
+      "components": [
+        "દ્",
+        "વ"
+      ],
+      "romanization": "dva",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "દ્વાર",
+          "meaning_en": "door",
+          "target_cluster": "દ્વ",
+          "audio_ios": "audio/jodakshar/jodakshar_18_word.mp3",
+          "audio_android": "audio_jodakshar_18_word.mp3",
+          "meaning_gu": "દરવાજો",
+          "sentence_gu": "મંદિરનું દ્વાર ખુલ્લું છે.",
+          "sentence_en": "The temple door is open.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_18_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_18_sentence.mp3"
+        },
+        {
+          "word": "દ્વીપ",
+          "meaning_en": "island",
+          "meaning_gu": "પાણીથી ઘેરાયેલી જમીન",
+          "target_cluster": "દ્વ",
+          "sentence_gu": "દ્વીપની આસપાસ પાણી છે.",
+          "sentence_en": "There is water around the island.",
+          "audio_ios": "audio/jodakshar/jodakshar_18_word_2.mp3",
+          "audio_android": "audio_jodakshar_18_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_18_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_18_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_18_letter.mp3",
+      "audio_android": "audio_jodakshar_18_letter.mp3",
+      "svg": "svgs/jodakshar/18_dva.svg",
+      "total_length": 180.105,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 19,
+      "level": "intermediate",
+      "cluster": "સ્થ",
+      "components": [
+        "સ્",
+        "થ"
+      ],
+      "romanization": "stha",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "સ્થાન",
+          "meaning_en": "place",
+          "target_cluster": "સ્થ",
+          "audio_ios": "audio/jodakshar/jodakshar_19_word.mp3",
+          "audio_android": "audio_jodakshar_19_word.mp3",
+          "meaning_gu": "જગ્યા",
+          "sentence_gu": "આ એક સુંદર સ્થાન છે.",
+          "sentence_en": "This is a beautiful place.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_19_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_19_sentence.mp3"
+        },
+        {
+          "word": "સ્થિર",
+          "meaning_en": "steady",
+          "meaning_gu": "અચળ",
+          "target_cluster": "સ્થ",
+          "sentence_gu": "તમારો હાથ સ્થિર રાખો.",
+          "sentence_en": "Keep your hand steady.",
+          "audio_ios": "audio/jodakshar/jodakshar_19_word_2.mp3",
+          "audio_android": "audio_jodakshar_19_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_19_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_19_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_19_letter.mp3",
+      "audio_android": "audio_jodakshar_19_letter.mp3",
+      "svg": "svgs/jodakshar/19_stha.svg",
+      "total_length": 301.391,
+      "groups": 1,
+      "formation_type": "danda_removal"
+    },
+    {
+      "id": 20,
+      "level": "intermediate",
+      "cluster": "શ્ર",
+      "components": [
+        "શ્",
+        "ર"
+      ],
+      "romanization": "shra",
+      "pattern": "ligature",
+      "examples": [
+        {
+          "word": "શ્રદ્ધા",
+          "meaning_en": "faith",
+          "target_cluster": "શ્ર",
+          "audio_ios": "audio/jodakshar/jodakshar_20_word.mp3",
+          "audio_android": "audio_jodakshar_20_word.mp3",
+          "meaning_gu": "વિશ્વાસ",
+          "sentence_gu": "ઈશ્વર પર પૂર્ણ શ્રદ્ધા રાખો.",
+          "sentence_en": "Have complete faith in God.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_20_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_20_sentence.mp3"
+        },
+        {
+          "word": "શ્રમ",
+          "meaning_en": "work / effort",
+          "meaning_gu": "મહેનત",
+          "target_cluster": "શ્ર",
+          "sentence_gu": "શ્રમથી સફળતા મળે છે.",
+          "sentence_en": "Effort brings success.",
+          "audio_ios": "audio/jodakshar/jodakshar_20_word_2.mp3",
+          "audio_android": "audio_jodakshar_20_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_20_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_20_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_20_letter.mp3",
+      "audio_android": "audio_jodakshar_20_letter.mp3",
+      "svg": "svgs/jodakshar/20_shra.svg",
+      "total_length": 210.366,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 21,
+      "level": "intermediate",
+      "cluster": "દ્ર",
+      "components": [
+        "દ્",
+        "ર"
+      ],
+      "romanization": "dra",
+      "pattern": "r-blend",
+      "examples": [
+        {
+          "word": "દ્રાક્ષ",
+          "meaning_en": "grapes",
+          "target_cluster": "દ્ર",
+          "audio_ios": "audio/jodakshar/jodakshar_21_word.mp3",
+          "audio_android": "audio_jodakshar_21_word.mp3",
+          "meaning_gu": "દ્રાક્ષ",
+          "sentence_gu": "લીલી દ્રાક્ષ મીઠી હોય છે.",
+          "sentence_en": "Green grapes are sweet.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_21_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_21_sentence.mp3"
+        },
+        {
+          "word": "સમુદ્ર",
+          "meaning_en": "sea",
+          "meaning_gu": "દરિયો",
+          "target_cluster": "દ્ર",
+          "sentence_gu": "સમુદ્રમાં મોજાં ઊઠે છે.",
+          "sentence_en": "Waves rise in the sea.",
+          "audio_ios": "audio/jodakshar/jodakshar_21_word_2.mp3",
+          "audio_android": "audio_jodakshar_21_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_21_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_21_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_21_letter.mp3",
+      "audio_android": "audio_jodakshar_21_letter.mp3",
+      "svg": "svgs/jodakshar/21_dra.svg",
+      "total_length": 123.456,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 22,
+      "level": "intermediate",
+      "cluster": "ગ્ર",
+      "components": [
+        "ગ્",
+        "ર"
+      ],
+      "romanization": "gra",
+      "pattern": "r-blend",
+      "examples": [
+        {
+          "word": "ગ્રાહક",
+          "meaning_en": "customer",
+          "target_cluster": "ગ્ર",
+          "audio_ios": "audio/jodakshar/jodakshar_22_word.mp3",
+          "audio_android": "audio_jodakshar_22_word.mp3",
+          "meaning_gu": "ખરીદનાર",
+          "sentence_gu": "દુકાનમાં ઘણા ગ્રાહક છે.",
+          "sentence_en": "There are many customers in the shop.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_22_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_22_sentence.mp3"
+        },
+        {
+          "word": "ગ્રામ",
+          "meaning_en": "village",
+          "meaning_gu": "ગામ",
+          "target_cluster": "ગ્ર",
+          "sentence_gu": "આ મારું ગ્રામ છે.",
+          "sentence_en": "This is my village.",
+          "audio_ios": "audio/jodakshar/jodakshar_22_word_2.mp3",
+          "audio_android": "audio_jodakshar_22_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_22_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_22_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_22_letter.mp3",
+      "audio_android": "audio_jodakshar_22_letter.mp3",
+      "svg": "svgs/jodakshar/22_gra.svg",
+      "total_length": 177.38,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 23,
+      "level": "advanced",
+      "cluster": "ષ્ટ",
+      "components": [
+        "ષ્",
+        "ટ"
+      ],
+      "romanization": "shta",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "કષ્ટ",
+          "meaning_en": "difficulty",
+          "target_cluster": "ષ્ટ",
+          "audio_ios": "audio/jodakshar/jodakshar_23_word.mp3",
+          "audio_android": "audio_jodakshar_23_word.mp3",
+          "meaning_gu": "મુશ્કેલી",
+          "sentence_gu": "મહેનતથી બધા કષ્ટ દૂર થાય છે.",
+          "sentence_en": "All hardships are overcome by hard work.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_23_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_23_sentence.mp3"
+        },
+        {
+          "word": "સ્પષ્ટ",
+          "meaning_en": "clear",
+          "meaning_gu": "ચોખ્ખું",
+          "target_cluster": "ષ્ટ",
+          "sentence_gu": "સ્પષ્ટ અવાજે બોલો.",
+          "sentence_en": "Speak in a clear voice.",
+          "audio_ios": "audio/jodakshar/jodakshar_23_word_2.mp3",
+          "audio_android": "audio_jodakshar_23_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_23_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_23_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_23_letter.mp3",
+      "audio_android": "audio_jodakshar_23_letter.mp3",
+      "svg": "svgs/jodakshar/23_shta.svg",
+      "total_length": 216.98,
+      "groups": 1,
+      "formation_type": "danda_removal"
+    },
+    {
+      "id": 24,
+      "level": "advanced",
+      "cluster": "ષ્ઠ",
+      "components": [
+        "ષ્",
+        "ઠ"
+      ],
+      "romanization": "shtha",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "શ્રેષ્ઠ",
+          "meaning_en": "excellent",
+          "target_cluster": "ષ્ઠ",
+          "audio_ios": "audio/jodakshar/jodakshar_24_word.mp3",
+          "audio_android": "audio_jodakshar_24_word.mp3",
+          "meaning_gu": "સૌથી સારું",
+          "sentence_gu": "આ પુસ્તક સૌથી શ્રેષ્ઠ છે.",
+          "sentence_en": "This book is the best.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_24_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_24_sentence.mp3"
+        },
+        {
+          "word": "પૃષ્ઠ",
+          "meaning_en": "page",
+          "meaning_gu": "પાનું",
+          "target_cluster": "ષ્ઠ",
+          "sentence_gu": "પુસ્તકનું પૃષ્ઠ ફેરવો.",
+          "sentence_en": "Turn the page of the book.",
+          "audio_ios": "audio/jodakshar/jodakshar_24_word_2.mp3",
+          "audio_android": "audio_jodakshar_24_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_24_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_24_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_24_letter.mp3",
+      "audio_android": "audio_jodakshar_24_letter.mp3",
+      "svg": "svgs/jodakshar/24_shtha.svg",
+      "total_length": 247.392,
+      "groups": 1,
+      "formation_type": "danda_removal"
+    },
+    {
+      "id": 25,
+      "level": "beginner",
+      "cluster": "ચ્છ",
+      "components": [
+        "ચ્",
+        "છ"
+      ],
+      "romanization": "chchha",
+      "pattern": "common",
+      "formation_type": "touching_conjoin",
+      "examples": [
+        {
+          "word": "સ્વચ્છ",
+          "meaning_en": "clean",
+          "meaning_gu": "સ્વચ્છ",
+          "target_cluster": "ચ્છ",
+          "sentence_gu": "આપણું ઘર સ્વચ્છ રાખો.",
+          "sentence_en": "Keep our home clean.",
+          "audio_ios": "audio/jodakshar/jodakshar_25_word.mp3",
+          "audio_android": "audio_jodakshar_25_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_25_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_25_sentence.mp3"
+        },
+        {
+          "word": "ઇચ્છા",
+          "meaning_en": "wish",
+          "meaning_gu": "ઇચ્છા",
+          "target_cluster": "ચ્છ",
+          "sentence_gu": "મારી ભણવાની ઇચ્છા છે.",
+          "sentence_en": "I have a desire to study.",
+          "audio_ios": "audio/jodakshar/jodakshar_25_word_2.mp3",
+          "audio_android": "audio_jodakshar_25_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_25_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_25_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_25_letter.mp3",
+      "audio_android": "audio_jodakshar_25_letter.mp3",
+      "svg": "svgs/jodakshar/25_chchha.svg",
+      "total_length": 333.076,
+      "groups": 1
+    },
+    {
+      "id": 26,
+      "level": "beginner",
+      "cluster": "લ્લ",
+      "components": [
+        "લ્",
+        "લ"
+      ],
+      "romanization": "lla",
+      "pattern": "double",
+      "formation_type": "geminate_double",
+      "examples": [
+        {
+          "word": "બિલ્લી",
+          "meaning_en": "cat",
+          "meaning_gu": "બિલ્લી",
+          "target_cluster": "લ્લ",
+          "sentence_gu": "બિલ્લી દૂધ પીએ છે.",
+          "sentence_en": "The cat drinks milk.",
+          "audio_ios": "audio/jodakshar/jodakshar_26_word.mp3",
+          "audio_android": "audio_jodakshar_26_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_26_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_26_sentence.mp3"
+        },
+        {
+          "word": "કિલ્લો",
+          "meaning_en": "fort",
+          "meaning_gu": "કિલ્લો",
+          "target_cluster": "લ્લ",
+          "sentence_gu": "આ એક જૂનો કિલ્લો છે.",
+          "sentence_en": "This is an old fort.",
+          "audio_ios": "audio/jodakshar/jodakshar_26_word_2.mp3",
+          "audio_android": "audio_jodakshar_26_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_26_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_26_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_26_letter.mp3",
+      "audio_android": "audio_jodakshar_26_letter.mp3",
+      "svg": "svgs/jodakshar/26_lla.svg",
+      "total_length": 274.467,
+      "groups": 1
+    },
+    {
+      "id": 27,
+      "level": "advanced",
+      "cluster": "ત્સ",
+      "components": [
+        "ત્",
+        "સ"
+      ],
+      "romanization": "tsa",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "ઉત્સવ",
+          "meaning_en": "festival",
+          "target_cluster": "ત્સ",
+          "audio_ios": "audio/jodakshar/jodakshar_27_word.mp3",
+          "audio_android": "audio_jodakshar_27_word.mp3",
+          "meaning_gu": "તહેવાર",
+          "sentence_gu": "દિવાળી ખુશીનો ઉત્સવ છે.",
+          "sentence_en": "Diwali is a festival of joy.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_27_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_27_sentence.mp3"
+        },
+        {
+          "word": "ઉત્સાહ",
+          "meaning_en": "enthusiasm",
+          "meaning_gu": "ઉમંગ",
+          "target_cluster": "ત્સ",
+          "sentence_gu": "બાળકો ઉત્સાહથી રમે છે.",
+          "sentence_en": "The children play with enthusiasm.",
+          "audio_ios": "audio/jodakshar/jodakshar_27_word_2.mp3",
+          "audio_android": "audio_jodakshar_27_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_27_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_27_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_27_letter.mp3",
+      "audio_android": "audio_jodakshar_27_letter.mp3",
+      "svg": "svgs/jodakshar/27_tsa.svg",
+      "total_length": 254.111,
+      "groups": 1,
+      "formation_type": "touching_conjoin"
+    },
+    {
+      "id": 28,
+      "level": "advanced",
+      "cluster": "દ્ભુ",
+      "components": [
+        "દ્",
+        "ભુ"
+      ],
+      "romanization": "dbhu",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "અદ્ભુત",
+          "meaning_en": "wonderful",
+          "target_cluster": "દ્ભુ",
+          "audio_ios": "audio/jodakshar/jodakshar_28_word.mp3",
+          "audio_android": "audio_jodakshar_28_word.mp3",
+          "meaning_gu": "અજાયબ",
+          "sentence_gu": "તાજમહલ એક અદ્ભુત ઇમારત છે.",
+          "sentence_en": "The Taj Mahal is a wonderful building.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_28_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_28_sentence.mp3"
+        },
+        {
+          "word": "અદ્ભુતતા",
+          "meaning_en": "wonderfulness",
+          "meaning_gu": "અજાયબી",
+          "target_cluster": "દ્ભુ",
+          "sentence_gu": "પ્રકૃતિની અદ્ભુતતા જુઓ.",
+          "sentence_en": "See the wonder of nature.",
+          "audio_ios": "audio/jodakshar/jodakshar_28_word_2.mp3",
+          "audio_android": "audio_jodakshar_28_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_28_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_28_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_28_letter.mp3",
+      "audio_android": "audio_jodakshar_28_letter.mp3",
+      "svg": "svgs/jodakshar/28_dbhu.svg",
+      "total_length": 263.34,
+      "groups": 1,
+      "formation_type": "halant_vertical"
+    },
+    {
+      "id": 29,
+      "level": "advanced",
+      "cluster": "ન્મ",
+      "components": [
+        "ન્",
+        "મ"
+      ],
+      "romanization": "nma",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "જન્મ",
+          "meaning_en": "birth",
+          "target_cluster": "ન્મ",
+          "audio_ios": "audio/jodakshar/jodakshar_29_word.mp3",
+          "audio_android": "audio_jodakshar_29_word.mp3",
+          "meaning_gu": "જન્મ",
+          "sentence_gu": "આજે મારો જન્મદિવસ છે.",
+          "sentence_en": "Today is my birthday.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_29_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_29_sentence.mp3"
+        },
+        {
+          "word": "જન્મદિવસ",
+          "meaning_en": "birthday",
+          "meaning_gu": "જન્મનો દિવસ",
+          "target_cluster": "ન્મ",
+          "sentence_gu": "મારો જન્મદિવસ આજે છે.",
+          "sentence_en": "My birthday is today.",
+          "audio_ios": "audio/jodakshar/jodakshar_29_word_2.mp3",
+          "audio_android": "audio_jodakshar_29_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_29_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_29_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_29_letter.mp3",
+      "audio_android": "audio_jodakshar_29_letter.mp3",
+      "svg": "svgs/jodakshar/29_nma.svg",
+      "total_length": 152.496,
+      "groups": 1,
+      "formation_type": "danda_removal"
+    },
+    {
+      "id": 30,
+      "level": "advanced",
+      "cluster": "જ્જ્વ",
+      "components": [
+        "જ્",
+        "જ્વ"
+      ],
+      "romanization": "jjva",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "ઉજ્જ્વળ",
+          "meaning_en": "bright",
+          "target_cluster": "જ્જ્વ",
+          "audio_ios": "audio/jodakshar/jodakshar_30_word.mp3",
+          "audio_android": "audio_jodakshar_30_word.mp3",
+          "meaning_gu": "તેજસ્વી",
+          "sentence_gu": "તેનું ભવિષ્ય ઉજ્જ્વળ છે.",
+          "sentence_en": "His future is bright.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_30_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_30_sentence.mp3"
+        },
+        {
+          "word": "ઉજ્જ્વળતા",
+          "meaning_en": "brightness",
+          "meaning_gu": "તેજ",
+          "target_cluster": "જ્જ્વ",
+          "sentence_gu": "દીવાની ઉજ્જ્વળતા જુઓ.",
+          "sentence_en": "Look at the brightness of the lamp.",
+          "audio_ios": "audio/jodakshar/jodakshar_30_word_2.mp3",
+          "audio_android": "audio_jodakshar_30_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_30_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_30_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_30_letter.mp3",
+      "audio_android": "audio_jodakshar_30_letter.mp3",
+      "svg": "svgs/jodakshar/30_jjva.svg",
+      "total_length": 633.686,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 31,
+      "level": "advanced",
+      "cluster": "સ્ફ",
+      "components": [
+        "સ્",
+        "ફ"
+      ],
+      "romanization": "spha",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "સ્ફૂર્તિ",
+          "meaning_en": "energy",
+          "target_cluster": "સ્ફ",
+          "audio_ios": "audio/jodakshar/jodakshar_31_word.mp3",
+          "audio_android": "audio_jodakshar_31_word.mp3",
+          "meaning_gu": "ઊર્જા",
+          "sentence_gu": "સવારની હવામાં સ્ફૂર્તિ હોય છે.",
+          "sentence_en": "Morning air has freshness and energy.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_31_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_31_sentence.mp3"
+        },
+        {
+          "word": "સ્ફટિક",
+          "meaning_en": "crystal",
+          "meaning_gu": "પારદર્શક સ્ફટિક",
+          "target_cluster": "સ્ફ",
+          "sentence_gu": "આ સ્ફટિક ચમકે છે.",
+          "sentence_en": "This crystal shines.",
+          "audio_ios": "audio/jodakshar/jodakshar_31_word_2.mp3",
+          "audio_android": "audio_jodakshar_31_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_31_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_31_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_31_letter.mp3",
+      "audio_android": "audio_jodakshar_31_letter.mp3",
+      "svg": "svgs/jodakshar/31_spha.svg",
+      "total_length": 310.825,
+      "groups": 1,
+      "formation_type": "touching_conjoin"
+    },
+    {
+      "id": 32,
+      "level": "advanced",
+      "cluster": "ક્ષ્ય",
+      "components": [
+        "ક્ષ્",
+        "ય"
+      ],
+      "romanization": "kshya",
+      "pattern": "common",
+      "examples": [
+        {
+          "word": "લક્ષ્ય",
+          "meaning_en": "goal",
+          "target_cluster": "ક્ષ્ય",
+          "audio_ios": "audio/jodakshar/jodakshar_32_word.mp3",
+          "audio_android": "audio_jodakshar_32_word.mp3",
+          "meaning_gu": "ધ્યેય",
+          "sentence_gu": "પોતાનું લક્ષ્ય હંમેશા યાદ રાખો.",
+          "sentence_en": "Always remember your goal.",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_32_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_32_sentence.mp3"
+        },
+        {
+          "word": "લક્ષ્યાંક",
+          "meaning_en": "target",
+          "meaning_gu": "નક્કી કરેલું ધ્યેય",
+          "target_cluster": "ક્ષ્ય",
+          "sentence_gu": "આજનો લક્ષ્યાંક વાંચવાનો છે.",
+          "sentence_en": "Today’s target is to read.",
+          "audio_ios": "audio/jodakshar/jodakshar_32_word_2.mp3",
+          "audio_android": "audio_jodakshar_32_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_32_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_32_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_32_letter.mp3",
+      "audio_android": "audio_jodakshar_32_letter.mp3",
+      "svg": "svgs/jodakshar/32_kshya.svg",
+      "total_length": 308.159,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 33,
+      "cluster": "ર્થ",
+      "components": [
+        "ર્",
+        "થ"
+      ],
+      "romanization": "rtha",
+      "pattern": "common",
+      "level": "intermediate",
+      "examples": [
+        {
+          "word": "અર્થ",
+          "meaning_en": "meaning",
+          "meaning_gu": "મતલબ",
+          "target_cluster": "ર્થ",
+          "sentence_gu": "આ શબ્દનો અર્થ સમજાવો.",
+          "sentence_en": "Explain the meaning of this word.",
+          "audio_ios": "audio/jodakshar/jodakshar_33_word.mp3",
+          "audio_android": "audio_jodakshar_33_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_33_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_33_sentence.mp3"
+        },
+        {
+          "word": "સમર્થ",
+          "meaning_en": "capable",
+          "meaning_gu": "સક્ષમ",
+          "target_cluster": "ર્થ",
+          "sentence_gu": "હું આ કામ કરવા સમર્થ છું.",
+          "sentence_en": "I am capable of doing this work.",
+          "audio_ios": "audio/jodakshar/jodakshar_33_word_2.mp3",
+          "audio_android": "audio_jodakshar_33_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_33_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_33_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_33_letter.mp3",
+      "audio_android": "audio_jodakshar_33_letter.mp3",
+      "svg": "svgs/jodakshar/33_rtha.svg",
+      "total_length": 212.241,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 34,
+      "cluster": "ર્મ",
+      "components": [
+        "ર્",
+        "મ"
+      ],
+      "romanization": "rma",
+      "pattern": "common",
+      "level": "intermediate",
+      "examples": [
+        {
+          "word": "કર્મ",
+          "meaning_en": "action",
+          "meaning_gu": "કાર્ય",
+          "target_cluster": "ર્મ",
+          "sentence_gu": "સારું કર્મ કરો.",
+          "sentence_en": "Do a good deed.",
+          "audio_ios": "audio/jodakshar/jodakshar_34_word.mp3",
+          "audio_android": "audio_jodakshar_34_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_34_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_34_sentence.mp3"
+        },
+        {
+          "word": "ધર્મ",
+          "meaning_en": "duty / religion",
+          "meaning_gu": "ફરજ અથવા ધર્મ",
+          "target_cluster": "ર્મ",
+          "sentence_gu": "સેવા કરવી આપણો ધર્મ છે.",
+          "sentence_en": "Serving others is our duty.",
+          "audio_ios": "audio/jodakshar/jodakshar_34_word_2.mp3",
+          "audio_android": "audio_jodakshar_34_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_34_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_34_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_34_letter.mp3",
+      "audio_android": "audio_jodakshar_34_letter.mp3",
+      "svg": "svgs/jodakshar/34_rma.svg",
+      "total_length": 173.521,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 35,
+      "cluster": "સ્ત",
+      "components": [
+        "સ્",
+        "ત"
+      ],
+      "romanization": "sta",
+      "pattern": "common",
+      "level": "intermediate",
+      "examples": [
+        {
+          "word": "પુસ્તક",
+          "meaning_en": "book",
+          "meaning_gu": "ચોપડી",
+          "target_cluster": "સ્ત",
+          "sentence_gu": "આ મારું પુસ્તક છે.",
+          "sentence_en": "This is my book.",
+          "audio_ios": "audio/jodakshar/jodakshar_35_word.mp3",
+          "audio_android": "audio_jodakshar_35_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_35_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_35_sentence.mp3"
+        },
+        {
+          "word": "રસ્તો",
+          "meaning_en": "road",
+          "meaning_gu": "માર્ગ",
+          "target_cluster": "સ્ત",
+          "sentence_gu": "આ રસ્તો લાંબો છે.",
+          "sentence_en": "This road is long.",
+          "audio_ios": "audio/jodakshar/jodakshar_35_word_2.mp3",
+          "audio_android": "audio_jodakshar_35_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_35_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_35_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_35_letter.mp3",
+      "audio_android": "audio_jodakshar_35_letter.mp3",
+      "svg": "svgs/jodakshar/35_sta.svg",
+      "total_length": 272.002,
+      "groups": 1,
+      "formation_type": "danda_removal"
+    },
+    {
+      "id": 36,
+      "cluster": "સ્પ",
+      "components": [
+        "સ્",
+        "પ"
+      ],
+      "romanization": "spa",
+      "pattern": "common",
+      "level": "intermediate",
+      "examples": [
+        {
+          "word": "સ્પર્શ",
+          "meaning_en": "touch",
+          "meaning_gu": "અડકવું",
+          "target_cluster": "સ્પ",
+          "sentence_gu": "ફૂલનો સ્પર્શ કોમળ છે.",
+          "sentence_en": "The flower feels soft to touch.",
+          "audio_ios": "audio/jodakshar/jodakshar_36_word.mp3",
+          "audio_android": "audio_jodakshar_36_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_36_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_36_sentence.mp3"
+        },
+        {
+          "word": "સ્પર્ધા",
+          "meaning_en": "competition",
+          "meaning_gu": "હરીફાઈ",
+          "target_cluster": "સ્પ",
+          "sentence_gu": "હું દોડની સ્પર્ધામાં ભાગ લઉં છું.",
+          "sentence_en": "I take part in a running competition.",
+          "audio_ios": "audio/jodakshar/jodakshar_36_word_2.mp3",
+          "audio_android": "audio_jodakshar_36_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_36_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_36_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_36_letter.mp3",
+      "audio_android": "audio_jodakshar_36_letter.mp3",
+      "svg": "svgs/jodakshar/36_spa.svg",
+      "total_length": 258.788,
+      "groups": 1,
+      "formation_type": "touching_conjoin"
+    },
+    {
+      "id": 37,
+      "cluster": "ગ્ન",
+      "components": [
+        "ગ્",
+        "ન"
+      ],
+      "romanization": "gna",
+      "pattern": "common",
+      "level": "intermediate",
+      "examples": [
+        {
+          "word": "અગ્નિ",
+          "meaning_en": "fire",
+          "meaning_gu": "આગ",
+          "target_cluster": "ગ્ન",
+          "sentence_gu": "અગ્નિથી દૂર રહો.",
+          "sentence_en": "Stay away from fire.",
+          "audio_ios": "audio/jodakshar/jodakshar_37_word.mp3",
+          "audio_android": "audio_jodakshar_37_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_37_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_37_sentence.mp3"
+        },
+        {
+          "word": "લગ્ન",
+          "meaning_en": "wedding",
+          "meaning_gu": "વિવાહ",
+          "target_cluster": "ગ્ન",
+          "sentence_gu": "આજે મારા કાકાનાં લગ્ન છે.",
+          "sentence_en": "Today is my uncle’s wedding.",
+          "audio_ios": "audio/jodakshar/jodakshar_37_word_2.mp3",
+          "audio_android": "audio_jodakshar_37_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_37_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_37_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_37_letter.mp3",
+      "audio_android": "audio_jodakshar_37_letter.mp3",
+      "svg": "svgs/jodakshar/37_gna.svg",
+      "total_length": 167.686,
+      "groups": 1,
+      "formation_type": "danda_removal"
+    },
+    {
+      "id": 38,
+      "cluster": "ક્ત",
+      "components": [
+        "ક્",
+        "ત"
+      ],
+      "romanization": "kta",
+      "pattern": "common",
+      "level": "intermediate",
+      "examples": [
+        {
+          "word": "ભક્ત",
+          "meaning_en": "devotee",
+          "meaning_gu": "ભક્તિ કરનાર",
+          "target_cluster": "ક્ત",
+          "sentence_gu": "ભક્ત ગીત ગાય છે.",
+          "sentence_en": "The devotee sings a song.",
+          "audio_ios": "audio/jodakshar/jodakshar_38_word.mp3",
+          "audio_android": "audio_jodakshar_38_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_38_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_38_sentence.mp3"
+        },
+        {
+          "word": "શક્તિ",
+          "meaning_en": "strength",
+          "meaning_gu": "બળ",
+          "target_cluster": "ક્ત",
+          "sentence_gu": "સારા ખોરાકથી શક્તિ મળે છે.",
+          "sentence_en": "Good food gives us strength.",
+          "audio_ios": "audio/jodakshar/jodakshar_38_word_2.mp3",
+          "audio_android": "audio_jodakshar_38_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_38_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_38_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_38_letter.mp3",
+      "audio_android": "audio_jodakshar_38_letter.mp3",
+      "svg": "svgs/jodakshar/38_kta.svg",
+      "total_length": 307.316,
+      "groups": 1,
+      "formation_type": "touching_conjoin"
+    },
+    {
+      "id": 39,
+      "cluster": "દ્ધ",
+      "components": [
+        "દ્",
+        "ધ"
+      ],
+      "romanization": "ddha",
+      "pattern": "ligature",
+      "level": "intermediate",
+      "examples": [
+        {
+          "word": "બુદ્ધિ",
+          "meaning_en": "intelligence",
+          "meaning_gu": "સમજશક્તિ",
+          "target_cluster": "દ્ધ",
+          "sentence_gu": "બુદ્ધિથી પ્રશ્ન ઉકેલો.",
+          "sentence_en": "Solve the question using intelligence.",
+          "audio_ios": "audio/jodakshar/jodakshar_39_word.mp3",
+          "audio_android": "audio_jodakshar_39_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_39_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_39_sentence.mp3"
+        },
+        {
+          "word": "શુદ્ધ",
+          "meaning_en": "pure",
+          "meaning_gu": "ચોખ્ખું",
+          "target_cluster": "દ્ધ",
+          "sentence_gu": "શુદ્ધ પાણી પીવો.",
+          "sentence_en": "Drink pure water.",
+          "audio_ios": "audio/jodakshar/jodakshar_39_word_2.mp3",
+          "audio_android": "audio_jodakshar_39_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_39_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_39_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_39_letter.mp3",
+      "audio_android": "audio_jodakshar_39_letter.mp3",
+      "svg": "svgs/jodakshar/39_ddha.svg",
+      "total_length": 210.007,
+      "groups": 1,
+      "formation_type": "special_ligature"
+    },
+    {
+      "id": 40,
+      "cluster": "શ્વ",
+      "components": [
+        "શ્",
+        "વ"
+      ],
+      "romanization": "shva",
+      "pattern": "common",
+      "level": "intermediate",
+      "examples": [
+        {
+          "word": "વિશ્વ",
+          "meaning_en": "world",
+          "meaning_gu": "દુનિયા",
+          "target_cluster": "શ્વ",
+          "sentence_gu": "વિશ્વમાં ઘણા દેશો છે.",
+          "sentence_en": "There are many countries in the world.",
+          "audio_ios": "audio/jodakshar/jodakshar_40_word.mp3",
+          "audio_android": "audio_jodakshar_40_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_40_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_40_sentence.mp3"
+        },
+        {
+          "word": "શ્વાસ",
+          "meaning_en": "breath",
+          "meaning_gu": "શ્વાસ",
+          "target_cluster": "શ્વ",
+          "sentence_gu": "ધીમો શ્વાસ લો.",
+          "sentence_en": "Take a slow breath.",
+          "audio_ios": "audio/jodakshar/jodakshar_40_word_2.mp3",
+          "audio_android": "audio_jodakshar_40_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_40_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_40_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_40_letter.mp3",
+      "audio_android": "audio_jodakshar_40_letter.mp3",
+      "svg": "svgs/jodakshar/40_shva.svg",
+      "total_length": 235.611,
+      "groups": 1,
+      "formation_type": "danda_removal"
+    },
+    {
+      "id": 41,
+      "level": "beginner",
+      "cluster": "સ્સ",
+      "components": [
+        "સ્",
+        "સ"
+      ],
+      "romanization": "ssa",
+      "pattern": "double",
+      "formation_type": "geminate_double",
+      "examples": [
+        {
+          "word": "ગુસ્સો",
+          "meaning_en": "anger",
+          "meaning_gu": "ગુસ્સો",
+          "target_cluster": "સ્સ",
+          "sentence_gu": "ક્યારેય ગુસ્સો ન કરવો.",
+          "sentence_en": "Never get angry.",
+          "audio_ios": "audio/jodakshar/jodakshar_41_word.mp3",
+          "audio_android": "audio_jodakshar_41_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_41_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_41_sentence.mp3"
+        },
+        {
+          "word": "કિસ્સો",
+          "meaning_en": "story",
+          "meaning_gu": "કિસ્સો",
+          "target_cluster": "સ્સ",
+          "sentence_gu": "દાદા સુંદર કિસ્સો કહે છે.",
+          "sentence_en": "Grandpa tells a nice story.",
+          "audio_ios": "audio/jodakshar/jodakshar_41_word_2.mp3",
+          "audio_android": "audio_jodakshar_41_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_41_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_41_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_41_letter.mp3",
+      "audio_android": "audio_jodakshar_41_letter.mp3",
+      "svg": "svgs/jodakshar/41_ssa.svg",
+      "total_length": 321.553,
+      "groups": 1
+    },
+    {
+      "id": 42,
+      "level": "intermediate",
+      "cluster": "જ્જ",
+      "components": [
+        "જ્",
+        "જ"
+      ],
+      "romanization": "jja",
+      "pattern": "double",
+      "formation_type": "geminate_double",
+      "examples": [
+        {
+          "word": "ઇજ્જત",
+          "meaning_en": "respect",
+          "meaning_gu": "ઇજ્જત",
+          "target_cluster": "જ્જ",
+          "sentence_gu": "વડીલોની ઇજ્જત કરો.",
+          "sentence_en": "Respect the elders.",
+          "audio_ios": "audio/jodakshar/jodakshar_42_word.mp3",
+          "audio_android": "audio_jodakshar_42_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_42_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_42_sentence.mp3"
+        },
+        {
+          "word": "લિજ્જત",
+          "meaning_en": "taste",
+          "meaning_gu": "લિજ્જત",
+          "target_cluster": "જ્જ",
+          "sentence_gu": "ભોજનની નવી લિજ્જત માણો.",
+          "sentence_en": "Enjoy the fresh taste of food.",
+          "audio_ios": "audio/jodakshar/jodakshar_42_word_2.mp3",
+          "audio_android": "audio_jodakshar_42_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_42_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_42_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_42_letter.mp3",
+      "audio_android": "audio_jodakshar_42_letter.mp3",
+      "svg": "svgs/jodakshar/42_jja.svg",
+      "total_length": 484.574,
+      "groups": 1
+    },
+    {
+      "id": 43,
+      "level": "intermediate",
+      "cluster": "વ્ય",
+      "components": [
+        "વ્",
+        "ય"
+      ],
+      "romanization": "vya",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "વ્યક્તિ",
+          "meaning_en": "person",
+          "meaning_gu": "વ્યક્તિ",
+          "target_cluster": "વ્ય",
+          "sentence_gu": "દરેક વ્યક્તિ મહત્વની છે.",
+          "sentence_en": "Every person is important.",
+          "audio_ios": "audio/jodakshar/jodakshar_43_word.mp3",
+          "audio_android": "audio_jodakshar_43_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_43_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_43_sentence.mp3"
+        },
+        {
+          "word": "વ્યવહાર",
+          "meaning_en": "behavior",
+          "meaning_gu": "વ્યવહાર",
+          "target_cluster": "વ્ય",
+          "sentence_gu": "સહુ સાથે સારો વ્યવહાર રાખો.",
+          "sentence_en": "Keep good behavior with everyone.",
+          "audio_ios": "audio/jodakshar/jodakshar_43_word_2.mp3",
+          "audio_android": "audio_jodakshar_43_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_43_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_43_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_43_letter.mp3",
+      "audio_android": "audio_jodakshar_43_letter.mp3",
+      "svg": "svgs/jodakshar/43_vya.svg",
+      "total_length": 227.866,
+      "groups": 1
+    },
+    {
+      "id": 44,
+      "level": "intermediate",
+      "cluster": "ધ્ય",
+      "components": [
+        "ધ્",
+        "ય"
+      ],
+      "romanization": "dhya",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "ધ્યાન",
+          "meaning_en": "focus",
+          "meaning_gu": "ધ્યાન",
+          "target_cluster": "ધ્ય",
+          "sentence_gu": "ધ્યાન રાખીને અભ્યાસ કરો.",
+          "sentence_en": "Study with focus.",
+          "audio_ios": "audio/jodakshar/jodakshar_44_word.mp3",
+          "audio_android": "audio_jodakshar_44_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_44_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_44_sentence.mp3"
+        },
+        {
+          "word": "અધ્યાય",
+          "meaning_en": "chapter",
+          "meaning_gu": "અધ્યાય",
+          "target_cluster": "ધ્ય",
+          "sentence_gu": "આ પુસ્તકનો નવો અધ્યાય વાંચો.",
+          "sentence_en": "Read the new chapter of the book.",
+          "audio_ios": "audio/jodakshar/jodakshar_44_word_2.mp3",
+          "audio_android": "audio_jodakshar_44_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_44_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_44_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_44_letter.mp3",
+      "audio_android": "audio_jodakshar_44_letter.mp3",
+      "svg": "svgs/jodakshar/44_dhya.svg",
+      "total_length": 232.899,
+      "groups": 1
+    },
+    {
+      "id": 45,
+      "level": "intermediate",
+      "cluster": "શ્ય",
+      "components": [
+        "શ્",
+        "ય"
+      ],
+      "romanization": "shya",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "દ્રશ્ય",
+          "meaning_en": "scene",
+          "meaning_gu": "દ્રશ્ય",
+          "target_cluster": "શ્ય",
+          "sentence_gu": "પ્રકૃતિનું સુંદર દ્રશ્ય છે.",
+          "sentence_en": "It is a beautiful nature scene.",
+          "audio_ios": "audio/jodakshar/jodakshar_45_word.mp3",
+          "audio_android": "audio_jodakshar_45_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_45_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_45_sentence.mp3"
+        },
+        {
+          "word": "શ્યામ",
+          "meaning_en": "Shyam",
+          "meaning_gu": "શ્યામ",
+          "target_cluster": "શ્ય",
+          "sentence_gu": "શ્યામ વાંસળી વગાડે છે.",
+          "sentence_en": "Shyam plays the flute.",
+          "audio_ios": "audio/jodakshar/jodakshar_45_word_2.mp3",
+          "audio_android": "audio_jodakshar_45_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_45_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_45_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_45_letter.mp3",
+      "audio_android": "audio_jodakshar_45_letter.mp3",
+      "svg": "svgs/jodakshar/45_shya.svg",
+      "total_length": 273.436,
+      "groups": 1
+    },
+    {
+      "id": 46,
+      "level": "intermediate",
+      "cluster": "ખ્ય",
+      "components": [
+        "ખ્",
+        "ય"
+      ],
+      "romanization": "khya",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "મુખ્ય",
+          "meaning_en": "main",
+          "meaning_gu": "મુખ્ય",
+          "target_cluster": "ખ્ય",
+          "sentence_gu": "આ અમારો મુખ્ય નિયમ છે.",
+          "sentence_en": "This is our main rule.",
+          "audio_ios": "audio/jodakshar/jodakshar_46_word.mp3",
+          "audio_android": "audio_jodakshar_46_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_46_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_46_sentence.mp3"
+        },
+        {
+          "word": "ખ્યાલ",
+          "meaning_en": "care",
+          "meaning_gu": "ખ્યાલ",
+          "target_cluster": "ખ્ય",
+          "sentence_gu": "પોતાનો સારો ખ્યાલ રાખો.",
+          "sentence_en": "Take good care of yourself.",
+          "audio_ios": "audio/jodakshar/jodakshar_46_word_2.mp3",
+          "audio_android": "audio_jodakshar_46_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_46_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_46_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_46_letter.mp3",
+      "audio_android": "audio_jodakshar_46_letter.mp3",
+      "svg": "svgs/jodakshar/46_khya.svg",
+      "total_length": 240.455,
+      "groups": 1
+    },
+    {
+      "id": 47,
+      "level": "intermediate",
+      "cluster": "ગ્ય",
+      "components": [
+        "ગ્",
+        "ય"
+      ],
+      "romanization": "gya",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "જગ્યા",
+          "meaning_en": "place",
+          "meaning_gu": "જગ્યા",
+          "target_cluster": "ગ્ય",
+          "sentence_gu": "આ એક શાંત જગ્યા છે.",
+          "sentence_en": "This is a quiet place.",
+          "audio_ios": "audio/jodakshar/jodakshar_47_word.mp3",
+          "audio_android": "audio_jodakshar_47_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_47_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_47_sentence.mp3"
+        },
+        {
+          "word": "આરોગ્ય",
+          "meaning_en": "health",
+          "meaning_gu": "આરોગ્ય",
+          "target_cluster": "ગ્ય",
+          "sentence_gu": "સારું આરોગ્ય સૌથી મોટી સંપત્તિ છે.",
+          "sentence_en": "Good health is the greatest wealth.",
+          "audio_ios": "audio/jodakshar/jodakshar_47_word_2.mp3",
+          "audio_android": "audio_jodakshar_47_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_47_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_47_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_47_letter.mp3",
+      "audio_android": "audio_jodakshar_47_letter.mp3",
+      "svg": "svgs/jodakshar/47_gya.svg",
+      "total_length": 230.283,
+      "groups": 1
+    },
+    {
+      "id": 48,
+      "level": "intermediate",
+      "cluster": "ક્ય",
+      "components": [
+        "ક્",
+        "ય"
+      ],
+      "romanization": "kya",
+      "pattern": "common",
+      "formation_type": "touching_conjoin",
+      "examples": [
+        {
+          "word": "વાક્ય",
+          "meaning_en": "sentence",
+          "meaning_gu": "વાક્ય",
+          "target_cluster": "ક્ય",
+          "sentence_gu": "આખું વાક્ય સ્પષ્ટ વાંચો.",
+          "sentence_en": "Read the whole sentence clearly.",
+          "audio_ios": "audio/jodakshar/jodakshar_48_word.mp3",
+          "audio_android": "audio_jodakshar_48_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_48_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_48_sentence.mp3"
+        },
+        {
+          "word": "ક્યારો",
+          "meaning_en": "flower bed",
+          "meaning_gu": "ક્યારો",
+          "target_cluster": "ક્ય",
+          "sentence_gu": "બગીચામાં ફૂલોનો ક્યારો છે.",
+          "sentence_en": "There is a flower bed in the garden.",
+          "audio_ios": "audio/jodakshar/jodakshar_48_word_2.mp3",
+          "audio_android": "audio_jodakshar_48_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_48_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_48_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_48_letter.mp3",
+      "audio_android": "audio_jodakshar_48_letter.mp3",
+      "svg": "svgs/jodakshar/48_kya.svg",
+      "total_length": 302.508,
+      "groups": 1
+    },
+    {
+      "id": 49,
+      "level": "intermediate",
+      "cluster": "ષ્ણ",
+      "components": [
+        "ષ્",
+        "ણ"
+      ],
+      "romanization": "shna",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "કૃષ્ણ",
+          "meaning_en": "Krishna",
+          "meaning_gu": "કૃષ્ણ",
+          "target_cluster": "ષ્ણ",
+          "sentence_gu": "શ્રીકૃષ્ણ પ્રેમનું પ્રતીક છે.",
+          "sentence_en": "Shri Krishna is a symbol of love.",
+          "audio_ios": "audio/jodakshar/jodakshar_49_word.mp3",
+          "audio_android": "audio_jodakshar_49_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_49_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_49_sentence.mp3"
+        },
+        {
+          "word": "વિષ્ણુ",
+          "meaning_en": "Vishnu",
+          "meaning_gu": "વિષ્ણુ",
+          "target_cluster": "ષ્ણ",
+          "sentence_gu": "ભગવાન વિષ્ણુ સહુનું રક્ષણ કરે છે.",
+          "sentence_en": "Lord Vishnu protects everyone.",
+          "audio_ios": "audio/jodakshar/jodakshar_49_word_2.mp3",
+          "audio_android": "audio_jodakshar_49_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_49_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_49_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_49_letter.mp3",
+      "audio_android": "audio_jodakshar_49_letter.mp3",
+      "svg": "svgs/jodakshar/49_shna.svg",
+      "total_length": 345.0,
+      "groups": 1
+    },
+    {
+      "id": 50,
+      "level": "intermediate",
+      "cluster": "ષ્પ",
+      "components": [
+        "ષ્",
+        "પ"
+      ],
+      "romanization": "shpa",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "પુષ્પ",
+          "meaning_en": "flower",
+          "meaning_gu": "પુષ્પ",
+          "target_cluster": "ષ્પ",
+          "sentence_gu": "બગીચામાં લાલ પુષ્પ ખીલ્યું છે.",
+          "sentence_en": "A red flower bloomed in the garden.",
+          "audio_ios": "audio/jodakshar/jodakshar_50_word.mp3",
+          "audio_android": "audio_jodakshar_50_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_50_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_50_sentence.mp3"
+        },
+        {
+          "word": "બાષ્પ",
+          "meaning_en": "vapor",
+          "meaning_gu": "બાષ્પ",
+          "target_cluster": "ષ્પ",
+          "sentence_gu": "ગરમ પાણીમાંથી બાષ્પ નીકળે છે.",
+          "sentence_en": "Vapor rises from hot water.",
+          "audio_ios": "audio/jodakshar/jodakshar_50_word_2.mp3",
+          "audio_android": "audio_jodakshar_50_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_50_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_50_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_50_letter.mp3",
+      "audio_android": "audio_jodakshar_50_letter.mp3",
+      "svg": "svgs/jodakshar/50_shpa.svg",
+      "total_length": 249.973,
+      "groups": 1
+    },
+    {
+      "id": 51,
+      "level": "intermediate",
+      "cluster": "શ્ચ",
+      "components": [
+        "શ્",
+        "ચ"
+      ],
+      "romanization": "shcha",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "પશ્ચિમ",
+          "meaning_en": "west",
+          "meaning_gu": "પશ્ચિમ",
+          "target_cluster": "શ્ચ",
+          "sentence_gu": "સૂર્ય પશ્ચિમ દિશામાં આથમે છે.",
+          "sentence_en": "The sun sets in the west.",
+          "audio_ios": "audio/jodakshar/jodakshar_51_word.mp3",
+          "audio_android": "audio_jodakshar_51_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_51_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_51_sentence.mp3"
+        },
+        {
+          "word": "આશ્ચર્ય",
+          "meaning_en": "wonder",
+          "meaning_gu": "આશ્ચર્ય",
+          "target_cluster": "શ્ચ",
+          "sentence_gu": "નવો વિચાર જાણીને આશ્ચર્ય થયું.",
+          "sentence_en": "I was filled with wonder learning the new idea.",
+          "audio_ios": "audio/jodakshar/jodakshar_51_word_2.mp3",
+          "audio_android": "audio_jodakshar_51_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_51_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_51_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_51_letter.mp3",
+      "audio_android": "audio_jodakshar_51_letter.mp3",
+      "svg": "svgs/jodakshar/51_shcha.svg",
+      "total_length": 259.89,
+      "groups": 1
+    },
+    {
+      "id": 52,
+      "level": "intermediate",
+      "cluster": "ધ્વ",
+      "components": [
+        "ધ્",
+        "વ"
+      ],
+      "romanization": "dhva",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "ધ્વજ",
+          "meaning_en": "flag",
+          "meaning_gu": "ધ્વજ",
+          "target_cluster": "ધ્વ",
+          "sentence_gu": "આકાશમાં તિરંગો ધ્વજ લહેરાય છે.",
+          "sentence_en": "The tricolor flag flutters in the sky.",
+          "audio_ios": "audio/jodakshar/jodakshar_52_word.mp3",
+          "audio_android": "audio_jodakshar_52_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_52_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_52_sentence.mp3"
+        },
+        {
+          "word": "ધ્વનિ",
+          "meaning_en": "sound",
+          "meaning_gu": "ધ્વનિ",
+          "target_cluster": "ધ્વ",
+          "sentence_gu": "પક્ષીઓનો મધુર ધ્વનિ સંભળાય છે.",
+          "sentence_en": "The sweet sound of birds is heard.",
+          "audio_ios": "audio/jodakshar/jodakshar_52_word_2.mp3",
+          "audio_android": "audio_jodakshar_52_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_52_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_52_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_52_letter.mp3",
+      "audio_android": "audio_jodakshar_52_letter.mp3",
+      "svg": "svgs/jodakshar/52_dhva.svg",
+      "total_length": 246.505,
+      "groups": 1
+    },
+    {
+      "id": 53,
+      "level": "intermediate",
+      "cluster": "બ્દ",
+      "components": [
+        "બ્",
+        "દ"
+      ],
+      "romanization": "bda",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "શબ્દ",
+          "meaning_en": "word",
+          "meaning_gu": "શબ્દ",
+          "target_cluster": "બ્દ",
+          "sentence_gu": "દરેક શબ્દનો સાચો અર્થ સમજો.",
+          "sentence_en": "Understand the true meaning of each word.",
+          "audio_ios": "audio/jodakshar/jodakshar_53_word.mp3",
+          "audio_android": "audio_jodakshar_53_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_53_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_53_sentence.mp3"
+        },
+        {
+          "word": "શબ્દકોશ",
+          "meaning_en": "dictionary",
+          "meaning_gu": "શબ્દકોશ",
+          "target_cluster": "બ્દ",
+          "sentence_gu": "શબ્દકોશમાંથી નવો અર્થ શોધો.",
+          "sentence_en": "Find the new meaning from the dictionary.",
+          "audio_ios": "audio/jodakshar/jodakshar_53_word_2.mp3",
+          "audio_android": "audio_jodakshar_53_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_53_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_53_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_53_letter.mp3",
+      "audio_android": "audio_jodakshar_53_letter.mp3",
+      "svg": "svgs/jodakshar/53_bda.svg",
+      "total_length": 213.105,
+      "groups": 1
+    },
+    {
+      "id": 54,
+      "level": "intermediate",
+      "cluster": "ઠ્ઠ",
+      "components": [
+        "ઠ્",
+        "ઠ"
+      ],
+      "romanization": "ththa",
+      "pattern": "double",
+      "formation_type": "geminate_double",
+      "examples": [
+        {
+          "word": "ચિઠ્ઠી",
+          "meaning_en": "note",
+          "meaning_gu": "ચિઠ્ઠી",
+          "target_cluster": "ઠ્ઠ",
+          "sentence_gu": "મિત્રને પ્રેમભરી ચિઠ્ઠી લખો.",
+          "sentence_en": "Write a loving note to your friend.",
+          "audio_ios": "audio/jodakshar/jodakshar_54_word.mp3",
+          "audio_android": "audio_jodakshar_54_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_54_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_54_sentence.mp3"
+        },
+        {
+          "word": "મુઠ્ઠી",
+          "meaning_en": "fist",
+          "meaning_gu": "મુઠ્ઠી",
+          "target_cluster": "ઠ્ઠ",
+          "sentence_gu": "બાળકે નાની મુઠ્ઠી વાળી છે.",
+          "sentence_en": "The child has clenched a small fist.",
+          "audio_ios": "audio/jodakshar/jodakshar_54_word_2.mp3",
+          "audio_android": "audio_jodakshar_54_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_54_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_54_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_54_letter.mp3",
+      "audio_android": "audio_jodakshar_54_letter.mp3",
+      "svg": "svgs/jodakshar/54_ththa.svg",
+      "total_length": 225.477,
+      "groups": 1
+    },
+    {
+      "id": 55,
+      "level": "intermediate",
+      "cluster": "ર્ય",
+      "components": [
+        "ર્",
+        "ય"
+      ],
+      "romanization": "rya",
+      "pattern": "common",
+      "formation_type": "special_ligature",
+      "examples": [
+        {
+          "word": "સૂર્ય",
+          "meaning_en": "sun",
+          "meaning_gu": "સૂર્ય",
+          "target_cluster": "ર્ય",
+          "sentence_gu": "સૂર્ય સવારે પૂર્વમાં ઊગે છે.",
+          "sentence_en": "The sun rises in the east in the morning.",
+          "audio_ios": "audio/jodakshar/jodakshar_55_word.mp3",
+          "audio_android": "audio_jodakshar_55_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_55_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_55_sentence.mp3"
+        },
+        {
+          "word": "કાર્ય",
+          "meaning_en": "work",
+          "meaning_gu": "કાર્ય",
+          "target_cluster": "ર્ય",
+          "sentence_gu": "સમયસર પોતાનું કાર્ય પૂર્ણ કરો.",
+          "sentence_en": "Complete your work on time.",
+          "audio_ios": "audio/jodakshar/jodakshar_55_word_2.mp3",
+          "audio_android": "audio_jodakshar_55_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_55_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_55_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_55_letter.mp3",
+      "audio_android": "audio_jodakshar_55_letter.mp3",
+      "svg": "svgs/jodakshar/55_rya.svg",
+      "total_length": 186.186,
+      "groups": 1
+    },
+    {
+      "id": 56,
+      "level": "intermediate",
+      "cluster": "ર્ણ",
+      "components": [
+        "ર્",
+        "ણ"
+      ],
+      "romanization": "rna",
+      "pattern": "common",
+      "formation_type": "special_ligature",
+      "examples": [
+        {
+          "word": "વર્ણ",
+          "meaning_en": "letter",
+          "meaning_gu": "વર્ણ",
+          "target_cluster": "ર્ણ",
+          "sentence_gu": "ભાષામાં દરેક વર્ણ મહત્વનો છે.",
+          "sentence_en": "Every letter is important in language.",
+          "audio_ios": "audio/jodakshar/jodakshar_56_word.mp3",
+          "audio_android": "audio_jodakshar_56_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_56_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_56_sentence.mp3"
+        },
+        {
+          "word": "પૂર્ણિમા",
+          "meaning_en": "full moon",
+          "meaning_gu": "પૂર્ણિમા",
+          "target_cluster": "ર્ણ",
+          "sentence_gu": "પૂર્ણિમાની રાતે ચાંદો ગોળ દેખાય છે.",
+          "sentence_en": "The moon looks round on a full moon night.",
+          "audio_ios": "audio/jodakshar/jodakshar_56_word_2.mp3",
+          "audio_android": "audio_jodakshar_56_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_56_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_56_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_56_letter.mp3",
+      "audio_android": "audio_jodakshar_56_letter.mp3",
+      "svg": "svgs/jodakshar/56_rna.svg",
+      "total_length": 266.26,
+      "groups": 1
+    },
+    {
+      "id": 57,
+      "level": "intermediate",
+      "cluster": "ર્ષ",
+      "components": [
+        "ર્",
+        "ષ"
+      ],
+      "romanization": "rsha",
+      "pattern": "common",
+      "formation_type": "special_ligature",
+      "examples": [
+        {
+          "word": "વર્ષ",
+          "meaning_en": "year",
+          "meaning_gu": "વર્ષ",
+          "target_cluster": "ર્ષ",
+          "sentence_gu": "આ નવું વર્ષ ખૂબ આનંદદાયક રહે.",
+          "sentence_en": "May this new year be very joyful.",
+          "audio_ios": "audio/jodakshar/jodakshar_57_word.mp3",
+          "audio_android": "audio_jodakshar_57_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_57_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_57_sentence.mp3"
+        },
+        {
+          "word": "હર્ષ",
+          "meaning_en": "joy",
+          "meaning_gu": "હર્ષ",
+          "target_cluster": "ર્ષ",
+          "sentence_gu": "સફળતા મળતાં મનમાં હર્ષ થયો.",
+          "sentence_en": "Joy filled the heart upon achieving success.",
+          "audio_ios": "audio/jodakshar/jodakshar_57_word_2.mp3",
+          "audio_android": "audio_jodakshar_57_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_57_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_57_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_57_letter.mp3",
+      "audio_android": "audio_jodakshar_57_letter.mp3",
+      "svg": "svgs/jodakshar/57_rsha.svg",
+      "total_length": 209.106,
+      "groups": 1
+    },
+    {
+      "id": 58,
+      "level": "intermediate",
+      "cluster": "ત્વ",
+      "components": [
+        "ત્",
+        "વ"
+      ],
+      "romanization": "tva",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "ત્વચા",
+          "meaning_en": "skin",
+          "meaning_gu": "ત્વચા",
+          "target_cluster": "ત્વ",
+          "sentence_gu": "ત્વચા શરીરનું રક્ષણ કરે છે.",
+          "sentence_en": "Skin protects the body.",
+          "audio_ios": "audio/jodakshar/jodakshar_58_word.mp3",
+          "audio_android": "audio_jodakshar_58_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_58_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_58_sentence.mp3"
+        },
+        {
+          "word": "મહત્ત્વ",
+          "meaning_en": "importance",
+          "meaning_gu": "મહત્ત્વ",
+          "target_cluster": "ત્વ",
+          "sentence_gu": "શિક્ષણનું જીવનમાં મોટું મહત્ત્વ છે.",
+          "sentence_en": "Education has great importance in life.",
+          "audio_ios": "audio/jodakshar/jodakshar_58_word_2.mp3",
+          "audio_android": "audio_jodakshar_58_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_58_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_58_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_58_letter.mp3",
+      "audio_android": "audio_jodakshar_58_letter.mp3",
+      "svg": "svgs/jodakshar/58_tva.svg",
+      "total_length": 216.882,
+      "groups": 1
+    },
+    {
+      "id": 59,
+      "level": "intermediate",
+      "cluster": "સ્મ",
+      "components": [
+        "સ્",
+        "મ"
+      ],
+      "romanization": "sma",
+      "pattern": "common",
+      "formation_type": "danda_removal",
+      "examples": [
+        {
+          "word": "સ્મિત",
+          "meaning_en": "smile",
+          "meaning_gu": "સ્મિત",
+          "target_cluster": "સ્મ",
+          "sentence_gu": "ચહેરા પર હંમેશા મીઠું સ્મિત રાખો.",
+          "sentence_en": "Always keep a sweet smile on your face.",
+          "audio_ios": "audio/jodakshar/jodakshar_59_word.mp3",
+          "audio_android": "audio_jodakshar_59_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_59_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_59_sentence.mp3"
+        },
+        {
+          "word": "સ્મરણ",
+          "meaning_en": "remembrance",
+          "meaning_gu": "સ્મરણ",
+          "target_cluster": "સ્મ",
+          "sentence_gu": "સારા વિચારોનું સદા સ્મરણ કરો.",
+          "sentence_en": "Always remember good thoughts.",
+          "audio_ios": "audio/jodakshar/jodakshar_59_word_2.mp3",
+          "audio_android": "audio_jodakshar_59_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_59_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_59_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_59_letter.mp3",
+      "audio_android": "audio_jodakshar_59_letter.mp3",
+      "svg": "svgs/jodakshar/59_sma.svg",
+      "total_length": 261.684,
+      "groups": 1
+    },
+    {
+      "id": 60,
+      "level": "beginner",
+      "cluster": "મ્મ",
+      "components": [
+        "મ્",
+        "મ"
+      ],
+      "romanization": "mma",
+      "pattern": "double",
+      "formation_type": "geminate_double",
+      "examples": [
+        {
+          "word": "મમ્મી",
+          "meaning_en": "mother",
+          "meaning_gu": "મમ્મી",
+          "target_cluster": "મ્મ",
+          "sentence_gu": "મમ્મી મને ખૂબ વ્હાલ કરે છે.",
+          "sentence_en": "Mom loves me very much.",
+          "audio_ios": "audio/jodakshar/jodakshar_60_word.mp3",
+          "audio_android": "audio_jodakshar_60_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_60_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_60_sentence.mp3"
+        },
+        {
+          "word": "હિમ્મત",
+          "meaning_en": "courage",
+          "meaning_gu": "હિમ્મત",
+          "target_cluster": "મ્મ",
+          "sentence_gu": "મુશ્કેલીમાં ક્યારેય હિમ્મત ન હારો.",
+          "sentence_en": "Never lose courage in difficulty.",
+          "audio_ios": "audio/jodakshar/jodakshar_60_word_2.mp3",
+          "audio_android": "audio_jodakshar_60_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_60_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_60_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_60_letter.mp3",
+      "audio_android": "audio_jodakshar_60_letter.mp3",
+      "svg": "svgs/jodakshar/60_mma.svg",
+      "total_length": 214.155,
+      "groups": 1
+    },
+    {
+      "id": 61,
+      "level": "intermediate",
+      "cluster": "ભ્ર",
+      "components": [
+        "ભ્",
+        "ર"
+      ],
+      "romanization": "bhra",
+      "pattern": "r-blend",
+      "formation_type": "special_ligature",
+      "examples": [
+        {
+          "word": "ભ્રમ",
+          "meaning_en": "illusion",
+          "meaning_gu": "ભ્રમ",
+          "target_cluster": "ભ્ર",
+          "sentence_gu": "સાચું જાણીને મનનો ભ્રમ દૂર થયો.",
+          "sentence_en": "Knowing the truth cleared the mind illusion.",
+          "audio_ios": "audio/jodakshar/jodakshar_61_word.mp3",
+          "audio_android": "audio_jodakshar_61_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_61_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_61_sentence.mp3"
+        },
+        {
+          "word": "ભ્રમણ",
+          "meaning_en": "orbit",
+          "meaning_gu": "ભ્રમણ",
+          "target_cluster": "ભ્ર",
+          "sentence_gu": "પૃથ્વી સૂર્યની આસપાસ ભ્રમણ કરે છે.",
+          "sentence_en": "The Earth orbits around the Sun.",
+          "audio_ios": "audio/jodakshar/jodakshar_61_word_2.mp3",
+          "audio_android": "audio_jodakshar_61_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_61_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_61_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_61_letter.mp3",
+      "audio_android": "audio_jodakshar_61_letter.mp3",
+      "svg": "svgs/jodakshar/61_bhra.svg",
+      "total_length": 224.078,
+      "groups": 1
+    },
+    {
+      "id": 62,
+      "level": "advanced",
+      "cluster": "હ્મ",
+      "components": [
+        "હ્",
+        "મ"
+      ],
+      "romanization": "hma",
+      "pattern": "ligature",
+      "formation_type": "halant_vertical",
+      "examples": [
+        {
+          "word": "બ્રહ્માંડ",
+          "meaning_en": "universe",
+          "meaning_gu": "બ્રહ્માંડ",
+          "target_cluster": "હ્મ",
+          "sentence_gu": "આપણું બ્રહ્માંડ અનંત અને વિશાળ છે.",
+          "sentence_en": "Our universe is infinite and vast.",
+          "audio_ios": "audio/jodakshar/jodakshar_62_word.mp3",
+          "audio_android": "audio_jodakshar_62_word.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_62_sentence.mp3",
+          "sentence_audio_android": "audio_jodakshar_62_sentence.mp3"
+        },
+        {
+          "word": "બ્રહ્મચર્ય",
+          "meaning_en": "discipline",
+          "meaning_gu": "બ્રહ્મચર્ય",
+          "target_cluster": "હ્મ",
+          "sentence_gu": "વિદ્યાર્થી જીવનમાં બ્રહ્મચર્ય જરૂરી છે.",
+          "sentence_en": "Discipline is essential in student life.",
+          "audio_ios": "audio/jodakshar/jodakshar_62_word_2.mp3",
+          "audio_android": "audio_jodakshar_62_word_2.mp3",
+          "sentence_audio_ios": "audio/jodakshar/jodakshar_62_sentence_2.mp3",
+          "sentence_audio_android": "audio_jodakshar_62_sentence_2.mp3"
+        }
+      ],
+      "audio_ios": "audio/jodakshar/jodakshar_62_letter.mp3",
+      "audio_android": "audio_jodakshar_62_letter.mp3",
+      "svg": "svgs/jodakshar/62_hma.svg",
+      "total_length": 224.151,
+      "groups": 1
+    }
+  ]
+}

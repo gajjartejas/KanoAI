@@ -2,6 +2,11 @@ const path = require("path");
 const fs = require("fs");
 const fetch = require("node-fetch");
 const TextToSVG = require("text-to-svg");
+const { createHarfBuzzShaper } = require("./harfbuzzSvg");
+const {
+  generateJodaksharInterpolateSvg: runJodaksharInterpolate,
+  syncJodaksharFromKano: runSyncJodaksharFromKano,
+} = require("./jodaksharInterpolate");
 
 // Resolve directories relative to repository root
 const ROOT_DIR = path.resolve(__dirname, "..");
@@ -12,90 +17,107 @@ const barakhdi = require(path.join(RESOURCES_DIR, "barakhdi/barakhdi.json"));
 const kakko = require(path.join(RESOURCES_DIR, "kakko/kakko.json"));
 const numerals = require(path.join(RESOURCES_DIR, "numerals/numerals.json"));
 
+// Kano React Native app paths & Jodakshar dataset
+const KANO_APP_DIR = path.resolve(ROOT_DIR, "../Kano");
+const KANO_JODAKSHAR_JSON = path.join(KANO_APP_DIR, "app/assets/lang/sections/jodakshar.json");
+const KANO_JODAKSHAR_SVGS = path.join(KANO_APP_DIR, "assets/svgs/jodakshar");
+
+const jodaksharJsonPath = fs.existsSync(path.join(RESOURCES_DIR, "jodakshar/jodakshar.json"))
+  ? path.join(RESOURCES_DIR, "jodakshar/jodakshar.json")
+  : KANO_JODAKSHAR_JSON;
+
+const jodaksharRaw = fs.existsSync(jodaksharJsonPath)
+  ? require(jodaksharJsonPath)
+  : { items: [] };
+const jodakshar = Array.isArray(jodaksharRaw) ? jodaksharRaw : jodaksharRaw.items || [];
+
 const fontPath = path.join(FONTS_DIR, "Noto_Sans_Gujarati/NotoSansGujarati-Light.ttf");
 const textToSVG = TextToSVG.loadSync(fontPath);
+const shaper = createHarfBuzzShaper(fontPath, textToSVG.font);
 
-const attributes = {};
 const options = {
   x: 0,
   y: 0,
   fontSize: 100,
   anchor: "left top",
-  attributes: attributes,
+  attributes: {},
+};
+
+const toSlugName = (text) =>
+  (text || "").replace(" / ", "_or_").replace(/[\s\/]+/g, "_").toLowerCase();
+
+const ensureDir = (dir) => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  return dir;
 };
 
 const generateBarakhadiSvg = () => {
   for (let i = 0; i < barakhdi.length; i++) {
     const charConfig = barakhdi[i];
-    const dir = path.join(RESOURCES_DIR, `barakhdi/svgs/${i}_${charConfig.en.toLocaleLowerCase()}`);
-    const chars = charConfig.chars;
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-    for (let j = 0; j < chars.length; j++) {
-      const char = chars[j];
+    const dir = ensureDir(
+      path.join(RESOURCES_DIR, `barakhdi/svgs/${i}_${charConfig.en.toLocaleLowerCase()}`)
+    );
+    for (const char of charConfig.chars) {
       const svg = textToSVG.getSVG(char.gu, options);
-      fs.writeFileSync(
-        path.join(dir, `${char.id}_${char.en.replace(" / ", "_or_").toLowerCase()}.svg`),
-        svg
-      );
+      fs.writeFileSync(path.join(dir, `${char.id}_${toSlugName(char.en)}.svg`), svg);
     }
   }
 };
 
 const generateKakkoSvg = () => {
-  const dir = path.join(RESOURCES_DIR, "kakko/svgs");
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-  for (let i = 0; i < kakko.length; i++) {
-    const char = kakko[i];
+  const dir = ensureDir(path.join(RESOURCES_DIR, "kakko/svgs"));
+  for (const char of kakko) {
     const svg = textToSVG.getSVG(char.gu, options);
-    fs.writeFileSync(
-      path.join(dir, `${char.id}_${char.en.replace(" / ", "_or_").toLowerCase()}.svg`),
-      svg
-    );
+    fs.writeFileSync(path.join(dir, `${char.id}_${toSlugName(char.en)}.svg`), svg);
   }
 };
 
 const generateNumeralsSvg = () => {
-  const dir = path.join(RESOURCES_DIR, "numerals/svgs");
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-  for (let i = 0; i < numerals.length; i++) {
-    const char = numerals[i];
-    const svg = textToSVG.getSVG(char.gu, options);
-    fs.writeFileSync(path.join(dir, `${char.en}.svg`), svg);
+  const dir = ensureDir(path.join(RESOURCES_DIR, "numerals/svgs"));
+  for (const char of numerals) {
+    fs.writeFileSync(path.join(dir, `${char.en}.svg`), textToSVG.getSVG(char.gu, options));
   }
 };
+
+const generateJodaksharSvg = async () => {
+  const dir = ensureDir(path.join(RESOURCES_DIR, "jodakshar/svgs"));
+  for (const item of jodakshar) {
+    const svg = await shaper.getShapedSVG(item.cluster || item.gu, options);
+    const fileName = `${item.id}_${toSlugName(item.romanization || item.en)}.svg`;
+    fs.writeFileSync(path.join(dir, fileName), svg);
+  }
+};
+
+const generateJodaksharInterpolateSvg = () =>
+  runJodaksharInterpolate({
+    rootDir: ROOT_DIR,
+    resourcesDir: RESOURCES_DIR,
+    jodakshar,
+    barakhdi,
+    shaper,
+    fontSize: options.fontSize,
+  });
+
+const syncJodaksharFromKano = () => runSyncJodaksharFromKano(ROOT_DIR, KANO_JODAKSHAR_SVGS);
 
 const generateBarakhdiCsv = () => {
   let csvString = "1,2,3,4,5,6,7,8,9,10,11,12,13\n";
   for (let i = 0; i < barakhdi.length; i++) {
-    const charConfig = barakhdi[i];
-    const chars = charConfig.chars;
-    let enArray = [];
-    let guArray = [];
-    for (let j = 0; j < chars.length; j++) {
-      const char = chars[j];
-      enArray.push(char.en);
-      guArray.push(char.gu);
-    }
+    const enArray = barakhdi[i].chars.map((c) => c.en);
+    const guArray = barakhdi[i].chars.map((c) => c.gu);
     csvString += `${i},${guArray.join(",")}\n${i},${enArray.join(",")}\n`;
   }
-  const dir = path.join(RESOURCES_DIR, "barakhdi");
-  fs.writeFileSync(path.join(dir, "barakhdi.csv"), csvString);
+  fs.writeFileSync(path.join(RESOURCES_DIR, "barakhdi/barakhdi.csv"), csvString);
 };
 
 const generateKakkoCsv = () => {
   let csvString = "1,2,3\n";
   for (let i = 0; i < kakko.length; i++) {
-    const char = kakko[i];
-    csvString += `${i},${char.gu},${char.en}\n`;
+    csvString += `${i},${kakko[i].gu},${kakko[i].en}\n`;
   }
-  const dir = path.join(RESOURCES_DIR, "kakko");
-  fs.writeFileSync(path.join(dir, "kakko.csv"), csvString);
+  fs.writeFileSync(path.join(RESOURCES_DIR, "kakko/kakko.csv"), csvString);
 };
 
 const generateNumeralsCsv = () => {
@@ -104,70 +126,22 @@ const generateNumeralsCsv = () => {
     const char = numerals[i];
     csvString += `${i},${char.en},${char.gu},${char.name_en},${char.name_gu}\n`;
   }
-  const dir = path.join(RESOURCES_DIR, "numerals");
-  fs.writeFileSync(path.join(dir, "numerals.csv"), csvString);
+  fs.writeFileSync(path.join(RESOURCES_DIR, "numerals/numerals.csv"), csvString);
 };
 
-const generateNumeralsAudio = async (section) => {
-  const dir = path.join(RESOURCES_DIR, "numerals/audio");
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
+const generateJodaksharCsv = () => {
+  let csvString =
+    "id,Cluster,Romanization,Components,Pattern,Level,Example Word,Example Sentence\n";
+  for (const item of jodakshar) {
+    const components = Array.isArray(item.components) ? item.components.join("+") : "";
+    const firstEx = item.examples && item.examples[0];
+    const exampleWord = firstEx ? firstEx.word : "";
+    const exampleSentence =
+      firstEx && firstEx.sentence_gu ? `"${firstEx.sentence_gu.replace(/"/g, '""')}"` : "";
+    csvString += `${item.id},${item.cluster},${item.romanization},${components},${item.pattern || ""},${item.level || ""},${exampleWord},${exampleSentence}\n`;
   }
-  for (let i = 0; i < numerals.length; i++) {
-    if (i < section) {
-      continue;
-    }
-    const char = numerals[i];
-    let audioBase64 = await getAudioBase64(char.gu);
-    const buffer = Buffer.from(audioBase64, "base64");
-    fs.writeFileSync(path.join(dir, `${char.en}.mp3`), buffer);
-  }
-};
-
-const generateBarakhadiAudio = async (section, row) => {
-  for (let i = 0; i < barakhdi.length; i++) {
-    if (i < section) {
-      continue;
-    }
-    const charConfig = barakhdi[i];
-    const dir = path.join(RESOURCES_DIR, `barakhdi/audio/${i}_${charConfig.en.toLocaleLowerCase()}`);
-    const chars = charConfig.chars;
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-    for (let j = 0; j < chars.length; j++) {
-      if (i < section && j < row) {
-        continue;
-      }
-      const char = chars[j];
-      let audioBase64 = await getAudioBase64(char.gu);
-      const buffer = Buffer.from(audioBase64, "base64");
-      fs.writeFileSync(
-        path.join(dir, `${char.id}_${char.en.replace(" / ", "_or_").toLowerCase()}.mp3`),
-        buffer
-      );
-      await new Promise((r) => setTimeout(r, 2000));
-    }
-  }
-};
-
-const generateKakkoAudio = async (section) => {
-  const dir = path.join(RESOURCES_DIR, "kakko/audio");
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-  for (let i = 0; i < kakko.length; i++) {
-    if (i < section) {
-      continue;
-    }
-    const char = kakko[i];
-    let audioBase64 = await getAudioBase64(char.gu);
-    const buffer = Buffer.from(audioBase64, "base64");
-    fs.writeFileSync(
-      path.join(dir, `${char.id}_${char.en.replace(" / ", "_or_").toLowerCase()}.mp3`),
-      buffer
-    );
-  }
+  const dir = ensureDir(path.join(RESOURCES_DIR, "jodakshar"));
+  fs.writeFileSync(path.join(dir, "jodakshar.csv"), csvString);
 };
 
 const getAudioBase64 = async (char) => {
@@ -178,8 +152,7 @@ const getAudioBase64 = async (char) => {
         accept: "*/*",
         "accept-language": "en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7,gu;q=0.6",
         "content-type": "text/plain;charset=UTF-8",
-        "sec-ch-ua":
-          '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
+        "sec-ch-ua": '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": '"macOS"',
         "sec-fetch-dest": "empty",
@@ -192,18 +165,64 @@ const getAudioBase64 = async (char) => {
       method: "POST",
     }
   );
-
   const jsonData = await response.json();
   return jsonData.audioContent;
+};
+
+const writeTtsMp3 = async (text, destPath, delayMs = 0) => {
+  const audioBase64 = await getAudioBase64(text);
+  fs.writeFileSync(destPath, Buffer.from(audioBase64, "base64"));
+  if (delayMs > 0) {
+    await new Promise((r) => setTimeout(r, delayMs));
+  }
+};
+
+const generateNumeralsAudio = async (section = 0) => {
+  const dir = ensureDir(path.join(RESOURCES_DIR, "numerals/audio"));
+  for (let i = section; i < numerals.length; i++) {
+    await writeTtsMp3(numerals[i].gu, path.join(dir, `${numerals[i].en}.mp3`));
+  }
+};
+
+const generateBarakhadiAudio = async (section = 0, row = 0) => {
+  for (let i = section; i < barakhdi.length; i++) {
+    const charConfig = barakhdi[i];
+    const dir = ensureDir(
+      path.join(RESOURCES_DIR, `barakhdi/audio/${i}_${charConfig.en.toLocaleLowerCase()}`)
+    );
+    const startRow = i === section ? row : 0;
+    for (let j = startRow; j < charConfig.chars.length; j++) {
+      const char = charConfig.chars[j];
+      await writeTtsMp3(char.gu, path.join(dir, `${char.id}_${toSlugName(char.en)}.mp3`), 2000);
+    }
+  }
+};
+
+const generateKakkoAudio = async (section = 0) => {
+  const dir = ensureDir(path.join(RESOURCES_DIR, "kakko/audio"));
+  for (let i = section; i < kakko.length; i++) {
+    const char = kakko[i];
+    await writeTtsMp3(char.gu, path.join(dir, `${char.id}_${toSlugName(char.en)}.mp3`));
+  }
+};
+
+const generateJodaksharAudio = async (section = 0) => {
+  const dir = ensureDir(path.join(RESOURCES_DIR, "jodakshar/audio"));
+  for (let i = section; i < jodakshar.length; i++) {
+    const item = jodakshar[i];
+    const fileName = `${item.id}_${toSlugName(item.romanization)}.mp3`;
+    await writeTtsMp3(item.cluster || item.gu, path.join(dir, fileName), 1000);
+  }
 };
 
 const generateAudio = async () => {
   await generateBarakhadiAudio(0, 0);
   await generateNumeralsAudio(0);
   await generateKakkoAudio(0);
+  await generateJodaksharAudio(0);
 };
 
-const generateResources = () => {
+const generateResources = async () => {
   generateBarakhadiSvg();
   generateBarakhdiCsv();
   generateNumeralsSvg();
@@ -211,6 +230,35 @@ const generateResources = () => {
   generateKakkoSvg();
   generateKakkoCsv();
   generateNumeralsCsv();
+
+  await generateJodaksharSvg();
+  await generateJodaksharInterpolateSvg();
+  generateJodaksharCsv();
+  syncJodaksharFromKano();
 };
 
-generateResources();
+if (require.main === module) {
+  generateResources().catch((err) => {
+    console.error("Failed to generate resources:", err);
+    process.exitCode = 1;
+  });
+}
+
+module.exports = {
+  generateBarakhadiSvg,
+  generateKakkoSvg,
+  generateNumeralsSvg,
+  generateJodaksharSvg,
+  generateJodaksharInterpolateSvg,
+  generateBarakhdiCsv,
+  generateKakkoCsv,
+  generateNumeralsCsv,
+  generateJodaksharCsv,
+  syncJodaksharFromKano,
+  generateBarakhadiAudio,
+  generateNumeralsAudio,
+  generateKakkoAudio,
+  generateJodaksharAudio,
+  generateResources,
+  generateAudio,
+};

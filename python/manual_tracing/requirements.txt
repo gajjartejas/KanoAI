@@ -1,0 +1,2 @@
+-r ../char_stroke_generation/requirements.txt
+scikit-image>=0.25,<0.27

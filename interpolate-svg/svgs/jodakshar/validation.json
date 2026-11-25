@@ -1,0 +1,468 @@
+[
+  {
+    "id": 1,
+    "cluster": "ક્ર",
+    "source": "shaped-medial-skeleton",
+    "strokes": 4,
+    "insideRatio": 1.0,
+    "totalLength": 172.01
+  },
+  {
+    "id": 2,
+    "cluster": "પ્ર",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 150.553
+  },
+  {
+    "id": 3,
+    "cluster": "ત્ર",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 139.158
+  },
+  {
+    "id": 4,
+    "cluster": "સ્વ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 5,
+    "insideRatio": 1.0,
+    "totalLength": 274.173
+  },
+  {
+    "id": 5,
+    "cluster": "સ્ક",
+    "source": "shaped-medial-skeleton",
+    "strokes": 6,
+    "insideRatio": 1.0,
+    "totalLength": 282.949
+  },
+  {
+    "id": 6,
+    "cluster": "ક્ષ",
+    "source": "existing-manual"
+  },
+  {
+    "id": 7,
+    "cluster": "જ્ઞ",
+    "source": "existing-manual"
+  },
+  {
+    "id": 8,
+    "cluster": "ક્ક",
+    "source": "shaped-medial-skeleton",
+    "strokes": 5,
+    "insideRatio": 1.0,
+    "totalLength": 298.707
+  },
+  {
+    "id": 9,
+    "cluster": "ચ્ચ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 5,
+    "insideRatio": 1.0,
+    "totalLength": 273.027
+  },
+  {
+    "id": 10,
+    "cluster": "ત્ત",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 155.673
+  },
+  {
+    "id": 11,
+    "cluster": "દ્દ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 128.667
+  },
+  {
+    "id": 12,
+    "cluster": "ન્ન",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 131.513
+  },
+  {
+    "id": 13,
+    "cluster": "પ્પ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 200.603
+  },
+  {
+    "id": 14,
+    "cluster": "ટ્ટ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 2,
+    "insideRatio": 1.0,
+    "totalLength": 171.972
+  },
+  {
+    "id": 15,
+    "cluster": "ત્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 206.86
+  },
+  {
+    "id": 16,
+    "cluster": "ન્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 165.113
+  },
+  {
+    "id": 17,
+    "cluster": "દ્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 187.067
+  },
+  {
+    "id": 18,
+    "cluster": "દ્વ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 2,
+    "insideRatio": 1.0,
+    "totalLength": 180.105
+  },
+  {
+    "id": 19,
+    "cluster": "સ્થ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 5,
+    "insideRatio": 1.0,
+    "totalLength": 301.391
+  },
+  {
+    "id": 20,
+    "cluster": "શ્ર",
+    "source": "shaped-medial-skeleton",
+    "strokes": 4,
+    "insideRatio": 1.0,
+    "totalLength": 210.366
+  },
+  {
+    "id": 21,
+    "cluster": "દ્ર",
+    "source": "shaped-medial-skeleton",
+    "strokes": 2,
+    "insideRatio": 1.0,
+    "totalLength": 123.456
+  },
+  {
+    "id": 22,
+    "cluster": "ગ્ર",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 177.38
+  },
+  {
+    "id": 23,
+    "cluster": "ષ્ટ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 216.98
+  },
+  {
+    "id": 24,
+    "cluster": "ષ્ઠ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 247.392
+  },
+  {
+    "id": 25,
+    "cluster": "ચ્છ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 333.076
+  },
+  {
+    "id": 26,
+    "cluster": "લ્લ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 274.467
+  },
+  {
+    "id": 27,
+    "cluster": "ત્સ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 5,
+    "insideRatio": 1.0,
+    "totalLength": 254.111
+  },
+  {
+    "id": 28,
+    "cluster": "દ્ભુ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 5,
+    "insideRatio": 1.0,
+    "totalLength": 263.34
+  },
+  {
+    "id": 29,
+    "cluster": "ન્મ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 4,
+    "insideRatio": 1.0,
+    "totalLength": 152.496
+  },
+  {
+    "id": 30,
+    "cluster": "જ્જ્વ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 7,
+    "insideRatio": 1.0,
+    "totalLength": 633.686
+  },
+  {
+    "id": 31,
+    "cluster": "સ્ફ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 7,
+    "insideRatio": 1.0,
+    "totalLength": 310.825
+  },
+  {
+    "id": 32,
+    "cluster": "ક્ષ્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 5,
+    "insideRatio": 1.0,
+    "totalLength": 308.159
+  },
+  {
+    "id": 33,
+    "cluster": "ર્થ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 212.241
+  },
+  {
+    "id": 34,
+    "cluster": "ર્મ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 4,
+    "insideRatio": 1.0,
+    "totalLength": 173.521
+  },
+  {
+    "id": 35,
+    "cluster": "સ્ત",
+    "source": "shaped-medial-skeleton",
+    "strokes": 6,
+    "insideRatio": 1.0,
+    "totalLength": 272.002
+  },
+  {
+    "id": 36,
+    "cluster": "સ્પ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 5,
+    "insideRatio": 1.0,
+    "totalLength": 258.788
+  },
+  {
+    "id": 37,
+    "cluster": "ગ્ન",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 167.686
+  },
+  {
+    "id": 38,
+    "cluster": "ક્ત",
+    "source": "shaped-medial-skeleton",
+    "strokes": 6,
+    "insideRatio": 1.0,
+    "totalLength": 307.316
+  },
+  {
+    "id": 39,
+    "cluster": "દ્ધ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 3,
+    "insideRatio": 1.0,
+    "totalLength": 210.007
+  },
+  {
+    "id": 40,
+    "cluster": "શ્વ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 4,
+    "insideRatio": 1.0,
+    "totalLength": 235.611
+  },
+  {
+    "id": 41,
+    "cluster": "સ્સ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 321.553
+  },
+  {
+    "id": 42,
+    "cluster": "જ્જ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 484.574
+  },
+  {
+    "id": 43,
+    "cluster": "વ્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 227.866
+  },
+  {
+    "id": 44,
+    "cluster": "ધ્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 232.899
+  },
+  {
+    "id": 45,
+    "cluster": "શ્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 273.436
+  },
+  {
+    "id": 46,
+    "cluster": "ખ્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 240.455
+  },
+  {
+    "id": 47,
+    "cluster": "ગ્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 230.283
+  },
+  {
+    "id": 48,
+    "cluster": "ક્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 302.508
+  },
+  {
+    "id": 49,
+    "cluster": "ષ્ણ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 345.0
+  },
+  {
+    "id": 50,
+    "cluster": "ષ્પ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 249.973
+  },
+  {
+    "id": 51,
+    "cluster": "શ્ચ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 259.89
+  },
+  {
+    "id": 52,
+    "cluster": "ધ્વ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 246.505
+  },
+  {
+    "id": 53,
+    "cluster": "બ્દ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 213.105
+  },
+  {
+    "id": 54,
+    "cluster": "ઠ્ઠ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 225.477
+  },
+  {
+    "id": 55,
+    "cluster": "ર્ય",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 186.186
+  },
+  {
+    "id": 56,
+    "cluster": "ર્ણ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 266.26
+  },
+  {
+    "id": 57,
+    "cluster": "ર્ષ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 209.106
+  },
+  {
+    "id": 58,
+    "cluster": "ત્વ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 216.882
+  },
+  {
+    "id": 59,
+    "cluster": "સ્મ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 261.684
+  },
+  {
+    "id": 60,
+    "cluster": "મ્મ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 214.155
+  },
+  {
+    "id": 61,
+    "cluster": "ભ્ર",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 224.078
+  },
+  {
+    "id": 62,
+    "cluster": "હ્મ",
+    "source": "shaped-medial-skeleton",
+    "strokes": 1,
+    "totalLength": 224.151
+  }
+]
